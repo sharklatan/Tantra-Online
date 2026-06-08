@@ -1,11 +1,14 @@
 #define _WIN32_WINNT 0x500 // for use "TryEnterCriticalSection"
 
+// FIX SharkLatan 2026-06-17 : 0x500 이상이여야 TryEnterCriticalSection 사용 가능
+#define WIN32_LEAN_AND_MEAN
+#include <winsock2.h>
+#include <windows.h>
 // standard include
 #include "stdafx.h"
 
-#include <windows.h>
+
 #include <windowsx.h>
-#include <winsock.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

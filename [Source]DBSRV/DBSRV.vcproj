@@ -87,6 +87,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="uuid.lib Winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)/DBSRV.exe"
 				LinkIncremental="1"
 				GenerateDebugInformation="TRUE"
@@ -120,7 +121,7 @@
 	</References>
 	<Files>
 		<Filter
-			Name="¼Ò½º ÆÄÀÏ"
+			Name="ï¿½Ò½ï¿½ ï¿½ï¿½ï¿½ï¿½"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
 			<File
 				RelativePath="CFileDB.cpp">
@@ -139,7 +140,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Çì´õ ÆÄÀÏ"
+			Name="ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½"
 			Filter="h;hpp;hxx;hm;inl;inc">
 			<File
 				RelativePath="CFileDB.h">
@@ -180,7 +181,7 @@
 			</Filter>
 		</Filter>
 		<Filter
-			Name="¸®¼Ò½º ÆÄÀÏ"
+			Name="ï¿½ï¿½ï¿½Ò½ï¿½ ï¿½ï¿½ï¿½ï¿½"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
 		</Filter>
 		<Filter
