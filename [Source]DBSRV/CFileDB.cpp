@@ -1954,7 +1954,7 @@ void CFileDB::CheckTrimuriti()
 
 	fclose(fp);
 
-	if(nHour==4)		//	하루에 한번 4시가 되면 주신동접 통계를 존서버에로 통보한다.
+	if(nHour==4)		//	하루에 한번 4시가 되면 주신동접 통계를 존서버에로 통보한다. //implementar archivo config para hora de Conf_trimuriti.txt
 	{
 		Msg_TrimuritiStatus sm; sm.wType = _Msg_TrimuritiStatus;
 		sm.iTrimuritiCount[0] = m_iTrimuriti[0][24];

@@ -156,6 +156,7 @@ extern FILE*	g_pLogFile;
 extern char		g_szLogPath[256];
 
 // Funcion de log con timestamp (usada en Server.cpp para EditHistory)
+// se implemento pero comento rompia compilacion mal implementada
 void TimeWriteLog(const char* pszText, const char* pszFilePath);
 
 #endif

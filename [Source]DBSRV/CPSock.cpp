@@ -711,7 +711,11 @@ BOOL CPSock::AddClientMessage(char *pMsg,int Size)
 		char szBuf[256] ={0,};
 		HEADER * proc = (HEADER*)(pRecvBuffer+nProcPosition);
 		sprintf( szBuf, "Send Socket buffer full %d-%d-%d-%d \r\n",nSentPosition,nSendPosition,pSMsg->wType,pSMsg->wPDULength);
-		TimeWriteLog( szBuf, ".\\Event\\[LOG]SERVER_CONNECTION.txt");
+		//TimeWriteLog( szBuf, ".\\Event\\[LOG]SERVER_CONNECTION.txt"); //asi estaba antes
+		//TimeWriteLog((const char*)tu_variable_buffer, (const char*)"EditHistory.txt"); // mediste esto
+		TimeWriteLog((const char*)szBuf, (const char*)"EditHistory.txt"); // imagino que es con variable szBuf
+		TimeWriteLog((const char*)szBuf, (const char*)".\\Event\\[LOG]SERVER_CONNECTION.txt"); // esto esta mal creo
+
 		#endif
 		RefreshSendBuffer();
 		if	(nSendPosition+Size >=	SEND_BUFFER_SIZE )

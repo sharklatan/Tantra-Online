@@ -18,6 +18,7 @@
 #include <windows.h>
 
 void WriteLog( char* pLog, char* chFileName ) ;
-void TimeWriteLog( char* pLog, char* chFileName ) ;
+//void TimeWriteLog( char* pLog, char* chFileName ) ; //antes TimeWriteLog(const char* pszText, const char* pszFilePath);
+void TimeWriteLog(const char* pszText, const char* pszFilePath); //se implemento pero comento rompia compilacion mal implementada
 
 #endif //__TNDebug_h__

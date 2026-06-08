@@ -1,0 +1,3105 @@
+https://claude.ai/share/bdd9b789-41b6-49f8-bc86-70de39fd4f30
+
+analiza este chat 
+
+estas en la misma pc vamso a continuar desde donde se quedo
+
+11:37 a.m.
+
+Failed to fetch: https://claude.ai/share/bdd9b789-41b6-49f8-bc86-70de39fd4f30
+Failed to fetch: https://claude.ai/share/bdd9b789-41b6-49f8-bc86-70de39fd4f30
+No puedo acceder directamente al enlace compartido de Claude. ¿Puedes pegarme el contenido del chat aquí para que pueda analizarlo y continuemos desde donde se quedaron?
+
+
+Hola! Parece que compartiste el código fuente de un servidor de base de datos (DBSRV), que parece ser parte de un juego en línea llamado Tantra Online (un MMORPG coreano). Los archivos incluyen: Lo más interesante del código: MD5Checksum.cpp/.h — Implementación del algoritmo MD5, pero con una modif
+
+pasted
+
+11:38 a.m.
+¡Perfecto! Ya tengo el contexto completo. Estamos en medio de la integración de las funciones reconstruidas del DBSRV_NEW.exe al código fuente limpio.
+
+Déjame revisar el estado actual de los archivos para saber exactamente dónde quedamos:
+
+
+Se usaron 2 integraciones, herramientas cargadas
+Se usaron 2 integraciones, herramientas cargadas
+Tengo el estado completo. Déjame ver también CFileDB.cpp para saber qué falta conectar:
+
+
+Read Text File
+Read Text File
+F
+
+
+Read Text File
+Request
+
+{
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB.cpp",
+  "head": 80
+}
+Response
+
+#include <windows.h>
+#include <ERRNO.H>
+#include <stdlib.h>
+#include <stdio.h>
+#include <io.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <time.h> 
+
+#include "Basedef.h"
+#include "CPSock.h"
+//#include "ItemEffect.h"
+
+#include "CUser.h"
+#include "CFileDB.h"
+#include "MD5Checksum.h"
+
+extern HWND hWndMain;
+extern CUser pUser[MAX_SERVERNUMBER];
+extern CUser pAdmin[MAX_ADMIN];
+extern void DisableAccount(int conn,char * account);
+extern void EnableAccount(int conn,char * account);
+
+extern STRUCT_MOB g_pBaseSet[MAX_CLASS];
+//extern int errno;
+extern void Log                  ( char * String1, char * String2 ,unsigned int ss);
+extern int				ServerIndex;
+extern int				TransperCharacter;
+extern int				GuildID;
+extern CPSock			AdminClient; // transperserver��
+extern E_COUNTRY_ID		g_eCountryID;
+
+BOOL ProcessRecord(int conn,char * str);
+
+//#define DECREASE_SLEEPING_ACCOUNTS_BP
+
+//////////////////////////////////////////////////////////////////////////
+//
+//             CFileDB,  ~CFileDB
+//
+// 1.��� �ʱ�ȭ
+//  
+//////////////////////////////////////////////////////////////////////////
+
+CFileDB::CFileDB()
+{	
+
+	for (int i=0;i<MAX_DBACCOUNT;i++)
+	{
+		pAccountList[i].Login =  0;
+        pAccountList[i].Slot  = -1;
+		memset(&pAccountList[i].File,0,sizeof(pAccountList[i].File));
+	}
+
+	for(i=0; i<5; i++)
+	{
+		for(int j=0; j<24; j++) m_iTrimuriti[3][24] = 0;
+	}
+}
+
+CFileDB::~CFileDB()
+{
+}
+
+void CFileDB::InitGuild()
+{
+	STRUCT_GUILD guild; 
+	for(int i=0; i<GuildID; i++)
+	{	//strupr(user);
+		memset(&guild, 0, sizeof(STRUCT_GUILD));
+		int nID=0; int ret = ReadGuildFile(i,&guild);	
+		if (ret==FALSE) continue;;
+		for	(int k=0;k<MAX_GUILD_MEMBER-1;k++)
+		{	if	(guild.Member[k].MemberName[0] == 0) continue;
+			for(int j=k+1; j<MAX_GUILD_MEMBER; j++)
+			{	if	(guild.Member[j].MemberName[0] == 0) continue;
+				if	(!strcmp(guild.Member[k].MemberName, guild.Member[j].MemberName)) 
+				{	memset(&(guild.Member[j]),0,sizeof(STRUCT_GUILD_MEMBER));
+				}
+			}
+Listo
+Ya tengo el panorama completo. Aquí está el estado exacto del proyecto:
+
+Estado actual — qué está hecho y qué falta
+✅ Completado
+CFileDB_NEW_funcs.cpp — 7 funciones reconstruidas y compilables
+CFileDB.h — declaraciones agregadas correctamente
+Globals definidos (g_InitItemTable, g_SkillData, g_pLogFile)
+Basedef.h creado con fixes
+El proyecto compila
+⚠️ Problema inmediato — doble definición
+En CFileDB_NEW_funcs.cpp hay dos definiciones de las mismas variables globales:
+
+cpp
+// Al inicio del archivo (línea ~16):
+FILE* g_pLogFile = NULL;
+char  g_szLogPath[256] = {0};
+
+// Y más abajo (línea ~380):
+FILE* g_pLogFile = NULL;   // ← DUPLICADO — error de linker
+char  g_szLogPath[256] = {0};
+🔲 Pendiente de integración
+Conectar las funciones al flujo del servidor — LoadInitItems() y LoadSkillData() deben llamarse en el constructor o en Server.cpp al iniciar
+OpenLogFile() — debe llamarse al inicio y posiblemente al rotar logs por hora
+CheckAccount / CheckAccount2 — tienen partes marcadas como TODO (la decodificación del slot)
+ProcessMessage() en CFileDB.cpp — debe enrutar los nuevos mensajes hacia las nuevas funciones
+El .vcproj — hay que verificar que CFileDB_NEW_funcs.cpp quedó agregado
+Empiezo por los problemas bloqueantes. Primero elimino la doble definición:
+
+La respuesta de Claude fue interrumpida.
+ok ahora neecsitamos ver lo que falta de integrar hay otras funciones que faltan segun veo
+
+11:40 a.m.
+Vamos a hacer un análisis completo. Primero leo todo lo que tenemos:
+
+
+Read Multiple Files
+Read Multiple Files
+D
+
+
+Read Multiple Files
+Request
+
+{
+  "paths": [
+    "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB.cpp",
+    "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\Server.cpp"
+  ]
+}
+Response
+
+C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.cpp: text/plain (text)
+C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Server.cpp: text/plain (text)
+Response
+
+
+--- C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.cpp contents: ---
+[Reading 1000 lines from start (total: 1965 lines, 965 remaining)]
+
+#include <windows.h>
+#include <ERRNO.H>
+#include <stdlib.h>
+#include <stdio.h>
+#include <io.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <time.h> 
+
+#include "Basedef.h"
+#include "CPSock.h"
+//#include "ItemEffect.h"
+
+#include "CUser.h"
+#include "CFileDB.h"
+#include "MD5Checksum.h"
+
+extern HWND hWndMain;
+extern CUser pUser[MAX_SERVERNUMBER];
+extern CUser pAdmin[MAX_ADMIN];
+extern void DisableAccount(int conn,char * account);
+extern void EnableAccount(int conn,char * account);
+
+extern STRUCT_MOB g_pBaseSet[MAX_CLASS];
+//extern int errno;
+extern void Log                  ( char * String1, char * String2 ,unsigned int ss);
+extern int				ServerIndex;
+extern int				TransperCharacter;
+extern int				GuildID;
+extern CPSock			AdminClient; // transperserver��
+extern E_COUNTRY_ID		g_eCountryID;
+
+BOOL ProcessRecord(int conn,char * str);
+
+//#define DECREASE_SLEEPING_ACCOUNTS_BP
+
+//////////////////////////////////////////////////////////////////////////
+//
+//             CFileDB,  ~CFileDB
+//
+// 1.��� �ʱ�ȭ
+//  
+//////////////////////////////////////////////////////////////////////////
+
+CFileDB::CFileDB()
+{	
+
+	for (int i=0;i<MAX_DBACCOUNT;i++)
+	{
+		pAccountList[i].Login =  0;
+        pAccountList[i].Slot  = -1;
+		memset(&pAccountList[i].File,0,sizeof(pAccountList[i].File));
+	}
+
+	for(i=0; i<5; i++)
+	{
+		for(int j=0; j<24; j++) m_iTrimuriti[3][24] = 0;
+	}
+}
+
+CFileDB::~CFileDB()
+{
+}
+
+void CFileDB::InitGuild()
+{
+	STRUCT_GUILD guild; 
+	for(int i=0; i<GuildID; i++)
+	{	//strupr(user);
+		memset(&guild, 0, sizeof(STRUCT_GUILD));
+		int nID=0; int ret = ReadGuildFile(i,&guild);	
+		if (ret==FALSE) continue;;
+		for	(int k=0;k<MAX_GUILD_MEMBER-1;k++)
+		{	if	(guild.Member[k].MemberName[0] == 0) continue;
+			for(int j=k+1; j<MAX_GUILD_MEMBER; j++)
+			{	if	(guild.Member[j].MemberName[0] == 0) continue;
+				if	(!strcmp(guild.Member[k].MemberName, guild.Member[j].MemberName)) 
+				{	memset(&(guild.Member[j]),0,sizeof(STRUCT_GUILD_MEMBER));
+				}
+			}
+			if(guild.Member[nID].GuildRank<guild.Member[k].GuildRank ||  
+				(guild.Member[nID].GuildRank==guild.Member[k].GuildRank && guild.Member[nID].byLevel<guild.Member[k].byLevel)) nID=k;
+			if(nID!=k && guild.Member[k].GuildRank==eGuildMaster) guild.Member[k].GuildRank=eGuildMember;
+		}
+		guild.Member[nID].GuildRank=eGuildMaster;
+		WriteGuildFile(i,&guild);
+
+		char guilfile[256]; sprintf(guilfile,"G:\\name\\%s.dat", guild.GuildName);
+		FILE * fp = fopen(guilfile,"wb"); if(fp==NULL) continue; 
+		char pID[128]={0,}; sprintf(pID, "%d", i);
+		fwrite(pID,strlen(pID),1,fp); fclose(fp);
+	}
+}
+
+BOOL CFileDB::AddAccount(char *id,char*pass,int ssn1,int ssn2)
+{
+
+	char check[128];
+	strncpy(check,id,ACCOUNTNAME_LENGTH); strupr(check);
+	if	(check[0]=='C'&&check[1]=='O'&&check[2]=='M'&&check[3]>=48&&check[3]<=57&&check[4]==0)	return FALSE;
+	if	(check[0]=='L'&&check[1]=='P'&&check[2]=='T'&&check[3]>=48&&check[3]<=57&&check[4]==0)	return FALSE;
+
+
+      char temp[128]; char First[128];BASE_GetFirstKey(id,First);
+	  sprintf(temp,"./account/%s/%s.TAD",First,id);
+
+    int Handle = open( temp, _O_RDONLY | _O_BINARY , NULL );
+	if (Handle!=-1)
+	{ 	close(Handle);
+		STRUCT_ACCOUNTFILE  file; strncpy(file.AccountName,id,ACCOUNTNAME_LENGTH);
+		DBReadAccount(&file);
+		if ( g_eCountryID != eCountryKorea )
+		{
+			char szMD5Pass[36] = {0, };
+			strlwr(pass);
+			CMD5Checksum::GetMD5((byte*)pass,strlen(pass),szMD5Pass);
+			strcpy(file.AccountPass,szMD5Pass);
+		}
+		else
+		{
+			strcpy(file.AccountPass,pass);
+		}
+	
+		file.ssn1 = ssn1;
+		file.ssn2 = ssn2;
+		DBWriteAccount(&file);
+		return TRUE;
+	}
+	close(Handle);
+	  
+
+      STRUCT_ACCOUNTFILE  file;
+	  memset(&file,0,sizeof(file));
+	  strcpy(file.AccountName,id);
+	  if ( g_eCountryID != eCountryKorea )
+	  {
+		  char szMD5Pass[36] = {0, };
+		  strlwr(pass);
+		  CMD5Checksum::GetMD5((byte*)pass,strlen(pass),szMD5Pass);
+		  strcpy(file.AccountPass,szMD5Pass);
+	  }
+	  else
+	  {
+		  strcpy(file.AccountPass,pass);
+	  }	
+	  file.ssn1 = ssn1;
+	  file.ssn2 = ssn2;
+	  
+
+ 
+      int ret = DBWriteAccount(&file); // ��ī��Ʈ ������ ��°�� ����.
+      if  (ret==FALSE) return FALSE;
+	  return TRUE;
+}
+
+
+BOOL CFileDB::UpdateAccount(char *id,char*pass,int ssn1,int ssn2)
+{
+
+	char check[128];
+	strncpy(check,id,ACCOUNTNAME_LENGTH); strupr(check);
+	if	(check[0]=='C'&&check[1]=='O'&&check[2]=='M'&&check[3]>=48&&check[3]<=57&&check[4]==0)	return FALSE;
+	if	(check[0]=='L'&&check[1]=='P'&&check[2]=='T'&&check[3]>=48&&check[3]<=57&&check[4]==0)	return FALSE;
+
+      char temp[128]; char First[128];BASE_GetFirstKey(id,First);
+	  sprintf(temp,"./account/%s/%s.TAD",First,id);
+
+      int Handle = open( temp, _O_RDONLY | _O_BINARY , NULL );
+	  if (Handle==-1)
+	  {  close(Handle);
+		 return FALSE;
+	  }
+	  close(Handle);
+
+      int idx = GetIndex(id);
+	  if  (idx!=-1)
+	  {   strcpy(pAccountList[idx].File.AccountPass,pass);
+	  }
+
+	  STRUCT_ACCOUNTFILE  file;
+	  strncpy(file.AccountName,id,ACCOUNTNAME_LENGTH);
+      int ret =DBReadAccount(&file);
+      if  (ret==FALSE)
+	  {	  Log("err updateaccount read fail",id,0);
+		  return FALSE;
+	  }
+
+	  char szMD5Pass[36] = {0, };
+	  if ( g_eCountryID != eCountryKorea )
+	  {
+		  strlwr(pass);
+		  CMD5Checksum::GetMD5((byte*)pass,strlen(pass),szMD5Pass);
+		  strcpy(file.AccountPass,szMD5Pass);
+	  }
+	  else
+	  {
+		  strcpy(file.AccountPass,pass);
+	  }
+
+	  file.ssn1 = ssn1;
+	  file.ssn2 = ssn2;
+	  ret = DBWriteAccount(&file); // ��ī��Ʈ ������ ��°�� ����.
+      if  (ret==FALSE)
+	  {   Log("err updateAccount write fail",id,0);
+		  return FALSE;
+	  }
+      // �������̸� pass �κ��� �����Ѵ�.
+      int IdxName = GetIndex(file.AccountName);
+      if  (IdxName > 0  && IdxName < MAX_DBACCOUNT)
+	  {   if ( g_eCountryID != eCountryKorea ) strcpy(pAccountList[IdxName].File.AccountPass,szMD5Pass);
+		  else strcpy(pAccountList[IdxName].File.AccountPass,pass);
+	  }
+	  //
+
+	  return TRUE;
+}
+
+BOOL ProcessRecord(int conn,char * str)
+{
+	// Record���Ͽ��ٰ� ����.
+	// Daemon�� �о� ���Ƿ� �����Ѵ�.
+	char file[256];
+	struct tm when;
+	time_t now;
+	time(&now); when= *localtime(&now);
+    sprintf(file,"RC%4.4d_%2.2d_%2.2d_%2.2d_%2.2d_%2d.txt",when.tm_year-100,when.tm_mon+1,when.tm_mday,when.tm_hour,when.tm_min,when.tm_sec,conn);
+	char filetemp[236];
+    sprintf(filetemp,"S:/export/record%d/%s",ServerIndex,file);
+	FILE * fp = fopen(filetemp,"wt");
+	if	(fp==NULL)	return FALSE;
+	
+
+	fprintf(fp,"%s",str);
+	fclose(fp);
+	return TRUE;
+}
+BOOL CFileDB::ReadGuildFile(int gid,STRUCT_GUILD* guild)
+{
+	char file[256]; sprintf(file,"G:\\%7.7d.dat",gid);
+	FILE * fp = fopen(file,"rb");	if (fp==NULL)	return FALSE;
+	fread(guild,sizeof(STRUCT_GUILD),1,fp);
+	fclose(fp);
+
+	return TRUE;
+}
+BOOL CFileDB::WriteGuildFile(int gid,STRUCT_GUILD * guild)
+{
+	char file[256]; sprintf(file,"G:\\%7.7d.dat",gid);
+	FILE * fp = fopen(file,"wb");	if (fp==NULL)	return FALSE;
+	fwrite(guild,sizeof(STRUCT_GUILD),1,fp);
+	fclose(fp);
+	return TRUE;
+}
+
+BOOL CFileDB::CreateGuildFile(int gid,MSG_CreateGuild* pData)
+{	
+	char guilfile[256]; sprintf(guilfile,"G:\\name\\%s.dat", pData->GuildName);
+	FILE * fp = fopen(guilfile, "r");
+	if(fp!=NULL) return false;
+
+	STRUCT_GUILD guild; memset(&guild,0,sizeof(guild));
+	guild.GuildID = gid;
+	guild.Mark=pData->GuildMark;
+	strncpy(guild.GuildName, pData->GuildName, SZNAME_LENGTH);
+	guild.Member[0]=pData->Member;
+	WriteGuildFile(gid,&guild);
+	fp = fopen(guilfile,"wb"); if(fp==NULL) return FALSE; 
+	char pID[128]={0,}; sprintf(pID, "%d", gid);
+	fwrite(pID,strlen(pID),1,fp); fclose(fp);
+	return TRUE;
+}
+BOOL CFileDB::AddGuildMember(int gid,MSG_AddGuildMember * pData)
+{	STRUCT_GUILD guild;
+	//strupr(user);
+	int ret = ReadGuildFile(gid,&guild);	
+	if (ret==FALSE) return FALSE;
+	for	(int i=0;i<MAX_GUILD_MEMBER;i++)
+	{	if	(!strcmp(guild.Member[i].MemberName, pData->Member.MemberName)) return FALSE;
+	}
+	for	(int i=0;i<MAX_GUILD_MEMBER;i++)
+	{	if	(guild.Member[i].MemberName[0]==0) break;
+	}
+	if	(i==MAX_GUILD_MEMBER) return FALSE;
+	guild.Member[i] = pData->Member;
+	ret = WriteGuildFile(gid,&guild);
+	if (ret==FALSE) return FALSE;
+	return TRUE;
+}
+int CFileDB::RemoveGuildMember(int gid,char * user, char* pMaster)
+{	STRUCT_GUILD guild;
+	int ret = ReadGuildFile(gid,&guild);		
+	if (ret==FALSE) return -1;
+	int i=0;	int nMaster=MAX_GUILD_MEMBER;			//	 nMaster=MAX_GUILD_MEMBER(������� �ȹٲ���� ���)
+	for	(i=0;i<MAX_GUILD_MEMBER;i++)
+	{	if	(!strncmp(guild.Member[i].MemberName,user,SZNAME_LENGTH)) break;
+	}
+	if	(i==MAX_GUILD_MEMBER) return -1;				//	�ش����� �������� �������
+	if	(guild.Member[i].GuildRank==eGuildMaster)		//	����� Ż��� �������� �̾�
+	{	int temp=0; int ntempLevel = 0;
+		for	(int m=0;m<MAX_GUILD_MEMBER;m++)
+		{	if	(guild.Member[m].GuildRank>temp && guild.Member[m].GuildRank!=eGuildMaster) { nMaster=m; temp=guild.Member[m].GuildRank; ntempLevel=guild.Member[m].byLevel; }
+			else if(guild.Member[m].GuildRank==temp && guild.Member[m].byLevel>ntempLevel) { nMaster=m; temp=guild.Member[m].GuildRank; ntempLevel=guild.Member[m].byLevel; }
+		}
+		if(nMaster>=0 && nMaster<MAX_GUILD_MEMBER)
+			if(guild.Member[nMaster].MemberName[0]!=0) 
+			{	guild.Member[nMaster].GuildRank=eGuildMaster;
+				strncpy(pMaster, guild.Member[nMaster].MemberName, SZNAME_LENGTH);
+			}
+	}
+
+	memset(&guild.Member[i],0,sizeof(STRUCT_GUILD_MEMBER));
+	// Ż��� ������ ������ ������Ʈ ���ش�.
+	char szAccount[ACCOUNTNAME_LENGTH] = {0, 0, };
+	GetAccountByChar( szAccount, user );
+	if ( szAccount[0] != 0 ) // ��ī��Ʈ ������ �����ϸ�,
+	{	STRUCT_ACCOUNTFILE acc;
+		ZeroMemory( &acc, sizeof(STRUCT_ACCOUNTFILE) );
+		strncpy( acc.AccountName, szAccount, ACCOUNTNAME_LENGTH );
+		if ( DBReadAccount( &acc ) )
+		{	for ( int i=0;i<MOB_PER_ACCOUNT;i++)
+			{	if ( strncmp( acc.Char[i].szName, user, SZNAME_LENGTH ) == 0 )
+				{	acc.Char[i].nGuildID = 0;
+					DBWriteAccount( &acc );
+					DBExportAccount( &acc );
+				}
+			}
+		}
+	}
+
+	ret = WriteGuildFile(gid,&guild);	
+	if (ret==FALSE) return -1;
+	return nMaster;
+}
+BOOL CFileDB::UpdateGuild(int gid,MSG_GuildUpdate * pData)
+{	STRUCT_GUILD guild;
+	//strupr(user);
+	int ret = ReadGuildFile(gid,&guild);	
+	if (ret==FALSE) return FALSE;
+
+	strncpy(guild.AlliedGuildName1, pData->AlliedGuildName1, SZNAME_LENGTH);
+	strncpy(guild.AlliedGuildName2, pData->AlliedGuildName2, SZNAME_LENGTH);
+	strncpy(guild.EnemyGuildName1, pData->EnemyGuildName1, SZNAME_LENGTH);
+	strncpy(guild.GuildMessage, pData->GuildMessage, GUILDMESSAGE_LENGTH);
+
+	ret = WriteGuildFile(gid,&guild);
+	if (ret==FALSE) return FALSE;
+	return TRUE;
+}
+BOOL CFileDB::UpdateGuildMember(int gid,MSG_GuildUpdateMember * pData)
+{	STRUCT_GUILD guild;
+	//strupr(user);
+	int ret = ReadGuildFile(gid,&guild);	
+	if(ret==FALSE) return FALSE;
+	for	(int i=0;i<MAX_GUILD_MEMBER;i++)
+	{	if(!strcmp(guild.Member[i].MemberName, pData->Member.MemberName)) break;
+	}
+	if	(i==MAX_GUILD_MEMBER) return FALSE;
+	BYTE byRank = guild.Member[i].GuildRank;
+	guild.Member[i] = pData->Member;
+	if(byRank!=guild.Member[i].GuildRank)		//	�������� ��������� �̻���.
+	{	char temp[256];
+		sprintf(temp,"err Update GuildMember GuildID:%d char:[%s] oRank:%d xRank:%d",gid, pData->Member.MemberName, byRank, guild.Member[i].GuildRank);
+		Log(temp,"-system",0);
+
+		guild.Member[i].GuildRank = byRank;
+		if(pData!=NULL) pData->Member.GuildRank = byRank;
+	}
+	ret = WriteGuildFile(gid,&guild);
+	if (ret==FALSE) return FALSE;
+	return TRUE;
+}
+
+BOOL CFileDB::UpdateGuildMark(int gid, MSG_GuildUpdateMark * pData)
+{	STRUCT_GUILD guild;
+	//strupr(user);
+	int ret = ReadGuildFile(gid,&guild);	
+	if(ret==FALSE) return FALSE;
+	guild.Mark=pData->Mark;
+	ret = WriteGuildFile(gid,&guild);
+	if (ret==FALSE) return FALSE;
+	return TRUE;
+}
+
+BOOL CFileDB::UpdateGuildMemberRank(int gid, MSG_GuildSetRanking * pData)
+{	STRUCT_GUILD guild;
+	//strupr(user);
+	int ret = ReadGuildFile(gid,&guild);	
+	if(ret==FALSE) return FALSE;
+	for	(int i=0;i<MAX_GUILD_MEMBER;i++)
+	{	if(!strcmp(guild.Member[i].MemberName, pData->CharacterName)) break;
+	}
+	if	(i==MAX_GUILD_MEMBER) return FALSE;
+	guild.Member[i].GuildRank = pData->GuildRank;
+	ret = WriteGuildFile(gid,&guild);
+	if (ret==FALSE) return FALSE;
+	return TRUE;
+}
+
+int CFileDB::GetGuildID(char* pName)
+{
+	if(strlen(pName)>GUILDNAME_LENGTH) return -1;
+
+	int nID=0; char temp[256] = {0,};
+	char guilfile[256]; sprintf(guilfile,"G:\\name\\%s.dat", pName);
+	FILE * fp=fopen(guilfile,"rt"); 
+	if(fp==NULL) 
+	{	sprintf(temp,"err GetGuildID:[%s]", pName);
+		Log(temp,"-system",0); return -1;
+	}
+	fscanf(fp,"%d",&nID);
+	fclose(fp);
+
+	sprintf(temp,"GetGuildID:[%s] ID:%d", pName, nID);
+	Log(temp,"-system",0);
+
+	return nID;
+}
+
+BOOL CFileDB::UpdateGuildCargoLevel(int nID, BYTE byLevel1, BYTE byLevel2, BYTE byLevel3)
+{
+	STRUCT_GUILD guild;
+
+	int ret = ReadGuildFile(nID, &guild);	
+	if(ret==FALSE) return FALSE;
+
+	guild.byCargoLevel[0] = byLevel1;
+	guild.byCargoLevel[1] = byLevel2;
+	guild.byCargoLevel[2] = byLevel3;
+
+	ret = WriteGuildFile(nID, &guild);
+	if (ret==FALSE) return FALSE;
+
+	return TRUE;
+}
+
+BOOL CFileDB::UpdateGuildCargoTime(int nID, DWORD dwTime1, DWORD dwTime2, DWORD dwTime3)
+{
+	STRUCT_GUILD guild;
+
+	int ret = ReadGuildFile(nID, &guild);	
+	if(ret==FALSE) return FALSE;
+
+	guild.dwTime[0] = dwTime1;
+	guild.dwTime[1] = dwTime2;
+	guild.dwTime[2] = dwTime3;
+
+	ret = WriteGuildFile(nID, &guild);
+	if (ret==FALSE) return FALSE;
+
+	return TRUE;
+}
+
+BOOL CFileDB::UpdateGuildCargoItem(int nID, int nIndex, STRUCT_ITEM* pstItem)
+{
+	STRUCT_GUILD guild;
+
+	int ret = ReadGuildFile(nID, &guild);	
+	if(ret==FALSE) return FALSE;
+
+	guild.Repository[nIndex] = *pstItem;
+
+	ret = WriteGuildFile(nID, &guild);
+	if (ret==FALSE) return FALSE;
+
+	return TRUE;
+}
+
+//////////////////////////////////////////////////////////////////////////
+//
+//             CFileDB,  ~CFileDB
+//
+// 1.��� �ʱ�ȭ
+//  
+//////////////////////////////////////////////////////////////////////////
+// ��ī��Ʈ ���� ��ī��Ʈ�������� ���� 1���� ������.
+// ĳ���� �б�� MOB �б�� ������ �и��ȴ�.
+extern int Sapphire;
+extern int WriteConfig(void);
+BOOL CFileDB::ProcessMessage(char * Msg,int conn)
+{    MSG_STANDARD *std= (MSG_STANDARD *)Msg;
+     switch (std->wType)    
+	 {
+	 case _Msg_GuildCargoUsingLevel:
+		 {	Msg_GuildCargoUsingLevel * m = (Msg_GuildCargoUsingLevel*)Msg;
+
+			char temp[256];
+			int ret = UpdateGuildCargoLevel(m->nGuildID, m->byCargoLevel[0], m->byCargoLevel[1], m->byCargoLevel[2]);
+			if	(ret==FALSE)	
+			{	sprintf(temp,"err _Msg_GuildCargoUsingLevel GuildID:%d level[0]:%d, level[1]:%d, level[2]:%d", m->nGuildID, m->byCargoLevel[0], m->byCargoLevel[1], m->byCargoLevel[2]);
+				return TRUE;
+			}
+
+			sprintf(temp,"_Msg_GuildCargoUsingLevel GuildID:%d level[0]:%d, level[1]:%d, level[2]:%d", m->nGuildID, m->byCargoLevel[0], m->byCargoLevel[1], m->byCargoLevel[2]);
+
+			SendToAll((MSG_STANDARD*)m);
+		 }	break;
+	 case _Msg_GuildCargoTime:
+		 {	Msg_GuildCargoTime * m = (Msg_GuildCargoTime*)Msg;
+
+			char temp[256];
+			int ret = UpdateGuildCargoTime(m->nGuildID, m->dwTime[0], m->dwTime[1], m->dwTime[2]);
+			if	(ret==FALSE)	
+			{	sprintf(temp,"err _Msg_GuildCargoTime GuildID:%d Time[0]:%d, Time[1]:%d, Time[2]:%d", m->nGuildID, m->dwTime[0], m->dwTime[1], m->dwTime[2]);
+				return TRUE;
+			}
+
+			sprintf(temp,"_Msg_GuildCargoTime GuildID:%d Time[0]:%d, Time[1]:%d, Time[2]:%d", m->nGuildID, m->dwTime[0], m->dwTime[1], m->dwTime[2]);
+
+			SendToAll((MSG_STANDARD*)m);
+		 }	break;
+	 case _Msg_GuildItemUpdate:
+		 {	Msg_GuildItemUpdate * m = (Msg_GuildItemUpdate*)Msg;
+
+			char temp[256];
+//			int ret = UpdateGuildCargoItem(m->nGuildID, m->nCargoIndex, &(m->item));
+			int ret = UpdateGuildCargoItem(m->nGuildID, m->nToIndex, &(m->item));
+			if	(ret==FALSE)	
+			{	sprintf(temp,"err _Msg_GuildItemUpdate GuildID:%d CIndex:%d, IIndex:%d", m->nGuildID, m->nToIndex, (m->item.snIndex)+4000);
+				return TRUE;
+			}
+
+			sprintf(temp,"_Msg_GuildItemUpdate GuildID:%d CIndex:%d, IIndex:%d,", m->nGuildID, m->nToIndex, (m->item.snIndex)+4000);
+
+			pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m));
+		 }	break;
+	 case _MSG_Warp:
+		 {	MSG_Warp * m = (MSG_Warp*) Msg;
+			
+			if(m->nID<0 || m->nID>=MAX_USER) break;
+
+			int nOheridx	= GetIndexFromName(m->szName);
+			if(nOheridx == 0)	//	������ ���������϶�
+			{	m->byResult = S_FALSE;
+			}
+			else				//	������ �������϶�
+			{	m->byResult = S_OK;
+
+				int nServer = nOheridx/MAX_USER;
+				pUser[nServer].cSock.SendOneMessage((char*)m, sizeof(*m));	//	��븦 ȣ���Ѵ�
+			}
+			if(m->nID != 0) pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m));			//	ȣ���ڿ��� ����� �����Ѵ�.
+		 }	break;
+/////////////////////////////////////////////////////////////////////
+//       ĳ���� ����
+/////////////////////////////////////////////////////////////////////
+		case	SSP_REQ_ZONE_INIT:
+		{	for	(int i=conn*MAX_USER;i<(conn+1)*MAX_USER;i++)
+			{	memset(&pAccountList[i],0,sizeof(pAccountList[i]));
+			}
+		}	break;
+		case	_MSG_CreateGuild:
+		{	MSG_CreateGuild * m = (MSG_CreateGuild*)Msg;
+			int ret = CreateGuildFile(GuildID,m);
+			if	(ret==FALSE)
+			{	m->GuildID = -1;	//	���������и� �˸���.
+				pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m)); return TRUE;
+			}
+
+			char temp[256];sprintf(temp,"create Guild:[%s] by char:[%s] ID:%d",m->GuildName, m->Member.MemberName, m->GuildID);
+			Log(temp,"-system",0);
+
+			m->GuildID = GuildID;
+			SendToAll((MSG_STANDARD*)m);
+			GuildID++;
+			WriteConfig();
+		}	break;
+		case _MSG_AddGuildMember:
+		{	MSG_AddGuildMember * m = (MSG_AddGuildMember*)Msg;
+			int ret = AddGuildMember(m->GuildID,m);
+			if	(ret==FALSE)	
+			{	m->nID = MAX_USER;
+				pUser[conn].cSock.SendOneMessage((char*)m, (m->wPDULength)+sizeof(HEADER));
+				return TRUE;
+			}
+
+			char temp[256];sprintf(temp,"Add Guildmember:[%s] GuildID:%d",m->Member.MemberName, m->GuildID);
+			Log(temp,pAccountList[m->nID].File.AccountName,0);
+
+			SendToAll((MSG_STANDARD*)m);
+		}	break;
+		case _MSG_RemoveGuildMember:
+		{	MSG_RemoveGuildMember * m = (MSG_RemoveGuildMember*)Msg;
+			char pMaster[SZNAME_LENGTH] = {0,0,0,};
+			int	ret = RemoveGuildMember(m->GuildID,m->CharacterName,pMaster);
+			if	(ret==-1)	return TRUE;
+
+			if(ret!=MAX_GUILD_MEMBER)		//	������� �ٲ���� ���
+			{	MSG_GuildSetRanking sm; sm.wType=_MSG_GuildSetRanking;
+				sm.wPDULength=sizeof(MSG_GuildSetRanking)-sizeof(HEADER);
+				strncpy(sm.CharacterName, pMaster, SZNAME_LENGTH);
+				sm.nGuildID=m->GuildID; sm.GuildRank=eGuildMaster;
+				sm.byDummy=0; sm.snDummy=0;
+				SendToAll((MSG_STANDARD*)&sm);
+				char temp[256];sprintf(temp,"Change Guildmaster to [%s] GuildID:%d",pMaster, m->GuildID);
+				Log(temp,"-system",0);
+			}
+
+			char temp[256];sprintf(temp,"Remove Guildmember:[%s] GuildID:%d",m->CharacterName, m->GuildID);
+			Log(temp,"-system",0);
+
+			SendToAll((MSG_STANDARD*)m);
+		}	break;
+		case _MSG_GuildMemberin:
+		case _MSG_GuildMemberout:
+		{	SendToAll((MSG_STANDARD*)Msg);
+		}	break;
+		case _MSG_GuildUpdate:
+		{	MSG_GuildUpdate * m = (MSG_GuildUpdate *)Msg;
+			int ret = UpdateGuild(m->GuildID,m);
+			if	(ret==FALSE)	
+			{	m->nID = MAX_USER;
+				pUser[conn].cSock.SendOneMessage((char*)m, (m->wPDULength)+sizeof(HEADER));
+				return TRUE;
+			}
+			char temp[256];sprintf(temp,"Update Guild:[%d]", m->GuildID);
+			Log(temp,pAccountList[m->nID].File.AccountName,0);
+
+			SendToAll((MSG_STANDARD*)m);
+		}	break;
+		case _MSG_GuildUpdateMember:
+		{	MSG_GuildUpdateMember * m = (MSG_GuildUpdateMember *)Msg;
+			int ret = UpdateGuildMember(m->GuildID,m);
+			if	(ret==FALSE)	
+			{	m->nID = MAX_USER;
+				pUser[conn].cSock.SendOneMessage((char*)m, (m->wPDULength)+sizeof(HEADER));
+				return TRUE;
+			}
+			char temp[256];sprintf(temp,"Update Guildmember:[%s] GuildID:%d",m->Member.MemberName, m->GuildID);
+			Log(temp,"-system",0);
+			SendToAll((MSG_STANDARD*)m);
+
+		}	break;
+		case _MSG_GuildUpdateMark:
+		{	MSG_GuildUpdateMark * m = (MSG_GuildUpdateMark *)Msg;
+			int ret = UpdateGuildMark(m->GuildID,m);
+			if	(ret==FALSE) return TRUE;
+			char temp[256];sprintf(temp,"Update Guilmark GuildID:%d mark:%08X type:%d",m->GuildID, m->Mark, m->byCostType);
+			Log(temp,"-system",0);
+			SendToAll((MSG_STANDARD*)m);
+		}	break;
+		case _MSG_GuildSetRanking:
+		{	MSG_GuildSetRanking * m = (MSG_GuildSetRanking *)Msg;
+			int ret = UpdateGuildMemberRank(m->nGuildID,m);
+			if	(ret==FALSE)	
+			{	m->nID = MAX_USER;
+				pUser[conn].cSock.SendOneMessage((char*)m, (m->wPDULength)+sizeof(HEADER));
+				return TRUE;
+			}
+			char temp[256];sprintf(temp,"SetRank:[%s] GuildID:%d to Rank:%d",m->CharacterName, m->nGuildID, m->GuildRank);
+			Log(temp,pAccountList[m->nID].File.AccountName,0);
+			SendToAll((MSG_STANDARD*)m);
+		}	break;
+		// select character list request reply
+		case SSP_REQ_CHAR_LIST:
+		{	S_SSP_REQ_CHAR_LIST *m = (S_SSP_REQ_CHAR_LIST *) Msg;
+			S_SSP_RESP_CHAR_LIST sm; sm.nID = m->nID; sm.wType = SSP_RESP_CHAR_LIST;
+			sm.wPDULength = sizeof(S_SSP_RESP_CHAR_LIST)-sizeof(HEADER);
+			int idx=GetIndex(conn,m->nID);
+            DBGetSelChar(&sm,&pAccountList[idx].File);
+			sm.nID=m->nID;
+			pUser[conn].cSock.SendOneMessage((char*)&sm, sizeof(S_SSP_RESP_CHAR_LIST));
+		}	break;
+/////////////////////////////////////////////////////////////////////
+		case	_MSG_MessageDBImple:
+		{
+			MSG_MessageDBImple *m = (MSG_MessageDBImple *) Msg;
+			m->nID = 0;
+			m->String[MESSAGE_LENGTH-1]=0;
+			m->String[MESSAGE_LENGTH-2]=0;
+			for (int i=0;i<MAX_SERVER;i++)
+			{	if	(pUser[i].Mode==USER_EMPTY)	continue;
+				if	(pUser[i].cSock.Sock==NULL)	continue;
+				pUser[i].cSock.SendOneMessage((char*)m,sizeof(*m));
+			}
+		}	break;
+/////////////////////////////////////////////////////////////////////
+//       ��ī��Ʈ �α���
+/////////////////////////////////////////////////////////////////////
+		case	SSP_REQ_MOVE_ZONE_SERVER:
+		{	S_SSP_REQ_MOVE_ZONE_SERVER* m=(S_SSP_REQ_MOVE_ZONE_SERVER*)Msg;
+			strupr(m->AccountName);
+			char *ac = m->AccountName;
+
+			S_SSP_RESP_MOVE_ZONE_SERVER sm; sm.wType = SSP_RESP_MOVE_ZONE_SERVER; sm.nID=m->nID;
+			strcpy(sm.AccountName,m->AccountName);
+			sm.nResult = REPLY_ACK_OK;
+
+			int Idx=GetIndex(conn,m->nID);
+			int IdxName = GetIndex(m->AccountName);
+			STRUCT_ACCOUNTFILE file;
+			memcpy(file.AccountName,m->AccountName,ACCOUNTNAME_LENGTH);
+			time_t tLastWrite;
+			int ret = DBReadAccount(&file,&tLastWrite);
+			if  (ret == FALSE)
+			{	sm.nResult = REPLY_INVALID_USER; // ������ �������� ����
+				pUser[conn].cSock.SendOneMessage((char*)&sm,sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
+				return TRUE;
+			}
+			if (file.Coin<0) file.Coin =0;
+			// �ϴ� ������ ���Ͽ��� ����� �˻��Ѵ�.
+			strupr(file.AccountPass);
+			strupr(m->AccountPass);
+			if  (strcmp(m->AccountPass,file.AccountPass))
+			{	sm.nResult = REPLY_INVALID_PASSWD; // ����� Ʋ��
+				pUser[conn].cSock.SendOneMessage((char*)&sm,sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
+				return TRUE;
+			}
+			// ���� ����� �°� ������ ������ 
+			// IdxName==Idx ���� ���Ӽ����� ���� ����(Ŭ���̾�Ʈ)���� Login�� 2�� ���ƿ°��. �ô´�.
+			if (IdxName==Idx) return TRUE;
+			// ���������� üũ�Ѵ�.
+			if	(IdxName != 0 )
+			{	//Idx==IdxName => ���� ���Կ��� AccountLogin�� 2�� ���ƿ°�� ??
+				Log("err disconnect previous connection",m->AccountName,0);
+				{	sm.nResult = REPLY_ALREADY_LOGIN; // �̹� ���ӵǾ� �ִ� ĳ����
+					pUser[conn].cSock.SendOneMessage((char*)&sm, sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
+					// ������ ���� �ٽ� �����϶�� ó�� �κ� �־����.
+
+					//SendDBSignal(conn,m->ID,_MSG_DBStillPlaying);
+					SendDBSavingQuit(IdxName,0); //���Ӽ�����, DB�������� ������ ��û
+					return TRUE;
+				}
+			}
+
+#ifdef DECREASE_SLEEPING_ACCOUNTS_BP
+			// �޸������ �ֽ� ����Ʈ�� ��´�. 2005�� 5�� 29���� ����.
+			time_t tNow = time( NULL );
+			time_t tStartTime = 1117292400; // 2005�� 5�� 29��...
+			if ( tLastWrite < tStartTime ) tLastWrite = tStartTime; // 5�� 29�� �����̾����� 5�� 29�Ϻ��� ���
+			time_t tElapsed = tNow - tLastWrite;
+			int nTerms = tElapsed / 5184000; // 60 * 24 * 60 * 60 = 5184000 : 60�� �������� ��ĥ�̳� ��������...
+			int nPercent = nTerms * 20; // �ֽ�����Ʈ ���� �ۼ�Ʈ
+			if ( nPercent > 100 ) nPercent = 100;
+#endif //DECREASE_SLEEPING_ACCOUNTS_BP
+
+			for(int i=0; i<MOB_PER_ACCOUNT; i++)
+			{	file.Char[i].byStatus = 0;
+#ifdef DECREASE_SLEEPING_ACCOUNTS_BP
+				file.Char[i].nBramanPoint *= ( 100 - nPercent ) / 100; // �޸� ������ �ֽ� ����Ʈ�� ���ҽ�Ų��.
+#endif //DECREASE_SLEEPING_ACCOUNTS_BP
+			}
+
+			strupr(file.AccountName);
+			// pAccountList �� ī���ϱ� ���� �̸� ĳ���� �̸� swap�� �ϰ� ������� �Ѵ�.
+			STRUCT_ACCOUNTFILE * pfile = &pAccountList[Idx].File;
+			memcpy(pfile,&file,sizeof(file));
+   			AddAccountList(Idx);
+			
+			// ������ ����Ʈ�� �Ҵ�Ǿ� ������, �� ������ DB���� ���忡��, Login���¸�, ������ �ִ�.
+			// AddAccountList ����⸦ �õ� �ϸ� ���� �����͸� DB������ ������ �ְ� ERROR�޽����� ǥ���Ѵ�.
+ 			// Slot = -1; AddAccountList���� �Ѵ�.
+			// ���Ӽ����� USER_LOGIN �����̹Ƿ�  USER_SELCHAR ���·� �ٲپ� �� �ñ׳��� ������ �Ѵ�.
+			// account login success
+			strcpy(sm.AccountName,file.AccountName);
+
+			// char select info
+			S_SSP_RESP_CHAR_LIST sel;
+			DBGetSelChar(&sel,&file);
+			sel.nID = m->nID; 
+			pUser[conn].cSock.AddMessage((char*)&sel, sizeof(S_SSP_RESP_CHAR_LIST));
+
+			sm.ssn1 = file.ssn1; sm.ssn2 = file.ssn2;
+			pUser[conn].cSock.SendOneMessage((char*)&sm, sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
+		}	break;
+/////////////////////////////////////////////////////////////////////
+//       ĳ���� �����     ĳ���͸� ����⸦ �����ϸ� �ݵ�� �� ĳ���ͷ� �α��� �ȴ�.
+/////////////////////////////////////////////////////////////////////
+     	case SSP_REQ_CHAR_CREATE:
+		{
+			S_SSP_REQ_CHAR_CREATE * m = (S_SSP_REQ_CHAR_CREATE *) Msg;
+            S_SSP_RESP_CHAR_CREATE sm; sm.wType = SSP_RESP_CHAR_CREATE; sm.nID=m->nID;
+			int nSlot = -1;
+			int Idx=GetIndex(conn,m->nID);
+			STRUCT_MOB *mob = NULL;
+			int i;
+			for	(i=0;i<MOB_PER_ACCOUNT;i++)
+			{	mob=&pAccountList[Idx].File.Char[i];
+				if	(mob->szName[0]==0)
+				{	nSlot=i;break;
+				}
+			}
+			int	nTot = m->byChakraHeart + m->byChakraMuscle + m->byChakraNerve + m->byChakraSoul;
+			if(nTot > MAX_BASE_CHAKRA)
+			{	Log("err newchar slot out of range",pAccountList[m->nID].File.AccountName,0);
+				sm.byResult=REPLY_CHAR_CREATE_CHAKRA_OVER;	//	��ũ���ʰ�����
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+				return TRUE;
+			}
+			if	(nSlot==-1)
+			{	Log("err newchar slot out of range",pAccountList[m->nID].File.AccountName,0);
+				sm.byResult=REPLY_CHAR_CREATE_CHAR_FULL;	//	ĳ���� �� ����
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+				return TRUE;
+			}
+			 if (m->snTribe< 1||m->snTribe> 128)	//	�߸��� �ֽ�
+			 {  Log("err newchar - class out of range",pAccountList[m->nID].File.AccountName,0);
+				sm.byResult=REPLY_CHAR_CREATE_FAIL;
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+				return TRUE;
+			 }
+			 ZeroMemory( mob, sizeof( STRUCT_MOB ) );
+			 mob->szName[SZNAME_LENGTH-1]=0;
+			 mob->szName[SZNAME_LENGTH-2]=0;
+			 m->szCharName[SZNAME_LENGTH-1]=0;
+			 m->szCharName[SZNAME_LENGTH-2]=0;
+			 int len = strlen(m->szCharName);
+			 for (i=0;i<len;i++)
+			 {   if  (m->szCharName[i]==-95 && m->szCharName[i+1]==-95)
+			     {	sm.byResult=REPLY_CHAR_CREATE_CHR_CHAR_FAIL;	//ĳ�����̸� ������
+					pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+					return TRUE;
+			     }		  
+			 }
+			 ////////////////////////////////////////////////////////////////////////
+             int ret = CreateCharacter(pAccountList[Idx].File.AccountName,m->szCharName);
+			 if  (ret==FALSE)
+			 {	sm.byResult=REPLY_CHAR_CREATE_ALREADY_EXIST;
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+				return TRUE;
+			 }
+			 ////////////////////////////////////////////////////////////////////////
+			 SetNewCharacter( mob, m );
+             memcpy(mob->szName,m->szCharName,SZNAME_LENGTH);
+             ret = DBWriteAccount(&pAccountList[Idx].File);
+             if  (ret==FALSE)
+			 {	sm.byResult=REPLY_CHAR_CREATE_FAIL;
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+				return TRUE;
+			 }
+			 char temp[256];sprintf(temp,"create character [%s]",mob->szName);
+			 Log(temp,pAccountList[Idx].File.AccountName,0);
+
+			 ////////////////////////////////////////////////////////////////////////
+			 sm.byResult=REPLY_ACK_OK; sm.bySlot=nSlot;
+			 strncpy( sm.szCharName, m->szCharName, SZNAME_LENGTH );
+			 pUser[conn].cSock.AddMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
+
+ 			S_SSP_RESP_CHAR_LIST sel;
+			DBGetSelChar(&sel,&pAccountList[Idx].File);
+			sel.nID = m->nID; 
+			pUser[conn].cSock.SendOneMessage((char*)&sel, sizeof(S_SSP_RESP_CHAR_LIST));
+
+		} break;
+		case _MSG_Status:
+		{	MSG_Status * m = (MSG_Status*) Msg;
+			if(m->nID<=0 || m->nID>=MAX_USER) break;
+			int Idx=GetIndex(conn,m->nID);
+			int slot = pAccountList[Idx].Slot;
+			pAccountList[Idx].File.Char[slot].byStatus = m->byStatus;
+		}	break;
+		/////////////////////////////////////////////////////////////////////
+		//       ĳ���� �α���   getimmconversion
+		/////////////////////////////////////////////////////////////////////
+		case SSP_REQ_CHAR_INIT:
+		{	S_SSP_REQ_CHAR_INIT * m = (S_SSP_REQ_CHAR_INIT *) Msg; 
+			int nSlot = m->bySlot;
+			if	(nSlot<0 || nSlot>=MOB_PER_ACCOUNT) break;
+
+			int idx=GetIndex(conn,m->nID);
+			//for(int i=0;i<MOB_PER_ACCOUNT;i++)
+			//{	
+				if	(strcmp(m->szCharName,pAccountList[idx].File.Char[nSlot].szName)) break;
+			//}
+
+			S_SSP_RESP_CHAR_INIT sm; sm.wType = SSP_RESP_CHAR_INIT; sm.nID=m->nID;            
+			sm.nSlot = nSlot; sm.byConnType = m->byConnType;
+			sm.byConnPos = m->byConnPos; sm.wPortalID = m->wPortalID;
+			sm.wPDULength = sizeof(S_SSP_RESP_CHAR_INIT) - sizeof(HEADER);
+			sm.bySlot = nSlot;
+			if	(nSlot==-1)
+			{	sm.byResult = 8; //������ �ε� ����
+				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_INIT));
+				return TRUE;
+			}
+			pAccountList[idx].Slot = nSlot;
+//			m_mapCharTable.insert( std::map<char*,int,HTStr>::value_type( pAccountList[idx].File.Char[nSlot].szName, idx ) );
+
+			sm.byResult = 0;//������ �ε� ����
+			memcpy(sm.szTargetName, m->szTargetName, SZNAME_LENGTH);
+			memcpy(&sm.sChar,&pAccountList[idx].File.Char[nSlot],sizeof(STRUCT_MOB));
+			memcpy(&sm.sNpcInven,pAccountList[idx].File.Cargo,sizeof(STRUCT_ITEM)*MAX_CARGO);
+			memcpy(sm.dwTimeStamp,pAccountList[idx].File.dwTimeStamp,sizeof(sm.dwTimeStamp));
+			sm.nNpcMoney=pAccountList[idx].File.Coin;
+			pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_INIT));
+			// ĳ���� �α��ο� �Ǵ� Account Login�� Cargo�� ������ �Ѵ�.
+			return TRUE;
+		}	break;
+		/////////////////////////////////////////////////////////////////////
+		//       SavingQuit ���� ó��
+		/////////////////////////////////////////////////////////////////////
+		case _MSG_DBNoNeedSave:
+		{	MSG_STANDARD * m = (MSG_STANDARD*) Msg;
+			if	(m->nID<0||m->nID>MAX_SERVER*MAX_USER) return TRUE;
+			int Idx = GetIndex(conn,m->nID);
+			char acc[128]; strncpy(acc,pAccountList[Idx].File.AccountName,ACCOUNTNAME_LENGTH);
+			RemoveAccountList(Idx);
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			for (int i=0;i<MAX_ADMIN;i++)
+			{	if (pAdmin[i].Level<=2 || pAdmin[i].DisableID==0) continue;
+				if (pAdmin[i].DisableID==Idx) {DisableAccount(i,acc);break;}// Disable Account // 
+			}
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		}	break;
+		case _MSG_DBSaveMob:
+		{
+			MSG_DBSaveMob *m = (MSG_DBSaveMob*) Msg;
+		    int Idx = GetIndex(conn,m->nID);
+            pAccountList[Idx].File.AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			pAccountList[Idx].File.AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			char acc[128]; strncpy(acc,pAccountList[Idx].File.AccountName,ACCOUNTNAME_LENGTH);
+			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			//pAccountList[Idx].Slot
+			//	int serverslot = pAccountList[Idx].Slot;
+			//	if	(m->Slot<0||m->Slot>=MOB_PER_ACCOUNT|| serverslot<0||serverslot>=MOB_PER_ACCOUNT) error.
+			//	if	(m->Slot!=serverslot) error.
+			//  if	(!strcmp(m->CharacterName,pAccountList[Idx].File.Char[serverslot].szName)
+			int Slot = -1; bool bContinue=false;
+			for(int n=0; n<MOB_PER_ACCOUNT; n++)
+			{
+				if(strcmp(m->MOB.szName, pAccountList[Idx].File.Char[n].szName) == 0) Slot = n;
+			}
+			if (Slot<0||Slot>=MOB_PER_ACCOUNT )
+			{	char temp[128]; sprintf(temp,"err savemob1 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+				return TRUE;
+			}
+			if	(Slot != m->Slot || Slot != pAccountList[Idx].Slot)
+			{	char temp[128]; sprintf(temp,"err savemob2 %d %d %d %d %s %s",m->nID,Slot,m->Slot,pAccountList[Idx].Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+			}
+			if	(pAccountList[Idx].Login==FALSE)
+			{	char temp[128]; sprintf(temp,"err savemob3 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				return TRUE; // ������.
+			}
+			while(1)
+			{
+    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	������ ������ �ٲ���� ����
+				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  ������ ���� �ٲ���� ����.
+				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  ������ �Ӹ������ �ٲ���� ����
+				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	������ ��ũ�� 0���� �۾��� ���� ����
+				if(m->MOB.byLevel<0) break;	// ������ ������ 0���� �۾������� ����
+				bContinue=true; break;
+			}
+			if(bContinue) pAccountList[Idx].File.Char[Slot]=m->MOB;						//	�������� ��� �ɸ����� �����͸� �����Ѵ�.
+			else
+			{	char temp[128]; sprintf(temp,"err savenquit3 Broken data %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+			}
+            memcpy(pAccountList[Idx].File.Cargo,m->Cargo, sizeof(m->Cargo));
+			memcpy(pAccountList[Idx].File.dwTimeStamp, m->dwTimeStamp, sizeof(pAccountList[Idx].File.dwTimeStamp));
+			pAccountList[Idx].File.Coin = m->Coin;
+
+			DBWriteAccount(&pAccountList[Idx].File);
+		}	break;
+		case SSP_REQ_SAVE_QUIT:
+		{   S_SSP_REQ_SAVE_QUIT *m = (S_SSP_REQ_SAVE_QUIT*) Msg;
+			
+			int Idx = GetIndex(conn,m->nID);
+			pAccountList[Idx].File.AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			pAccountList[Idx].File.AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			char acc[128]; strncpy(acc,pAccountList[Idx].File.AccountName,ACCOUNTNAME_LENGTH);
+	
+		    
+			int Slot = -1; bool bContinue=false;
+			for(int n=0; n<MOB_PER_ACCOUNT; n++)
+			{	if(strcmp(m->MOB.szName, pAccountList[Idx].File.Char[n].szName) == 0) Slot = n;
+			}
+			if	(Slot<0||Slot>=MOB_PER_ACCOUNT)
+			{	char temp[128]; sprintf(temp,"err savenquit2 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+                RemoveAccountList(Idx);
+				return TRUE;
+			}
+			
+			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			if (strncmp(m->AccountName,acc,ACCOUNTNAME_LENGTH))
+			{  char temp[128]; sprintf(temp,"err savenquit1 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+				//������ �̺κп��� �ش� ������ ����, �ش� ���԰� ī���� �����ϰų� �������� ���ƾ� �Ѵ�.
+                RemoveAccountList(Idx);
+				return TRUE;
+			}
+			if	(pAccountList[Idx].Login==FALSE)
+			{	char temp[128]; sprintf(temp,"err savenquit3 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
+				Log(temp,"-system",0);
+				return TRUE;
+			}
+
+			while(1)
+			{
+    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	������ ������ �ٲ���� ����
+				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  ������ ���� �ٲ���� ����.
+				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  ������ �Ӹ������ �ٲ���� ����
+				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	������ ��ũ�� 0���� �۾��� ���� ����
+				if(m->MOB.byLevel<0) break;	// ������ ������ 0���� �۾������� ����
+				bContinue=true; break;
+			}
+Response
+
+
+--- C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Server.cpp contents: ---
+[Reading 1000 lines from start (total: 1701 lines, 701 remaining)]
+
+#include <windows.h>
+#include <windowsx.h>
+#include <stdlib.h>
+#include <stdio.h> 
+#include <fcntl.h>
+#include <io.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/timeb.h>
+#include <string.h>        
+#include <time.h> 
+
+#include "Basedef.h"
+#include "CPSock.h"
+#include "TNDebug.h"
+//#include "CMob.h"
+#include "CUser.h"
+#include "CFileDB.h"
+#include "DrawInfo.h"
+
+unsigned char	LocalIP[4]={0,};
+int				LocalPort;
+unsigned		LocalIPBin=0;
+unsigned char	GMLocalIP[4]={0,};
+int				GMLocalPort;
+unsigned		GMLocalIPBin=0;
+int				LastUserCountDay = -1;
+int				MaxDayUserCount = 0;
+E_COUNTRY_ID	g_eCountryID = eCountryChina;
+// ��� ��ü ���� ���ҽ��� �̰����� ����.
+
+//  Item�� 
+//  1.ItemList�� ���� �����Ͱ� �ְ�, Object,SysnZone�� Index�� ������ ���
+//  2.Item�ϳ� �ϳ��� pItem �� �����Ǹ� ������ �����͸� ī���ذ��� ���
+//  3.1��2�� �������� ��ũ���� �ε����� ����Ʈ���� �������� ���
+//
+
+// MOB�� NPC,PC ��� ���� �����Ͱ� �ִ� ��Ʈ���ĸ� ������.
+#define     TIMER_SEC    0
+#define     TIMER_MIN    1
+
+//CMob			pMob [MAX_MOB];
+CUser			pUser[MAX_SERVERNUMBER]; // Server�� 5���� MAX_SERVER�� �ּ� 6�̻� ����.
+CUser			pAdmin[MAX_ADMIN];
+unsigned int	pAdminIP[MAX_ADMIN];
+CUser			TempUser; // ACCEPT�� �ϴ� Temp�� �޾Ҵٰ�, ���� IP������ ������ ������.
+int				SecCounter		=0;
+int				MinCounter		=0;
+int				HourCounter		=0;
+int				ServerIndex		=-1;
+int				TransperCharacter=0;
+int				GuildID			=0;	
+//CItem			pItem[MAX_ITEM];
+
+
+
+int        UserConnection[MAX_SERVERNUMBER] = {0,};
+HINSTANCE  hInst;     
+HWND    hWndMain;
+unsigned int CurrentTime;
+unsigned int LastSendTime;
+HMENU   hMainMenu;
+CPSock  ListenSocket[MAX_SERVERNUMBER];
+CPSock  AdminSocket;
+CPSock  AdminClient; //
+CFileDB cFileDB;
+int		AdminLevel[MAX_ADMIN] = 
+{ 
+	0, 0, 0,										// ROOT: 0 ~ 2
+	1,												// SUPERVISOR: 3
+	2, 2, 2, 2, 2,									// GOP: 4 ~ 8
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,	// GM: 9 ~ 23
+	4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 // GMS: 24 ~ 50
+};
+enum ADMIN_LEVEL_DESC
+{
+	eAdminRoot			= 0,
+	eAdminSupervisor	= 1,
+	eAdminGOP			= 2,
+	eAdminGM			= 3,
+	eAdminGMS			= 4
+};
+
+LONG APIENTRY MainWndProc(HWND, UINT, UINT, LONG);
+
+void ProcessClientMessage ( int conn , char*msg);
+int ProcessAdminMessage  (int conn,char*msg);
+
+void ProcessSecTimer    ( void );
+void ProcessMinTimer    ( void );
+void ImportUser         ( void );
+void UpdateUser         ( void );
+
+int  GetUserFromSocket  ( int Sock );
+int  GetAdminFromSocket ( int Sock );
+
+int  GetEmptyUser       ( void );
+int  GetEmptyAdmin		(void);
+void StartLog           ( char * cccc );
+void ImportItem         ( void );
+
+void DisableAccount		(int conn,char * account);
+void EnableAccount		(int conn,char * account);
+void SetValidUser		(int ServerNum, int AdminNum);
+
+void SendUserCount		(int conn);
+
+void Log                  ( char * String1, char * String2 ,unsigned int ip);
+FILE * fLogFile = NULL;
+
+void ProcessUser(void);
+
+int  g_HeightWidth  = MAX_GRIDX;
+int  g_HeightHeight = MAX_GRIDY;
+int  g_HeightPosX   = 0;
+int  g_HeightPosY   = 0;
+STRUCT_MOB g_pBaseSet[MAX_CLASS];
+char temp[256];
+
+BOOL SendAdminSignal(int svr,unsigned short id, unsigned short signal)
+{	MSG_STANDARD sm; sm.wType = signal;
+	sm.nID = id; sm.wPDULength = sizeof(sm) - sizeof(HEADER);
+	pAdmin[svr].cSock.SendOneMessage((char*)&sm,sizeof(sm));
+	return TRUE;
+}
+BOOL SendAdminMessage(int svr,unsigned short id, char * message)
+{    
+	MSG_NPNotice sm; sm.wType = _MSG_NPNotice;
+	sm.nID = id; sm.wPDULength = sizeof(sm) - sizeof(HEADER);
+	strcpy(sm.String,message);
+	pAdmin[svr].cSock.SendOneMessage((char*)&sm,sizeof(sm));
+	return TRUE;
+}
+
+BOOL SendAdminParm(int svr,unsigned short id, unsigned short signal,int parm)
+{    /*MSG_STANDARDPARM sm; sm.wType = signal;
+     sm.nID = id;          sm.wPDULength = sizeof(sm) - sizeof(HEADER);
+	 sm.Parm = parm;
+     pAdmin[svr].cSock.SendOneMessage((char*)&sm,sizeof(sm));*/
+	 return TRUE;
+}
+BOOL SendAdminState(int svr,unsigned short id, unsigned short signal,char * pass)
+{    MSG_STANDARDPARM sm; sm.wType = signal;
+     sm.wPDULength = sizeof(MSG_STANDARDPARM) - sizeof(HEADER);
+	 sm.Parm = 0;
+	 if (pass[0]=='@') sm.Parm = 1;
+	 if (pass[0]=='_') sm.Parm = 2;
+	 if (pass[0]=='#') sm.Parm = 3;
+     pAdmin[svr].cSock.SendOneMessage((char*)&sm,sizeof(MSG_STANDARDPARM));
+	 return TRUE;
+}
+
+//2191360
+BOOL InitApplication(HANDLE hInstance)   
+{    WNDCLASS  wc;  wc.style = CS_VREDRAW|CS_HREDRAW|CS_DBLCLKS;    
+     wc.lpfnWndProc = (WNDPROC)MainWndProc;  wc.cbClsExtra = 0;  wc.cbWndExtra = 0;                    
+     wc.hIcon = (HICON)LoadIcon ((HINSTANCE)hInstance, "MAINICON");
+     wc.hInstance = (HINSTANCE) hInstance;  wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+     wc.hbrBackground = (HBRUSH) GetStockObject(WHITE_BRUSH);  wc.lpszMenuName =  NULL;           
+     wc.lpszClassName = "MainClass"; if(!RegisterClass(&wc)) return RegisterClass(&wc);
+     return TRUE;
+}
+
+BOOL InitInstance( HANDLE hInstance, int nCmdShow)  
+{    hMainMenu = CreateMenu();
+ 	 hWndMain = CreateWindow(   "MainClass",  "DB Server", 
+        WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN ,    // Window style. 
+        CW_USEDEFAULT,   CW_USEDEFAULT, 640+8,   480,            // W,H[Menu��ġ�� 480]
+        NULL,    hMainMenu,  (HINSTANCE)hInstance,   NULL     );
+     if (!hWndMain) return (FALSE);
+     ShowWindow(hWndMain, nCmdShow);  
+     UpdateWindow(hWndMain);          
+   return (TRUE);     
+}
+
+void UpdateConnection(void)
+{
+     char temp[256];
+  	 sprintf(temp,"R:/serv%2.2d.htm",ServerIndex);
+     FILE * fp = fopen(temp,"wt");
+     if (fp==NULL) return;
+	 for (int i=0;i<MAX_SERVER;i++)
+	 {
+		 if (pUser[i].Mode==USER_EMPTY) 
+		 {  fprintf(fp,"-1\n");
+		    continue;
+		 }
+		 if (UserConnection[i]<pUser[i].Count) UserConnection[i] = pUser[i].Count;
+		 fprintf(fp,"%d\n",pUser[i].Count);
+	 }
+	 fclose(fp);
+}
+
+void UpdateConnectionData(void)
+{
+ 	 char temp[256];
+	 sprintf(temp,"R:/data%2.2d.csv",ServerIndex);
+	 FILE * fp = fopen(temp,"a+");
+     if (fp==NULL) return;
+
+     
+   	 struct tm when;
+	 time_t now;
+	 time(&now); when= *localtime(&now);
+     sprintf(temp,"%4.4d_%2.2d_%2.2d_%2.2d ",when.tm_year+1900,when.tm_mon+1,when.tm_mday,when.tm_hour);
+
+
+	 fprintf(fp,temp);
+     if (fp==NULL) return;
+     int total = 0;
+	 for (int i=0;i<MAX_SERVER;i++)
+	 {
+		 int ret = UserConnection[i];
+		 total=total+ret;
+		 fprintf(fp,",%4d  ",ret);
+		 UserConnection[i]=0;
+	 }
+	 fprintf(fp,",%4d  ",total);
+	 fprintf(fp,"\n");
+
+	 fclose(fp);
+}
+
+void ReadAdmin()
+{
+ 	 char temp[256];
+	 sprintf(temp,"Admin.txt");
+	 FILE * fp = fopen(temp,"r");
+     if (fp==NULL) return;
+   
+	 while(1)
+	 {
+ 	    int a,b,c,d;
+	    a=b=c=d=0;
+		char * ret = fgets((char*)temp,127,fp);    if (ret==NULL) break;
+	    int idx=-1;
+		for (int i=0;i<255;i++) if (temp[i]=='.') temp[i]=' ';
+        sscanf(temp,"%d %d %d %d %d",&idx,&a,&b,&c,&d);
+        unsigned int ip = (d<<24) + (c<<16) +  (b<<8) + a; 
+	    if (idx<0 ||idx>=MAX_ADMIN) continue;
+        pAdminIP[idx]=ip;
+    };
+    fclose(fp);
+}
+int	ReadConfig(void)
+{	char temp[256];
+	GuildID=0;
+	FILE * fp=fopen("Config.txt","rt");if(fp==NULL) { MessageBox(hWndMain,"cant find Config.txt","BOOTING ERROR",NULL);return FALSE; }
+	fscanf(fp,"%s %d\n",temp,&GuildID);
+	if(GuildID==0) { MessageBox(hWndMain,"cant read current guild id in Config.txt","BOOTING ERROR",NULL);return FALSE; }
+	fclose(fp);
+	return TRUE;
+}
+
+int	WriteConfig(void)
+{
+	FILE * fp=fopen("Config.txt","wt");if(fp==NULL) { /*MessageBox(hWndMain,"cant write Config.txt","BOOTING ERROR",NULL);*/return FALSE; }
+	fprintf(fp,"GuildID %d\n",GuildID);
+	fclose(fp);
+	return TRUE;
+}
+
+//#define REPORT 1
+char adminclientid[256];
+char adminclientpass[256];
+WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow )
+{   MSG msg;
+    UNREFERENCED_PARAMETER( lpCmdLine );
+    hInst = hInstance;
+    if (!hPrevInstance)
+	if (!InitApplication(hInstance)) return (FALSE);             
+    if (!InitInstance(hInstance, nCmdShow)) return (FALSE);
+
+	SetValidUser( MAX_SERVERNUMBER, MAX_ADMIN );
+
+	int n = sizeof(STRUCT_ACCOUNTFILE);
+
+	////////////////////////////////////////////////
+	BASE_InitModuleDir();
+	BASE_InitializeServerList();
+	////////////////////////////////////////////////
+	StartLog("A");
+	Log("start log","-system",0);
+	ReadConfig();
+	CreateDirectory( "Delete_Backup", NULL );
+
+	cFileDB.InitGuild();
+	cFileDB.CheckTrimuriti();
+
+#ifdef REPORT
+    ProcessUser();
+    if (fLogFile) fclose(fLogFile); 
+	return TRUE;
+#endif 
+	int ret = ListenSocket[0].WSAInitialize();
+	if (ret==NULL)
+	{  Log("err wsainitialize fail","-system",0);
+	   return FALSE;
+    }
+  	//SetTimer(hWndMain, TIMER_SEC,  4000,NULL); 
+   	//SetTimer(hWndMain, TIMER_MIN, 60000,NULL); 
+
+    /////////////SetLocalAddress////////////////////////////////////////
+
+    char name[255];
+    //PHOSTENT hostinfo;
+	FILE * fp = fopen("localip.txt","rt");
+	if	(fp) 
+	{	fscanf(fp,"%s %d",name, &LocalPort);fclose(fp);
+	}	else	
+	{	MessageBox(hWndMain,"Can't find localip.txt","REBOOTING ERROR",NULL);
+	}
+	int r1,r2,r3,r4;
+	sscanf(name,"%d.%d.%d.%d",&r1,&r2,&r3,&r4);
+	LocalIP[0]=r1;	LocalIP[1]=r2;	LocalIP[2]=r3;	LocalIP[3]=r4;	
+
+	fp = fopen("GMlocalip.txt","rt");
+	if	(fp) 
+	{	memset(name, 0, sizeof(name));
+		fscanf(fp,"%s %d",name, &GMLocalPort);fclose(fp);
+		sscanf(name,"%d.%d.%d.%d",&r1,&r2,&r3,&r4);
+		GMLocalIP[0]=r1;	GMLocalIP[1]=r2;	GMLocalIP[2]=r3;	GMLocalIP[3]=r4;	
+	}	else	
+	{	//	MessageBox(hWndMain,"Can't find GMlocalip.txt","REBOOTING ERROR",NULL);
+		GMLocalIP[0]=r1;	GMLocalIP[1]=r2;	GMLocalIP[2]=r3;	GMLocalIP[3]=r4;
+		GMLocalPort=ADMIN_PORT;
+	}
+	fp = fopen("CountryID.txt","rt");
+	if	(fp)
+	{	fscanf(fp,"%d",&g_eCountryID);fclose(fp);
+	}
+/*
+    if (gethostname ( name, sizeof(name)) == 0)
+    {	if ((hostinfo = gethostbyname(name)) != NULL)
+		{
+			char * tmp = inet_ntoa(*(struct in_addr *)*hostinfo->h_addr_list);
+			sscanf(tmp,"%d.%d.%d.%d",&LocalIP[0],&LocalIP[1],&LocalIP[2],&LocalIP[3]);
+			strcpy(name,tmp);
+		}
+	}
+	if (LocalIP[0]==0){MessageBox(NULL,"Can't get local address","Reboot error",MB_OK); return 0;}
+*/
+    // g_pServerList�� �����Ͽ� ServerIndex�� ���Ѵ�.
+	unsigned * tmp = (unsigned*)LocalIP;
+	LocalIPBin = *tmp;
+	int i=0;
+    for (i=0;i<MAX_SERVERGROUP;i++)
+	{   
+        if (!strcmp(g_pServerList[i][0],name)) {ServerIndex=i;break;}
+	}
+    if (ServerIndex==-1)
+    {	MessageBox(hWndMain,"Can't get Server Group Index LocalIP:",name,MB_OK|MB_SYSTEMMODAL);
+		MessageBox(hWndMain,"Can't get Server Group Index TestServerIP:",g_pServerList[i][0],MB_OK|MB_SYSTEMMODAL);
+	   return TRUE;
+    }
+	//ImportItem();
+	
+	for	(i=1;i<MAX_SERVER+1;i++)	//	for zone server
+	{	ListenSocket[i].StartListen( hWndMain, LocalIPBin, g_pServerListPort[ServerIndex][i]+1000, WSA_ACCEPT);
+	}
+	
+	//	for sql deamon
+	ListenSocket[INDEXOFDAEMON].StartListen( hWndMain, LocalIPBin, g_pServerListPort[ServerIndex][INDEXOFDAEMON]+1000, WSA_ACCEPT);
+
+	tmp = (unsigned*)GMLocalIP;
+	GMLocalIPBin = *tmp;
+	AdminSocket.StartListen( hWndMain, GMLocalIPBin, GMLocalPort, WSA_ACCEPTADMIN );
+
+//////AdminClient/////////////////////////////////////////////////////////////////////////////////////
+	fp = fopen("redirect.txt","rt");
+	if	(fp)	
+	{	char sip[256];
+		int  port;
+		fscanf(fp,"%s %d %s %s",sip,&port,adminclientid,adminclientpass);
+		fclose(fp);
+		ret = AdminClient.ConnectServer(sip,port,INADDR_ANY,WSA_READADMINCLIENT,hWndMain);
+        if	(ret==NULL)
+		{	MessageBox(hWndMain,"there's redirect.txt but can't connect","BOOTING ERROR",NULL);
+			return FALSE;		
+		}	else
+		{	Log("sys redirection server connected","-system",0);
+			TransperCharacter = 1;
+		}
+	}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    SetTimer(hWndMain, TIMER_SEC, 1000,NULL); 
+	SetTimer(hWndMain, TIMER_MIN, 60000,NULL); 
+
+    while (GetMessage(&msg, NULL, 0, 0))
+    {     TranslateMessage(&msg);
+          DispatchMessage(&msg); 
+    }
+    return (msg.wParam);  
+}
+
+int ProcessAdminClientMessage(char*msg)
+{
+
+	MSG_STANDARD *std= (MSG_STANDARD *)msg;
+
+	//if	(!(std->wType&FLAG_NP2DB)  ||  (std->nID<0) || (std->nID>=MAX_DBACCOUNT) )
+	//{	char temp[128]; sprintf(temp,"err adminclient_packet:%d ID:%d Size:%d ",std->wType,std->nID,std->wPDULength);
+	//	Log(temp,"-system",0);
+	//	return FALSE;
+	//} 
+/*
+    switch (std->Type)    
+	{
+		case _MSG_NPCreateCharacter_Reply:	// redirect source�� ������� ó��
+		{	MSG_NPCreateCharacter_Reply* m = (MSG_NPCreateCharacter_Reply*) msg;
+			char * account	= m->Account;
+			int slot		= m->Slot;
+			int result		= m->Result;
+			int IdxName		= cFileDB.GetIndex(m->Account);
+			int	svr			= IdxName/MAX_USER;
+			int	id			= IdxName%MAX_USER;
+			MSG_ReqTransper sm; memset(&sm,0,sizeof(sm));
+			sm.Type = _MSG_ReqTransper; 
+			sm.Size = sizeof(sm);
+			sm.ID	= id;
+			sm.Slot = slot;
+			sm.Result=m->Result;
+
+			// �ϴ� ȸ�Ź��ڸ��� Enable���� ��Ų��.
+			EnableAccount(-1,account);
+			//strcpy(sm.Account,m->Account); ���Ӽ��������� ��ī��Ʈ üũ�� �ѹ� �ؾ� �� ��Ȯ�ϴ�.
+			if	(m->Result==0)//; //0: Success Delete Parm2
+			{	
+				STRUCT_ACCOUNTFILE file;
+				memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
+				int ret = cFileDB.DBReadAccount(&file);
+				if  (ret == FALSE)
+				{	// ������ ��û�ߴµ� ������ ����?
+					char tt[256]; sprintf(tt,"etc tranper_FAILED!!!!!(read) %s %s",m->Account,m->szName);
+					Log(tt,file.AccountName,0);
+					if	(IdxName)	{sm.Result = 4;pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);}
+					return TRUE;
+				}
+				char tt[256]; sprintf(tt,"etc tranper_success(deleted) %s %s",m->Account,m->szName);
+				Log(tt,file.AccountName,0);
+				memset(&file.Char[slot],0,sizeof(STRUCT_MOB));
+				strupr(file.AccountName);
+				ret=cFileDB.DBWriteAccount(&file);
+	            if  (ret==FALSE)
+				{	char tt[256]; sprintf(tt,"etc tranper_FAILED!!!!!(write) %s %s",m->Account,m->szName);
+					Log(tt,file.AccountName,0);
+					if	(IdxName)	{sm.Result = 4;	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);}
+					return TRUE;
+				}
+
+				if	(IdxName)
+				{	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
+					memset( &(cFileDB.pAccountList[IdxName].File.Char[slot]),0,sizeof(STRUCT_MOB));
+				}
+				//  ���� �������̸�, �ش� ĳ���͸� �����Ѵ�
+				//  ������ �ߴ� ���� �ʾʴ� Account�� �о ĳ���͸� ����� �����Ѵ�
+			}
+			if	(result==1)		//1: Threre's Same Name Already
+			{	if	(IdxName)	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
+			}	else
+			if	(result==2)		//2: No character space. delete first.
+			{	if	(IdxName)	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
+			}	else
+			if	(result==3)		//3: That account is playing
+			{	if	(IdxName)	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
+			}
+		}	break;	
+	}
+	*/
+	return TRUE;
+}
+
+LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam) 
+{
+	switch (message)    
+	{
+		case WM_TIMER:
+		{ 
+			if (wParam==TIMER_SEC) ProcessSecTimer(); else
+			if (wParam==TIMER_MIN) ProcessMinTimer(); 
+		}	break;
+		case WSA_READADMINCLIENT:
+		{
+		    if	(WSAGETSELECTEVENT(lParam) != FD_READ)
+  	        {	Log("adminclient close fd read","-system",0);
+				AdminClient.CloseSocket();
+				break;
+			}
+			if	(AdminClient.Receive()!=1)
+			{	Log("adminclient %d close receive","-system",0);
+				break;
+			}
+			char temp[256];	int Error;	int ErrorCode;
+            while(1)
+			{	char * Msg = AdminClient.ReadMessage(&Error,&ErrorCode); if (Msg==NULL) break;
+				///////////////////
+				if	(Error==1|| Error==2)
+				{	sprintf(temp,"err wsa_ReadadminClient (%d),%d",Error,ErrorCode );
+					Log(temp,"-system",0);
+					break;
+				}
+				int ret = ProcessAdminClientMessage(Msg);// , Manage.ReceiveSize);
+
+			};
+		}	break;
+		case WSA_READADMIN:
+		{
+			int User = GetAdminFromSocket(wParam);  
+			if	(User == -1)
+			{	closesocket(wParam);
+				Log("err wsa_read unregistered sever socket","-system",0);
+				break;
+			} 
+            //
+		    if	(WSAGETSELECTEVENT(lParam) != FD_READ)
+  	        {	char temp[256];sprintf(temp,"admin close fd %d",User);
+				Log(temp,"-system",0);
+				pAdmin[User].cSock.CloseSocket();
+				pAdmin[User].Mode=USER_EMPTY;
+				pAdmin[User].Name[0]=0;
+				break;
+			} 
+		 	CurrentTime = timeGetTime();
+			if	(pAdmin[User].cSock.Receive()!=1)
+			{	char temp[256];sprintf(temp,"admin %d close receive",User);
+				Log(temp,"-system",0);
+				break;
+			}
+
+			char temp[256];
+			int Error;
+			int ErrorCode;
+            while(1)                    //   ReadMessage fors_debug to ��ȡGMTOOS��Ϣ
+			{	char * Msg = pAdmin[User].cSock.ReadClientMessage(&Error,&ErrorCode);   //     ReadMessage(&Error,&ErrorCode); 
+				if (Msg==NULL) break;
+				////////////////////////////////
+	            #ifdef  _PACKET_DEBUG
+				MSG_STANDARD * debug = (MSG_STANDARD*) Msg;
+		//		if	(BASE_CheckPacket(debug))
+				{	sprintf(temp,"err packet Type:%d Size:%d",debug->wType,debug->wPDULength);
+					Log(temp,"-system",0);
+				}
+				#endif
+				///////////////////
+				if	(Error==1|| Error==2)
+				{	sprintf(temp,"err wsa_Readadmin (%d),%d",Error,ErrorCode );
+					Log(temp,"-system",0);
+					break;
+				}
+				int ret = ProcessAdminMessage(User,Msg);// , Manage.ReceiveSize);
+				if	(ret==FALSE) 
+				{	pAdmin[User].cSock.CloseSocket();
+					pAdmin[User].Mode = USER_EMPTY;
+					pAdmin[User].Name[0]=0;
+					break;
+				}
+			}; 
+		}     break;
+		case WSA_READ:
+		{
+			int User = GetUserFromSocket(wParam);  
+			if	(User == -1)
+			{	
+				//Sleep(100);
+				closesocket(wParam);
+				SendUserCount(-1);
+				Log("err wsa_read unregistered game server socket","-system",0);
+				break;
+			}
+            //
+			if	(WSAGETSELECTEVENT(lParam) != FD_READ)
+			{	//Sleep(100);
+				char temp[256];sprintf(temp,"clo server fd zone :%d",User+1);
+				Log(temp,"-system",0);
+				pUser[User].cSock.CloseSocket();
+				//pUser[User].Count = 0;
+				pUser[User].Mode=USER_EMPTY;
+				SendUserCount(-1);
+				// ACCEPT������ IP�� ������ User���Կ� ���ӽ�Ų��.
+				break;
+			}
+			CurrentTime = timeGetTime();
+
+			if	(pUser[User].cSock.Receive()!=1)
+			{	char temp[256];sprintf(temp,"clo server receive %d",User);
+				Log(temp,"-system",0);
+
+				pUser[User].cSock.CloseSocket();
+				//pUser[User].Count = 0;
+				pUser[User].Mode=USER_EMPTY;
+				SendUserCount(-1);
+
+				// pUser[User].ModepUser[User].cSock.=MODE_SAVEEMPTY;
+				// DB ������ REQ_SAVE�� ������ 
+				// MODE�� REQ_SAVE�� �ٲ۴�.
+				// Confirm�� ����  MODE_EMPTY
+				break;
+			}
+
+			char temp[256];
+			int Error;
+			int ErrorCode;
+			do 
+			{	char * Msg = pUser[User].cSock.ReadMessage(&Error,&ErrorCode); 
+				if (Msg==NULL) break;
+				////////////////////////////////
+				#ifdef  _PACKET_DEBUG
+				MSG_STANDARD * debug = (MSG_STANDARD*) Msg;
+				if	(BASE_CheckPacket(debug))
+				{	sprintf(temp,"**PACKET_DEBUG** Type:%d Size:%d",debug->Type,debug->Size);
+					Log(temp,"-system",0);
+				}
+				#endif
+				///////////////////
+				if	(Error==1 || Error==2)
+				{	sprintf(temp,"err wsa_read (%d),%d",Error,ErrorCode );
+					Log(temp,"-system",0);
+					break;
+				} 
+				ProcessClientMessage(User,Msg);// , Manage.ReceiveSize);
+			} while(1);
+		}	break;     
+		case WSA_ACCEPTADMIN:
+		{	ReadAdmin();
+			if	(WSAGETSELECTERROR( lParam ) == 0) 
+			{	TempUser.AcceptUser(AdminSocket.Sock,WSA_READADMIN);
+				unsigned char *cIP  = (unsigned char *) &(TempUser.IP);
+				int User=-1;
+				int i=0;
+				//	�ƹ��ų� ��Ÿ� ������ // ������ ����
+				//for (i=0;i<=MAX_ADMIN;i++)
+				//{   if (pAdmin[User].Mode==USER_EMPTY) {User=i;break;}
+				//}
+				//
+				///*
+				// ���������� IP�� �ߺ��Ǵ°��� �˻��Ѵ�. // ������ ����
+				User=-1;
+				//for (i=0;i<=MAX_ADMIN;i++)
+				//{   if	(pAdmin[i].IP == TempUser.IP) {User=i;break;}
+				//}
+				DWORD dwFlag = 0x000000FF; 
+				DWORD dwAdmin = 0; 
+				DWORD dwUser = TempUser.IP & 0xFFFFFF00;
+				if  (User==-1) // �� ���� ������ ��ġ�ϴ� �����ǰ� ����.
+				{
+					for	(i=0;i<MAX_ADMIN;i++)
+					{	int a,b,c,d; a=b=c=d=0;
+						if (pAdminIP[i]==0) continue;
+						DWORD dwAdmin = pAdminIP[i] & 0x000000FF;
+						if(dwAdmin)
+						{	if (pAdminIP[i]==TempUser.IP) {User=i;break;}
+						}	else
+						{	if (pAdminIP[i]==dwUser) {User=i;break;}
+						}
+					}
+					if	(i==MAX_ADMIN)
+					{	TempUser.cSock.CloseSocket();
+						char temp[256];   
+						sprintf(temp,"err wsa_acceptadmin request accept from  %d.%d.%d.%d",cIP[0],cIP[1],cIP[2],cIP[3] );
+						Log(temp,"-system",0);
+					}
+				} 
+				//*/
+				if	(User>=0 && User<MAX_ADMIN)
+				{
+					 if	(pAdmin[User].Mode!=USER_EMPTY)
+					{	char temp[256];
+						sprintf(temp,"err wsa_acceptadmin not empty previous slot %d",i );
+						Log(temp,"-system",0);
+						TempUser.cSock.CloseSocket();
+						// �������ӵ� ���������.
+						pAdmin[User].cSock.CloseSocket();
+						pAdmin[User].Mode=USER_EMPTY;
+						break;
+					} 
+				}   else
+				{   Log("err accept_admin unknown attempt","-system",0);
+					TempUser.cSock.CloseSocket();
+					break;
+				}
+
+				User = GetEmptyAdmin();
+
+				if	(User==-1)
+				{	Log("err accept_admin no empty","-system",0);
+					break;
+				} 
+				//pAdmin[User].Level               = -1; // Not Authrized
+				pAdmin[User].Level               = AdminLevel[User];
+				pAdmin[User].DisableID           = 0;
+				pAdmin[User].IP                  = TempUser.IP;
+				pAdmin[User].Mode                = TempUser.Mode;
+				pAdmin[User].Name[0]			 = 0;
+				pAdmin[User].cSock.Sock          = TempUser.cSock.Sock;
+				pAdmin[User].cSock.nRecvPosition = TempUser.cSock.nRecvPosition;
+				pAdmin[User].cSock.nProcPosition = TempUser.cSock.nProcPosition;
+				pAdmin[User].cSock.nSendPosition = TempUser.cSock.nSendPosition ;
+				pAdmin[User].cSock.ucRecvSeq = pAdmin[User].cSock.ucSendSeq = pAdmin[User].cSock.oldRecvChecksum = pAdmin[User].cSock.oldSendChecksum = 0;
+				cIP = (unsigned char *) &(pAdmin[User].IP);
+				char tmp[100]; sprintf(tmp,"sys wsa_acceptadmin %d.%d.%d.%d <%d>",cIP[0],cIP[1],cIP[2],cIP[3],User);
+				Log(tmp,"-system",0);
+			}	else 
+			{	Log("err accept_admin accepting fails","-system",0);
+			}
+		}
+		break;
+		case WSA_ACCEPT:
+		{
+			int i=0;
+			if	(WSAGETSELECTERROR( lParam )) 
+			{	Log("err WSAGETSELECTERROR - accepting new client.","-system",0);
+				break;
+			}
+					
+			int index = -1;
+			for	(i=0;i<MAX_SERVERNUMBER;i++)
+			{	if	(wParam == ListenSocket[i].Sock)	{index=i; break;}
+			}
+			if	(index<0||index>MAX_SERVERNUMBER)
+			{	Log("invalid server listen socket","-system",0);
+				return TRUE;
+			}
+			TempUser.AcceptUser(ListenSocket[index].Sock,WSA_READ);
+			TempUser.cSock.Port = ListenSocket[index].Port;
+			unsigned char  *cIP    = (unsigned char *) &(TempUser.IP);
+			char sIP[256]; sprintf(sIP,"%d.%d.%d.%d",cIP[0],cIP[1],cIP[2],cIP[3]);
+			//TempUser.IP �� ������ ������ pUser[User].IP�� ��ȸ.  ������ �׳༮���� User�� �Ҵ� �׷��� ������,
+			// IP�� ��� �ִ� User�� idx�� User���Ҵ�.
+			int User=-1;
+			for (i=0;i<MAX_SERVERNUMBER;i++)
+			{   if (pUser[i].IP==TempUser.IP && pUser[i].cSock.Port == ListenSocket[index].Port-1000) {User=i;break;}
+			}
+	//		User=22;
+			if  (User==-1) // �� ���� ������ ��ġ�ϴ� �����ǰ� ����.
+			{ 
+				for (i=1;i<MAX_SERVERNUMBER;i++)
+				{	if ((!strcmp(g_pServerList[ServerIndex][i],sIP)) && ((g_pServerListPort[ServerIndex][i]+1000)==ListenSocket[index].Port)) break;
+				}
+				if	(i==MAX_SERVERNUMBER)
+				{	TempUser.cSock.CloseSocket();
+					char temp[256];   
+					sprintf(temp,"err wsa_accept request from  %s",sIP );
+					Log(temp,"-system",0);
+					break;
+				}
+				User=i-1;
+			}   else
+			if  (User>=0 && User<MAX_SERVERNUMBER)
+			{   if	(pUser[User].Mode!=USER_EMPTY)
+				{	char temp[256];
+					sprintf(temp,"err wsa_accept no previous slot %d",User );
+					Log(temp,"-system",0);
+					TempUser.cSock.CloseSocket();
+					break;
+				}
+			}   else
+			{	Log("err wsa_accept unknown attempt","-system",0);
+				TempUser.cSock.CloseSocket();
+			}
+			if	(User==-1)
+			{	Log("err wsa_accept no empty","-system",0);
+				break;
+			}
+			pUser[User].IP                  = TempUser.IP;
+			pUser[User].Mode                = TempUser.Mode;
+			pUser[User].cSock.Sock          = TempUser.cSock.Sock;
+			pUser[User].cSock.Port          = TempUser.cSock.Port;
+			pUser[User].cSock.nRecvPosition = TempUser.cSock.nRecvPosition;
+			pUser[User].cSock.nProcPosition = TempUser.cSock.nProcPosition;
+			pUser[User].cSock.nSendPosition = TempUser.cSock.nSendPosition ;
+			pUser[User].cSock.ucRecvSeq = pUser[User].cSock.ucSendSeq = pUser[User].cSock.oldRecvChecksum = pUser[User].cSock.oldSendChecksum = 0;
+			char temp[256];sprintf(temp,"sys new connection from %d.%d.%d.%d - zone :%d",cIP[0],cIP[1],cIP[2],cIP[3],User+1);
+			SendUserCount(-1);
+			Log(temp,"-system",0);
+			// �ϴ��� Error�� Log�� �����.
+		}	break;
+		case WM_PAINT:
+			PAINTSTRUCT ps;
+			BeginPaint(hWnd,&ps);
+			DrawInformations(ps.hdc);
+			EndPaint(hWnd,&ps);
+			break; 
+		case WM_CLOSE:
+		{	for(int i=0; i<MAX_SERVER; i++)
+			{	if(pUser[i].Mode!=USER_EMPTY)
+				{	int rret = MessageBox(hWndMain,"Zone Server is Connected. Do you want to close DBA Server?","Warning!! - Close Server",MB_OKCANCEL);
+					if	(rret==1)
+					{	if (fLogFile) fclose(fLogFile); 
+						break;
+					}	else
+						return true;
+				}
+			}
+			DefWindowProc(hWnd,message,wParam,lParam);
+		}	break;
+		case WM_DESTROY:
+			WSACleanup();
+			PostQuitMessage(0);
+			break;
+		default:                      
+			return (DefWindowProc(hWnd, message, wParam, lParam));
+		break;
+	}
+	return (0);
+}
+
+
+void ProcessClientMessage(int conn,char*msg)
+{
+	cFileDB.ProcessMessage(msg,conn);
+}
+
+void DisableAccount(int conn,char * account)
+{
+	// ������ �о �н����� ���ܿ� #�� �ٿ��� �����ϰ�, NP���� Disable�� ������.
+	account[ACCOUNTNAME_LENGTH-1]=0;
+	account[ACCOUNTNAME_LENGTH-2]=0;
+	strupr(account);
+	STRUCT_ACCOUNTFILE file;
+	memcpy(file.AccountName,account,ACCOUNTNAME_LENGTH);
+	int iret = cFileDB.DBReadAccount(&file);  
+	if	(iret==FALSE) 
+	{	if	(conn>=0) SendAdminSignal(conn,0,_MSG_NPNotFound);
+		if	(conn>=0) SendAdminMessage(conn,0,"There's no account with that account name");
+		return;
+	}
+	// ����� #�߰�.
+	if	(file.AccountPass[0]==1) 
+	{	if	(conn>=0) SendAdminState(conn,0,_MSG_NPState,file.AccountPass);
+		return;
+	}
+	file.AccountPass[ACCOUNTPASS_LENGTH-1]=0;
+	file.AccountPass[ACCOUNTPASS_LENGTH-2]=0;
+	char temp[256];sprintf(temp,"#%s",file.AccountPass);temp[0]=1;
+	strcpy(file.AccountPass,temp);
+	cFileDB.DBWriteAccount(&file);
+	if	(conn>=0)
+	{	int idx = pAdmin[conn].DisableID;
+		MSG_NPReqAccount sm; sm.wType= _MSG_NPReqAccount; sm.wPDULength = sizeof(MSG_NPReqAccount) - sizeof(HEADER);
+		strncpy(sm.Account,account,ACCOUNTNAME_LENGTH);
+		sm.Char[0]=0;
+		ProcessAdminMessage(conn,(char*)&sm);
+		pAdmin[conn].DisableID=0;
+	}
+}
+void EnableAccount(int conn,char * account)
+{	
+	account[ACCOUNTNAME_LENGTH-1]=0;
+	account[ACCOUNTNAME_LENGTH-2]=0;
+	strupr(account);
+	// ������ �о �н����� ���ܿ� #�� �ٿ��� �����ϰ�, NP���� Disable�� ������.
+	STRUCT_ACCOUNTFILE file;
+  	memcpy(file.AccountName,account,ACCOUNTNAME_LENGTH);
+	int iret = cFileDB.DBReadAccount(&file);  
+	if	(iret==FALSE) 
+	{	if	(conn>=0) SendAdminSignal(conn,0,_MSG_NPNotFound);
+		if	(conn>=0) SendAdminMessage(conn,0,"There's no account with that account name");
+		return;
+	}
+	// ����� #�߰�.
+	if	(file.AccountPass[0]!=1) 
+	{	if	(conn>=0) SendAdminState(conn,0,_MSG_NPState,file.AccountPass);
+		return;
+	}
+	file.AccountPass[ACCOUNTPASS_LENGTH-1]=0;
+	file.AccountPass[ACCOUNTPASS_LENGTH-2]=0;
+	char temp[256];sprintf(temp,"%s",file.AccountPass+1);
+	strcpy(file.AccountPass,temp);
+	cFileDB.DBWriteAccount(&file);
+	if	(conn>=0)
+	{	int idx = pAdmin[conn].DisableID;
+		MSG_NPReqAccount sm; sm.wType= _MSG_NPReqAccount; sm.wPDULength = sizeof(MSG_NPReqAccount) - sizeof(HEADER);
+		strncpy(sm.Account,account,ACCOUNTNAME_LENGTH);
+		sm.Char[0]=0;
+		ProcessAdminMessage(conn,(char*)&sm);
+	}
+	return ;
+}
+int GetAdminLevel(char*szName,char*szPassword)
+{
+//	return 0;
+		char szFile[256] ={0,};
+	sprintf( szFile, "./GMPermission/%s.bin", szName);
+	FILE* fpBin = fopen( szFile, "rb" );
+	if ( fpBin != NULL ) 
+	{
+		char szServerBin[64];
+		char szPass[64];
+		int nLevel = 0;
+		char szList[65] ="���������������������������������äŤǤˤ̤ФѤӤ��ĤӤǤ̰�����";			
+		fread( szServerBin, 1, 64, fpBin );
+		for( int i = 0 ; i < 64 ; i++ ) 
+		{
+			szServerBin[i] -= szList[63 - i];
+		}
+		sscanf( szServerBin, "%s %d", szPass, &nLevel );
+		fclose(fpBin);
+		if(strcmp(szPassword, szPass)!=0) return -1;
+		return nLevel;
+	}
+	else
+	{
+		return -1;
+	}
+	
+}
+int ProcessAdminMessage(int conn,char*msg)
+{	MSG_STANDARD * std= (MSG_STANDARD*)msg;
+
+	switch(std->wType)
+	{
+		case _MSG_NPReqAccount:
+		{   MSG_NPReqAccount *m = (MSG_NPReqAccount *) msg;
+			m->Account[ACCOUNTNAME_LENGTH - 1] = 0;
+			m->Account[ACCOUNTNAME_LENGTH - 2] = 0;
+			m->Char[SZNAME_LENGTH - 1] = 0;
+			m->Char[SZNAME_LENGTH - 2] = 0;
+			strupr(m->Account);
+			if (m->Char[0]!=0)		{ cFileDB.GetAccountByChar(m->Account,m->Char); }
+			if	(m->Account[0]==0) // ĳ���ͷε�  ��ã����. 
+			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
+				SendAdminMessage(conn,0,"Cannot find account from this character.");
+				return TRUE;
+			}  
+			STRUCT_ACCOUNTFILE file;
+			memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
+			int iret = cFileDB.DBReadAccount(&file);  
+			if	(iret==FALSE) // ��ī��Ʈ�� ��ã����
+			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
+				SendAdminMessage(conn,0,"Account not found.");
+				return TRUE;
+			}
+			MSG_NPAccountInfo sm; sm.wType = _MSG_NPAccountInfo; sm.wPDULength = sizeof(MSG_NPAccountInfo) - sizeof(HEADER); 
+			sm.account = file; sm.Session = cFileDB.GetIndex(m->Account);
+			file.Char[0].szName[SZNAME_LENGTH-1]=0;file.Char[0].szName[SZNAME_LENGTH-2]=0;
+			file.Char[1].szName[SZNAME_LENGTH-1]=0;file.Char[1].szName[SZNAME_LENGTH-2]=0;
+			file.Char[2].szName[SZNAME_LENGTH-1]=0;file.Char[2].szName[SZNAME_LENGTH-2]=0;
+			file.AccountName[ACCOUNTNAME_LENGTH-1]=0;file.AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			char temp[256]; sprintf(temp,"Account Info: %s<%s|%s|%s>\n%s : %d",
+				file.AccountName,file.Char[0].szName,
+				file.Char[1].szName,
+				file.Char[2].szName,
+				( sm.Session == 0 ) ? "Not connected" : "Connected",
+				sm.Session / MAX_USER +	1 );
+			if (sm.Session != 0) sprintf(temp,"%s (char:%s)",temp,file.Char[cFileDB.pAccountList[sm.Session].Slot].szName);
+			temp[MESSAGE_LENGTH-1]=0; temp[MESSAGE_LENGTH-2]=0;
+			SendAdminMessage(conn,0,temp); // Account Name setting
+			sm.State = 0;
+			if (sm.account.AccountPass[0]=='@') sm.State = 1; // ����
+			if (sm.account.AccountPass[0]=='_') sm.State = 2; // ����
+			if (sm.account.AccountPass[0]==1) sm.State = 3; // Disable
+			pAdmin[conn].cSock.SendOneMessage((char*)&sm,sizeof(MSG_NPAccountInfo));
+		} break;
+		case _MSG_NPReqSaveAccount:
+		{	MSG_NPAccountInfo * m = (MSG_NPAccountInfo *) msg;
+			if ( m->wPDULength != sizeof(MSG_NPAccountInfo) - sizeof(HEADER) )
+			{
+				SendAdminMessage(conn,0,"You have wrong GM-Tool");
+				return TRUE;
+			}
+			char pchLog[512]={0,}; in_addr sIP;  
+			sIP.S_un.S_addr = pAdmin[conn].IP;
+			int IdxName = cFileDB.GetIndex(m->account.AccountName);
+			if  (IdxName!=0)
+			{	SendAdminMessage(conn,0,"Account already connected. Cannot save account.");
+				return TRUE;
+			}
+			cFileDB.DBWriteAccount(&m->account);
+			cFileDB.DBExportAccount(&m->account);
+			char temp[256]; sprintf(temp,"[%s] Account saving is completed.", m->account.AccountName);
+			SendAdminMessage(conn,0,temp);
+			if(!strcmp(m->account.AccountName, Developer)) break;
+			sprintf(pchLog,"From %d.%d.%d.%d    %s written \r\n", sIP.S_un.S_un_b.s_b1, sIP.S_un.S_un_b.s_b2, sIP.S_un.S_un_b.s_b3, sIP.S_un.S_un_b.s_b4, m->account.AccountName);
+			sprintf(pchLog,"%s %s\r\n", pchLog, m->Memo);
+			TimeWriteLog(pchLog, ".\\LOG\\EditHistory.txt");  
+		} break;
+		case _MSG_NPDisable:
+		{	MSG_NPEnable * m = (MSG_NPEnable *) msg;
+			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			strupr(m->AccountName);
+			int IdxName = cFileDB.GetIndex(m->AccountName);
+			if  (IdxName==0)
+			{	DisableAccount(conn,m->AccountName);
+				return TRUE;
+			}	else
+			{	// �ش� �������� "���� ������ ���ؼ� ��� ������ ���ڽ��ϴ�."
+				cFileDB.SendDBSavingQuit(IdxName,1);
+				pAdmin[conn].DisableID = IdxName;
+			}
+		} break;
+		case _MSG_NPEnable:
+		{	
+			//if (pAdmin[conn].Level<=2) return TRUE; // ���� �������� 1�̻�
+			MSG_NPEnable * m = (MSG_NPEnable *) msg;
+			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
+			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
+			strupr(m->AccountName);
+			int IdxName = cFileDB.GetIndex(m->AccountName);
+Listo
+Ahora tengo el cuadro completo. Veo cosas muy importantes. Déjame revisar el resto de CFileDB.cpp y el binario para ver qué funciones faltan:
+
+
+Read Text File
+Read Text File
+F
+
+
+Read Text File
+Request
+
+{
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB.cpp",
+  "tail": 200
+}
+Response
+
+		sel->sData[i].Equip[eVisualEquipShield] = file->Char[i].Equip[eTNEqu_Shield];
+		sel->sData[i].Equip[eVisualEquipOneWeapon] = file->Char[i].Equip[eTNEqu_OneHandWeapon];
+		sel->sData[i].Equip[eVisualEquipBoots] = file->Char[i].Equip[eTNEqu_Boots];
+		sel->sData[i].Equip[eVisualEquipGloves] = file->Char[i].Equip[eTNEqu_Gloves];
+		//memcpy( sel->sData[i].Equip, file->Char[i].Equip, sizeof(STRUCT_ITEM) * VISUAL_EQUIP );
+	}
+}
+void CFileDB::GetAccountByChar(char *acc, char *cha)
+{
+	 acc[0]=0;
+     char temp[128]; char First[128];BASE_GetFirstKey(cha,First);
+	 sprintf(temp,"./char/%s/%s.TCD",First,cha);
+     int Handle = open( temp, _O_RDONLY | _O_TEXT , NULL );
+	 if (Handle==-1)
+	 {  close(Handle);
+	    return;
+	 }
+	 read(Handle,acc,ACCOUNTNAME_LENGTH);
+	 close(Handle);
+     return ;
+
+}
+
+void CFileDB::InitAccountList(int idx)
+{	 
+	 memset(&pAccountList[idx].File,0,sizeof(pAccountList[idx].File));  
+}
+
+void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData )
+{
+	STRUCT_ITEM a_DefItem[4]; ZeroMemory(a_DefItem, sizeof(a_DefItem));
+	a_DefItem[0].snIndex = 4026 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[1].snIndex = 4001 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[2].snIndex = 4327 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[3].snIndex = 4111 - HT_PARAMTYPE_ITEM_START + 1;
+
+	a_DefItem[0].byCount = 1; a_DefItem[0].snDurability = 3600;
+	a_DefItem[1].byCount = 1; a_DefItem[1].snDurability = 4500;
+	a_DefItem[2].byCount = 1; a_DefItem[2].snDurability = 5500;
+	a_DefItem[3].byCount = 1; a_DefItem[3].snDurability = 2000;
+    
+	STRUCT_ITEM DefPotion; ZeroMemory(&DefPotion, sizeof(STRUCT_ITEM));
+	DefPotion.snIndex = 7001 - HT_PARAMTYPE_ITEM_START + 1;
+
+	// �ϴ� �ϵ��ڵ�, ���Ŀ� ������ ���� �о�鿩 �� �� �ֵ��� �����Ѵ�.
+	pMob->byZone = 1;
+	pMob->snX = -1;
+	pMob->snZ = -1;
+	pMob->byTrimuriti = pData->byTrimuriti;
+	pMob->snTribe = pData->snTribe;
+	pMob->byFace = pData->byFaceType;
+	pMob->byHead = pData->byHeadType;
+	pMob->byLevel = 1;
+	pMob->nRupiah = 0;
+	pMob->byInvenBag = 0;
+	pMob->bySpecialName = 0;
+	pMob->byInvenBag = 0;
+	pMob->bySaveZone = 1;
+	pMob->snKarma = 0;
+	pMob->byGMStatus = 0;
+	pMob->byClass1 = 0;
+	pMob->byClass2 = 0;
+
+	ZeroMemory( pMob->bySkill, sizeof( pMob->bySkill ) );
+	ZeroMemory( pMob->byQuest, sizeof( pMob->byQuest ) );
+	ZeroMemory( pMob->Inven, sizeof( pMob->Inven ) );
+	ZeroMemory( pMob->Equip, sizeof( pMob->Equip ) );
+
+	// �׽�Ʈ��.. �ϴ� ��ų �����͸� �� Level 1�� �����Ѵ�.
+	//memset( pMob->bySkill, 0x01, MAX_SKILL );
+
+	switch(pData->snTribe)
+	{
+	case TRIBE_NAGA: // ����, Ų����
+	case TRIBE_KINNARA:
+		pMob->sMuscle = 12;
+		pMob->sNerves = 10;
+		pMob->sHeart = 11;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[0];
+		break;
+	case TRIBE_ASURA: // �Ƽ���, ������
+	case TRIBE_RAKSHASA:
+		pMob->sMuscle = 11;
+		pMob->sNerves = 12;
+		pMob->sHeart = 10;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[1];
+		break;
+	case TRIBE_YAKSA: // ��ũ��, ���ٸ���
+	case TRIBE_GANDHARVA:
+		pMob->sMuscle = 11;
+		pMob->sNerves = 11;
+		pMob->sHeart = 11;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[2];
+		break;
+	case TRIBE_DEVA: // ����, �����
+	case TRIBE_GARUDA:
+		pMob->sMuscle = 10;
+		pMob->sNerves = 10;
+		pMob->sHeart = 10;
+		pMob->sMind = 13;
+		pMob->Inven[0] = a_DefItem[3];
+		break;
+	}
+
+	pMob->sMuscle += pData->byChakraMuscle;
+	pMob->sNerves += pData->byChakraNerve;
+	pMob->sHeart += pData->byChakraHeart;
+	pMob->sMind += pData->byChakraSoul;
+
+	pMob->nHP = 1000;
+	pMob->nTP = 1000;
+
+	pMob->byQuest[0] = 1;
+}
+
+void CFileDB::SendToAll(MSG_STANDARD * msg)
+{
+	for (int i=0;i<MAX_SERVER;i++)
+	{	if	(pUser[i].Mode==USER_EMPTY || pUser[i].cSock.Sock==NULL) continue;
+		pUser[i].cSock.SendOneMessage((char*)msg,msg->wPDULength+sizeof(HEADER));
+	}
+}
+
+void CFileDB::CheckTrimuriti()
+{
+	int nHour = 0;
+	int nSlot = 0;
+	int nTri  = 0;
+
+	struct tm when;
+	time_t now;
+	time(&now); when= *localtime(&now);
+    nHour = when.tm_hour;
+
+	FILE * fp = fopen("Trimuriti.dat","r");		//	old data loading
+	if (fp==NULL)	//	������ ���� ��� ������ ������ش�.
+	{
+		fp = fopen("Trimuriti.dat","w");
+		if(fp==NULL) return;
+		for(int i=0; i<3; i++)
+		{
+			for(int j=0; j<24; j++) fprintf(fp, "%d ", 0);
+			fprintf(fp, "\n", 0);
+		}
+		fclose(fp);
+
+		for(i=0; i<3; i++) m_iTrimuriti[i][nHour] = 0;
+	}	else
+	{	
+		for(int i=0; i<3; i++)
+		{
+			for(int j=0; j<24; j++) fscanf(fp, "%d", &m_iTrimuriti[i][j]);
+		}
+		fclose(fp);
+	}
+
+	m_iTrimuriti[0][nHour] = 0;
+	m_iTrimuriti[1][nHour] = 0;
+	m_iTrimuriti[2][nHour] = 0;
+	m_iTrimuriti[0][24]    = 0;
+	m_iTrimuriti[1][24]    = 0;
+	m_iTrimuriti[2][24]    = 0;
+
+    for (int i=0;i<MAX_DBACCOUNT;i++)				//	hour data update
+	{   if (pAccountList[i].Login==0) continue;
+		nSlot = pAccountList[i].Slot;
+		if(nSlot<0 || nSlot>=MOB_PER_ACCOUNT) continue;
+		nTri = pAccountList[i].File.Char[nSlot].byTrimuriti;
+		if(nTri<0 || nTri>eTNClan_Siva) continue;
+		if(nTri==eTNClan_Brahma) m_iTrimuriti[0][nHour]++;
+		else if(nTri==eTNClan_Vishnu) m_iTrimuriti[1][nHour]++;
+		else if(nTri==eTNClan_Siva) m_iTrimuriti[2][nHour]++;
+	}
+
+	fp = fopen("Trimuriti.dat","w");			//	nem_iTrimuritig
+	if (fp==NULL) return;
+	
+	for(i=0; i<3; i++)
+	{
+		for(int j=0; j<24; j++) 
+		{	m_iTrimuriti[i][24] += m_iTrimuriti[i][j];
+			fprintf(fp, "%d ", m_iTrimuriti[i][j]);
+		}
+		fprintf(fp, "\n");
+	}
+
+	fclose(fp);
+
+	if(nHour==4)		//	�Ϸ翡 �ѹ� 4�ð� �Ǹ� �ֽŵ��� ��踦 ���������� �뺸�Ѵ�.
+	{
+		Msg_TrimuritiStatus sm; sm.wType = _Msg_TrimuritiStatus;
+		sm.iTrimuritiCount[0] = m_iTrimuriti[0][24];
+		sm.iTrimuritiCount[1] = m_iTrimuriti[1][24];
+		sm.iTrimuritiCount[2] = m_iTrimuriti[2][24];
+		SendToAll((MSG_STANDARD*)&sm);
+	}
+}
+Listo
+Ahora tengo todo el contexto. Ya veo perfectamente qué falta. Déjame hacer el análisis completo:
+
+
+Read Text File
+Read Text File
+F
+
+
+Read Text File
+Request
+
+{
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB.cpp",
+  "tail": 400
+}
+Response
+
+			}
+		}
+		memcpy( &sm.account, account, sizeof(STRUCT_ACCOUNTFILE) );
+		sm.wType = _MSG_NPReqSaveAccount;
+		sm.wPDULength = sizeof(sm)- sizeof(HEADER);
+		// ������ ���� �� ���񿩵� �������
+		int ret = pUser[INDEXOFDAEMON-1].cSock.SendOneMessage((char*)&sm,sizeof(sm));
+		if	(ret==FALSE)
+		{	Log("err exporting account",account->AccountName,0);
+			return FALSE;
+		}
+	}
+	return TRUE;
+}
+
+BOOL CFileDB::DBReadAccount(STRUCT_ACCOUNTFILE * file,time_t *ptLastWrite/*= NULL*/)
+{
+	// blocking broken or cracked packet.
+	 file->AccountName[ACCOUNTNAME_LENGTH-1]=0;
+	 file->AccountName[ACCOUNTNAME_LENGTH-2]=0;
+	 file->AccountPass[ACCOUNTPASS_LENGTH-1]=0;
+	 file->AccountPass[ACCOUNTPASS_LENGTH-2]=0;
+    // �ٸ� ��ü�� ���ƾ� �Ѵ�.
+ 	if(strlen(file->AccountName) < 4) return FALSE;
+
+    char temp[128]; char First[128];BASE_GetFirstKey(file->AccountName,First);
+    sprintf(temp,"./account/%s/%s.TAD",First,file->AccountName);
+
+	file->ssn1 = 0;
+	file->ssn2 = 0;
+	ZeroMemory(file->dwTimeStamp, sizeof(file->dwTimeStamp) );
+
+	if ( ptLastWrite != NULL )
+	{	struct _finddata_t tFindData;
+		int hFindFile = _findfirst(  temp, &tFindData );
+		if ( hFindFile != -1 ) *ptLastWrite = tFindData.time_write;
+		_findclose( hFindFile );
+	}
+
+    int Handle = open(temp, _O_RDONLY | _O_BINARY, NULL);
+	if (Handle==-1)
+	{	
+#ifdef _ACCOUNTNAME_LENGTH_52BYTES_
+		OLD_STRUCT_ACCOUNTFILE oldfile;
+		char oldDir[128];
+		sprintf(oldDir,"./old_account/%s/%s.TAD",First,file->AccountName);
+		int oldhandle = open(oldDir,_O_RDONLY | _O_BINARY, NULL);
+		if ( oldhandle == -1 ) return FALSE;
+        
+		read(oldhandle,&oldfile,sizeof(OLD_STRUCT_ACCOUNTFILE));
+		strncpy(file->AccountName,oldfile.AccountName,OLD_ACCOUNTNAME_LENGTH);
+		memcpy(file->AccountPass,oldfile.AccountPass,sizeof(OLD_STRUCT_ACCOUNTFILE)-OLD_ACCOUNTNAME_LENGTH);
+		close(oldhandle);
+		if ( !DBWriteAccount(file) ) return FALSE;
+		DeleteFile(oldDir);
+		int Handle = open(temp, _O_RDONLY | _O_BINARY, NULL);
+#else
+		if (errno==EINVAL) {Log("err readaccount EINVAL",file->AccountName,0);return FALSE;}  // invalid oflag or pmode argument
+		if (errno==EMFILE) {Log("err readaccount EEMFILE",file->AccountName,0);return FALSE;}  // ���� �ڵ��� ����.
+		if (errno==ENOENT) {/*Log("ReadAccount ENOENT",file->AccountName);*/return FALSE;}  // File or Path not found
+		Log("err readaccount UNKNOWN",file->AccountName,0);
+		return FALSE;
+#endif
+	}
+	int	sz = filelength(Handle);
+	read(Handle,file,sz);
+	close(Handle);
+	return TRUE;
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+#define NUM_ILCHAT 7
+char illegulname[NUM_ILCHAT][12] = 
+{     "���"  ,"������"  ,"������"  ,"����"  ,"����",
+      "���ڵ�"  ,"����"  
+};
+BOOL CFileDB::DBCheckImpleName(char ** ilchat,char * Str)
+{
+     for (int j=0;j<NUM_ILCHAT;j++)
+	 { 	 for (int i=0;i<ACCOUNTNAME_LENGTH;i++)
+	     {   if (Str[i]==0||Str[i+1]==0||Str[i+2]==0||Str[i+3]==0) break;
+             if (Str[i]==' '||Str[i+1]==' '||Str[i+2]==' '||Str[i+3]==' ') continue;
+	         if (Str[i]==ilchat[j][0] && Str[i+1]==ilchat[j][1] &&
+                 Str[i+2]==ilchat[j][2] && Str[i+3]==ilchat[j][3] &&
+				 ilchat[j][4]==0) return 1;
+			 if (ilchat[j][i+4]==0) continue;
+	         if (Str[i]==ilchat[j][0] && Str[i+1]==ilchat[j][1] &&
+                 Str[i+2]==ilchat[j][2] && Str[i+3]==ilchat[j][3] &&
+                 Str[i+4]==ilchat[j][4] && Str[i+5]==ilchat[j][5] &&
+				 ilchat[j][6]==0) return 1;
+			 if (ilchat[j][i+6]==0) continue;
+	         if (Str[i]==ilchat[j][0] && Str[i+1]==ilchat[j][1] &&
+                 Str[i+2]==ilchat[j][2] && Str[i+3]==ilchat[j][3] &&
+                 Str[i+4]==ilchat[j][4] && Str[i+5]==ilchat[j][5] &&
+                 Str[i+6]==ilchat[j][6] && Str[i+7]==ilchat[j][7] &&
+				 ilchat[j][8]==0) return 1;
+		 }
+	 }
+	 return 0;
+
+}
+
+
+
+// ��ī��Ʈ ����� ����.
+
+           // ��ü �α����� Account�� Character �� ��̸� ������.
+           // [Account]:[Character]:[GameServer][User-IP]
+           // Account�� Login���� �������¿����� Character�� �α��� ���� �ʴ´�.
+           // Character�� User-IP�� Account�� User-IP�� Ʋ���� �α��� ���� �ʴ´�.
+           // Account�� Login�� ���¿��� �ٽ� Account Login ��û�� ������ 
+           // ���� ������ ������ ���Ӽ������� �˸��� �����Ŀ� ���´�.
+           // ĳ���Ͱ� Login�� ���¿��� �ٽ� ĳ���� Login�� ������ ���� G-Srv���� 
+           // ���� ������ ������ (Char Save) �� ������ �޴´�.
+           // Account�� �α��� �� ���¿��� Account�� �ٸ� ������ Char�α��� �� ���͵� ���� ���� �Ұ�.
+
+           // 1. account ���丮�� ������ �����ϴ��� Ȯ���Ѵ�. // 
+		   //    => �����ϸ� ���и� ���� ������ �˸���(MSG_DBMESSAGE). (MSG_CLOSENOTHING). ��(x). 
+           //    ĳ���� ������ ���� ����, Create�� ������ ������, G-Srv�� Client�� ������ ���� �־�� �Ѵ�.
+		   //
+           // 2. �������� ������ �ֹι�ȣ�ߺ� ���γ� ���� ���� ���θ� üũ �Ѵ�.
+           //    => ���н� ��. 
+		   //    �ֹι�ȣ �ߺ� üũ ��� 
+           //    1)üũ���� �ʴ´�.
+		   //    2)SSN ������ ���� 0Byte������ �����.
+		   //    3)MS-SQL�� ����Ѵ�. (������ Ǯ �ʿ�)
+		   //    4)������ �����ؼ� üũ�Ѵ�.
+		   //    5)���� �ϳ��� SSN���̺� ���������� �����.
+		   // 3. ����Ʈ�� ����ϰ� �ٷ� �����Ѵ�. (����Ʈ ���� ä��, CUser Ŭ������ ��°�� �����Ѵ�.)
+	    
+		   // 1.��Ƽ �������� ��� ������ ����� CREATE | EXCL �� ����.
+		
+           // 2. �ֹι�ȣ�ߺ�, ���� ���翩�� üũ 
+           // ���� 
+            
+		   // 3. ���� ���� ������ ����Ʈ ���
+		   //char AccountName[ACCOUNTNAME_LENGTH];
+		   //char AccountPass[ACCOUNTPASS_LENGTH];
+		   //char RealName[REALNAME_LENGTH];
+           //unsigned int SSN1;
+		   //unsigned int SSN2;
+           //char Email[EMAIL_LENGTH];
+           //char Telephone[TELEPHONE_LENGTH];
+           //char Address[ADDRESS_LENGTH];
+// ������ �б� ���� [�а�/����]�� ���� -> Charged
+// �� �а� �ݴ´�. 
+//
+// ������ �̹� ���� ���µǾ� ������ �а� ���� ������ �����Ѵ�.
+// ���� ������ ���� ���� ������ ������ ������ file open �� �ʿ�.
+// CLI:    GSVR�� ���� �õ�
+// GSVR:   DBSVR�� ���� 
+// DBSVR:  GSVR2�� ���� ��û
+// CLI:    [���] -> GSVR: Ŭ���̾�Ʈ �ݱ�, DBSVR:�̹� GSVR2�� ����� Ȯ��(Nothing)		   
+// GSVR:  1.xƽ�� (RECONNECT
+void CFileDB::DBGetSelChar(S_SSP_RESP_CHAR_LIST * sel,STRUCT_ACCOUNTFILE * file)
+{
+
+	memset(sel,0,sizeof(*sel));
+	sel->wType = SSP_RESP_CHAR_LIST; 
+ 	for ( int i = 0 ; i < MOB_PER_ACCOUNT ; i++ )
+	{
+		memcpy( sel->sData[i].szCharName, file->Char[i].szName, SZNAME_LENGTH );
+		if(sel->sData[i].szCharName[0]==0) continue;
+		sel->sData[i].byFaceType	= file->Char[i].byFace;
+		sel->sData[i].byHeadType	= file->Char[i].byHead;
+		sel->sData[i].byTrimuriti	= file->Char[i].byTrimuriti;
+		sel->sData[i].snTribe		= file->Char[i].snTribe;
+		sel->sData[i].byTrimuritiClass = 0;
+		sel->sData[i].nBrahmanPoint = file->Char[i].nBramanPoint;
+
+		sel->sData[i].snChakraMuscle= file->Char[i].sMuscle;
+		sel->sData[i].snChakraNerve	= file->Char[i].sNerves;
+		sel->sData[i].snChakraHeart = file->Char[i].sHeart;
+		sel->sData[i].snChakraSoul	= file->Char[i].sMind;
+
+		sel->sData[i].snKarma		= file->Char[i].snKarma;
+		sel->sData[i].byGMStatus	= file->Char[i].byGMStatus;;
+		sel->sData[i].byClass1		= file->Char[i].byClass1;
+		sel->sData[i].byClass2		= file->Char[i].byClass2;
+		sel->sData[i].byLevel		= file->Char[i].byLevel;
+		sel->sData[i].snDummy		= 0;
+
+		if ( file->Char[i].byZone == 0 ) 
+		{	file->Char[i].byZone = 1;
+			file->Char[i].snX = -1;
+			file->Char[i].snZ = -1;
+		}
+
+		sel->sData[i].LastZone		= file->Char[i].byZone;
+		sel->sData[i].LastServerIP.S_un.S_addr = g_pServerListBin[ServerIndex][file->Char[i].byZone];
+		sel->sData[i].LastServerPort=GAME_PORT; 
+
+		sel->sData[i].Equip[eVisualEquipHelmet] = file->Char[i].Equip[eTNEqu_Helmet];
+		sel->sData[i].Equip[eVisualEquipArmor] = file->Char[i].Equip[eTNEqu_Armor];
+		sel->sData[i].Equip[eVisualEquipPants] = file->Char[i].Equip[eTNEqu_Pants];
+		sel->sData[i].Equip[eVisualEquipShield] = file->Char[i].Equip[eTNEqu_Shield];
+		sel->sData[i].Equip[eVisualEquipOneWeapon] = file->Char[i].Equip[eTNEqu_OneHandWeapon];
+		sel->sData[i].Equip[eVisualEquipBoots] = file->Char[i].Equip[eTNEqu_Boots];
+		sel->sData[i].Equip[eVisualEquipGloves] = file->Char[i].Equip[eTNEqu_Gloves];
+		//memcpy( sel->sData[i].Equip, file->Char[i].Equip, sizeof(STRUCT_ITEM) * VISUAL_EQUIP );
+	}
+}
+void CFileDB::GetAccountByChar(char *acc, char *cha)
+{
+	 acc[0]=0;
+     char temp[128]; char First[128];BASE_GetFirstKey(cha,First);
+	 sprintf(temp,"./char/%s/%s.TCD",First,cha);
+     int Handle = open( temp, _O_RDONLY | _O_TEXT , NULL );
+	 if (Handle==-1)
+	 {  close(Handle);
+	    return;
+	 }
+	 read(Handle,acc,ACCOUNTNAME_LENGTH);
+	 close(Handle);
+     return ;
+
+}
+
+void CFileDB::InitAccountList(int idx)
+{	 
+	 memset(&pAccountList[idx].File,0,sizeof(pAccountList[idx].File));  
+}
+
+void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData )
+{
+	STRUCT_ITEM a_DefItem[4]; ZeroMemory(a_DefItem, sizeof(a_DefItem));
+	a_DefItem[0].snIndex = 4026 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[1].snIndex = 4001 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[2].snIndex = 4327 - HT_PARAMTYPE_ITEM_START + 1;
+	a_DefItem[3].snIndex = 4111 - HT_PARAMTYPE_ITEM_START + 1;
+
+	a_DefItem[0].byCount = 1; a_DefItem[0].snDurability = 3600;
+	a_DefItem[1].byCount = 1; a_DefItem[1].snDurability = 4500;
+	a_DefItem[2].byCount = 1; a_DefItem[2].snDurability = 5500;
+	a_DefItem[3].byCount = 1; a_DefItem[3].snDurability = 2000;
+    
+	STRUCT_ITEM DefPotion; ZeroMemory(&DefPotion, sizeof(STRUCT_ITEM));
+	DefPotion.snIndex = 7001 - HT_PARAMTYPE_ITEM_START + 1;
+
+	// �ϴ� �ϵ��ڵ�, ���Ŀ� ������ ���� �о�鿩 �� �� �ֵ��� �����Ѵ�.
+	pMob->byZone = 1;
+	pMob->snX = -1;
+	pMob->snZ = -1;
+	pMob->byTrimuriti = pData->byTrimuriti;
+	pMob->snTribe = pData->snTribe;
+	pMob->byFace = pData->byFaceType;
+	pMob->byHead = pData->byHeadType;
+	pMob->byLevel = 1;
+	pMob->nRupiah = 0;
+	pMob->byInvenBag = 0;
+	pMob->bySpecialName = 0;
+	pMob->byInvenBag = 0;
+	pMob->bySaveZone = 1;
+	pMob->snKarma = 0;
+	pMob->byGMStatus = 0;
+	pMob->byClass1 = 0;
+	pMob->byClass2 = 0;
+
+	ZeroMemory( pMob->bySkill, sizeof( pMob->bySkill ) );
+	ZeroMemory( pMob->byQuest, sizeof( pMob->byQuest ) );
+	ZeroMemory( pMob->Inven, sizeof( pMob->Inven ) );
+	ZeroMemory( pMob->Equip, sizeof( pMob->Equip ) );
+
+	// �׽�Ʈ��.. �ϴ� ��ų �����͸� �� Level 1�� �����Ѵ�.
+	//memset( pMob->bySkill, 0x01, MAX_SKILL );
+
+	switch(pData->snTribe)
+	{
+	case TRIBE_NAGA: // ����, Ų����
+	case TRIBE_KINNARA:
+		pMob->sMuscle = 12;
+		pMob->sNerves = 10;
+		pMob->sHeart = 11;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[0];
+		break;
+	case TRIBE_ASURA: // �Ƽ���, ������
+	case TRIBE_RAKSHASA:
+		pMob->sMuscle = 11;
+		pMob->sNerves = 12;
+		pMob->sHeart = 10;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[1];
+		break;
+	case TRIBE_YAKSA: // ��ũ��, ���ٸ���
+	case TRIBE_GANDHARVA:
+		pMob->sMuscle = 11;
+		pMob->sNerves = 11;
+		pMob->sHeart = 11;
+		pMob->sMind = 10;
+		pMob->Inven[0] = a_DefItem[2];
+		break;
+	case TRIBE_DEVA: // ����, �����
+	case TRIBE_GARUDA:
+		pMob->sMuscle = 10;
+		pMob->sNerves = 10;
+		pMob->sHeart = 10;
+		pMob->sMind = 13;
+		pMob->Inven[0] = a_DefItem[3];
+		break;
+	}
+
+	pMob->sMuscle += pData->byChakraMuscle;
+	pMob->sNerves += pData->byChakraNerve;
+	pMob->sHeart += pData->byChakraHeart;
+	pMob->sMind += pData->byChakraSoul;
+
+	pMob->nHP = 1000;
+	pMob->nTP = 1000;
+
+	pMob->byQuest[0] = 1;
+}
+
+void CFileDB::SendToAll(MSG_STANDARD * msg)
+{
+	for (int i=0;i<MAX_SERVER;i++)
+	{	if	(pUser[i].Mode==USER_EMPTY || pUser[i].cSock.Sock==NULL) continue;
+		pUser[i].cSock.SendOneMessage((char*)msg,msg->wPDULength+sizeof(HEADER));
+	}
+}
+
+void CFileDB::CheckTrimuriti()
+{
+	int nHour = 0;
+	int nSlot = 0;
+	int nTri  = 0;
+
+	struct tm when;
+	time_t now;
+	time(&now); when= *localtime(&now);
+    nHour = when.tm_hour;
+
+	FILE * fp = fopen("Trimuriti.dat","r");		//	old data loading
+	if (fp==NULL)	//	������ ���� ��� ������ ������ش�.
+	{
+		fp = fopen("Trimuriti.dat","w");
+		if(fp==NULL) return;
+		for(int i=0; i<3; i++)
+		{
+			for(int j=0; j<24; j++) fprintf(fp, "%d ", 0);
+			fprintf(fp, "\n", 0);
+		}
+		fclose(fp);
+
+		for(i=0; i<3; i++) m_iTrimuriti[i][nHour] = 0;
+	}	else
+	{	
+		for(int i=0; i<3; i++)
+		{
+			for(int j=0; j<24; j++) fscanf(fp, "%d", &m_iTrimuriti[i][j]);
+		}
+		fclose(fp);
+	}
+
+	m_iTrimuriti[0][nHour] = 0;
+	m_iTrimuriti[1][nHour] = 0;
+	m_iTrimuriti[2][nHour] = 0;
+	m_iTrimuriti[0][24]    = 0;
+	m_iTrimuriti[1][24]    = 0;
+	m_iTrimuriti[2][24]    = 0;
+
+    for (int i=0;i<MAX_DBACCOUNT;i++)				//	hour data update
+	{   if (pAccountList[i].Login==0) continue;
+		nSlot = pAccountList[i].Slot;
+		if(nSlot<0 || nSlot>=MOB_PER_ACCOUNT) continue;
+		nTri = pAccountList[i].File.Char[nSlot].byTrimuriti;
+		if(nTri<0 || nTri>eTNClan_Siva) continue;
+		if(nTri==eTNClan_Brahma) m_iTrimuriti[0][nHour]++;
+		else if(nTri==eTNClan_Vishnu) m_iTrimuriti[1][nHour]++;
+		else if(nTri==eTNClan_Siva) m_iTrimuriti[2][nHour]++;
+	}
+
+	fp = fopen("Trimuriti.dat","w");			//	nem_iTrimuritig
+	if (fp==NULL) return;
+	
+	for(i=0; i<3; i++)
+	{
+		for(int j=0; j<24; j++) 
+		{	m_iTrimuriti[i][24] += m_iTrimuriti[i][j];
+			fprintf(fp, "%d ", m_iTrimuriti[i][j]);
+		}
+		fprintf(fp, "\n");
+	}
+
+	fclose(fp);
+
+	if(nHour==4)		//	�Ϸ翡 �ѹ� 4�ð� �Ǹ� �ֽŵ��� ��踦 ���������� �뺸�Ѵ�.
+	{
+		Msg_TrimuritiStatus sm; sm.wType = _Msg_TrimuritiStatus;
+		sm.iTrimuritiCount[0] = m_iTrimuriti[0][24];
+		sm.iTrimuritiCount[1] = m_iTrimuriti[1][24];
+		sm.iTrimuritiCount[2] = m_iTrimuriti[2][24];
+		SendToAll((MSG_STANDARD*)&sm);
+	}
+}
+Listo
+Ahora tengo todo. Tengo el panorama completo. Aquí está el análisis definitivo:
+
+Diagnóstico completo — qué falta integrar
+🔴 Problema crítico 1: doble definición de globals
+En CFileDB_NEW_funcs.cpp las variables g_pLogFile y g_szLogPath están definidas DOS veces (líneas ~16 y ~380). Esto causa error de linker. Hay que eliminar la segunda.
+
+🔴 Problema crítico 2: TimeWriteLog — función usada pero no definida
+En Server.cpp línea ~1480 el código llama:
+
+cpp
+TimeWriteLog(pchLog, ".\\LOG\\EditHistory.txt");
+Esta función existe en el NEW pero no está en el source. Hay que implementarla.
+
+🟡 Integración pendiente: LoadInitItems + LoadSkillData — nunca se llaman
+En WinMain de Server.cpp el servidor arranca y llama cFileDB.InitGuild() y cFileDB.CheckTrimuriti() pero nunca llama a LoadInitItems() ni LoadSkillData(). Hay que agregarlas.
+
+🟡 OpenLogFile — no conectada al log actual
+El servidor usa fLogFile (variable global en Server.cpp), pero OpenLogFile del NEW usa g_pLogFile en el objeto. Son dos sistemas de log paralelos. Hay que unificarlos o conectarlos.
+
+🟡 SetNewCharacter — hardcoded, debería usar g_InitItemTable
+El código actual tiene items hardcodeados (4026, 4001, 4327, 4111). El NEW los lee del CSV. Hay que conectar.
+
+🟢 GetAdminLevel en Server.cpp — ya existe y es equivalente a GetGMPermission
+Ya hay una implementación en Server.cpp (~línea 1450). La versión del NEW es idéntica en lógica. No hay conflicto, pero GetGMPermission en CFileDB_NEW_funcs.cpp es redundante — la puedes dejar como alternativa o eliminar.
+
+Ahora aplico los fixes en orden:
+
+
+Edit File
+Edit File
+F
+
+
+Edit File
+Request
+
+{
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB_NEW_funcs.cpp",
+  "edits": [
+    {
+      "oldText": "FILE* g_pLogFile   = NULL; // VA 0x48C810 en binario
+char  g_szLogPath[256] = {0};
+
+void CFileDB::OpenLogFile(int nSuffix)",
+      "newText": "void CFileDB::OpenLogFile(int nSuffix)"
+    }
+  ]
+}
+Response
+
+```diff
+Index: C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp
+===================================================================
+--- C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp	original
++++ C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp	modified
+@@ -463,11 +463,8 @@
+ // Modo apertura: "wt" (write text)
+ // Si habia log previo abierto lo cierra primero
+ // ============================================================
+ 
+-FILE* g_pLogFile   = NULL; // VA 0x48C810 en binario
+-char  g_szLogPath[256] = {0};
+-
+ void CFileDB::OpenLogFile(int nSuffix)
+ {
+     // Cerrar log anterior si estaba abierto
+     if (g_pLogFile)
+```
+
+Listo
+Doble definición eliminada. Ahora agrego TimeWriteLog — la función que usa Server.cpp pero no existe en el source:
+
+
+Edit File
+Edit File
+F
+
+
+Edit File
+Request
+
+{
+  "edits": [
+    {
+      "oldText": "// ---- Definicion de globals ----
+short		g_InitItemTable[MAX_INIT_ITEMS][4]  = {0};
+SkillEntry	g_SkillData[MAX_SKILL_DATA]         = {0};
+FILE*		g_pLogFile   = NULL;
+char		g_szLogPath[256] = {0};",
+      "newText": "// ---- Definicion de globals ----
+short		g_InitItemTable[MAX_INIT_ITEMS][4]  = {0};
+SkillEntry	g_SkillData[MAX_SKILL_DATA]         = {0};
+FILE*		g_pLogFile   = NULL;
+char		g_szLogPath[256] = {0};
+
+// ============================================================
+// TimeWriteLog
+// Escribe texto en un archivo de log con timestamp
+// Usada en Server.cpp para EditHistory.txt
+// Reconstruida del binario NEW (VA 0x00440960)
+// ============================================================
+void TimeWriteLog(const char* pszText, const char* pszFilePath)
+{
+    if (!pszText || !pszFilePath) return;
+
+    FILE* fp = fopen(pszFilePath, \"at\");
+    if (!fp) return;
+
+    SYSTEMTIME st;
+    GetLocalTime(&st);
+
+    // Formato de timestamp: [YYYY/MM/DD HH:MM:SS]
+    fprintf(fp, \"[%04d/%02d/%02d %02d:%02d:%02d] %s\",
+            st.wYear, st.wMonth, st.wDay,
+            st.wHour, st.wMinute, st.wSecond,
+            pszText);
+
+    // Asegurar newline al final
+    int len = (int)strlen(pszText);
+    if (len > 0 && pszText[len-1] != '\
+')
+        fprintf(fp, \"\
+\");
+
+    fclose(fp);
+}"
+    }
+  ],
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB_NEW_funcs.cpp"
+}
+Response
+
+```diff
+Index: C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp
+===================================================================
+--- C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp	original
++++ C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB_NEW_funcs.cpp	modified
+@@ -19,8 +19,38 @@
+ FILE*		g_pLogFile   = NULL;
+ char		g_szLogPath[256] = {0};
+ 
+ // ============================================================
++// TimeWriteLog
++// Escribe texto en un archivo de log con timestamp
++// Usada en Server.cpp para EditHistory.txt
++// Reconstruida del binario NEW (VA 0x00440960)
++// ============================================================
++void TimeWriteLog(const char* pszText, const char* pszFilePath)
++{
++    if (!pszText || !pszFilePath) return;
++
++    FILE* fp = fopen(pszFilePath, "at");
++    if (!fp) return;
++
++    SYSTEMTIME st;
++    GetLocalTime(&st);
++
++    // Formato de timestamp: [YYYY/MM/DD HH:MM:SS]
++    fprintf(fp, "[%04d/%02d/%02d %02d:%02d:%02d] %s",
++            st.wYear, st.wMonth, st.wDay,
++            st.wHour, st.wMinute, st.wSecond,
++            pszText);
++
++    // Asegurar newline al final
++    int len = (int)strlen(pszText);
++    if (len > 0 && pszText[len-1] != '\n')
++        fprintf(fp, "\n");
++
++    fclose(fp);
++}
++
++// ============================================================
+ // CONSTANTES EXTRAIDAS DEL BINARIO
+ // ============================================================
+ 
+ // Clave de decodificacion GM (65 bytes, VA 0x476E40 en NEW)
+```
+
+Listo
+Ahora declaro TimeWriteLog en el header para que Server.cpp la encuentre:
+
+
+Edit File
+Edit File
+F
+
+
+Edit File
+Request
+
+{
+  "edits": [
+    {
+      "newText": "// Log global
+extern FILE*	g_pLogFile;
+extern char		g_szLogPath[256];
+
+// Funcion de log con timestamp (usada en Server.cpp para EditHistory)
+void TimeWriteLog(const char* pszText, const char* pszFilePath);
+
+#endif",
+      "oldText": "// Log global
+extern FILE*	g_pLogFile;
+extern char		g_szLogPath[256];
+
+
+#endif"
+    }
+  ],
+  "path": "C:\\Users\\Shark\\Documents\\GitHub\\Tantra-Online\\[Source]DBSRV\\CFileDB.h"
+}
+Response
+
+```diff
+Index: C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.h
+===================================================================
+--- C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.h	original
++++ C:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.h	modified
+@@ -154,6 +154,8 @@
+ // Log global
+ extern FILE*	g_pLogFile;
+ extern char		g_szLogPath[256];
+ 
++// Funcion de log con timestamp (usada en Server.cpp para EditHistory)
++void TimeWriteLog(const char* pszText, const char* pszFilePath);
+ 
+ #endif
+\ No newline at end of file
+```
+
+Listo
+Ahora conecto LoadInitItems() y LoadSkillData() al arranque del servidor en Server.cpp:
+
+
+Edit File
+Edit File
+Server.cpp está bloqueado (probablemente abierto en VS). Usa el Desktop Commander que tiene acceso:
+
+
+Usó la integración de Desktop Commander, herramientas cargadas
+Usó la integración de Desktop Commander, herramientas cargadas
+Desktop Commander icon
+Desktop Commander
+read_file
+
+Escribo el script a disco primero:
+
+
+Start Terminal Process
+Start Terminal Process
+D
+
+
+Start Terminal Process
+Request
+
+{
+  "command": "python C:\	emp_tantra\\patch_server.py",
+  "shell": "cmd",
+  "timeout_ms": 8000
+}
+Response
+
+Process started with PID 5336 (shell: cmd)
+Initial output:
+CONTEXTO: 'B.CheckTrimuriti();\n\n#ifdef REPORT\n    ProcessUser();\n    if (fLogFile) fclose(fLo'
+OK - Server.cpp parcheado
+Listo
+Desktop Commander icon
+Desktop Commander
+write_file
+
+Perfecto. Ahora verifico que quedó bien y también que CFileDB_NEW_funcs.cpp está en el .vcproj:
+
+
+Usó la integración de Desktop Commander
+Usó la integración de Desktop Commander
+Desktop Commander icon
+Desktop Commander
+write_file
+

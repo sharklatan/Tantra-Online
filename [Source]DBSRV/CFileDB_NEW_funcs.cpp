@@ -24,6 +24,39 @@ char		g_szLogPath[256] = {0};
 // Escribe texto en un archivo de log con timestamp
 // Usada en Server.cpp para EditHistory.txt
 // Reconstruida del binario NEW (VA 0x00440960)
+//COENTADA ROMPIA COMPILACION MAL IMPLEMENTADA
+// ============================================================
+//void TimeWriteLog(const char* pszText, const char* pszFilePath)
+//{
+//    if (!pszText || !pszFilePath) return;
+
+//    FILE* fp = fopen(pszFilePath, "at");
+//    if (!fp) return;
+
+//    SYSTEMTIME st;
+//    GetLocalTime(&st);
+
+    // Formato de timestamp: [YYYY/MM/DD HH:MM:SS]
+//    fprintf(fp, "[%04d/%02d/%02d %02d:%02d:%02d] %s",
+//            st.wYear, st.wMonth, st.wDay,
+//            st.wHour, st.wMinute, st.wSecond,
+//            pszText);
+
+    // Asegurar newline al final
+//    int len = (int)strlen(pszText);
+//    if (len > 0 && pszText[len-1] != '\n')
+//        fprintf(fp, "\n");
+
+//    fclose(fp);
+//}
+
+
+// ============================================================
+// TimeWriteLog
+// Escribe texto en un archivo de log con timestamp
+// Usada en Server.cpp para EditHistory.txt
+// Reconstruida del binario NEW (VA 0x00440960)
+//COENTADA ROMPIA COMPILACION MAL IMPLEMENTADA
 // ============================================================
 void TimeWriteLog(const char* pszText, const char* pszFilePath)
 {
@@ -156,7 +189,7 @@ static void GetSubDir(const char* pszAccountName, char* pszSubDir, int nMaxLen)
                 pszSubDir[1] = (char)s_HangulSubDirs[nRange][1];
                 pszSubDir[2] = '\0';
                 return;
-            }
+            } //line 159
         }
     }
 
