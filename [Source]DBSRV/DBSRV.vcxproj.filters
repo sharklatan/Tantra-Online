@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="占쌀쏙옙 占쏙옙占쏙옙">
+      <UniqueIdentifier>{e7380582-2678-4f6a-96ba-2105317cc561}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="占쏙옙占%3f占쏙옙占쏙옙">
+      <UniqueIdentifier>{792b81df-683b-4d6a-911e-613574f76848}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="占쏙옙占%3f占쏙옙占쏙옙\HTUtil">
+      <UniqueIdentifier>{a58aa3cf-eae8-4848-af47-1b9c90880748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="占쏙옙占쌀쏙옙 占쏙옙占쏙옙">
+      <UniqueIdentifier>{aa3292ea-100e-4d45-b29a-1fdc4d53283c}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="BASE">
+      <UniqueIdentifier>{ead8385c-776f-4aec-abd4-c74a60953969}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CFileDB.cpp">
+      <Filter>占쌀쏙옙 占쏙옙占쏙옙</Filter>
+    </ClCompile>
+    <ClCompile Include="CUser.cpp">
+      <Filter>占쌀쏙옙 占쏙옙占쏙옙</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawInfo.cpp">
+      <Filter>占쌀쏙옙 占쏙옙占쏙옙</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>占쌀쏙옙 占쏙옙占쏙옙</Filter>
+    </ClCompile>
+    <ClCompile Include="TNDebug.cpp">
+      <Filter>占쌀쏙옙 占쏙옙占쏙옙</Filter>
+    </ClCompile>
+    <ClCompile Include="Basedef.cpp">
+      <Filter>BASE</Filter>
+    </ClCompile>
+    <ClCompile Include="CPSock.cpp">
+      <Filter>BASE</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5Checksum.cpp">
+      <Filter>BASE</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CFileDB.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="CUser.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawInfo.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="TNDebug.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙</Filter>
+    </ClInclude>
+    <ClInclude Include="HT.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙\HTUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="HTFile.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙\HTUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="HTPackFile.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙\HTUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="HTString.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙\HTUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="HTXMLParser.h">
+      <Filter>占쏙옙占%3f占쏙옙占쏙옙\HTUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Basedef.h">
+      <Filter>BASE</Filter>
+    </ClInclude>
+    <ClInclude Include="CPSock.h">
+      <Filter>BASE</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5Checksum.h">
+      <Filter>BASE</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5ChecksumDefines.h">
+      <Filter>BASE</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="serverlist.txt" />
+  </ItemGroup>
+</Project>

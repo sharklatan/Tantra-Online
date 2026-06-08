@@ -7,16 +7,16 @@
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 //                  USERFILE
 //
-// account : ¾îÄ«¿îÆ® DB Æú´õ
-// char    : Ä³·¢ÅÍ DB Æú´õ
+// account : ï¿½ï¿½Ä«ï¿½ï¿½Æ® DB ï¿½ï¿½ï¿½ï¿½
+// char    : Ä³ï¿½ï¿½ï¿½ï¿½ DB ï¿½ï¿½ï¿½ï¿½
 //
 //  
-// account ¿Í char-name Àº ex-filename ÀÌ °¡´ÉÇÑ ÇÑµµ¿¡¼­ Áö¿ø.
-// ( * ? " ~ `) ºÒ°¡ ,  ( ' ) ´Â °¡´É.       
+// account ï¿½ï¿½ char-name ï¿½ï¿½ ex-filename ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+// ( * ? " ~ `) ï¿½Ò°ï¿½ ,  ( ' ) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.       
 // ID
 // PASS
-// ±âÅ¸ ÇÁ·ÎÆÄÀÏ
-// °ú±ÝÁ¤º¸
+// ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 // MOB Index
 // 
 // MOB1    // 1 K //
@@ -40,8 +40,8 @@ typedef struct
         char Email[EMAIL_LENGTH];
         char Telephone[TELEPHONE_LENGTH];
         char Address[ADDRESS_LENGTH];
-////////// À§ ºÎºÐÀº Ç×»ó BaseDEFÀÇ MSG_DBNewAccount ¿Í ÀÏÄ¡½ÃÄÑ¾ß ÇÑ´Ù .
-		unsigned short GameServer;// connÀÌ °ÔÀÓ¼­¹öÀÎµ¦½º´Ù. °ÔÀÓ¼­¹ö°¡ ³¯¸®´Â °ªÀº ¹«½ÃÇÏ°í connÀ» ÀúÀåÇÑ´Ù.
+////////// ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½×»ï¿½ BaseDEFï¿½ï¿½ MSG_DBNewAccount ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½Ñ¾ï¿½ ï¿½Ñ´ï¿½ .
+		unsigned short GameServer;// connï¿½ï¿½ ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ connï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         char MobName[MOB_PER_ACCOUNT][MOBNAME_LENGTH];
 		unsigned short Login;
 }  STRUCT_ACCOUNT; 
@@ -69,7 +69,7 @@ typedef struct
 class CFileDB
 {
 private:
-	int m_iTrimuriti[3][25];	//	3ÁÖ½ÅÀÇ 24½Ã°£ Á¢¼ÓÀÚ¼ö(½Ã°£¸¶´Ù Ã¼Å©ÇÑ´Ù), 25¹øÂ°´Â ÇÕ°è¸¦ ÀúÀå.
+	int m_iTrimuriti[3][25];	//	3ï¿½Ö½ï¿½ï¿½ï¿½ 24ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½(ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½), 25ï¿½ï¿½Â°ï¿½ï¿½ ï¿½Õ°è¸¦ ï¿½ï¿½ï¿½ï¿½.
 
 public:
     STRUCT_ACCOUNTLIST pAccountList[MAX_DBACCOUNT];
@@ -91,18 +91,18 @@ public:
 	BOOL   UpdateAccount(char *id,char*pass,int ssn1,int ssn2);
 	BOOL	DBExportAccount(STRUCT_ACCOUNTFILE * account);
      
-	int    GetIndex                  (char * account);                                  // -1 : ÀÏÄ¡ÇÏ´Â ¾îÄ«¿îÆ® ¾øÀ½.
+	int    GetIndex                  (char * account);                                  // -1 : ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½.
 	int    GetIndex                  (int server ,int id);
 	int	   GetIndexFromName			 (char * szMob);
-    void   AddAccountList            (int Idx);   // -1 : fail, empty¸¦ Ã£¾Æ Ã¤¿ì°í idx¸®ÅÏ
+    void   AddAccountList            (int Idx);   // -1 : fail, emptyï¿½ï¿½ Ã£ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ idxï¿½ï¿½ï¿½ï¿½
 	void   RemoveAccountList         (int Idx);
 	void   SendDBSavingQuit          (int Idx,int mode);
      
-	// »ç¿ëÀÚ °èÁ¤ (account µð·ºÅä¸®)
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (account ï¿½ï¿½ï¿½ä¸®)
 	BOOL   DBWriteAccount            (STRUCT_ACCOUNTFILE * account);
     BOOL   DBReadAccount             (STRUCT_ACCOUNTFILE * account,time_t *ptLastWrite = NULL);
 
-	// AccountÀÇ MOBÀ» Charactor¶ó ¸í¸í. ( char µð·ºÅä¸®)
+	// Accountï¿½ï¿½ MOBï¿½ï¿½ Charactorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ( char ï¿½ï¿½ï¿½ä¸®)
     BOOL   DBCheckImpleName          (char **source,char * name);
     void   DBGetSelChar              (S_SSP_RESP_CHAR_LIST * sel,STRUCT_ACCOUNTFILE * file);
 	void   InitAccountList           (int idx);
@@ -127,7 +127,35 @@ public:
 	BOOL	UpdateGuildCargoLevel	(int nID, BYTE byLevel1, BYTE byLevel2, BYTE byLevel3);
 	BOOL	UpdateGuildCargoTime	(int nID, DWORD dwTime1, DWORD dwTime2, DWORD dwTime3);
 	BOOL	UpdateGuildCargoItem	(int nID, int nIndex, STRUCT_ITEM* pstItem);
+
+	// ---- Funciones reconstruidas de DBSRV_NEW ----
+	int		CreateAccount		(const char* pszAccountName, const char* pCharData, int nLen, int nFlag);
+	int		CreateAccount2		(const char* pszAccountName, const char* pCharData, int nLen, int nFlag);
+	int		CheckAccount		(const char* pszAccountName, void* pOutData, int nFlag);
+	int		CheckAccount2		(void* pMsg, int* pOutSlotID);
+	int		GetGMPermission		(const char* pszAccountName, const char* pszCheckName);
+	void	LoadInitItems		();
+	void	LoadSkillData		();
+	void	OpenLogFile			(int nSuffix);
 };
 
+// ---- Globals de DBSRV_NEW ----
+// Tabla de items iniciales: stride 8 bytes (4 x short)
+// Equivale a VA 0x186124C0 del binario NEW
+#define MAX_INIT_ITEMS		512
+extern short	g_InitItemTable[MAX_INIT_ITEMS][4];
+
+// Tabla de skills: stride 0x54 bytes (21 x int)
+// Equivale a VA 0x186126C0 del binario NEW
+#define MAX_SKILL_DATA		101
+struct SkillEntry { int f[21]; };
+extern SkillEntry	g_SkillData[MAX_SKILL_DATA];
+
+// Log global
+extern FILE*	g_pLogFile;
+extern char		g_szLogPath[256];
+
+// Funcion de log con timestamp (usada en Server.cpp para EditHistory)
+void TimeWriteLog(const char* pszText, const char* pszFilePath);
 
 #endif
