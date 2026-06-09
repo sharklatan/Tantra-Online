@@ -10,8 +10,10 @@
 #include <io.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <errno.h>
 #include "Basedef.h"
 #include "CFileDB.h"
+#include "TNDebug.h"
 
 // ---- Definicion de globals ----
 short		g_InitItemTable[MAX_INIT_ITEMS][4]  = {0};
@@ -24,64 +26,7 @@ char		g_szLogPath[256] = {0};
 // Escribe texto en un archivo de log con timestamp
 // Usada en Server.cpp para EditHistory.txt
 // Reconstruida del binario NEW (VA 0x00440960)
-//COENTADA ROMPIA COMPILACION MAL IMPLEMENTADA
 // ============================================================
-//void TimeWriteLog(const char* pszText, const char* pszFilePath)
-//{
-//    if (!pszText || !pszFilePath) return;
-
-//    FILE* fp = fopen(pszFilePath, "at");
-//    if (!fp) return;
-
-//    SYSTEMTIME st;
-//    GetLocalTime(&st);
-
-    // Formato de timestamp: [YYYY/MM/DD HH:MM:SS]
-//    fprintf(fp, "[%04d/%02d/%02d %02d:%02d:%02d] %s",
-//            st.wYear, st.wMonth, st.wDay,
-//            st.wHour, st.wMinute, st.wSecond,
-//            pszText);
-
-    // Asegurar newline al final
-//    int len = (int)strlen(pszText);
-//    if (len > 0 && pszText[len-1] != '\n')
-//        fprintf(fp, "\n");
-
-//    fclose(fp);
-//}
-
-
-// ============================================================
-// TimeWriteLog
-// Escribe texto en un archivo de log con timestamp
-// Usada en Server.cpp para EditHistory.txt
-// Reconstruida del binario NEW (VA 0x00440960)
-//COENTADA ROMPIA COMPILACION MAL IMPLEMENTADA
-// ============================================================
-void TimeWriteLog(const char* pszText, const char* pszFilePath)
-{
-    if (!pszText || !pszFilePath) return;
-
-    FILE* fp = fopen(pszFilePath, "at");
-    if (!fp) return;
-
-    SYSTEMTIME st;
-    GetLocalTime(&st);
-
-    // Formato de timestamp: [YYYY/MM/DD HH:MM:SS]
-    fprintf(fp, "[%04d/%02d/%02d %02d:%02d:%02d] %s",
-            st.wYear, st.wMonth, st.wDay,
-            st.wHour, st.wMinute, st.wSecond,
-            pszText);
-
-    // Asegurar newline al final
-    int len = (int)strlen(pszText);
-    if (len > 0 && pszText[len-1] != '\n')
-        fprintf(fp, "\n");
-
-    fclose(fp);
-}
-
 // ============================================================
 // CONSTANTES EXTRAIDAS DEL BINARIO
 // ============================================================
@@ -106,7 +51,7 @@ static const unsigned char s_GMKey[65] = {
 
 // Valida que el nombre no sea un dispositivo reservado de Windows
 // COM0-COM9 y LPT0-LPT9 causan problemas al abrir archivos
-static bool IsReservedDeviceName(const char* pszName)
+bool IsReservedDeviceName(const char* pszName)
 {
     if (!pszName || !pszName[0]) return false;
 
@@ -148,7 +93,7 @@ static const unsigned char s_HangulSubDirs[18][3] = {
 //     Busca en s_HangulRanges[] el rango correspondiente
 //     Subcarpeta = s_HangulSubDirs[rango] (2 bytes Hangul + null)
 //  3. Cualquier otro caso -> subcarpeta = "etc"
-static void GetSubDir(const char* pszAccountName, char* pszSubDir, int nMaxLen)
+void GetSubDir(const char* pszAccountName, char* pszSubDir, int nMaxLen)
 {
     if (!pszAccountName || !pszAccountName[0])
     {
@@ -189,7 +134,7 @@ static void GetSubDir(const char* pszAccountName, char* pszSubDir, int nMaxLen)
                 pszSubDir[1] = (char)s_HangulSubDirs[nRange][1];
                 pszSubDir[2] = '\0';
                 return;
-            } //line 159
+            }
         }
     }
 
@@ -223,12 +168,12 @@ int CFileDB::CreateAccount(const char* pszAccountName, const char* pCharData,
     if (fd == -1)
     {
         int err = errno;
-        if      (err == EACCES) TNDebug("CreateAccount EACCES\n");
-        else if (err == EEXIST) TNDebug("CreateAccount EEXIST\n");
-        else if (err == EINVAL) TNDebug("CreateAccount EINVAL\n");
-        else if (err == EMFILE) TNDebug("CreateAccount EMFILE\n");
-        else if (err == ENOENT) TNDebug("CreateAccount ENOENT\n");
-        else                    TNDebug("CreateAccount write fail\n");
+        if      (err == EACCES) WriteLog("CreateAccount EACCES", ".\\LOG\\debug.txt");
+        else if (err == EEXIST) WriteLog("CreateAccount EEXIST", ".\\LOG\\debug.txt");
+        else if (err == EINVAL) WriteLog("CreateAccount EINVAL", ".\\LOG\\debug.txt");
+        else if (err == EMFILE) WriteLog("CreateAccount EMFILE", ".\\LOG\\debug.txt");
+        else if (err == ENOENT) WriteLog("CreateAccount ENOENT", ".\\LOG\\debug.txt");
+        else                    WriteLog("CreateAccount write fail", ".\\LOG\\debug.txt");
         return 0;
     }
 
@@ -265,12 +210,12 @@ int CFileDB::CreateAccount2(const char* pszAccountName, const char* pCharData,
     if (fd == -1)
     {
         int err = errno;
-        if      (err == EACCES) TNDebug("CreateAccount2 EACCES\n");
-        else if (err == EEXIST) TNDebug("CreateAccount2 EEXIST\n");
-        else if (err == EINVAL) TNDebug("CreateAccount2 EINVAL\n");
-        else if (err == EMFILE) TNDebug("CreateAccount2 EMFILE\n");
-        else if (err == ENOENT) TNDebug("CreateAccount2 ENOENT\n");
-        else                    TNDebug("CreateAccount2 write fail\n");
+        if      (err == EACCES) WriteLog("CreateAccount2 EACCES", ".\\LOG\\debug.txt");
+        else if (err == EEXIST) WriteLog("CreateAccount2 EEXIST", ".\\LOG\\debug.txt");
+        else if (err == EINVAL) WriteLog("CreateAccount2 EINVAL", ".\\LOG\\debug.txt");
+        else if (err == EMFILE) WriteLog("CreateAccount2 EMFILE", ".\\LOG\\debug.txt");
+        else if (err == ENOENT) WriteLog("CreateAccount2 ENOENT", ".\\LOG\\debug.txt");
+        else                    WriteLog("CreateAccount2 write fail", ".\\LOG\\debug.txt");
         return 0;
     }
 
@@ -287,78 +232,9 @@ int CFileDB::CreateAccount2(const char* pszAccountName, const char* pCharData,
 // Carga datos al slot del personaje
 // Retorna: 1 OK, 0 error
 // ============================================================
-int CFileDB::CheckAccount(const char* pszAccountName, void* pOutData, int nFlag)
-{
-    if (IsReservedDeviceName(pszAccountName))
-        return 0;
-
-    char szSubDir[256]   = {0};
-    char szFilePath[256] = {0};
-    GetSubDir(pszAccountName, szSubDir, sizeof(szSubDir));
-    sprintf(szFilePath, "./Check_account/%s/%s.TAD", szSubDir, pszAccountName);
-
-    int fd = _open(szFilePath, _O_RDONLY | _O_BINARY);
-    if (fd == -1)
-    {
-        TNDebug("err UpdateOneTimeAccount write fail\n");
-        return 0;
-    }
-
-    // Leer y copiar datos al slot (stride 0x1D18, max 0xC350 slots)
-    // TODO: implementar lectura de slot especifico
-
-    _close(fd);
-    return 1;
-}
-
-// ============================================================
 // CheckAccount2 / DBReadOneTimeAccount
 // Version mejorada con limpieza de flags y manejo de errores Winsock
 // Retorna: 1 OK, 0 error
-// ============================================================
-int CFileDB::CheckAccount2(void* pMsg, int* pOutSlotID)
-{
-    char* pszName = (char*)pMsg;
-
-    // Limpiar flags de seguridad en el mensaje
-    pszName[0x33] = 0;
-    pszName[0x32] = 0;
-    pszName[0x57] = 0;
-    pszName[0x56] = 0;
-
-    // Nombre minimo 4 caracteres
-    if (strlen(pszName) < 4)
-        return 0;
-
-    char szSubDir[256]   = {0};
-    char szFilePath[256] = {0};
-    GetSubDir(pszName, szSubDir, sizeof(szSubDir));
-    sprintf(szFilePath, "./Check_account/%s/%s.TAD", szSubDir, pszName);
-
-    // Limpiar campos del mensaje
-    memset(pszName + 0x34,  0, 0x100);
-    memset(pszName + 0x134, 0, 8);
-
-    // Abrir en lectura/escritura
-    int fd = _open(szFilePath, _O_RDWR | _O_BINARY);
-    if (fd == -1)
-    {
-        DWORD dwErr = GetLastError();
-        if (dwErr == 0x16)      TNDebug("err DBReadOneTimeAccount EINVAL\n");
-        else if (dwErr == 0x18) TNDebug("err DBReadOneTimeAccount EEMFILE\n");
-        else if (dwErr == 2)    { /* silencioso */ }
-        else                    TNDebug("err DBReadOneTimeAccount UNKNOWN\n");
-        return 0;
-    }
-
-    // Leer, decodificar (XOR/byte ops) y copiar a buffer del mensaje
-    // stride: 0x25C bytes por registro
-    // TODO: implementar decodificacion con clave del slot
-
-    _close(fd);
-    return 1;
-}
-
 // ============================================================
 // GetGMPermission
 // Lee ./GMPermission/<accountName>.bin
@@ -534,7 +410,7 @@ void CFileDB::OpenLogFile(int nSuffix)
     {
         // El binario loguea "Logfile close fail!!" si fclose falla
         if (fclose(g_pLogFile) != 0)
-            TNDebug("Logfile close fail!!\n");
+            WriteLog("Logfile close fail!!", ".\\LOG\\debug.txt");
         g_pLogFile = NULL;
     }
 

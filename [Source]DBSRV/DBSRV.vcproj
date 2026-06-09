@@ -127,6 +127,24 @@
 				RelativePath="CFileDB.cpp">
 			</File>
 			<File
+				RelativePath="CFileDB_NEW_funcs.cpp">
+			</File>
+			<File
+				RelativePath="CFileDB_NEW_funcs2.cpp">
+			</File>
+			<File
+				RelativePath="CFileDB_NEW_funcs3.cpp">
+			</File>
+			<File
+				RelativePath="CFileDB_NEW_funcs4.cpp">
+			</File>
+			<File
+				RelativePath="CFileDB_NEW_funcs5.cpp">
+			</File>
+			<File
+				RelativePath="CFileDB_NEW_funcs6.cpp">
+			</File>
+			<File
 				RelativePath="CUser.cpp">
 			</File>
 			<File

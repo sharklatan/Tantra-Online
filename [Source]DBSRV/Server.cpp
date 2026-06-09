@@ -27,23 +27,23 @@ unsigned		GMLocalIPBin=0;
 int				LastUserCountDay = -1;
 int				MaxDayUserCount = 0;
 E_COUNTRY_ID	g_eCountryID = eCountryChina;
-// ¸ðµç ÀüÃ¼ °øÀ¯ ¸®¼Ò½º´Â ÀÌ°÷¿¡¼­ Á¤ÀÇ.
+// ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
-//  ItemÀº 
-//  1.ItemList¿¡ ¼¼ºÎ µ¥ÀÌÅÍ°¡ ÀÖ°í, Object,SysnZoneÀº Index¸¸ °¡Áö´Â ¹æ½Ä
-//  2.ItemÇÏ³ª ÇÏ³ª°¡ pItem ¿¡ »ý¼ºµÇ¸ç ¿øº»ÀÇ µ¥ÀÌÅÍ¸¦ Ä«ÇÇÇØ°¡´Â ¹æ½Ä
-//  3.1°ú2ÀÇ ÀýÃæÀ¸·Î µð½ºÅ©¸³¸¸ ÀÎµ¦½º·Î ¸®½ºÆ®¿¡¼­ °¡Á®¿À´Â ¹æ½Ä
+//  Itemï¿½ï¿½ 
+//  1.ItemListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ö°ï¿½, Object,SysnZoneï¿½ï¿½ Indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//  2.Itemï¿½Ï³ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ pItem ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ Ä«ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//  3.1ï¿½ï¿½2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 //
 
-// MOB´Â NPC,PC ¸ðµÎ ¼¼ºÎ Å×ÀÌÅÍ°¡ ÀÖ´Â ½ºÆ®·°ÃÄ¸¦ °¡Áø´Ù.
+// MOBï¿½ï¿½ NPC,PC ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½Ä¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 #define     TIMER_SEC    0
 #define     TIMER_MIN    1
 
 //CMob			pMob [MAX_MOB];
-CUser			pUser[MAX_SERVERNUMBER]; // Server°¡ 5°³¸é MAX_SERVER´Â ÃÖ¼Ò 6ÀÌ»ó ¼±¾ð.
+CUser			pUser[MAX_SERVERNUMBER]; // Serverï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ MAX_SERVERï¿½ï¿½ ï¿½Ö¼ï¿½ 6ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½.
 CUser			pAdmin[MAX_ADMIN];
 unsigned int	pAdminIP[MAX_ADMIN];
-CUser			TempUser; // ACCEPT½Ã ÀÏ´Ü Temp¿¡ ¹Þ¾Ò´Ù°¡, µ¿ÀÏ IP±âÁ¢¼Ó ¼ÒÄÏÀÌ ÀÖÀ¸¸é.
+CUser			TempUser; // ACCEPTï¿½ï¿½ ï¿½Ï´ï¿½ Tempï¿½ï¿½ ï¿½Þ¾Ò´Ù°ï¿½, ï¿½ï¿½ï¿½ï¿½ IPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 int				SecCounter		=0;
 int				MinCounter		=0;
 int				HourCounter		=0;
@@ -97,6 +97,7 @@ int  GetAdminFromSocket ( int Sock );
 int  GetEmptyUser       ( void );
 int  GetEmptyAdmin		(void);
 void StartLog           ( char * cccc );
+void ReadCountryID      ( void );
 void ImportItem         ( void );
 
 void DisableAccount		(int conn,char * account);
@@ -165,7 +166,7 @@ BOOL InitInstance( HANDLE hInstance, int nCmdShow)
 {    hMainMenu = CreateMenu();
  	 hWndMain = CreateWindow(   "MainClass",  "DB Server", 
         WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN ,    // Window style. 
-        CW_USEDEFAULT,   CW_USEDEFAULT, 640+8,   480,            // W,H[MenuÇÕÄ¡¸é 480]
+        CW_USEDEFAULT,   CW_USEDEFAULT, 640+8,   480,            // W,H[Menuï¿½ï¿½Ä¡ï¿½ï¿½ 480]
         NULL,    hMainMenu,  (HINSTANCE)hInstance,   NULL     );
      if (!hWndMain) return (FALSE);
      ShowWindow(hWndMain, nCmdShow);  
@@ -278,10 +279,14 @@ WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, 
 	////////////////////////////////////////////////
 	BASE_InitModuleDir();
 	BASE_InitializeServerList();
-	////////////////////////////////////////////////
+	//////////////////////////////////////////////
 	StartLog("A");
 	Log("start log","-system",0);
 	ReadConfig();
+	ReadSettings();
+	ReadCountryID();
+	ReadAdminTxt();
+	cFileDB.OpenLogFile(0);
 	CreateDirectory( "Delete_Backup", NULL );
 
 	cFileDB.InitGuild();
@@ -340,7 +345,7 @@ WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, 
 	}
 	if (LocalIP[0]==0){MessageBox(NULL,"Can't get local address","Reboot error",MB_OK); return 0;}
 */
-    // g_pServerList¿Í ´ëÁ¶ÇÏ¿© ServerIndex¸¦ ±¸ÇÑ´Ù.
+    // g_pServerListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ServerIndexï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
 	unsigned * tmp = (unsigned*)LocalIP;
 	LocalIPBin = *tmp;
 	int i=0;
@@ -407,7 +412,7 @@ int ProcessAdminClientMessage(char*msg)
 /*
     switch (std->Type)    
 	{
-		case _MSG_NPCreateCharacter_Reply:	// redirect sourceÀÇ »ý¼º°á°ú Ã³¸®
+		case _MSG_NPCreateCharacter_Reply:	// redirect sourceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		{	MSG_NPCreateCharacter_Reply* m = (MSG_NPCreateCharacter_Reply*) msg;
 			char * account	= m->Account;
 			int slot		= m->Slot;
@@ -422,16 +427,16 @@ int ProcessAdminClientMessage(char*msg)
 			sm.Slot = slot;
 			sm.Result=m->Result;
 
-			// ÀÏ´Ü È¸½Å¹ÞÀÚ¸¶ÀÚ EnableºÎÅÍ ½ÃÅ²´Ù.
+			// ï¿½Ï´ï¿½ È¸ï¿½Å¹ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ Enableï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
 			EnableAccount(-1,account);
-			//strcpy(sm.Account,m->Account); °ÔÀÓ¼­¹ö¿¡¼­µµ ¾îÄ«¿îÆ® Ã¼Å©¸¦ ÇÑ¹ø ÇØ¾ß ´õ Á¤È®ÇÏ´Ù.
+			//strcpy(sm.Account,m->Account); ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ® Ã¼Å©ï¿½ï¿½ ï¿½Ñ¹ï¿½ ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½È®ï¿½Ï´ï¿½.
 			if	(m->Result==0)//; //0: Success Delete Parm2
 			{	
 				STRUCT_ACCOUNTFILE file;
 				memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
 				int ret = cFileDB.DBReadAccount(&file);
 				if  (ret == FALSE)
-				{	// ÀÌÀüÀ» ¿äÃ»Çß´Âµ¥ ¿øº»ÀÌ ¾ø´Ù?
+				{	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ß´Âµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?
 					char tt[256]; sprintf(tt,"etc tranper_FAILED!!!!!(read) %s %s",m->Account,m->szName);
 					Log(tt,file.AccountName,0);
 					if	(IdxName)	{sm.Result = 4;pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);}
@@ -453,8 +458,8 @@ int ProcessAdminClientMessage(char*msg)
 				{	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
 					memset( &(cFileDB.pAccountList[IdxName].File.Char[slot]),0,sizeof(STRUCT_MOB));
 				}
-				//  ÇöÀç Á¢¼ÓÁßÀÌ¸é, ÇØ´ç Ä³·¢ÅÍ¸¦ Á¦°ÅÇÑ´Ù
-				//  Á¢¼ÓÀ» Çß´ø ÇÏÁö ¾Ê¾Ê´ø Account¸¦ ÀÐ¾î¼­ Ä³·¢ÅÍ¸¦ Áö¿ì°í ÀúÀåÇÑ´Ù
+				//  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½, ï¿½Ø´ï¿½ Ä³ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
+				//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ê´ï¿½ Accountï¿½ï¿½ ï¿½Ð¾î¼­ Ä³ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 			}
 			if	(result==1)		//1: Threre's Same Name Already
 			{	if	(IdxName)	pUser[svr].cSock.SendOneMessage((char*)&sm,sm.Size);
@@ -531,7 +536,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 			char temp[256];
 			int Error;
 			int ErrorCode;
-            while(1)                    //   ReadMessage fors_debug to ¶ÁÈ¡GMTOOSÏûÏ¢
+            while(1)                    //   ReadMessage fors_debug to ï¿½ï¿½È¡GMTOOSï¿½ï¿½Ï¢
 			{	char * Msg = pAdmin[User].cSock.ReadClientMessage(&Error,&ErrorCode);   //     ReadMessage(&Error,&ErrorCode); 
 				if (Msg==NULL) break;
 				////////////////////////////////
@@ -577,7 +582,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				//pUser[User].Count = 0;
 				pUser[User].Mode=USER_EMPTY;
 				SendUserCount(-1);
-				// ACCEPT¿¡¼­´Â IP°¡ µ¿ÀÏÇÑ User½½·Ô¿¡ Á¢¼Ó½ÃÅ²´Ù.
+				// ACCEPTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IPï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Userï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½Ó½ï¿½Å²ï¿½ï¿½.
 				break;
 			}
 			CurrentTime = timeGetTime();
@@ -592,9 +597,9 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				SendUserCount(-1);
 
 				// pUser[User].ModepUser[User].cSock.=MODE_SAVEEMPTY;
-				// DB ¼­¹ö¿¡ REQ_SAVE¸¦ ³¯¸®°í 
-				// MODE¸¦ REQ_SAVE·Î ¹Ù²Û´Ù.
-				// ConfirmÀÌ ¿À¸é  MODE_EMPTY
+				// DB ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ REQ_SAVEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				// MODEï¿½ï¿½ REQ_SAVEï¿½ï¿½ ï¿½Ù²Û´ï¿½.
+				// Confirmï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  MODE_EMPTY
 				break;
 			}
 
@@ -628,13 +633,13 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				unsigned char *cIP  = (unsigned char *) &(TempUser.IP);
 				int User=-1;
 				int i=0;
-				//	¾Æ¹«°Å³ª ºó°Å¸¦ °í¸¥´Ù // ´ÙÀ¯Àú ¹öÀü
+				//	ï¿½Æ¹ï¿½ï¿½Å³ï¿½ ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				//for (i=0;i<=MAX_ADMIN;i++)
 				//{   if (pAdmin[User].Mode==USER_EMPTY) {User=i;break;}
 				//}
 				//
 				///*
-				// ±âÁ¢¼ÓÀÚÀÇ IP¿Í Áßº¹µÇ´Â°ÍÀ» °Ë»çÇÑ´Ù. // ¿øÀ¯Àú ¹öÀü
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IPï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´Â°ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½. // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				User=-1;
 				//for (i=0;i<=MAX_ADMIN;i++)
 				//{   if	(pAdmin[i].IP == TempUser.IP) {User=i;break;}
@@ -642,7 +647,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				DWORD dwFlag = 0x000000FF; 
 				DWORD dwAdmin = 0; 
 				DWORD dwUser = TempUser.IP & 0xFFFFFF00;
-				if  (User==-1) // ±â Á¢¼Ó ¼­¹öÁß ÀÏÄ¡ÇÏ´Â ¾ÆÀÌÇÇ°¡ ¾ø´Ù.
+				if  (User==-1) // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½.
 				{
 					for	(i=0;i<MAX_ADMIN;i++)
 					{	int a,b,c,d; a=b=c=d=0;
@@ -669,7 +674,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 						sprintf(temp,"err wsa_acceptadmin not empty previous slot %d",i );
 						Log(temp,"-system",0);
 						TempUser.cSock.CloseSocket();
-						// ÀÌÀüÁ¢¼Óµµ ²÷¾î¹ö¸°´Ù.
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 						pAdmin[User].cSock.CloseSocket();
 						pAdmin[User].Mode=USER_EMPTY;
 						break;
@@ -725,14 +730,14 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 			TempUser.cSock.Port = ListenSocket[index].Port;
 			unsigned char  *cIP    = (unsigned char *) &(TempUser.IP);
 			char sIP[256]; sprintf(sIP,"%d.%d.%d.%d",cIP[0],cIP[1],cIP[2],cIP[3]);
-			//TempUser.IP °¡ µ¿ÀÏÇÑ ²÷¾îÁø pUser[User].IP¸¦ Á¶È¸.  ÀÖÀ¸¸é ±×³à¼®¿¡°Ô User¸¦ ÇÒ´ç ±×·¸Áö ¾ÊÀ¸¸é,
-			// IP°¡ ºñ¾î ÀÖ´Â UserÀ» idx¸¦ User¿¡ÇÒ´ç.
+			//TempUser.IP ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pUser[User].IPï¿½ï¿½ ï¿½ï¿½È¸.  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×³à¼®ï¿½ï¿½ï¿½ï¿½ Userï¿½ï¿½ ï¿½Ò´ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+			// IPï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Userï¿½ï¿½ idxï¿½ï¿½ Userï¿½ï¿½ï¿½Ò´ï¿½.
 			int User=-1;
 			for (i=0;i<MAX_SERVERNUMBER;i++)
 			{   if (pUser[i].IP==TempUser.IP && pUser[i].cSock.Port == ListenSocket[index].Port-1000) {User=i;break;}
 			}
 	//		User=22;
-			if  (User==-1) // ±â Á¢¼Ó ¼­¹öÁß ÀÏÄ¡ÇÏ´Â ¾ÆÀÌÇÇ°¡ ¾ø´Ù.
+			if  (User==-1) // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½.
 			{ 
 				for (i=1;i<MAX_SERVERNUMBER;i++)
 				{	if ((!strcmp(g_pServerList[ServerIndex][i],sIP)) && ((g_pServerListPort[ServerIndex][i]+1000)==ListenSocket[index].Port)) break;
@@ -773,7 +778,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 			char temp[256];sprintf(temp,"sys new connection from %d.%d.%d.%d - zone :%d",cIP[0],cIP[1],cIP[2],cIP[3],User+1);
 			SendUserCount(-1);
 			Log(temp,"-system",0);
-			// ÀÏ´ÜÀº Error¸¸ Log¸¦ ¸¸µç´Ù.
+			// ï¿½Ï´ï¿½ï¿½ï¿½ Errorï¿½ï¿½ Logï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 		}	break;
 		case WM_PAINT:
 			PAINTSTRUCT ps;
@@ -813,7 +818,7 @@ void ProcessClientMessage(int conn,char*msg)
 
 void DisableAccount(int conn,char * account)
 {
-	// ÆÄÀÏÀ» ÀÐ¾î¼­ ÆÐ½º¿öµå ¼±´Ü¿¡ #À» ºÙ¿©¼­ ÀúÀåÇÏ°í, NP¿¡°Ô DisableÀ» ³¯¸°´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾î¼­ ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¿ï¿½ #ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, NPï¿½ï¿½ï¿½ï¿½ Disableï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	account[ACCOUNTNAME_LENGTH-1]=0;
 	account[ACCOUNTNAME_LENGTH-2]=0;
 	strupr(account);
@@ -825,7 +830,7 @@ void DisableAccount(int conn,char * account)
 		if	(conn>=0) SendAdminMessage(conn,0,"There's no account with that account name");
 		return;
 	}
-	// ºñ¹ø¿¡ #Ãß°¡.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ #ï¿½ß°ï¿½.
 	if	(file.AccountPass[0]==1) 
 	{	if	(conn>=0) SendAdminState(conn,0,_MSG_NPState,file.AccountPass);
 		return;
@@ -849,7 +854,7 @@ void EnableAccount(int conn,char * account)
 	account[ACCOUNTNAME_LENGTH-1]=0;
 	account[ACCOUNTNAME_LENGTH-2]=0;
 	strupr(account);
-	// ÆÄÀÏÀ» ÀÐ¾î¼­ ÆÐ½º¿öµå ¼±´Ü¿¡ #À» ºÙ¿©¼­ ÀúÀåÇÏ°í, NP¿¡°Ô DisableÀ» ³¯¸°´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾î¼­ ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¿ï¿½ #ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, NPï¿½ï¿½ï¿½ï¿½ Disableï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	STRUCT_ACCOUNTFILE file;
   	memcpy(file.AccountName,account,ACCOUNTNAME_LENGTH);
 	int iret = cFileDB.DBReadAccount(&file);  
@@ -858,7 +863,7 @@ void EnableAccount(int conn,char * account)
 		if	(conn>=0) SendAdminMessage(conn,0,"There's no account with that account name");
 		return;
 	}
-	// ºñ¹ø¿¡ #Ãß°¡.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ #ï¿½ß°ï¿½.
 	if	(file.AccountPass[0]!=1) 
 	{	if	(conn>=0) SendAdminState(conn,0,_MSG_NPState,file.AccountPass);
 		return;
@@ -887,8 +892,9 @@ int GetAdminLevel(char*szName,char*szPassword)
 	{
 		char szServerBin[64];
 		char szPass[64];
-		int nLevel = 0;
-		char szList[65] ="¤¡¤¤¤§¤©¤±¤²¤µ¤·¤¸¤º¤»¤¼¤½¤¾¤¿¤Á¤Ã¤Å¤Ç¤Ë¤Ì¤Ð¤Ñ¤Ó¤¿¤Ä¤Ó¤Ç¤Ì°¡³ª´Ù";			
+		int nLevel;
+		const unsigned char szList[65] = {164,161,164,164,164,167,164,169,164,177,164,178,164,181,164,183,164,184,164,186,164,187,164,188,164,189,164,190,164,191,164,193,164,195,164,197,164,199,164,203,164,204,164,208,164,209,164,211,164,191,164,196,164,211,164,199,164,204,176,161,179,170,180,217,0};
+		nLevel = 0;
 		fread( szServerBin, 1, 64, fpBin );
 		for( int i = 0 ; i < 64 ; i++ ) 
 		{
@@ -918,7 +924,7 @@ int ProcessAdminMessage(int conn,char*msg)
 			m->Char[SZNAME_LENGTH - 2] = 0;
 			strupr(m->Account);
 			if (m->Char[0]!=0)		{ cFileDB.GetAccountByChar(m->Account,m->Char); }
-			if	(m->Account[0]==0) // Ä³·¢ÅÍ·Îµµ  ¸øÃ£¾ÒÀ½. 
+			if	(m->Account[0]==0) // Ä³ï¿½ï¿½ï¿½Í·Îµï¿½  ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½. 
 			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
 				SendAdminMessage(conn,0,"Cannot find account from this character.");
 				return TRUE;
@@ -926,7 +932,7 @@ int ProcessAdminMessage(int conn,char*msg)
 			STRUCT_ACCOUNTFILE file;
 			memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
 			int iret = cFileDB.DBReadAccount(&file);  
-			if	(iret==FALSE) // ¾îÄ«¿îÆ®·Î ¸øÃ£¾ÒÀ½
+			if	(iret==FALSE) // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½
 			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
 				SendAdminMessage(conn,0,"Account not found.");
 				return TRUE;
@@ -947,8 +953,8 @@ int ProcessAdminMessage(int conn,char*msg)
 			temp[MESSAGE_LENGTH-1]=0; temp[MESSAGE_LENGTH-2]=0;
 			SendAdminMessage(conn,0,temp); // Account Name setting
 			sm.State = 0;
-			if (sm.account.AccountPass[0]=='@') sm.State = 1; // Á¤Áö
-			if (sm.account.AccountPass[0]=='_') sm.State = 2; // »èÁ¦
+			if (sm.account.AccountPass[0]=='@') sm.State = 1; // ï¿½ï¿½ï¿½ï¿½
+			if (sm.account.AccountPass[0]=='_') sm.State = 2; // ï¿½ï¿½ï¿½ï¿½
 			if (sm.account.AccountPass[0]==1) sm.State = 3; // Disable
 			pAdmin[conn].cSock.SendOneMessage((char*)&sm,sizeof(MSG_NPAccountInfo));
 		} break;
@@ -985,14 +991,14 @@ int ProcessAdminMessage(int conn,char*msg)
 			{	DisableAccount(conn,m->AccountName);
 				return TRUE;
 			}	else
-			{	// ÇØ´ç À¯Àú¿¡°Ô "°èÁ¤ º¹±¸¸¦ À§ÇØ¼­ Àá½Ã Á¢¼ÓÀ» ²÷°Ú½À´Ï´Ù."
+			{	// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½."
 				cFileDB.SendDBSavingQuit(IdxName,1);
 				pAdmin[conn].DisableID = IdxName;
 			}
 		} break;
 		case _MSG_NPEnable:
 		{	
-			//if (pAdmin[conn].Level<=2) return TRUE; // À¯Àú Á¢¼ÓÁ¾·á 1ÀÌ»ó
+			//if (pAdmin[conn].Level<=2) return TRUE; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½Ì»ï¿½
 			MSG_NPEnable * m = (MSG_NPEnable *) msg;
 			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
 			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
@@ -1005,20 +1011,20 @@ int ProcessAdminMessage(int conn,char*msg)
 			}
 			EnableAccount(conn,m->AccountName);
 		} break;
-		case _MSG_NPNotice:  // Æ¯Á¤»ç¿ëÀÚ ¶Ç´Â Àü¼­¹ö¿¡ °øÁö
+		case _MSG_NPNotice:  // Æ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		{	MSG_NPNotice *m = (MSG_NPNotice *) msg;
 			m->AccountName[ACCOUNTNAME_LENGTH-1]=0;
 			m->AccountName[ACCOUNTNAME_LENGTH-2]=0;
 			m->String[MAX_NOTIFY_LENGTH-1]=0;
 			m->String[MAX_NOTIFY_LENGTH-2]=0;
-			if	(m->AccountName[0]==0 && m->Parm1==1)  // Àü¼­¹ö °øÁö
+			if	(m->AccountName[0]==0 && m->Parm1==1)  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			{	//if (pAdmin[conn].Level<=2) return TRUE;
 				MSG_Broadcast sm; sm.wType = _MSG_Broadcast;
 				sm.wPDULength = sizeof(MSG_Broadcast) - sizeof(HEADER); 
 				sm.byMsgType=2; sm.byBgColor=0; sm.byTextColor=14;
 				strncpy(sm.szName,"<<GM>>",SZNAME_LENGTH);
 				strncpy(sm.szMsg,m->String,MAX_NOTIFY_LENGTH);
-				if (m->Parm2 != -1 ) // Æ¯Á¤ Á¸¿¡¸¸ °øÁö
+				if (m->Parm2 != -1 ) // Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				{	if  (m->Parm2>=MAX_SERVER) return TRUE;
 					if	(pUser[m->Parm2].Mode==USER_EMPTY) return TRUE;
 					if	(pUser[m->Parm2].cSock.Sock==NULL)	return TRUE;
@@ -1032,7 +1038,7 @@ int ProcessAdminMessage(int conn,char*msg)
 				}
 				return TRUE;
 			}
-			// °³ÀÎ°øÁö.
+			// ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½.
 			//if (pAdmin[conn].Level<=0) return TRUE;
 			int IdxName = cFileDB.GetIndexFromName(m->AccountName);
 			if (IdxName==0)
@@ -1059,7 +1065,7 @@ int ProcessAdminMessage(int conn,char*msg)
 			m->szName[ACCOUNTNAME_LENGTH-2]=0;
 			m->szMsg[MAX_NOTIFY_LENGTH-1]=0;
 			m->szMsg[MAX_NOTIFY_LENGTH-2]=0;
-			if (m->byMsgType != 255 ) // Æ¯Á¤ Á¸¿¡¸¸ °øÁö
+			if (m->byMsgType != 255 ) // Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			{	if  (m->byMsgType>=MAX_SERVER) return TRUE;
 				if	(pUser[m->byMsgType].Mode==USER_EMPTY) return TRUE;
 				if	(pUser[m->byMsgType].cSock.Sock==NULL)	return TRUE;
@@ -1108,7 +1114,7 @@ int ProcessAdminMessage(int conn,char*msg)
 			STRUCT_ACCOUNTFILE file;
 			strncpy( file.AccountName, m->szAccountName, ACCOUNTNAME_LENGTH );
 			int iret = cFileDB.DBReadAccount(&file);  
-			if	(iret==FALSE) // ¾îÄ«¿îÆ®·Î ¸øÃ£¾ÒÀ½
+			if	(iret==FALSE) // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½
 			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
 				SendAdminMessage(conn,0,"Account not found.");
 				return TRUE;
@@ -1154,7 +1160,7 @@ int ProcessAdminMessage(int conn,char*msg)
 			STRUCT_ACCOUNTFILE file;
 			strncpy( file.AccountName, m->szAccountName, ACCOUNTNAME_LENGTH );
 			int iret = cFileDB.DBReadAccount(&file);  
-			if	(iret==FALSE) // ¾îÄ«¿îÆ®·Î ¸øÃ£¾ÒÀ½
+			if	(iret==FALSE) // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½
 			{	SendAdminSignal(conn,0,_MSG_NPNotFound);
 				SendAdminMessage(conn,0,"Account not found.");
 				return TRUE;
@@ -1220,10 +1226,10 @@ int ProcessAdminMessage(int conn,char*msg)
 
 /*
 
-	if	(std->Type==_MSG_NPCreateCharacter)		// redirect destinationÀÇ Ä³·¢ÅÍ »ý¼º 
+	if	(std->Type==_MSG_NPCreateCharacter)		// redirect destinationï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	{	
 		MSG_NPCreateCharacter* m = (MSG_NPCreateCharacter*) msg;
-		// ReplyÆÐÅ¶ÁØºñ	
+		// Replyï¿½ï¿½Å¶ï¿½Øºï¿½	
 		MSG_NPCreateCharacter_Reply	sm; sm.Type = _MSG_NPCreateCharacter_Reply;
 		sm.Size		= sizeof(sm);
 		sm.Slot		= m->Slot;
@@ -1232,7 +1238,7 @@ int ProcessAdminMessage(int conn,char*msg)
 		strncpy(sm.Account,m->Account,ACCOUNTNAME_LENGTH);
 //		strncpy(sm.szName,m->Mob.szName,szName_LENGTH);
 
-		// 1. ¿øº» ¾îÄ«¿îÆ®¸¦ ÀÐ¾î¿Â´Ù. ¾îÄ«¿îÆ®°¡ ¾øÀ¸¸é µðÆúÆ® ¾îÄ«¿îÆ®¸¦ »ý¼ºÇÑ´Ù ? => ¿¡·¯ÄÚµå3À» ¸®ÅÏÇÑ´Ù.
+		// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ð¾ï¿½Â´ï¿½. ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ ? => ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		char * account	= m->Account;
 		int slot		= m->Slot;
 		int IdxName		= cFileDB.GetIndex(m->Account);
@@ -1242,7 +1248,7 @@ int ProcessAdminMessage(int conn,char*msg)
 		memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
 		int ret = cFileDB.DBReadAccount(&file);
 		if  (ret == FALSE)
-		{	// ÀÌÀüÀ» ¿äÃ»Çß´Âµ¥ ¿øº»ÀÌ ¾ø´Ù?
+		{	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ß´Âµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?
 			char tt[256]; sprintf(tt,"etc tranper_FAILED!!!!!(read) %s %s",m->Account,m->Mob.szName);
 			Log(tt,file.AccountName,0);
 			sm.Result = 4;pAdmin[conn].cSock.SendOneMessage((char*)&sm,sm.Size);
@@ -1253,7 +1259,7 @@ int ProcessAdminMessage(int conn,char*msg)
 		{	if	(file.Char[empty].szName[0]==0) break;
 		}
 		if	(empty==MOB_PER_ACCOUNT)	{sm.Result = 2;pAdmin[conn].cSock.SendOneMessage((char*)&sm,sm.Size);return TRUE;}
-		//	µ¿ÀÏÀÌ¸§ °Ë»ç
+		//	ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Ë»ï¿½
 		ret = cFileDB.CreateCharacter(m->Account,m->Mob.szName);
 		if	(ret==FALSE)
 		{	sm.Result = 1;pAdmin[conn].cSock.SendOneMessage((char*)&sm,sm.Size);
@@ -1284,8 +1290,8 @@ int ProcessAdminMessage(int conn,char*msg)
 		memcpy(file.AccountName,m->Account,ACCOUNTNAME_LENGTH);
 		int iret = cFileDB.DBReadAccount(&file);  
 		if (iret==FALSE) return TRUE;
-		if (file.AccountPass[0]=='_') return FALSE;  // ¿ø·¡´Â °èÁ¤ÀÌ ¾ø´Â°Ô ¾Æ´Ï°í, »ç¿ëÇÒ¼ö ¾ø´Â°Å(ÇØÁöµÈ °èÁ¤)
-		if (file.AccountPass[0]=='@') return FALSE;   // ¿ø·¡´Â °èÁ¤ÀÌ ¾ø´Â°Ô ¾Æ´Ï°í, »ç¿ëÇÒ¼ö ¾ø´Â°Å(ÇØÁöµÈ °èÁ¤)
+		if (file.AccountPass[0]=='_') return FALSE;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+		if (file.AccountPass[0]=='@') return FALSE;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 		char *p = (char*)file.AccountPass;
 		iret = strncmp(m->Pass,p,ACCOUNTNAME_LENGTH);		 
 		if (iret) return FALSE;
@@ -1296,7 +1302,7 @@ int ProcessAdminMessage(int conn,char*msg)
 		}
 		if (maxlevel<1000) return FALSE;
 		int admin = maxlevel-1000;
-		pAdmin[conn].Level = admin; // ÇöÀç´Â ¹«Á¶°Ç ½´ÆÛ  // ¿ø·¡´Â CharÀÇ 4°³ÀÇ ÃÖ°í·¹º§ (Level-1024) ÀÌ ·¹º§
+		pAdmin[conn].Level = admin; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Charï¿½ï¿½ 4ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ï¿½ï¿½ (Level-1024) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		pAdmin[conn].DisableID = 0;
 		strncpy(pAdmin[conn].Name,m->Account,ACCOUNTNAME_LENGTH);
 		char temp[256];
@@ -1314,7 +1320,7 @@ void ProcessSecTimer( void )
 	UpdateUser();
 	SecCounter++;
 
-	// AccountLogin¿¡ µô·¹ÀÌ¸¦ ÁÖ±â À§ÇÑ ÄÚµå?
+	// AccountLoginï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½?
 
 	//
 	//if	(SecCounter%120==0) ImportItem(); // Once per 2 min.
@@ -1355,22 +1361,46 @@ void ProcessMinTimer( void )
 
 /////////////////////////////////////////////////////////////////////////////////
 //
-//  ·Î±× ÆÄÀÏ °ü·Ã Æã¼Ç StartLog(), Log()
+//  ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ StartLog(), Log()
 //
 //////////////////////////////////////////////////////////////////////////////////
-void StartLog ( char * cccc )
+		   
+
+
+void StartLog(char* pszSuffix)
 {
-	 char Temp[256];
-     if (fLogFile!=NULL)
-	 {  int ret=fclose(fLogFile);
-	    if (ret) Log("Logfile close fail!!","-system",0);
-	 }
-	 struct tm when;
-	 time_t now;
-	 time(&now); when= *localtime(&now);
-     sprintf(Temp,".\\Log\\DB%4.4d_%2.2d_%2.2d_%2.2d_%2.2d%s.txt",when.tm_year+1900,when.tm_mon+1,when.tm_mday,when.tm_hour,when.tm_min,cccc);
-   	 fLogFile=fopen(Temp,"wt");
-}		   
+    if (fLogFile)
+    {
+        if (fclose(fLogFile) != 0)
+            Log("Logfile close fail!!", "-system", 0);
+        fLogFile = NULL;
+    }
+    struct tm when;
+    time_t now;
+    time(&now); when = *localtime(&now);
+    char szPath[256] = {0};
+    sprintf(szPath, ".\\Log\\DB%4.4d_%2.2d_%2.2d_%2.2d_%2.2d%s.txt",
+            when.tm_year+1900, when.tm_mon+1, when.tm_mday,
+            when.tm_hour, when.tm_min,
+            pszSuffix ? pszSuffix : "A");
+    fLogFile = fopen(szPath, "wt");
+    if (g_pLogFile) fclose(g_pLogFile);
+    g_pLogFile = fLogFile;
+}
+
+void ReadCountryID()
+{
+    // CountryID.txt contiene el indice del grupo de servidores
+    // NO el ID del pais (ese viene de Settings.ini [Country] Name=)
+    FILE* fp = fopen("CountryID.txt", "rt");
+    if (!fp) return;
+    int nGroup = 0;
+    fscanf(fp, "%d", &nGroup);
+    fclose(fp);
+    // Setear ServerIndex con el grupo leido
+    if (nGroup >= 0 && nGroup < MAX_SERVERGROUP)
+        ServerIndex = nGroup;
+}
 
 void Log(char * str1,char * str2,unsigned int ip)
 {	 
@@ -1406,7 +1436,7 @@ int GetAdminFromSocket(int Sock)
 
 int GetEmptyUser()
 {
-	for (int i=0;i<MAX_SERVERNUMBER;i++)   // ¼­¹ö´Â Ç×»ó 0 ºÎÅÍ ¸ÅÇÎ ½ÃÅ²´Ù.
+	for (int i=0;i<MAX_SERVERNUMBER;i++)   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
 	{   if (pUser[i].Mode == USER_EMPTY) return i;
 	}
 	return -1;
@@ -1414,7 +1444,7 @@ int GetEmptyUser()
 
 int GetEmptyAdmin()
 {
-	for (int i=0;i<MAX_ADMIN;i++)   // ¼­¹ö´Â Ç×»ó 0 ºÎÅÍ ¸ÅÇÎ ½ÃÅ²´Ù.
+	for (int i=0;i<MAX_ADMIN;i++)   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
 	{   if (pAdmin[i].Mode == USER_EMPTY) return i;
 	}
 	return -1;
@@ -1473,7 +1503,7 @@ void UpdateUser(void)
 
 			 int ret = 0;
 			 ret = cFileDB.UpdateAccount(id,pass,ssn1,ssn2);
-			 // ±âÁ¢¼ÓÁßÀÌ¸é AccountListµµ ¼öÁ¤.
+			 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ AccountListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 			 /////////////////////////////////////////////////////////////////////
 			 if (ret) ret =DeleteFile(filename);
 			 else		MoveFile(filename,movefile);

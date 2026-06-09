@@ -131,12 +131,39 @@ public:
 	// ---- Funciones reconstruidas de DBSRV_NEW ----
 	int		CreateAccount		(const char* pszAccountName, const char* pCharData, int nLen, int nFlag);
 	int		CreateAccount2		(const char* pszAccountName, const char* pCharData, int nLen, int nFlag);
-	int		CheckAccount		(const char* pszAccountName, void* pOutData, int nFlag);
-	int		CheckAccount2		(void* pMsg, int* pOutSlotID);
 	int		GetGMPermission		(const char* pszAccountName, const char* pszCheckName);
 	void	LoadInitItems		();
 	void	LoadSkillData		();
 	void	OpenLogFile			(int nSuffix);
+	// -- funcs2 --
+	int		DeleteAccountWithBackup	(const char* pszAccountName, const char* pszCharName, int nMode);
+	int		DBReadOldAccount		(const char* pszAccountName, void* pOutData);
+	void	LogAccountInfo			(int nUser, const char* pszAccount, const char* pszChar, int nSlot, unsigned char byAccountType, unsigned char* pClientIP);
+	void	LogAdminGuildCargo		(int nUser, const char* pszMsg, unsigned char* pClientIP, int nGuildID);
+	// -- funcs4 --
+	int		CheckAccount			(const char* pszAccountName, void* pOutData, int nFlag);
+	int		CheckAccount2			(void* pMsg, int* pOutSlotID);
+	void	LogAccountSaveFail		(const char* pszAccountName);
+	// -- funcs5 --
+	int		DBWriteAccount2			(STRUCT_ACCOUNTFILE* pData);
+	int		DBWriteOneTimeAccount	(void* pData);
+	int		DBCreateChar			(const char* pszAccountName, const char* pszCharName);
+	int		DBDeleteChar			(const char* pszCharName, const char* pszAccountName, int nMode);
+	void	DBReadChar				(char* pszOutAccount, const char* pszCharName);
+	int		DBCharExists			(const char* pszCharName);
+	// -- funcs6 --
+	int		DBWriteChar				(const char* pszCharName, void* pData);
+	int		GetCharName				(void* pMsg, void* pResult);
+	int		GetGuildID				(const char* pszGuildName);
+	void	Rankings_WriteRank		(void* pAccount, int nServerGroup, int nSlot, int bMRank);
+	void	Rankings_ReadRank		(void* pAccount, int nRankIndex, int bWrite, int bMRank);
+	void	Rankings_UpdateRank		(void* pAccount, int nRankIndex, int nType);
+	int		Disciple_Create			(void* pMsg, void* pMasterData, void* pDiscipleData);
+	int		Disciple_Read			(int nGuildID, void* pOut);
+	int		Disciple_Write			(int nGuildID, void* pData);
+	void	ExportData				();
+	int		LoadInitItemBin			();
+	int		SaveExtraItemBin		(const char* pszFileName, int nMode);
 };
 
 // ---- Globals de DBSRV_NEW ----
@@ -147,7 +174,6 @@ extern short	g_InitItemTable[MAX_INIT_ITEMS][4];
 
 // Tabla de skills: stride 0x54 bytes (21 x int)
 // Equivale a VA 0x186126C0 del binario NEW
-#define MAX_SKILL_DATA		101
 struct SkillEntry { int f[21]; };
 extern SkillEntry	g_SkillData[MAX_SKILL_DATA];
 
@@ -155,8 +181,23 @@ extern SkillEntry	g_SkillData[MAX_SKILL_DATA];
 extern FILE*	g_pLogFile;
 extern char		g_szLogPath[256];
 
+// Globals de configuracion (Settings.ini)
+extern int  g_nCountryID;
+extern int  g_nSWorld1;
+extern int  g_nSWorld2;
+extern int  g_nDWorld;
+extern int  g_nWorld1Size;
+extern int  g_nWorld2Size;
+extern int  g_nAgeLimit;
+
+// ReadConfig - lee Settings.ini completo
+void ReadSettings();
+bool IsReservedDeviceName(const char* pszName);
+void ReadAdminTxt();
+void Log(char* str1, char* str2, unsigned int ip);
+extern unsigned int pAdminIP[]; // lee Settings.ini (NEW)
+
 // Funcion de log con timestamp (usada en Server.cpp para EditHistory)
 // se implemento pero comento rompia compilacion mal implementada
-void TimeWriteLog(const char* pszText, const char* pszFilePath);
-
+void GetSubDir(const char* pszAccountName, char* pszSub, int nMaxLen);
 #endif

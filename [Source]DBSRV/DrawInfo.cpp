@@ -2,6 +2,7 @@
 #include "Basedef.h"
 #include "DrawInfo.h"
 #include "CUser.h"
+#include "CFileDB.h"
 
 #define TEXT_ROW_POINTS 20
 
@@ -20,7 +21,8 @@ void DrawInformations( HDC hDC )
 {
 	if ( hDC == NULL ) return;
 	int nIndex=0; g_nCurrentTextY = 10;
-	PrintText( hDC, "DB Server");
+	// Exacto del NEW (VA 0x439150): una sola linea con el country code
+	PrintText( hDC, "DB Server - country code[%d]", g_nCountryID );
 	PrintText( hDC, "Server Zone Status" );
 	for(int i=0; i<MAX_SERVER; i++)
 	{	if(pUser[i].Mode==USER_EMPTY) continue;

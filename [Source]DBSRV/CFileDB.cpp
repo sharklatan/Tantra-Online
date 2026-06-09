@@ -14,6 +14,7 @@
 #include "CUser.h"
 #include "CFileDB.h"
 #include "MD5Checksum.h"
+#include "TNDebug.h"
 
 extern HWND hWndMain;
 extern CUser pUser[MAX_SERVERNUMBER];
@@ -27,7 +28,7 @@ extern void Log                  ( char * String1, char * String2 ,unsigned int 
 extern int				ServerIndex;
 extern int				TransperCharacter;
 extern int				GuildID;
-extern CPSock			AdminClient; // transperserver¿ë
+extern CPSock			AdminClient; // transperserverï¿½ï¿½
 extern E_COUNTRY_ID		g_eCountryID;
 
 BOOL ProcessRecord(int conn,char * str);
@@ -38,7 +39,7 @@ BOOL ProcessRecord(int conn,char * str);
 //
 //             CFileDB,  ~CFileDB
 //
-// 1.¸ðµå ÃÊ±âÈ­
+// 1.ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 //  
 //////////////////////////////////////////////////////////////////////////
 
@@ -148,7 +149,7 @@ BOOL CFileDB::AddAccount(char *id,char*pass,int ssn1,int ssn2)
 	  
 
  
-      int ret = DBWriteAccount(&file); // ¾îÄ«¿îÆ® ÆÄÀÏÀ» ÅëÂ°·Î ¾´´Ù.
+      int ret = DBWriteAccount(&file); // ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
       if  (ret==FALSE) return FALSE;
 	  return TRUE;
 }
@@ -199,12 +200,12 @@ BOOL CFileDB::UpdateAccount(char *id,char*pass,int ssn1,int ssn2)
 
 	  file.ssn1 = ssn1;
 	  file.ssn2 = ssn2;
-	  ret = DBWriteAccount(&file); // ¾îÄ«¿îÆ® ÆÄÀÏÀ» ÅëÂ°·Î ¾´´Ù.
+	  ret = DBWriteAccount(&file); // ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
       if  (ret==FALSE)
 	  {   Log("err updateAccount write fail",id,0);
 		  return FALSE;
 	  }
-      // Á¢¼ÓÁßÀÌ¸é pass ºÎºÐÀ» º¯°æÇÑ´Ù.
+      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ pass ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
       int IdxName = GetIndex(file.AccountName);
       if  (IdxName > 0  && IdxName < MAX_DBACCOUNT)
 	  {   if ( g_eCountryID != eCountryKorea ) strcpy(pAccountList[IdxName].File.AccountPass,szMD5Pass);
@@ -217,8 +218,8 @@ BOOL CFileDB::UpdateAccount(char *id,char*pass,int ssn1,int ssn2)
 
 BOOL ProcessRecord(int conn,char * str)
 {
-	// RecordÆÄÀÏ¿¡´Ù°¡ ¾´´Ù.
-	// DaemonÀÌ ÀÐ¾î °¡¹Ç·Î ÁÖÀÇÇÑ´Ù.
+	// Recordï¿½ï¿½ï¿½Ï¿ï¿½ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	// Daemonï¿½ï¿½ ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	char file[256];
 	struct tm when;
 	time_t now;
@@ -290,12 +291,12 @@ int CFileDB::RemoveGuildMember(int gid,char * user, char* pMaster)
 {	STRUCT_GUILD guild;
 	int ret = ReadGuildFile(gid,&guild);		
 	if (ret==FALSE) return -1;
-	int i=0;	int nMaster=MAX_GUILD_MEMBER;			//	 nMaster=MAX_GUILD_MEMBER(±æµåÀåÀÌ ¾È¹Ù²î¾ùÀ» °æ¿ì)
+	int i=0;	int nMaster=MAX_GUILD_MEMBER;			//	 nMaster=MAX_GUILD_MEMBER(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¹Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
 	for	(i=0;i<MAX_GUILD_MEMBER;i++)
 	{	if	(!strncmp(guild.Member[i].MemberName,user,SZNAME_LENGTH)) break;
 	}
-	if	(i==MAX_GUILD_MEMBER) return -1;				//	ÇØ´ç¸â¹ö°¡ Á¸ÀçÇÏÁö ¾ÊÀ»°æ¿ì
-	if	(guild.Member[i].GuildRank==eGuildMaster)		//	±æµåÀå Å»Åð½Ã ±æµåÀå±ÇÇÑ ÀÌ¾ç
+	if	(i==MAX_GUILD_MEMBER) return -1;				//	ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	if	(guild.Member[i].GuildRank==eGuildMaster)		//	ï¿½ï¿½ï¿½ï¿½ï¿½ Å»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾ï¿½
 	{	int temp=0; int ntempLevel = 0;
 		for	(int m=0;m<MAX_GUILD_MEMBER;m++)
 		{	if	(guild.Member[m].GuildRank>temp && guild.Member[m].GuildRank!=eGuildMaster) { nMaster=m; temp=guild.Member[m].GuildRank; ntempLevel=guild.Member[m].byLevel; }
@@ -309,10 +310,10 @@ int CFileDB::RemoveGuildMember(int gid,char * user, char* pMaster)
 	}
 
 	memset(&guild.Member[i],0,sizeof(STRUCT_GUILD_MEMBER));
-	// Å»ÅðµÈ °èÁ¤ÀÇ Á¤º¸µµ ¾÷µ¥ÀÌÆ® ÇØÁØ´Ù.
+	// Å»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ø´ï¿½.
 	char szAccount[ACCOUNTNAME_LENGTH] = {0, 0, };
 	GetAccountByChar( szAccount, user );
-	if ( szAccount[0] != 0 ) // ¾îÄ«¿îÆ® Á¤º¸°¡ Á¸ÀçÇÏ¸é,
+	if ( szAccount[0] != 0 ) // ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½,
 	{	STRUCT_ACCOUNTFILE acc;
 		ZeroMemory( &acc, sizeof(STRUCT_ACCOUNTFILE) );
 		strncpy( acc.AccountName, szAccount, ACCOUNTNAME_LENGTH );
@@ -357,7 +358,7 @@ BOOL CFileDB::UpdateGuildMember(int gid,MSG_GuildUpdateMember * pData)
 	if	(i==MAX_GUILD_MEMBER) return FALSE;
 	BYTE byRank = guild.Member[i].GuildRank;
 	guild.Member[i] = pData->Member;
-	if(byRank!=guild.Member[i].GuildRank)		//	Á¸¼­¹öÀÇ ±æµåÁ¤º¸°¡ ÀÌ»óÇÔ.
+	if(byRank!=guild.Member[i].GuildRank)		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½.
 	{	char temp[256];
 		sprintf(temp,"err Update GuildMember GuildID:%d char:[%s] oRank:%d xRank:%d",gid, pData->Member.MemberName, byRank, guild.Member[i].GuildRank);
 		Log(temp,"-system",0);
@@ -469,11 +470,11 @@ BOOL CFileDB::UpdateGuildCargoItem(int nID, int nIndex, STRUCT_ITEM* pstItem)
 //
 //             CFileDB,  ~CFileDB
 //
-// 1.¸ðµå ÃÊ±âÈ­
+// 1.ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 //  
 //////////////////////////////////////////////////////////////////////////
-// ¾îÄ«¿îÆ® ¸¶´Ù ¾îÄ«¿îÆ®³×ÀÓÀ¸·Î ÆÄÀÏ 1°³¸¸ °¡Áø´Ù.
-// Ä³·¢ÅÍ ÀÐ±â¿Í MOB ÀÐ±â´Â ¿ÏÀüÈ÷ ºÐ¸®µÈ´Ù.
+// ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½ï¿½ MOB ï¿½Ð±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½È´ï¿½.
 extern int Sapphire;
 extern int WriteConfig(void);
 BOOL CFileDB::ProcessMessage(char * Msg,int conn)
@@ -529,19 +530,19 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			if(m->nID<0 || m->nID>=MAX_USER) break;
 
 			int nOheridx	= GetIndexFromName(m->szName);
-			if(nOheridx == 0)	//	»ó´ë¹æÀÌ ºñÁ¢¼ÓÁßÀÏ¶§
+			if(nOheridx == 0)	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 			{	m->byResult = S_FALSE;
 			}
-			else				//	»ó´ë¹æÀÌ Á¢¼ÓÁßÀÏ¶§
+			else				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 			{	m->byResult = S_OK;
 
 				int nServer = nOheridx/MAX_USER;
-				pUser[nServer].cSock.SendOneMessage((char*)m, sizeof(*m));	//	»ó´ë¸¦ È£ÃâÇÑ´Ù
+				pUser[nServer].cSock.SendOneMessage((char*)m, sizeof(*m));	//	ï¿½ï¿½ë¸¦ È£ï¿½ï¿½ï¿½Ñ´ï¿½
 			}
-			if(m->nID != 0) pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m));			//	È£ÃâÀÚ¿¡°Ô °á°úÀ» Àü¼ÛÇÑ´Ù.
+			if(m->nID != 0) pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m));			//	È£ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 }	break;
 /////////////////////////////////////////////////////////////////////
-//       Ä³·¢ÅÍ ÀÌÀü
+//       Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 /////////////////////////////////////////////////////////////////////
 		case	SSP_REQ_ZONE_INIT:
 		{	for	(int i=conn*MAX_USER;i<(conn+1)*MAX_USER;i++)
@@ -552,7 +553,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 		{	MSG_CreateGuild * m = (MSG_CreateGuild*)Msg;
 			int ret = CreateGuildFile(GuildID,m);
 			if	(ret==FALSE)
-			{	m->GuildID = -1;	//	±æµå»ý¼º½ÇÆÐ¸¦ ¾Ë¸°´Ù.
+			{	m->GuildID = -1;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½.
 				pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m)); return TRUE;
 			}
 
@@ -584,7 +585,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			int	ret = RemoveGuildMember(m->GuildID,m->CharacterName,pMaster);
 			if	(ret==-1)	return TRUE;
 
-			if(ret!=MAX_GUILD_MEMBER)		//	±æµåÀåÀÌ ¹Ù²î¾úÀ» °æ¿ì
+			if(ret!=MAX_GUILD_MEMBER)		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			{	MSG_GuildSetRanking sm; sm.wType=_MSG_GuildSetRanking;
 				sm.wPDULength=sizeof(MSG_GuildSetRanking)-sizeof(HEADER);
 				strncpy(sm.CharacterName, pMaster, SZNAME_LENGTH);
@@ -674,7 +675,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			}
 		}	break;
 /////////////////////////////////////////////////////////////////////
-//       ¾îÄ«¿îÆ® ·Î±×ÀÎ
+//       ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½Î±ï¿½ï¿½ï¿½
 /////////////////////////////////////////////////////////////////////
 		case	SSP_REQ_MOVE_ZONE_SERVER:
 		{	S_SSP_REQ_MOVE_ZONE_SERVER* m=(S_SSP_REQ_MOVE_ZONE_SERVER*)Msg;
@@ -692,64 +693,64 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			time_t tLastWrite;
 			int ret = DBReadAccount(&file,&tLastWrite);
 			if  (ret == FALSE)
-			{	sm.nResult = REPLY_INVALID_USER; // °èÁ¤ÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½
+			{	sm.nResult = REPLY_INVALID_USER; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char*)&sm,sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
 				return TRUE;
 			}
 			if (file.Coin<0) file.Coin =0;
-			// ÀÏ´Ü ¹«Á¶°Ç ÆÄÀÏ¿¡¼­ ºñ¹øÀ» °Ë»çÇÑ´Ù.
+			// ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½.
 			strupr(file.AccountPass);
 			strupr(m->AccountPass);
 			if  (strcmp(m->AccountPass,file.AccountPass))
-			{	sm.nResult = REPLY_INVALID_PASSWD; // ºñ¹øÀÌ Æ²¸²
+			{	sm.nResult = REPLY_INVALID_PASSWD; // ï¿½ï¿½ï¿½ï¿½ï¿½ Æ²ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char*)&sm,sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
 				return TRUE;
 			}
-			// ÀÌÇÏ ºñ¹øÀÌ ¸Â°í °èÁ¤ÀÌ ÀÖÀ¸¸é 
-			// IdxName==Idx °°Àº °ÔÀÓ¼­¹öÀÇ °°Àº ½½·Ô(Å¬¶óÀÌ¾ðÆ®)¿¡¼­ LoginÀÌ 2¹ø ³¯¾Æ¿Â°æ¿ì. ¾Ã´Â´Ù.
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+			// IdxName==Idx ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®)ï¿½ï¿½ï¿½ï¿½ Loginï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¿Â°ï¿½ï¿½. ï¿½Ã´Â´ï¿½.
 			if (IdxName==Idx) return TRUE;
-			// Á¢¼ÓÁßÀÎÁö Ã¼Å©ÇÑ´Ù.
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
 			if	(IdxName != 0 )
-			{	//Idx==IdxName => °°Àº ½½·Ô¿¡¼­ AccountLoginÀÌ 2¹ø ³¯¾Æ¿Â°æ¿ì ??
+			{	//Idx==IdxName => ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ AccountLoginï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¿Â°ï¿½ï¿½ ??
 				Log("err disconnect previous connection",m->AccountName,0);
-				{	sm.nResult = REPLY_ALREADY_LOGIN; // ÀÌ¹Ì Á¢¼ÓµÇ¾î ÀÖ´Â Ä³¸¯ÅÍ
+				{	sm.nResult = REPLY_ALREADY_LOGIN; // ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ÓµÇ¾ï¿½ ï¿½Ö´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½
 					pUser[conn].cSock.SendOneMessage((char*)&sm, sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
-					// Á¢¼ÓÀ» ²÷°í ´Ù½Ã Á¢¼ÓÇÏ¶ó´Â Ã³¸® ºÎºÐ ÀÖ¾î¾ßÇÔ.
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Îºï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½.
 
 					//SendDBSignal(conn,m->ID,_MSG_DBStillPlaying);
-					SendDBSavingQuit(IdxName,0); //°ÔÀÓ¼­¹ö¿¡, DB¼­¹ö¿¡°Ô ÀúÀåÀ» ¿äÃ»
+					SendDBSavingQuit(IdxName,0); //ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½, DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 					return TRUE;
 				}
 			}
 
 #ifdef DECREASE_SLEEPING_ACCOUNTS_BP
-			// ÈÞ¸é°èÁ¤ÀÇ ÁÖ½Å Æ÷ÀÎÆ®¸¦ ±ð´Â´Ù. 2005³â 5¿ù 29ÀÏÀÌ ±âÁØ.
+			// ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Â´ï¿½. 2005ï¿½ï¿½ 5ï¿½ï¿½ 29ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 			time_t tNow = time( NULL );
-			time_t tStartTime = 1117292400; // 2005³â 5¿ù 29ÀÏ...
-			if ( tLastWrite < tStartTime ) tLastWrite = tStartTime; // 5¿ù 29ÀÏ ÀÌÀüÀÌ¾úÀ¸¸é 5¿ù 29ÀÏºÎÅÍ °è»ê
+			time_t tStartTime = 1117292400; // 2005ï¿½ï¿½ 5ï¿½ï¿½ 29ï¿½ï¿½...
+			if ( tLastWrite < tStartTime ) tLastWrite = tStartTime; // 5ï¿½ï¿½ 29ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ 29ï¿½Ïºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			time_t tElapsed = tNow - tLastWrite;
-			int nTerms = tElapsed / 5184000; // 60 * 24 * 60 * 60 = 5184000 : 60ÀÏ °£°ÝÀ¸·Î ¸çÄ¥ÀÌ³ª Áö³µ´ÂÁö...
-			int nPercent = nTerms * 20; // ÁÖ½ÅÆ÷ÀÎÆ® °¨¼Ò ÆÛ¼¾Æ®
+			int nTerms = tElapsed / 5184000; // 60 * 24 * 60 * 60 = 5184000 : 60ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¥ï¿½Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
+			int nPercent = nTerms * 20; // ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½Æ®
 			if ( nPercent > 100 ) nPercent = 100;
 #endif //DECREASE_SLEEPING_ACCOUNTS_BP
 
 			for(int i=0; i<MOB_PER_ACCOUNT; i++)
 			{	file.Char[i].byStatus = 0;
 #ifdef DECREASE_SLEEPING_ACCOUNTS_BP
-				file.Char[i].nBramanPoint *= ( 100 - nPercent ) / 100; // ÈÞ¸é °èÁ¤ÀÇ ÁÖ½Å Æ÷ÀÎÆ®¸¦ °¨¼Ò½ÃÅ²´Ù.
+				file.Char[i].nBramanPoint *= ( 100 - nPercent ) / 100; // ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½Å²ï¿½ï¿½.
 #endif //DECREASE_SLEEPING_ACCOUNTS_BP
 			}
 
 			strupr(file.AccountName);
-			// pAccountList ¿¡ Ä«ÇÇÇÏ±â Àü¿¡ ¹Ì¸® Ä³·¢ÅÍ ÀÌ¸§ swapÀ» ÇÏ°í ÀúÀå±îÁö ÇÑ´Ù.
+			// pAccountList ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ swapï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 			STRUCT_ACCOUNTFILE * pfile = &pAccountList[Idx].File;
 			memcpy(pfile,&file,sizeof(file));
    			AddAccountList(Idx);
 			
-			// ¼­¹öº° ¸®½ºÆ®°¡ ÇÒ´çµÇ¾î ÀÖÀ¸³ª, ±× ½½·ÔÀÌ DB¼­¹ö ÀÔÀå¿¡¼­, Login»óÅÂ¸é, ¹®Á¦°¡ ÀÖ´Ù.
-			// AddAccountList µ¤¾î¾²±â¸¦ ½Ãµµ ÇÏ¸é ÀÌÀü µ¥ÀÌÅÍ¸¦ DB¼­¹ö°¡ ÀúÀåÇØ ÁÖ°í ERROR¸Þ½ÃÁö¸¦ Ç¥½ÃÇÑ´Ù.
- 			// Slot = -1; AddAccountList¿¡¼­ ÇÑ´Ù.
-			// °ÔÀÓ¼­¹ö°¡ USER_LOGIN »óÅÂÀÌ¹Ç·Î  USER_SELCHAR »óÅÂ·Î ¹Ù²Ù¾î ÁÙ ½Ã±×³ÎÀ» º¸³»¾ß ÇÑ´Ù.
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ò´ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DBï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½å¿¡ï¿½ï¿½, Loginï¿½ï¿½ï¿½Â¸ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+			// AddAccountList ï¿½ï¿½ï¿½î¾²ï¿½â¸¦ ï¿½Ãµï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ERRORï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ñ´ï¿½.
+ 			// Slot = -1; AddAccountListï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+			// ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ USER_LOGIN ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹Ç·ï¿½  USER_SELCHAR ï¿½ï¿½ï¿½Â·ï¿½ ï¿½Ù²Ù¾ï¿½ ï¿½ï¿½ ï¿½Ã±×³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 			// account login success
 			strcpy(sm.AccountName,file.AccountName);
 
@@ -763,7 +764,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			pUser[conn].cSock.SendOneMessage((char*)&sm, sizeof(S_SSP_RESP_MOVE_ZONE_SERVER));
 		}	break;
 /////////////////////////////////////////////////////////////////////
-//       Ä³·¢ÅÍ ¸¸µé±â     Ä³·¢ÅÍ¸¦ ¸¸µé±â¸¦ ¼º°øÇÏ¸é ¹Ýµå½Ã ±× Ä³·¢ÅÍ·Î ·Î±×ÀÎ µÈ´Ù.
+//       Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½     Ä³ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ýµï¿½ï¿½ ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í·ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
 /////////////////////////////////////////////////////////////////////
      	case SSP_REQ_CHAR_CREATE:
 		{
@@ -782,17 +783,17 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			int	nTot = m->byChakraHeart + m->byChakraMuscle + m->byChakraNerve + m->byChakraSoul;
 			if(nTot > MAX_BASE_CHAKRA)
 			{	Log("err newchar slot out of range",pAccountList[m->nID].File.AccountName,0);
-				sm.byResult=REPLY_CHAR_CREATE_CHAKRA_OVER;	//	Â÷Å©¶óÃÊ°ú¿À·ù
+				sm.byResult=REPLY_CHAR_CREATE_CHAKRA_OVER;	//	ï¿½ï¿½Å©ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ï¿½ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
 				return TRUE;
 			}
 			if	(nSlot==-1)
 			{	Log("err newchar slot out of range",pAccountList[m->nID].File.AccountName,0);
-				sm.byResult=REPLY_CHAR_CREATE_CHAR_FULL;	//	Ä³¸¯ÅÍ ´Ù ÀÖÀ½
+				sm.byResult=REPLY_CHAR_CREATE_CHAR_FULL;	//	Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
 				return TRUE;
 			}
-			 if (m->snTribe< 1||m->snTribe> 128)	//	Àß¸øµÈ ÁÖ½Å
+			 if (m->snTribe< 1||m->snTribe> 128)	//	ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
 			 {  Log("err newchar - class out of range",pAccountList[m->nID].File.AccountName,0);
 				sm.byResult=REPLY_CHAR_CREATE_FAIL;
 				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
@@ -806,7 +807,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			 int len = strlen(m->szCharName);
 			 for (i=0;i<len;i++)
 			 {   if  (m->szCharName[i]==-95 && m->szCharName[i+1]==-95)
-			     {	sm.byResult=REPLY_CHAR_CREATE_CHR_CHAR_FAIL;	//Ä³¸¯ÅÍÀÌ¸§ ºÎÀûÇÕ
+			     {	sm.byResult=REPLY_CHAR_CREATE_CHR_CHAR_FAIL;	//Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_CREATE));
 					return TRUE;
 			     }		  
@@ -849,7 +850,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			pAccountList[Idx].File.Char[slot].byStatus = m->byStatus;
 		}	break;
 		/////////////////////////////////////////////////////////////////////
-		//       Ä³·¢ÅÍ ·Î±×ÀÎ   getimmconversion
+		//       Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½   getimmconversion
 		/////////////////////////////////////////////////////////////////////
 		case SSP_REQ_CHAR_INIT:
 		{	S_SSP_REQ_CHAR_INIT * m = (S_SSP_REQ_CHAR_INIT *) Msg; 
@@ -868,25 +869,25 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			sm.wPDULength = sizeof(S_SSP_RESP_CHAR_INIT) - sizeof(HEADER);
 			sm.bySlot = nSlot;
 			if	(nSlot==-1)
-			{	sm.byResult = 8; //µ¥ÀÌÅÍ ·Îµù ¿¡·¯
+			{	sm.byResult = 8; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_INIT));
 				return TRUE;
 			}
 			pAccountList[idx].Slot = nSlot;
 //			m_mapCharTable.insert( std::map<char*,int,HTStr>::value_type( pAccountList[idx].File.Char[nSlot].szName, idx ) );
 
-			sm.byResult = 0;//µ¥ÀÌÅÍ ·Îµù ¼º°ø
+			sm.byResult = 0;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½
 			memcpy(sm.szTargetName, m->szTargetName, SZNAME_LENGTH);
 			memcpy(&sm.sChar,&pAccountList[idx].File.Char[nSlot],sizeof(STRUCT_MOB));
 			memcpy(&sm.sNpcInven,pAccountList[idx].File.Cargo,sizeof(STRUCT_ITEM)*MAX_CARGO);
 			memcpy(sm.dwTimeStamp,pAccountList[idx].File.dwTimeStamp,sizeof(sm.dwTimeStamp));
 			sm.nNpcMoney=pAccountList[idx].File.Coin;
 			pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(S_SSP_RESP_CHAR_INIT));
-			// Ä³·¢ÅÍ ·Î±×ÀÎ¿¡ ¶Ç´Â Account Login¿¡ Cargo¸¦ ³¯·Á¾ß ÇÑ´Ù.
+			// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½Î¿ï¿½ ï¿½Ç´ï¿½ Account Loginï¿½ï¿½ Cargoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 			return TRUE;
 		}	break;
 		/////////////////////////////////////////////////////////////////////
-		//       SavingQuit ¸®ÅÏ Ã³¸®
+		//       SavingQuit ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		/////////////////////////////////////////////////////////////////////
 		case _MSG_DBNoNeedSave:
 		{	MSG_STANDARD * m = (MSG_STANDARD*) Msg;
@@ -931,18 +932,18 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			}
 			if	(pAccountList[Idx].Login==FALSE)
 			{	char temp[128]; sprintf(temp,"err savemob3 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
-				return TRUE; // °¡´ÉÇÔ.
+				return TRUE; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 			}
 			while(1)
 			{
-    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	°ÔÀÓÁß Á¾Á·ÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù
-				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  °ÔÀÓÁß ¾ó±¼ÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù.
-				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  °ÔÀÓÁß ¸Ó¸®¸ð¾çÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù
-				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	°ÔÀÓÁß Â÷Å©¶ó°¡ 0º¸´Ù ÀÛ¾ÆÁú ¼ö´Â ¾ø´Ù
-				if(m->MOB.byLevel<0) break;	// °ÔÀÓÁß ·¹º§ÀÌ 0º¸´Ù ÀÛ¾ÆÁú¼ö´Â ¾ø´Ù
+    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if(m->MOB.byLevel<0) break;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				bContinue=true; break;
 			}
-			if(bContinue) pAccountList[Idx].File.Char[Slot]=m->MOB;						//	Á¤»óÀûÀÏ °æ¿ì ÄÉ¸¯ÅÍÀÇ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù.
+			if(bContinue) pAccountList[Idx].File.Char[Slot]=m->MOB;						//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 			else
 			{	char temp[128]; sprintf(temp,"err savenquit3 Broken data %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
 				Log(temp,"-system",0);
@@ -978,7 +979,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			if (strncmp(m->AccountName,acc,ACCOUNTNAME_LENGTH))
 			{  char temp[128]; sprintf(temp,"err savenquit1 %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
 				Log(temp,"-system",0);
-				//¿ø·¡´Â ÀÌºÎºÐ¿¡¼­ ÇØ´ç ÆÄÀÏÀ» ¿­°í, ÇØ´ç ½½·Ô°ú Ä«°í¸¦ ÀúÀåÇÏ°Å³ª ÀúÀåÇÏÁö ¸»¾Æ¾ß ÇÑ´Ù.
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÌºÎºÐ¿ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ô°ï¿½ Ä«ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¾ï¿½ ï¿½Ñ´ï¿½.
                 RemoveAccountList(Idx);
 				return TRUE;
 			}
@@ -990,15 +991,15 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 
 			while(1)
 			{
-    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	°ÔÀÓÁß Á¾Á·ÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù
-				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  °ÔÀÓÁß ¾ó±¼ÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù.
-				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  °ÔÀÓÁß ¸Ó¸®¸ð¾çÀÌ ¹Ù²ð¼ö´Â ¾ø´Ù
-				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	°ÔÀÓÁß Â÷Å©¶ó°¡ 0º¸´Ù ÀÛ¾ÆÁú ¼ö´Â ¾ø´Ù
-				if(m->MOB.byLevel<0) break;	// °ÔÀÓÁß ·¹º§ÀÌ 0º¸´Ù ÀÛ¾ÆÁú¼ö´Â ¾ø´Ù
+    //            if(pAccountList[Idx].File.Char[Slot].snTribe!=m->MOB.snTribe) break;				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				//if(pAccountList[Idx].File.Char[Slot].byFace!=m->MOB.byFace) break;					//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+				//if(pAccountList[Idx].File.Char[Slot].byHead!=m->MOB.byHead) break;					//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if(m->MOB.sHeart<0||m->MOB.sMind<0||m->MOB.sMuscle<0||m->MOB.sNerves<0) break;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if(m->MOB.byLevel<0) break;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				bContinue=true; break;
 			}
 
-			if(bContinue) pAccountList[Idx].File.Char[Slot]=m->MOB;						//	Á¤»óÀûÀÏ °æ¿ì ÄÉ¸¯ÅÍÀÇ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù.
+			if(bContinue) pAccountList[Idx].File.Char[Slot]=m->MOB;						//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 			else
 			{	char temp[128]; sprintf(temp,"err savenquit3 Broken data %d %d %d %s %s",m->nID,Slot,m->Slot,acc,m->AccountName);
 				Log(temp,"-system",0);
@@ -1021,7 +1022,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
              /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		} break;
 		/////////////////////////////////////////////////////////////////////
-		//       Ä³·¢ÅÍ »èÁ¦                           
+		//       Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                           
 		/////////////////////////////////////////////////////////////////////
 		case SSP_REQ_CHAR_REMOVE:
 		{    
@@ -1039,12 +1040,12 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			}
 			}
 			if (nSlot == -1)
-			{	sm.byResult = 2;//Ä³¸¯ÅÍ »èÁ¦½ÇÆÐ
+			{	sm.byResult = 2;//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				pUser[conn].cSock.SendOneMessage((char *)&sm,sizeof(sm));
 				return TRUE;
 			}
 			char Temp[255];
-			if(mob->nGuildID)	//	±æµå°¡ÀÔ½Ã ÀÚµ¿Å»Åð ½ÃÅ²´Ù.
+			if(mob->nGuildID)	//	ï¿½ï¿½å°¡ï¿½Ô½ï¿½ ï¿½Úµï¿½Å»ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
 			{	char pMaster[SZNAME_LENGTH] = {0,0,0,};
 				int	ret = RemoveGuildMember(mob->nGuildID,mob->szName,pMaster);
 				if	(ret!=-1)
@@ -1052,7 +1053,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 					sm.byRemoveType=eGuild_Remove_me; sm.GuildID=mob->nGuildID;
 					sm.wPDULength=sizeof(MSG_RemoveGuildMember)-sizeof(HEADER);
 					strncpy(sm.CharacterName, mob->szName, SZNAME_LENGTH);
-					if(ret!=MAX_GUILD_MEMBER)		//	±æµåÀåÀÌ ¹Ù²î¾úÀ» °æ¿ì
+					if(ret!=MAX_GUILD_MEMBER)		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 					{	MSG_GuildSetRanking nm; nm.wType=_MSG_GuildSetRanking;
 						nm.wPDULength=sizeof(MSG_GuildSetRanking)-sizeof(HEADER);
 						strncpy(nm.CharacterName, pMaster, SZNAME_LENGTH);
@@ -1074,7 +1075,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			Log(Temp,pAccountList[Idx].File.AccountName,0);
 			memset(mob, 0, sizeof(STRUCT_MOB));
 			DBWriteAccount(&pAccountList[Idx].File);
-			sm.byResult = 0;//Ä³¸¯ÅÍ »èÁ¦¼º°ø
+			sm.byResult = 0;//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			pUser[conn].cSock.AddMessage((char *)&sm,sizeof(sm));
 
 			S_SSP_RESP_CHAR_LIST sel;
@@ -1090,10 +1091,10 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 			sm.nID=m->nID; sm.byTrimuriti=m->byTrimuriti;
 			strncpy(sm.szName, m->szDestName, SZNAME_LENGTH);
 
-			if(nOheridx == 0)	//	»ó´ë¹æÀÌ ºñÁ¢¼ÓÁßÀÏ¶§
+			if(nOheridx == 0)	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 			{	sm.byResult = REPLY_WHISPER_CHAR_FAIL;
 			}
-			else				//	»ó´ë¹æÀÌ Á¢¼ÓÁßÀÏ¶§
+			else				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 			{	int slot = pAccountList[nOheridx].Slot;
 				int nStatus = (int)pAccountList[nOheridx].File.Char[slot].byStatus;
 				if(nStatus & 0x01) 
@@ -1172,7 +1173,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 		case _MSG_GMMode:
 		{	MSG_GMMode* m = (MSG_GMMode*)Msg;
 
-			//	´ë»óÀÚ°¡ Á¢¼ÓÇÏÁö ¾Ê¾ÒÀ» °æ¿ì
+			//	ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			int idx = GetIndexFromName(m->szCharName);
 			if ( idx == 0 ) 
 			{	m->byResult = S_FALSE;
@@ -1180,7 +1181,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 				return FALSE;
 			}
 
-			//	´ë»óÀÚ°¡ Á¢¼ÓÇÏ°í ÀÖÀ» °æ¿ì
+			//	ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			int nServer=( idx / MAX_USER ) + 1;
 			MSG_GMMode_Notify sm; sm.wType=_MSG_GMMode_Notify;
 			sm.byGMMode=m->byGMMode; sm.nID=idx%MAX_USER;
@@ -1189,7 +1190,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 		case _MSG_GMMoveToPlayer:
 		{	MSG_GMMoveToPlayer* m = (MSG_GMMoveToPlayer*)Msg;
 
-			//	´ë»óÀÚ°¡ Á¢¼ÓÇÏÁö ¾Ê¾ÒÀ» °æ¿ì
+			//	ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			int idx = GetIndexFromName(m->szCharName);
 			if ( idx == 0 ) 
 			{	m->byZone = 0;
@@ -1197,7 +1198,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 				return FALSE;
 			}
 
-			//	´ë»óÀÚ°¡ Á¢¼ÓÇÏ°í ÀÖÀ» °æ¿ì
+			//	ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			m->byZone=( idx / MAX_USER ) + 1;
 			pUser[conn].cSock.SendOneMessage((char*)m,sizeof(MSG_GMMoveToPlayer));
 		}	break;
@@ -1239,7 +1240,7 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 //
 //             FUNCTIONS
 //
-//  SendDBMessage (conn,Å¬¶óÀÌ¾ðÆ®ID,¸Þ½ÃÁö)     : Å¬¶óÀÌ¾ðÆ®¿¡°Ô ¸Þ½ÃÁö Á÷Á¢ Åë°ú 
+//  SendDBMessage (conn,Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ID,ï¿½Þ½ï¿½ï¿½ï¿½)     : Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 //  
 //////////////////////////////////////////////////////////////////////////
 
@@ -1286,7 +1287,7 @@ BOOL CFileDB::SendDBMessage(int svr,unsigned short id, char * msg)
 //{
 //	int conn = Idx/MAX_USER;
 //	int id   = Idx%MAX_USER;
-//	// Idx¹Ù¿îÅÍ¸® Ã¤Å© 
+//	// Idxï¿½Ù¿ï¿½ï¿½Í¸ï¿½ Ã¤Å© 
 //    MSG_DBSavingQuit sm; sm.Type = _MSG_DBSavingQuit;
 //	sm.ID = id;      sm.Size = sizeof(MSG_DBSavingQuit);
 //	sm.Mode = mode;
@@ -1317,7 +1318,7 @@ void CFileDB::AddAccountList(int Idx )
 	pAccountList[Idx].Login = TRUE;
 	pAccountList[Idx].Slot  = -1;
 	//Log("AddAccountList","Slot = -1");
-	//FileÀº updateÇÏÁö ¾Ê´Â´Ù. (Add¸¦ ºÎ¸£±â Àü¿¡ ±â ¼¼ÆÃÇß¾î¾ß ÇÑ´Ù.)
+	//Fileï¿½ï¿½ updateï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½. (Addï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½ï¿½ ï¿½Ñ´ï¿½.)
 
 	//m_mapAccTable.insert( std::map<char*,int,HTStr>::value_type( pAccountList[Idx].File.AccountName, Idx ) );
 
@@ -1327,8 +1328,8 @@ void CFileDB::AddAccountList(int Idx )
 void CFileDB::RemoveAccountList(int Idx)
 { 
 	if (pAccountList[Idx].Login==FALSE) 
-	{  //Log("¾îÄ«¿îÆ® ¸®½ºÆ® Áö¿î°Å ¶ÇÁö¿ì±â ¹ß»ý!","Ã³¸®ÇÏÁö ¾Ê¾ÒÀ½");
-	//Log("RemoveAccount¸¦ ½ÃµµÇßÀ¸³ª ÀÌ¹Ì LOGOFF»óÅÂÀÓ",pAccountList[Idx].File.AccountName);
+	{  //Log("ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½!","Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½");
+	//Log("RemoveAccountï¿½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ LOGOFFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",pAccountList[Idx].File.AccountName);
 	return;
 	}
 
@@ -1345,11 +1346,11 @@ void CFileDB::RemoveAccountList(int Idx)
 	//{	m_mapAccTable.erase( it );
 	//}
 
-	// »ç½Ç ÀÌ°Ç ¹ß»ýÇÒ¼ö ÀÖ´Ù.
-	// Á¢¼ÓÇØ ÀÖÀ»¶§ ´Ù¸¥°÷¿¡¼­ ²÷±â¸¦ ¿äÃ».
-	// °ÔÀÓ¼­¹ö¿¡°Ô SavingQuitÀ» ¿äÃ»ÇØ¼­ °ÔÀÓ¼­¹ö°¡ SaveMobAndQuit¸¦ ³¯¸®°í,
-	// ÀÌ°Ô Ã³¸®µÇ¾î¼­ Empty°¡ µÇ´Â ¼ø°£,
-    // »ç¿ëÀÚÀÇ Àç¿äÃ»¿¡ ÀÇÇÑ SaveMobAndQuit°¡ µµÂøÇÏ¸é 
+	// ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ ï¿½ß»ï¿½ï¿½Ò¼ï¿½ ï¿½Ö´ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½Ã».
+	// ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SavingQuitï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ SaveMobAndQuitï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+	// ï¿½Ì°ï¿½ Ã³ï¿½ï¿½ï¿½Ç¾î¼­ Emptyï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½,
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ SaveMobAndQuitï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ 
     int conn = Idx/MAX_USER;
 	pUser[conn].Count--;
 
@@ -1375,10 +1376,10 @@ BOOL CFileDB::CreateCharacter(char * ac, char *ch)
      
      Handle = open( temp, _O_CREAT | _O_RDWR | _O_TEXT , _S_IREAD | _S_IWRITE );
 	 if  (Handle==-1)
-	 {   if (errno==EEXIST) {Log("err createchar EEXIST",ch,0);return FALSE;}  // _O_EXCL ÀÏ¶§ ÀÌ¹Ì ÆÄÀÏÀÌ ÀÖ´Â°æ¿ì
-         if (errno==EACCES) {Log("err createchar EACCES",ch,0);return FALSE;}  // readonly¸¦ ¾²·Á°í ÇÑ°æ¿ì, ½¦¾î¸ðµå°¡ ºÒ°¡ÀÎ°æ¿ì, µð·ºÅä¸®°¡ invalid
+	 {   if (errno==EEXIST) {Log("err createchar EEXIST",ch,0);return FALSE;}  // _O_EXCL ï¿½Ï¶ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½
+         if (errno==EACCES) {Log("err createchar EACCES",ch,0);return FALSE;}  // readonlyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½å°¡ ï¿½Ò°ï¿½ï¿½Î°ï¿½ï¿½, ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ invalid
          if (errno==EINVAL) {Log("err createchar EINVAL",ch,0);return FALSE;}  // invalid oflag or pmode argument
-	     if (errno==EMFILE) {Log("err createchar EMFILE",ch,0);return FALSE;}  // ÆÄÀÏ ÇÚµéÀÌ ¾ø´Ù.
+	     if (errno==EMFILE) {Log("err createchar EMFILE",ch,0);return FALSE;}  // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	     if (errno==ENOENT) {Log("err createchar ENOENT",ch,0);return FALSE;}  // File or Path not found
 		 Log("err createchar UNKNOWN",ch,0);
          return FALSE;
@@ -1478,7 +1479,7 @@ void CFileDB::SendDBSavingQuit(int Idx,int mode)
 {
 	int conn = Idx/MAX_USER;
 	int id   = Idx%MAX_USER;
-	// Idx¹Ù¿îÅÍ¸® Ã¤Å© 
+	// Idxï¿½Ù¿ï¿½ï¿½Í¸ï¿½ Ã¤Å© 
 
     MSG_DBSavingQuit sm; sm.wType = _MSG_DBSavingQuit;
 	sm.nID = id;     sm.wPDULength = sizeof(MSG_DBSavingQuit) - sizeof(HEADER);
@@ -1487,7 +1488,7 @@ void CFileDB::SendDBSavingQuit(int Idx,int mode)
     pUser[conn].cSock.SendOneMessage((char*)&sm,sizeof(MSG_DBSavingQuit));
     return;
 }
-// ÀÌ°Í¿¡ ´ëÇÑ CNF (MOB Æ÷ÇÔ ¶Ç´Â Login Flag¸¸ Reset)
+// ï¿½Ì°Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ CNF (MOB ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ Login Flagï¿½ï¿½ Reset)
 
 
 
@@ -1495,7 +1496,7 @@ void CFileDB::SendDBSavingQuit(int Idx,int mode)
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-// ¾îÄ«¿îÆ® °ü·Ã Æã¼Ç, Create , Update , Read , SetLogin
+// ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, Create , Update , Read , SetLogin
 BOOL CFileDB::DBWriteAccount(STRUCT_ACCOUNTFILE * account)
 {
 	char *accname = account->AccountName;
@@ -1512,28 +1513,28 @@ BOOL CFileDB::DBWriteAccount(STRUCT_ACCOUNTFILE * account)
     int Handle = open( temp, _O_CREAT | _O_RDWR | _O_BINARY , _S_IREAD | _S_IWRITE );
 	if (Handle==-1)
 	{ 
-		if (errno==EEXIST) {Log("err writeaccount EEXIST",accname,0);return FALSE;}  // _O_EXCL ÀÏ¶§ ÀÌ¹Ì ÆÄÀÏÀÌ ÀÖ´Â°æ¿ì
-		if (errno==EACCES) {Log("err writeaccount EACCES",accname,0);return FALSE;}  // readonly¸¦ ¾²·Á°í ÇÑ°æ¿ì, ½¦¾î¸ðµå°¡ ºÒ°¡ÀÎ°æ¿ì, µð·ºÅä¸®°¡ invalid
+		if (errno==EEXIST) {Log("err writeaccount EEXIST",accname,0);return FALSE;}  // _O_EXCL ï¿½Ï¶ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½
+		if (errno==EACCES) {Log("err writeaccount EACCES",accname,0);return FALSE;}  // readonlyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½å°¡ ï¿½Ò°ï¿½ï¿½Î°ï¿½ï¿½, ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ invalid
 		if (errno==EINVAL) {Log("err writeaccount EINVAL",accname,0);return FALSE;}  // invalid oflag or pmode argument
-		if (errno==EMFILE) {Log("err writeaccount EMFILE",accname,0);return FALSE;}  // ÆÄÀÏ ÇÚµéÀÌ ¾ø´Ù.
+		if (errno==EMFILE) {Log("err writeaccount EMFILE",accname,0);return FALSE;}  // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		if (errno==ENOENT) {Log("err writeaccount ENOENT",accname,0);return FALSE;}  // File or Path not found
 		Log("err writeaccount UNKNOWN",accname,0);
 		return FALSE;
 	}
 	int ret = _lseek(Handle,0,SEEK_SET);
 	if (ret==-1)
-	{	Log("err writeaccount lseek fail",accname,0);  // _O_EXCL ÀÏ¶§ ÀÌ¹Ì ÆÄÀÏÀÌ ÀÖ´Â°æ¿ì
+	{	Log("err writeaccount lseek fail",accname,0);  // _O_EXCL ï¿½Ï¶ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½
 		close(Handle); 
 		return FALSE;
 	}
-	ret = _write(Handle,account,sizeof(STRUCT_ACCOUNTFILE));  // text¸ðµå½Ã CTRL+Z ´Â end-of-fileÀÌ µÈ´Ù.
+	ret = _write(Handle,account,sizeof(STRUCT_ACCOUNTFILE));  // textï¿½ï¿½ï¿½ï¿½ CTRL+Z ï¿½ï¿½ end-of-fileï¿½ï¿½ ï¿½È´ï¿½.
 	if (ret==-1)
-	{	close(Handle);   // Disk Full ¶Ç´Â ±âÅ¸ I/O ¿¡·¯.
+	{	close(Handle);   // Disk Full ï¿½Ç´ï¿½ ï¿½ï¿½Å¸ I/O ï¿½ï¿½ï¿½ï¿½.
 		Log("CreateAccount write fail",accname,0);
-		if (errno==EEXIST) {Log("CreateAccount EEXIST",accname,0);return FALSE;}  // _O_EXCL ÀÏ¶§ ÀÌ¹Ì ÆÄÀÏÀÌ ÀÖ´Â°æ¿ì
-		if (errno==EACCES) {Log("CreateAccount EACCES",accname,0);return FALSE;}  // readonly¸¦ ¾²·Á°í ÇÑ°æ¿ì, ½¦¾î¸ðµå°¡ ºÒ°¡ÀÎ°æ¿ì, µð·ºÅä¸®°¡ invalid
+		if (errno==EEXIST) {Log("CreateAccount EEXIST",accname,0);return FALSE;}  // _O_EXCL ï¿½Ï¶ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½
+		if (errno==EACCES) {Log("CreateAccount EACCES",accname,0);return FALSE;}  // readonlyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½å°¡ ï¿½Ò°ï¿½ï¿½Î°ï¿½ï¿½, ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ invalid
 		if (errno==EINVAL) {Log("CreateAccount EINVAL",accname,0);return FALSE;}  // invalid oflag or pmode argument
-		if (errno==EMFILE) {Log("CreateAccount EMFILE",accname,0);return FALSE;}  // ÆÄÀÏ ÇÚµéÀÌ ¾ø´Ù.
+		if (errno==EMFILE) {Log("CreateAccount EMFILE",accname,0);return FALSE;}  // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		if (errno==ENOENT) {Log("CreateAccount ENOENT",accname,0);return FALSE;}  // File or Path not found
 		return FALSE;
 	}
@@ -1568,7 +1569,7 @@ BOOL CFileDB::DBExportAccount(STRUCT_ACCOUNTFILE * account)
 		memcpy( &sm.account, account, sizeof(STRUCT_ACCOUNTFILE) );
 		sm.wType = _MSG_NPReqSaveAccount;
 		sm.wPDULength = sizeof(sm)- sizeof(HEADER);
-		// ³ª¸ÓÁö °ªÀº ´Ù °¡ºñ¿©µµ »ó°ü¾ø´Ù
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ñ¿©µï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int ret = pUser[INDEXOFDAEMON-1].cSock.SendOneMessage((char*)&sm,sizeof(sm));
 		if	(ret==FALSE)
 		{	Log("err exporting account",account->AccountName,0);
@@ -1585,7 +1586,7 @@ BOOL CFileDB::DBReadAccount(STRUCT_ACCOUNTFILE * file,time_t *ptLastWrite/*= NUL
 	 file->AccountName[ACCOUNTNAME_LENGTH-2]=0;
 	 file->AccountPass[ACCOUNTPASS_LENGTH-1]=0;
 	 file->AccountPass[ACCOUNTPASS_LENGTH-2]=0;
-    // ´Ù¸¥ °³Ã¼µµ ¸·¾Æ¾ß ÇÑ´Ù.
+    // ï¿½Ù¸ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¾ï¿½ ï¿½Ñ´ï¿½.
  	if(strlen(file->AccountName) < 4) return FALSE;
 
     char temp[128]; char First[128];BASE_GetFirstKey(file->AccountName,First);
@@ -1621,7 +1622,7 @@ BOOL CFileDB::DBReadAccount(STRUCT_ACCOUNTFILE * file,time_t *ptLastWrite/*= NUL
 		int Handle = open(temp, _O_RDONLY | _O_BINARY, NULL);
 #else
 		if (errno==EINVAL) {Log("err readaccount EINVAL",file->AccountName,0);return FALSE;}  // invalid oflag or pmode argument
-		if (errno==EMFILE) {Log("err readaccount EEMFILE",file->AccountName,0);return FALSE;}  // ÆÄÀÏ ÇÚµéÀÌ ¾ø´Ù.
+		if (errno==EMFILE) {Log("err readaccount EEMFILE",file->AccountName,0);return FALSE;}  // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		if (errno==ENOENT) {/*Log("ReadAccount ENOENT",file->AccountName);*/return FALSE;}  // File or Path not found
 		Log("err readaccount UNKNOWN",file->AccountName,0);
 		return FALSE;
@@ -1639,11 +1640,28 @@ BOOL CFileDB::DBReadAccount(STRUCT_ACCOUNTFILE * file,time_t *ptLastWrite/*= NUL
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// illegulname: palabras prohibidas en nombres (EUC-KR bytes exactos del NEW @ 0x47D100)
+// Original comentado abajo - no eliminar
+#define NUM_ILCHAT 7
+// Cada slot: 12 bytes, terminado en \0
+static const unsigned char illegulname_raw[NUM_ILCHAT][12] = {
+    {0xBF,0xEE,0xBF,0xB5,0xC0,0xDA,0x00,0x00,0x00,0x00,0x00,0x00},
+    {0xB0,0xFC,0xB8,0xAE,0xC0,0xDA,0x00,0x00,0x00,0x00,0x00,0x00},
+    {0xC0,0xA7,0xB5,0xE5,0xBF,0xEE,0xBF,0xB5,0xC0,0xDA,0x00,0x00},
+    {0xC0,0xA7,0xB5,0xE5,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},
+    {0xC0,0xD3,0xC7,0xC3,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},
+    {0xC0,0xA7,0xC0,0xDA,0xB5,0xE5,0x00,0x00,0x00,0x00,0x00,0x00},
+    {0xBE,0xEE,0xB5,0xE5,0xB9,0xCE,0x00,0x00,0x00,0x00,0x00,0x00}
+};
+char (*illegulname)[12] = (char(*)[12])illegulname_raw;
+/* ORIGINAL (coreano EUC-KR, no compilable en VS2003 sin locale):
 #define NUM_ILCHAT 7
 char illegulname[NUM_ILCHAT][12] = 
-{     "¿î¿µÀÚ"  ,"°ü¸®ÀÚ"  ,"À§µå¿î¿µÀÚ"  ,"À§µå"  ,"ÀÓÇÃ",
-      "À§ÀÚµå"  ,"¾îµå¹Î"  
+{     ""  ,""  ,""  ,""  ,"",
+      ""  ,""
 };
+*/
+
 BOOL CFileDB::DBCheckImpleName(char ** ilchat,char * Str)
 {
      for (int j=0;j<NUM_ILCHAT;j++)
@@ -1672,38 +1690,38 @@ BOOL CFileDB::DBCheckImpleName(char ** ilchat,char * Str)
 
 
 
-// ¾îÄ«¿îÆ® ¸¸µé±â °ü·Ã.
+// ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
-           // ÀüÃ¼ ·Î±×ÀÎÇÑ Account¿Í Character ÀÇ ¾î·¹ÀÌ¸¦ °¡Áø´Ù.
+           // ï¿½ï¿½Ã¼ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ Accountï¿½ï¿½ Character ï¿½ï¿½ ï¿½î·¹ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
            // [Account]:[Character]:[GameServer][User-IP]
-           // Account°¡ LoginµÇÁö ¾ÊÀº»óÅÂ¿¡¼­´Â Characterµµ ·Î±×ÀÎ µÇÁö ¾Ê´Â´Ù.
-           // CharacterÀÇ User-IP°¡ AccountÀÇ User-IP¿Í Æ²·Áµµ ·Î±×ÀÎ µÇÁö ¾Ê´Â´Ù.
-           // Account°¡ LoginµÈ »óÅÂ¿¡¼­ ´Ù½Ã Account Login ¿äÃ»ÀÌ µé¾î¿À¸é 
-           // ÀÌÀü Á¢¼ÓÀ» ²÷µµ·Ï °ÔÀÓ¼­¹ö¿¡°Ô ¾Ë¸®°í ÄÁÆßÈÄ¿¡ ²÷´Â´Ù.
-           // Ä³·¢ÅÍ°¡ LoginµÈ »óÅÂ¿¡¼­ ´Ù½Ã Ä³·¢ÅÍ LoginÀÌ µé¾î¿À¸é ¿ª½Ã G-Srv¿¡°Ô 
-           // ÀÌÀü Á¢¼ÓÀ» ²÷µµ·Ï (Char Save) ÈÄ Á¢¼ÓÀ» ¹Þ´Â´Ù.
-           // Account¸¸ ·Î±×ÀÎ µÈ »óÅÂ¿¡¼­ Account¿Í ´Ù¸¥ ¼­¹ö·Î Char·Î±×ÀÎ ÀÌ µé¾î¿Íµµ ¿ª½Ã Á¢¼Ó ºÒ°¡.
+           // Accountï¿½ï¿½ Loginï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ Characterï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
+           // Characterï¿½ï¿½ User-IPï¿½ï¿½ Accountï¿½ï¿½ User-IPï¿½ï¿½ Æ²ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
+           // Accountï¿½ï¿½ Loginï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ Account Login ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+           // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½Â´ï¿½.
+           // Ä³ï¿½ï¿½ï¿½Í°ï¿½ Loginï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ Loginï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ G-Srvï¿½ï¿½ï¿½ï¿½ 
+           // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (Char Save) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
+           // Accountï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ Accountï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Charï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½.
 
-           // 1. account µð·ºÅä¸®¿¡ °èÁ¤ÀÌ Á¸ÀçÇÏ´ÂÁö È®ÀÎÇÑ´Ù. // 
-		   //    => Á¸ÀçÇÏ¸é ½ÇÆÐ¸¦ °ÔÀÓ ¼­¹ö¿¡ ¾Ë¸°´Ù(MSG_DBMESSAGE). (MSG_CLOSENOTHING). ³¡(x). 
-           //    Ä³·¢ÅÍ ¸¸µé±â´Â Á¢¼Ó Á÷ÈÄ, Create¸¦ º¸³»±â ¶§¹®¿¡, G-Srv°¡ ClientÀÇ Á¢¼ÓÀ» ²÷¾î ÁÖ¾î¾ß ÇÑ´Ù.
+           // 1. account ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ñ´ï¿½. // 
+		   //    => ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½Ð¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½(MSG_DBMESSAGE). (MSG_CLOSENOTHING). ï¿½ï¿½(x). 
+           //    Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, Createï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, G-Srvï¿½ï¿½ Clientï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
 		   //
-           // 2. Á¸ÀçÇÏÁö ¾ÊÀ¸¸é ÁÖ¹Î¹øÈ£Áßº¹ ¿©ºÎ³ª °ú±Ý °áÁ¦ ¿©ºÎ¸¦ Ã¼Å© ÇÑ´Ù.
-           //    => ½ÇÆÐ½Ã »óµ¿. 
-		   //    ÁÖ¹Î¹øÈ£ Áßº¹ Ã¼Å© ¹æ¹ý 
-           //    1)Ã¼Å©ÇÏÁö ¾Ê´Â´Ù.
-		   //    2)SSN Æú´õ¸¦ ¸¸µé¾î¼­ 0ByteÆÄÀÏÀ» ¸¸µç´Ù.
-		   //    3)MS-SQLÀ» »ç¿ëÇÑ´Ù. (¾²·¹µù Ç® ÇÊ¿ä)
-		   //    4)ÀÏÀÏÈ÷ ¿ÀÇÂÇØ¼­ Ã¼Å©ÇÑ´Ù.
-		   //    5)ÆÄÀÏ ÇÏ³ª¸¦ SSNÅ×ÀÌºí Äõ¸®¿ëÀ¸·Î ¸¸µç´Ù.
-		   // 3. ¸®½ºÆ®¿¡ µî·ÏÇÏ°í ¹Ù·Î ÀúÀåÇÑ´Ù. (µðÆúÆ® °ªÀº Ã¤¿ö, CUser Å¬·¡½º¸¦ ÅëÂ°·Î ÀúÀåÇÑ´Ù.)
+           // 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¹Î¹ï¿½È£ï¿½ßºï¿½ ï¿½ï¿½ï¿½Î³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ Ã¼Å© ï¿½Ñ´ï¿½.
+           //    => ï¿½ï¿½ï¿½Ð½ï¿½ ï¿½ï¿½. 
+		   //    ï¿½Ö¹Î¹ï¿½È£ ï¿½ßºï¿½ Ã¼Å© ï¿½ï¿½ï¿½ 
+           //    1)Ã¼Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
+		   //    2)SSN ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ 0Byteï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
+		   //    3)MS-SQLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç® ï¿½Ê¿ï¿½)
+		   //    4)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
+		   //    5)ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ SSNï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
+		   // 3. ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. (ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½, CUser Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.)
 	    
-		   // 1.¸ÖÆ¼ ½º·¹µù¿¡ ´ëºñ ÆÄÀÏÀ» ¾²±â·Î CREATE | EXCL ·Î ¿¬´Ù.
+		   // 1.ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ CREATE | EXCL ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		
-           // 2. ÁÖ¹Î¹øÈ£Áßº¹, °ú±Ý °áÀç¿©ºÎ Ã¼Å© 
-           // »ý·« 
+           // 2. ï¿½Ö¹Î¹ï¿½È£ï¿½ßºï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ç¿©ï¿½ï¿½ Ã¼Å© 
+           // ï¿½ï¿½ï¿½ï¿½ 
             
-		   // 3. ÆÄÀÏ ¾²±â ¼º°ø½Ã ¸®½ºÆ® µî·Ï
+		   // 3. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 		   //char AccountName[ACCOUNTNAME_LENGTH];
 		   //char AccountPass[ACCOUNTPASS_LENGTH];
 		   //char RealName[REALNAME_LENGTH];
@@ -1712,16 +1730,16 @@ BOOL CFileDB::DBCheckImpleName(char ** ilchat,char * Str)
            //char Email[EMAIL_LENGTH];
            //char Telephone[TELEPHONE_LENGTH];
            //char Address[ADDRESS_LENGTH];
-// ÆÄÀÏÀ» ÀÐ±â Àü¿¡ [ÀÐ°í/¾²±â]·Î ¿ÀÇÂ -> Charged
-// ÈÄ ÀÐ°í ´Ý´Â´Ù. 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½ ï¿½ï¿½ï¿½ï¿½ [ï¿½Ð°ï¿½/ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -> Charged
+// ï¿½ï¿½ ï¿½Ð°ï¿½ ï¿½Ý´Â´ï¿½. 
 //
-// ÆÄÀÏÀÌ ÀÌ¹Ì ¾²±â ¿ÀÇÂµÇ¾î ÀÖÀ¸¸é ÀÐ°í ¾²±â ¿ÀÇÂÀÌ ½ÇÆÐÇÑ´Ù.
-// ÆÄÀÏ ¾øÀ½°ú ¾²±â ¿ÀÇÂ ½ÇÆÐÀÇ ±¸ºÐÀÌ °¡´ÉÇÑ file open ÀÌ ÇÊ¿ä.
-// CLI:    GSVR¿¡ Á¢¼Ó ½Ãµµ
-// GSVR:   DBSVR¿¡ Àü´Þ 
-// DBSVR:  GSVR2¿¡ Á¾·á ¿äÃ»
-// CLI:    [Ãë¼Ò] -> GSVR: Å¬¶óÀÌ¾ðÆ® ´Ý±â, DBSVR:ÀÌ¹Ì GSVR2ÀÇ Á¾·á´Â È®Á¤(Nothing)		   
-// GSVR:  1.xÆ½ÈÄ (RECONNECT
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÂµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ file open ï¿½ï¿½ ï¿½Ê¿ï¿½.
+// CLI:    GSVRï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½
+// GSVR:   DBSVRï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+// DBSVR:  GSVR2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+// CLI:    [ï¿½ï¿½ï¿½] -> GSVR: Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½Ý±ï¿½, DBSVR:ï¿½Ì¹ï¿½ GSVR2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½(Nothing)		   
+// GSVR:  1.xÆ½ï¿½ï¿½ (RECONNECT
 void CFileDB::DBGetSelChar(S_SSP_RESP_CHAR_LIST * sel,STRUCT_ACCOUNTFILE * file)
 {
 
@@ -1807,7 +1825,7 @@ void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData 
 	STRUCT_ITEM DefPotion; ZeroMemory(&DefPotion, sizeof(STRUCT_ITEM));
 	DefPotion.snIndex = 7001 - HT_PARAMTYPE_ITEM_START + 1;
 
-	// ÀÏ´Ü ÇÏµåÄÚµù, ÃßÈÄ¿¡ ÆÄÀÏÀ» ¸¸µé¾î¼­ ÀÐ¾îµé¿© ÇÒ ¼ö ÀÖµµ·Ï ¼öÁ¤ÇÑ´Ù.
+	// ï¿½Ï´ï¿½ ï¿½Ïµï¿½ï¿½Úµï¿½, ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½Ð¾ï¿½é¿© ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	pMob->byZone = 1;
 	pMob->snX = -1;
 	pMob->snZ = -1;
@@ -1831,12 +1849,12 @@ void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData 
 	ZeroMemory( pMob->Inven, sizeof( pMob->Inven ) );
 	ZeroMemory( pMob->Equip, sizeof( pMob->Equip ) );
 
-	// Å×½ºÆ®¿ë.. ÀÏ´Ü ½ºÅ³ µ¥ÀÌÅÍ¸¦ ´Ù Level 1·Î ¼³Á¤ÇÑ´Ù.
+	// ï¿½×½ï¿½Æ®ï¿½ï¿½.. ï¿½Ï´ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ Level 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	//memset( pMob->bySkill, 0x01, MAX_SKILL );
 
 	switch(pData->snTribe)
 	{
-	case TRIBE_NAGA: // ³ª°¡, Å²³ª¶ó
+	case TRIBE_NAGA: // ï¿½ï¿½ï¿½ï¿½, Å²ï¿½ï¿½ï¿½ï¿½
 	case TRIBE_KINNARA:
 		pMob->sMuscle = 12;
 		pMob->sNerves = 10;
@@ -1844,7 +1862,7 @@ void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData 
 		pMob->sMind = 10;
 		pMob->Inven[0] = a_DefItem[0];
 		break;
-	case TRIBE_ASURA: // ¾Æ¼ö¶ó, ¶ô»þ»ç
+	case TRIBE_ASURA: // ï¿½Æ¼ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	case TRIBE_RAKSHASA:
 		pMob->sMuscle = 11;
 		pMob->sNerves = 12;
@@ -1852,7 +1870,7 @@ void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData 
 		pMob->sMind = 10;
 		pMob->Inven[0] = a_DefItem[1];
 		break;
-	case TRIBE_YAKSA: // ¾ßÅ©»ç, °£´Ù¸£¹Ù
+	case TRIBE_YAKSA: // ï¿½ï¿½Å©ï¿½ï¿½, ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
 	case TRIBE_GANDHARVA:
 		pMob->sMuscle = 11;
 		pMob->sNerves = 11;
@@ -1860,7 +1878,7 @@ void CFileDB::SetNewCharacter(  STRUCT_MOB *pMob, S_SSP_REQ_CHAR_CREATE * pData 
 		pMob->sMind = 10;
 		pMob->Inven[0] = a_DefItem[2];
 		break;
-	case TRIBE_DEVA: // µ¥¹Ù, °¡·ç´Ù
+	case TRIBE_DEVA: // ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½
 	case TRIBE_GARUDA:
 		pMob->sMuscle = 10;
 		pMob->sNerves = 10;
@@ -1901,7 +1919,7 @@ void CFileDB::CheckTrimuriti()
     nHour = when.tm_hour;
 
 	FILE * fp = fopen("Trimuriti.dat","r");		//	old data loading
-	if (fp==NULL)	//	ÆÄÀÏÀÌ ¾øÀ» °æ¿ì ÆÄÀÏÀ» ¸¸µé¾îÁØ´Ù.
+	if (fp==NULL)	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 	{
 		fp = fopen("Trimuriti.dat","w");
 		if(fp==NULL) return;
@@ -1954,12 +1972,30 @@ void CFileDB::CheckTrimuriti()
 
 	fclose(fp);
 
-	if(nHour==4)		//	ÇÏ·ç¿¡ ÇÑ¹ø 4½Ã°¡ µÇ¸é ÁÖ½Åµ¿Á¢ Åë°è¸¦ Á¸¼­¹ö¿¡·Î Åëº¸ÇÑ´Ù. //implementar archivo config para hora de Conf_trimuriti.txt
+	if(nHour==4)		//	ï¿½Ï·ç¿¡ ï¿½Ñ¹ï¿½ 4ï¿½Ã°ï¿½ ï¿½Ç¸ï¿½ ï¿½Ö½Åµï¿½ï¿½ï¿½ ï¿½ï¿½è¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ëº¸ï¿½Ñ´ï¿½. //implementar archivo config para hora de Conf_trimuriti.txt
 	{
 		Msg_TrimuritiStatus sm; sm.wType = _Msg_TrimuritiStatus;
 		sm.iTrimuritiCount[0] = m_iTrimuriti[0][24];
 		sm.iTrimuritiCount[1] = m_iTrimuriti[1][24];
 		sm.iTrimuritiCount[2] = m_iTrimuriti[2][24];
 		SendToAll((MSG_STANDARD*)&sm);
+	}
+
+	// Log formato DBSRV_NEW (reconstruido de VA 0x004364A0)
+	// "Trimuriti Log Year:%d Month:%d Day:%d Hour:%d BrahmaCount:%d VishnuCount:%d SivaCount:%d"
+	{
+		char szLog[512] = {0};
+		sprintf(szLog,
+			"Trimuriti Log Year:%d Month:%d Day:%d Hour:%d BrahmaCount:%d VishnuCount:%d SivaCount:%d",
+			when.tm_year + 1900,
+			when.tm_mon  + 1,
+			when.tm_mday,
+			nHour,
+			m_iTrimuriti[0][24],
+			m_iTrimuriti[1][24],
+			m_iTrimuriti[2][24]);
+		// [removido: no va a EditHistory.txt]
+		if (g_pLogFile) { fprintf(g_pLogFile, "%s\n", szLog); fflush(g_pLogFile); }
+		Log(szLog, (char*)"-system", 0);
 	}
 }
