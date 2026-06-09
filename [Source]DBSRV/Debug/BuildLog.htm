@@ -11,7 +11,7 @@ Build Log
 </h3>
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Command Lines
-</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP00001B.rsp" with contents
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP000001.rsp" with contents
 [
 /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Gm /EHsc /RTC1 /MLd /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /ZI /TP
 ".\MD5Checksum.cpp"
@@ -21,13 +21,25 @@ Command Lines
 ".\Server.cpp"
 ".\DrawInfo.cpp"
 ".\CUser.cpp"
+".\CFileDB_NEW_funcs6.cpp"
+".\CFileDB_NEW_funcs5.cpp"
+".\CFileDB_NEW_funcs4.cpp"
+".\CFileDB_NEW_funcs3.cpp"
+".\CFileDB_NEW_funcs2.cpp"
+".\CFileDB_NEW_funcs.cpp"
 ".\CFileDB.cpp"
 ]
-Creating command line "cl.exe @"c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP00001B.rsp" /nologo"
-Creating temporary file "c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP00001C.rsp" with contents
+Creating command line "cl.exe @"c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP000001.rsp" /nologo"
+Creating temporary file "c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP000002.rsp" with contents
 [
 /OUT:"Release/DBSRV.exe" /INCREMENTAL /NOLOGO /DEBUG /PDB:"Release/DBSRV.pdb" /MAP /SUBSYSTEM:WINDOWS /MACHINE:X86 uuid.lib Winmm.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
 ".\Debug\CFileDB.obj"
+".\Debug\CFileDB_NEW_funcs.obj"
+".\Debug\CFileDB_NEW_funcs2.obj"
+".\Debug\CFileDB_NEW_funcs3.obj"
+".\Debug\CFileDB_NEW_funcs4.obj"
+".\Debug\CFileDB_NEW_funcs5.obj"
+".\Debug\CFileDB_NEW_funcs6.obj"
 ".\Debug\CUser.obj"
 ".\Debug\DrawInfo.obj"
 ".\Debug\Server.obj"
@@ -36,7 +48,7 @@ Creating temporary file "c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]D
 ".\Debug\CPSock.obj"
 ".\Debug\MD5Checksum.obj"
 ]
-Creating command line "link.exe @"c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP00001C.rsp""
+Creating command line "link.exe @"c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\RSP000002.rsp""
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Output Window
 </font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Compiling...
@@ -47,13 +59,15 @@ c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CPSock.cpp(71) : war
 Basedef.cpp
 TNDebug.cpp
 Server.cpp
-c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.h(150) : warning C4005: 'MAX_SKILL_DATA' : macro redefinition
-        c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Basedef.h(78) : see previous definition of 'MAX_SKILL_DATA'
 DrawInfo.cpp
 CUser.cpp
+CFileDB_NEW_funcs6.cpp
+CFileDB_NEW_funcs5.cpp
+CFileDB_NEW_funcs4.cpp
+CFileDB_NEW_funcs3.cpp
+CFileDB_NEW_funcs2.cpp
+CFileDB_NEW_funcs.cpp
 CFileDB.cpp
-c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\CFileDB.h(150) : warning C4005: 'MAX_SKILL_DATA' : macro redefinition
-        c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Basedef.h(78) : see previous definition of 'MAX_SKILL_DATA'
 Generating Code...
 Linking...
 LINK : LNK6004: Release/DBSRV.exe not found or not built by the last incremental link; performing full link
@@ -61,5 +75,5 @@ LINK : LNK6004: Release/DBSRV.exe not found or not built by the last incremental
 Results
 </font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
 Build log was saved at "file://c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]DBSRV\Debug\BuildLog.htm"
-DBSRV - 0 error(s), 4 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+DBSRV - 0 error(s), 2 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
 </font></table></body></html>
