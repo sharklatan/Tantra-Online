@@ -289,6 +289,9 @@ WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, 
 	cFileDB.OpenLogFile(0);
 	CreateDirectory( "Delete_Backup", NULL );
 
+	cFileDB.LoadInitItems();
+	cFileDB.LoadSkillData();
+
 	cFileDB.InitGuild();
 	cFileDB.CheckTrimuriti();
 
@@ -649,7 +652,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				DWORD dwUser = TempUser.IP & 0xFFFFFF00;
 				if  (User==-1) // �� ���� ������ ��ġ�ϴ� �����ǰ� ����.
 				{
-					for	(i=0;i<MAX_ADMIN;i++)
+					for	(int i=0;i<MAX_ADMIN;i++)
 					{	int a,b,c,d; a=b=c=d=0;
 						if (pAdminIP[i]==0) continue;
 						DWORD dwAdmin = pAdminIP[i] & 0x000000FF;
@@ -775,7 +778,20 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 			pUser[User].cSock.nProcPosition = TempUser.cSock.nProcPosition;
 			pUser[User].cSock.nSendPosition = TempUser.cSock.nSendPosition ;
 			pUser[User].cSock.ucRecvSeq = pUser[User].cSock.ucSendSeq = pUser[User].cSock.oldRecvChecksum = pUser[User].cSock.oldSendChecksum = 0;
-			char temp[256];sprintf(temp,"sys new connection from %d.%d.%d.%d - zone :%d",cIP[0],cIP[1],cIP[2],cIP[3],User+1);
+			// ---- Handshake/ACK de registro (reconstruido de DBSRV_NEW) ----
+			// El NEW envia un mensaje de 16 bytes (todo 0 salvo wType=0x4606) DE VUELTA
+			// al servidor/daemon recien conectado. El daemon lo espera para operar.
+			// Ref: DBSRV_NEW VA 0x43c075 (mov word [buf],0x4606) + SendOneMessage(buf,16).
+			{
+				char ackBuf[16];
+				memset(ackBuf, 0, sizeof(ackBuf));
+				*(unsigned short*)ackBuf = 0x4606;   // wType custom (inyectado en NEW)
+				pUser[User].cSock.SendOneMessage(ackBuf, 16);
+			}
+			// [MOD 2026-06-16] Linea original conservada (sin campo sock:%d):
+			//char temp[256];sprintf(temp,"sys new connection from %d.%d.%d.%d - zone :%d",cIP[0],cIP[1],cIP[2],cIP[3],User+1);
+			// Nueva: el NEW loguea sock:%d extra (VA string 0x476a70). Se agrega para igualar comportamiento.
+			char temp[256];sprintf(temp,"sys new connection from %d.%d.%d.%d sock:%d - zone :%d",cIP[0],cIP[1],cIP[2],cIP[3],pUser[User].cSock.Sock,User+1);
 			SendUserCount(-1);
 			Log(temp,"-system",0);
 			// �ϴ��� Error�� Log�� �����.
@@ -1691,7 +1707,7 @@ void SetValidUser( int ServerNum, int AdminNum )
 		}
 	}
 
-	for	(i=0;i<MAX_ADMIN;i++)
+	for	(int i=0;i<MAX_ADMIN;i++)
 	{
 		if	(i<AdminNum)
 		{

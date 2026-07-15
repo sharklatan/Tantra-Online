@@ -145,6 +145,9 @@
 				RelativePath="CFileDB_NEW_funcs6.cpp">
 			</File>
 			<File
+				RelativePath="CFileDB_NEW_funcs7.cpp">
+			</File>
+			<File
 				RelativePath="CUser.cpp">
 			</File>
 			<File

@@ -1,0 +1,70 @@
+nhengho 님의 말:
+id:limosr
+linhengho 님의 말:
+7995297
+[Ahn]  J.I. 님의 말:
+ftp만으로 mysql 드라이버를 연결할수는 없고요..
+[Ahn]  J.I. 님의 말:
+telnet은 로그인 안되네요...
+linhengho 님의 말:
+zterm 이걸로 해야 한다던데
+[Ahn]  J.I. 님의 말:
+zterm 요? 그냥 telnet은 안되고요?
+[Ahn]  J.I. 님의 말:
+제가 봤는데요..
+[Ahn]  J.I. 님의 말:
+아마도, 회원 가입도 그냥 걷모양만 되어 있고 실제 회원 db를 구축하고 있지 않는것 같고요..
+linhengho 님의 말:
+네  보안상에 문제로 telnet은 접근을 못한데요...
+linhengho 님의 말:
+네 에..
+[Ahn]  J.I. 님의 말:
+kku가 본인 개인 서버가 아니시죠?
+linhengho 님의 말:
+네
+[Ahn]  J.I. 님의 말:
+admin 권한은 가지고 계신가요?
+linhengho 님의 말:
+학교 거에요
+[Ahn]  J.I. 님의 말:
+관리자..
+linhengho 님의 말:
+네
+[Ahn]  J.I. 님의 말:
+아 그럼 mysql 데몬도 설치하셨고요?
+[Ahn]  J.I. 님의 말:
+mysql 설치까지는 되어 있는건가요?
+linhengho 님의 말:
+rainbow.kku.ac.kr 로 접속헤야한다는건만 알아요
+linhengho 님의 말:
+mysql 이 깔려있데요
+[Ahn]  J.I. 님의 말:
+네 php에서 mysql 계정이 있어야 하거든요?
+[Ahn]  J.I. 님의 말:
+로그인 하는 보통 계정 말고요..
+[Ahn]  J.I. 님의 말:
+다른분이 작업하셔서 어디까지 해 놨는지를 모르겠네요..
+linhengho 님의 말:
+잠시만요 확인해보고요
+linhengho 님의 말:
+
+
+mysql : hyoungho / 7995297
+
+
+linhengho 님의 말:
+넵
+[Ahn]  J.I. 님의 말:
+네 서버 관리자가 mysql 계정을 만들어준거지요?
+linhengho 님의 말:
+네
+[Ahn]  J.I. 님의 말:
+네 회원 DB 테이블같은거 만드는 작업부터 하면 되나요?
+linhengho 님의 말:
+네
+[Ahn]  J.I. 님의 말:
+네 일단 접속을 해야 되는데...
+[Ahn]  J.I. 님의 말:
+telnet이 안되서 곤란하네요..
+
+mysql계정 

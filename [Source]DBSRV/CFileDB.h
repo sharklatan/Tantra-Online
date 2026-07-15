@@ -164,6 +164,11 @@ public:
 	void	ExportData				();
 	int		LoadInitItemBin			();
 	int		SaveExtraItemBin		(const char* pszFileName, int nMode);
+	// -- funcs7 --
+	void	_Msg_EditChar			(int nUser, void* pMsg);
+	void	_Msg_CreateChar			(int nUser, void* pMsg);
+	void	_Msg_DeleteChar			(int nUser, void* pMsg);
+	void	_Msg_RenameChar			(int nUser, void* pMsg);
 };
 
 // ---- Globals de DBSRV_NEW ----

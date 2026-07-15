@@ -13,111 +13,111 @@
 #define _ACCOUNTNAME_LENGTH_52BYTES_
 
 #define		MAX_ENGLISH				400			
-#define		DBG_TRACE					// µð¹ö±× Æ®·¹ÀÌ½º 
+#define		DBG_TRACE					// ï¿½ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½Ì½ï¿½ 
 #define		APP_VERSION				563
 #define		GAME_PORT				18400
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                           DEFINE
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		DB_PORT					7514      // DB¼­¹öÀÇ ¼ö½ÅÆ÷Æ®
+#define		DB_PORT					7514      // DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 #define		ADMIN_PORT				8895 
 #define		TSMON_PORT				15110
 #define		BILL_PORT				3010
-#define		WHATSUP_PORT			5000	  // What's up ¼­ºñ½º¿ë Æ÷Æ®(Áß±¹¿ë)
+#define		WHATSUP_PORT			5000	  // What's up ï¿½ï¿½ï¿½ñ½º¿ï¿½ ï¿½ï¿½Æ®(ï¿½ß±ï¿½ï¿½ï¿½)
 #define		MAX_ZONE				6
-#define		MAX_SERVER				20      // DB¼­¹ö 1°³¿¡ ºÙÀ»¼ö ÀÖ´Â Game¼­¹öÀÇ °¹¼ö
+#define		MAX_SERVER				20      // DBï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Gameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 #define		MAX_SERVERGROUP			10
 //#define		MAX_SERVERNUMBER		(MAX_SERVER+2)// DB+MSG+ZONE
 #define		MAX_SERVERNUMBER		(MAX_SERVER+3)// DB+MSG+ZONE+DAEMON
 #define		INDEXOFDBA				0
 #define		SERVER_SHAMBALA			2
-#define		SERVER_TRIMURITI		10 // Å©·ç¸¶ Á¸
-#define		SERVER_CHATURANGKA		11 // Â÷Åõ¶û°¡ Á¸
-#define		SERVER_KALIA_LOW		13	//	Ä®¸®¾Æ´øÀü Àú·¦
-#define		SERVER_KALIA_MIDDLE		14	//	Ä®¸®¾Æ´øÀü Àú·¦
-#define		SERVER_KALIA_HIGH		15	//	Ä®¸®¾Æ´øÀü Àú·¦
-#define		SERVER_STRONGHOLD		16	//	¿ä»õÀü
-#define		SERVER_KATANA3			17	//	Ä«Å¸³ª3
+#define		SERVER_TRIMURITI		10 // Å©ï¿½ç¸¶ ï¿½ï¿½
+#define		SERVER_CHATURANGKA		11 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+#define		SERVER_KALIA_LOW		13	//	Ä®ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		SERVER_KALIA_MIDDLE		14	//	Ä®ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		SERVER_KALIA_HIGH		15	//	Ä®ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		SERVER_STRONGHOLD		16	//	ï¿½ï¿½ï¿½ï¿½ï¿½
+#define		SERVER_KATANA3			17	//	Ä«Å¸ï¿½ï¿½3
 #define		INDEXOFMESSENGER		21
 #define		INDEXOFDAEMON			22
 #define		MAX_IP_LENGTH			16
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		SECSTANDINGBY			8      // ÃÊÅ¸ÀÌ¸Ó¿¡ ÀÇÇÑ ´ë±â»óÅÂ NPC ACTION ºÐÇÒ°ª. 2.0ÃÊ(=8*0.25ÃÊ)
-#define		SECBATTLE				2      // ÃÊÅ¸ÀÌ¸Ó¿¡ ÀÇÇÑ ÀüÅõ»óÅÂ NPC ACTION ºÐÇÒ°ª. 0.5ÃÊ(=2*0.25ÃÊ)
+#define		SECSTANDINGBY			8      // ï¿½ï¿½Å¸ï¿½Ì¸Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NPC ACTION ï¿½ï¿½ï¿½Ò°ï¿½. 2.0ï¿½ï¿½(=8*0.25ï¿½ï¿½)
+#define		SECBATTLE				2      // ï¿½ï¿½Å¸ï¿½Ì¸Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NPC ACTION ï¿½ï¿½ï¿½Ò°ï¿½. 0.5ï¿½ï¿½(=2*0.25ï¿½ï¿½)
 #define		TICKSIZE				250
-#define		MAX_USER				1000      // pUserÀÇ ÀÎµ¦½ºÀÌÀÚ pMobÀÇ ÀÎµ¦½º pMobÀÇ MAX_USERÀÌÈÄ´Â NPC
-#define		MAX_ADMIN				50      // 10°³ 
+#define		MAX_USER				1000      // pUserï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pMobï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ pMobï¿½ï¿½ MAX_USERï¿½ï¿½ï¿½Ä´ï¿½ NPC
+#define		MAX_ADMIN				50      // 10ï¿½ï¿½ 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifdef _ACCOUNTNAME_LENGTH_52BYTES_
-	#define		OLD_ACCOUNTNAME_LENGTH	20		// ÀÌÀü ¾îÄ«¿îÆ® ÀÌ¸§±æÀÌ
-	#define		ACCOUNTNAME_LENGTH		52      // ¾îÄ«¿îÆ®ÀÇ ÀÌ¸§±æÀÌ
+	#define		OLD_ACCOUNTNAME_LENGTH	20		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	#define		ACCOUNTNAME_LENGTH		52      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½
 #else
 	#define ACCOUNTNAME_LENGTH			20
 #endif
 
-#define		ACCOUNTPASS_LENGTH		36     // ¾îÄ«¿îÆ®ÀÇ ºñ¹ø±æÀÌ
+#define		ACCOUNTPASS_LENGTH		36     // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-#define		REALNAME_LENGTH			24      // ¾îÄ«¿îÆ®ÀÇ °¡ÀÔÀÚ º»¸í ±æÀÌ
-#define		EMAIL_LENGTH			48      // ¾îÄ«¿îÆ®ÀÇ °¡ÀÔÀÚ ÀÌ¸ÞÀÏ ±æÀÌ
-#define		ADDRESS_LENGTH			80      // ¾îÄ«¿îÆ®ÀÇ °¡ÀÔÀÚ ÁÖ¼Ò ±æÀÌ
-#define		TELEPHONE_LENGTH		16      // ¾îÄ«¿îÆ®ÀÇ °¡ÀÔÀÚ ÀüÈ­¹øÈ£ ±æÀÌ
-#define		MAX_GUILD				4096   // ±æµå³×ÀÓÀ» À§ÇÑ Å©±â
-#define		MOB_PER_ACCOUNT			3      // ¾îÄ«¿îÆ®´ç ¸¸µé¼ö ÀÖ´Â CharÀÇ °¹¼ö
+#define		REALNAME_LENGTH			24      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		EMAIL_LENGTH			48      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		ADDRESS_LENGTH			80      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		TELEPHONE_LENGTH		16      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+#define		MAX_GUILD				4096   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
+#define		MOB_PER_ACCOUNT			3      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Charï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		IDX_MOB					0      // Mob Àº 0ºÎÅÍ ½ÃÀÛ.
+#define		IDX_MOB					0      // Mob ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 #define		MAX_MONSTER				3500
-#define		MAX_MOB					5000      // PC¿Í NPC ¸¿ÀÇ ÃÖ´ë °¹¼ö. CMob ¾î·¹ÀÌÅ©±â
-#define		SZNAME_LENGTH			20      // NPC¶Ç´Â CharÀÇ ÀÌ¸§ ±æÀÌ
-#define		GUILDNAME_LENGTH		20	  // Guild NameÀÇ ±æÀÌ
-#define		MAX_SCORE				16      // MOBÀÇ Æ¯¼º (Á¡¼ö,µ·,°æÇèÄ¡...)
-#define		MAX_EQUIP				16      // Ä³·¢ÅÍ°¡ ÀÔÀ»¼ö ÀÖ´Â ¾ÆÀÌÅÛ, ¸Ó¸®¿Í ¸öÅëÀÌ °¢°¢ 0,1¹øÂ°´Ù.
-#define		MAX_INVEN				72      // MOBInven´ÂCharÀÇ  Mob°ú ShipÀÇ ÀÇ Inventory ÃÑÇÕÀÌ´Ù.
+#define		MAX_MOB					5000      // PCï¿½ï¿½ NPC ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½. CMob ï¿½î·¹ï¿½ï¿½Å©ï¿½ï¿½
+#define		SZNAME_LENGTH			20      // NPCï¿½Ç´ï¿½ Charï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		GUILDNAME_LENGTH		20	  // Guild Nameï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		MAX_SCORE				16      // MOBï¿½ï¿½ Æ¯ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ä¡...)
+#define		MAX_EQUIP				16      // Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0,1ï¿½ï¿½Â°ï¿½ï¿½.
+#define		MAX_INVEN				72      // MOBInvenï¿½ï¿½Charï¿½ï¿½  Mobï¿½ï¿½ Shipï¿½ï¿½ ï¿½ï¿½ Inventory ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
 #define		MAX_ONEINVEN			24
-#define		MAX_CARGO				120      // ¾îÄ«¿îÆ®º° ¾ÆÀÌÅÛ Âü°í
-#define		MAX_SKILL				100	  // Ä³¸¯ÅÍº° ½ºÅ³ ÃÖ´ë°ª
-#define		MAX_SKILL_DATA			4500     // ½ºÅ³ ÃÖ´ë °³¼ö
-#define		MAX_EVENT_FLAG			100	  // Ä³¸¯ÅÍº° Äù½ºÆ® ÇÃ·¡±× ÃÖ´ë°ª
+#define		MAX_CARGO				120      // ï¿½ï¿½Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		MAX_SKILL				100	  // Ä³ï¿½ï¿½ï¿½Íºï¿½ ï¿½ï¿½Å³ ï¿½Ö´ë°ª
+#define		MAX_SKILL_DATA			4500     // ï¿½ï¿½Å³ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		MAX_EVENT_FLAG			100	  // Ä³ï¿½ï¿½ï¿½Íºï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Ö´ë°ª
 #define		MAX_DESC				24   
 #define		MAX_CLASS				8
 #define		MAX_MONSTER_DATA		1000
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define		MAX_SUMMONLIST			2048
-#define		MAX_NPCGENERATOR		4096      // NPC»ý¼º Á¾·ù ¸®½ºÆ®. NpcGener.txt¿¡¼­ ÀÐ¾î µéÀÎ ³»¿ëÀÌ´Ù.
+#define		MAX_NPCGENERATOR		4096      // NPCï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®. NpcGener.txtï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
 #define		MAX_CLAN				26
-#define		MAX_SEGMENT				5   // ÀÌ °ªÀ» ¼öÁ¤ÇÏ¸é ¹Ù·Î ¾Æ·¡ÀÇ LAST_SEGMENT¸¦ ²À ¼öÁ¤ÇØÁØ´Ù.
+#define		MAX_SEGMENT				5   // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ù·ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ LAST_SEGMENTï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 #define		LAST_SEGMENT			4
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		IDX_ITEM				10000      // ItemÀº ID°¡ 10000¹ø ÀÌÈÄ·Î ºÙ´Â´Ù.
-#define		MAX_ITEM				5000      // ¶¥¹Ù´Ú¿¡ ³õÀÌ´Â ¾ÆÀÌÅÛ ¾î·¹ÀÌ Å©±â
-#define		MAX_ITEMLIST			3000	  // ¾ÆÀÌÅÛ ÀÌÆåÆ® ¸®½ºÆ®
-#define		MAX_ITEM_DATA			6000      // ¾ÆÀÌÅÛ ÃÖ´ë °³¼ö(¿ø·¡ ¾ÆÀÌÅÛ °³¼ö5000 + monster item °³¼ö 1000)
-#define		ITEMNAME_LENGTH			28      // ¾ÆÀÌÅÛÀÇ ÀÌ¸§ ±æÀÌ
+#define		IDX_ITEM				10000      // Itemï¿½ï¿½ IDï¿½ï¿½ 10000ï¿½ï¿½ ï¿½ï¿½ï¿½Ä·ï¿½ ï¿½Ù´Â´ï¿½.
+#define		MAX_ITEM				5000      // ï¿½ï¿½ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î·¹ï¿½ï¿½ Å©ï¿½ï¿½
+#define		MAX_ITEMLIST			3000	  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½Æ®
+#define		MAX_ITEM_DATA			6000      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½5000 + monster item ï¿½ï¿½ï¿½ï¿½ 1000)
+#define		ITEMNAME_LENGTH			28      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		MESSAGE_LENGTH			96      // MSG_MessagePanel ¶Ç´Â MessageBoxÀÇ ½ºÆ®¸µ ±æÀÌ
-#define		MAX_DBACCOUNT			(MAX_USER*MAX_SERVER) // Game¼­¹ö´ç MAX_USER°³¸¦ ¹ÞÀ»¼ö ÀÖ´Âµ¥ DB¼­¹ö¿¡¼­´Â ÀÌ ÀüÃ¼ Á¢¼Ó ¸®½ºÆ®¸¦ µé°í ÀÖ¾î¾ß ÇÑ´Ù.
+#define		MESSAGE_LENGTH			96      // MSG_MessagePanel ï¿½Ç´ï¿½ MessageBoxï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define		MAX_DBACCOUNT			(MAX_USER*MAX_SERVER) // Gameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MAX_USERï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Âµï¿½ DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
 #define		IsUser(value)			((((value)>=0&&(value)<MAX_USER ) ? TRUE : FALSE) )
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		MAX_GRIDX				1024		// ÀüÃ¼ ¼¿ °¡·Î ¼¼·Î Å©±â
+#define		MAX_GRIDX				1024		// ï¿½ï¿½Ã¼ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 #define		MAX_GRIDY				1024
 #define		PRANAGRIDX				100
 #define		PRANAGRIDY				100
-//#define		VIEWGRIDX				65		// Multicasting ÇÒ °¡·Î ¼¼·Î Å©±â
+//#define		VIEWGRIDX				65		// Multicasting ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 //#define		VIEWGRIDY				65
-//#define		HALFGRIDX				32		// Multicasting ¹ÝÁö¸§
+//#define		HALFGRIDX				32		// Multicasting ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //#define		HALFGRIDY				32
 #define		TRACE_LIMIT				24
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define		MAX_ROUTE				24
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define		InvenGRIDX				9	// ÀÎº¥ °¡·Î ¼¼·Î Å©±â
+#define		InvenGRIDX				9	// ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 #define		InvenGRIDY				7
-#define		CARGOGRIDX				9	// Ã¢°í °¡·Î ¼¼·Î Å©±â	
+#define		CARGOGRIDX				9	// Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½	
 #define		CARGOGRIDY				14
-#define		MAX_FORMATION			5 // ´ëÇü (Á¾·ù)°¹¼ö
+#define		MAX_FORMATION			5 // ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½
 
 #define		MAX_GROUNDMASK			6
 #define		MAX_INITITEM			64
-#define		MAX_SKILLINDEX			101	// ½ÇÁ¦´Â 0-100	
+#define		MAX_SKILLINDEX			101	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0-100	
 #define		BASE_EQUIP_LIMIT		40
 #define		MAX_TRADE				8
 #define		MAX_AUTOTRADE			12
@@ -125,9 +125,9 @@
 #define		MAX_SHOPLIST			27
 #define		SET_ITEM_CREATE			0
 #define		SET_ITEM_DELETE			1
-#define		ITEM_REFINING_COAT		0.2		//	¾ÆÀÌÅÛÁ¦·Ã½Ã ¾ÆÀÌÅÛ°¡°ÝÀÇ 20% Àû¿ë
-#define		ITEM_REPAIR_COAT		0.85	//	¾ÆÀÌÅÛÁ¦·Ã½Ã ¾ÆÀÌÅÛ°¡°ÝÀÇ 20% Àû¿ë
-//	#define		ITEM_SELL_COAT			6		//	¾ÆÀÌÅÛÁ¦·Ã½Ã ¾ÆÀÌÅÛ°¡°ÝÀÇ 20% Àû¿ë
+#define		ITEM_REFINING_COAT		0.2		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ï¿½ï¿½ï¿½ï¿½ 20% ï¿½ï¿½ï¿½ï¿½
+#define		ITEM_REPAIR_COAT		0.85	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ï¿½ï¿½ï¿½ï¿½ 20% ï¿½ï¿½ï¿½ï¿½
+//	#define		ITEM_SELL_COAT			6		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ï¿½ï¿½ï¿½ï¿½ 20% ï¿½ï¿½ï¿½ï¿½
 #define MAX_TASKITEM_SOURCE			6
 #define MAX_TASKITEM_REWARD			5
 #define MAX_TASKNPC_COUNT			5
@@ -146,11 +146,11 @@ enum E_COUNTRY_ID
 };
 
 //	char
-const int	TRIMURITY_LEVEL				=	30;				//	ÁÖ½Åº¯°æ·¹º§
-const int	TRIMURITY_POINT_LEVEL		=	100;			//	½ºÅ³Æ÷ÀÎÆ®·¹º§
-const int	MONEY_TRIMURITY_UP			=	50000;			//	½ºÅ³Æ÷ÀÎÆ®¾÷½Ã ÇÊ¿äºñ¿ë
-const int	MONEY_CHANGE_TRIMURITY_DOWN	=	100000;			//	ÁÖ½Åº¯°æ½Ã ÇÊ¿äºñ¿ë	
-const int   MONEY_CHANGE_TRIMURITY_UP	=	1000000;		//	ÁÖ½Åº¯°æ½Ã ÇÊ¿äºñ¿ë
+const int	TRIMURITY_LEVEL				=	30;				//	ï¿½Ö½Åºï¿½ï¿½æ·¹ï¿½ï¿½
+const int	TRIMURITY_POINT_LEVEL		=	100;			//	ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
+const int	MONEY_TRIMURITY_UP			=	50000;			//	ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½
+const int	MONEY_CHANGE_TRIMURITY_DOWN	=	100000;			//	ï¿½Ö½Åºï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½	
+const int   MONEY_CHANGE_TRIMURITY_UP	=	1000000;		//	ï¿½Ö½Åºï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½
 
 //	Init
 const int	CONNECT_TYPE_FIRST		=	1;
@@ -198,7 +198,7 @@ const int	MSG_TYPE_ZONE	=	2;
 const int	MSG_TYPE_WORLD	=	3;
 const int	MSG_TYPE_GAME	=	4;
 
-//	¾ÆÀÌÅÛ
+//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const int ITEM_PLACE_MAP			=	0;
 const int ITEM_PLACE_INVEN			=	1;
 const int ITEM_PLACE_EQUIP			=	2;
@@ -221,7 +221,7 @@ const int ITEM_EQUIP_LEVEL			=	5;
 const int DROP_TYPE_MONEY			=   0;
 const int DROP_TYPE_ITEM			=   1;
 
-//	 Àç·Ã°ü·Ã»ó¼ö
+//	 ï¿½ï¿½Ã°ï¿½ï¿½Ã»ï¿½ï¿½
 const int  _REFINE_WEPON_ONEHAND		=	1;	
 const int  _REFINE_WEPON_TWOHAND		=	2;	
 const int  _REFINE_DEFENCE_SHIELD		=	4;	
@@ -237,17 +237,17 @@ const int  _REFINE_DEFENCE_PANTS		=	2048;
 const int  _REFINE_DEFENCE_GLOVES		=	4096;	
 const int  MAX_ITEM_CONTRIBUTION		=	10;
 const int  ITEM_CONTRIBUTION_DEVIDE		=	225;
-const int  MAX_MAINREFINELEVEL			=	12;		// ÁÖÀç·Ã·¹º§
-const int  MAX_SUBMATERIAL				=	10;		// º¸Á¶Àç·áÀÇ ÃÖ´ë°¹¼ö
+ const int  MAX_MAINREFINELEVEL			=	15;		// ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½
+const int  MAX_SUBMATERIAL				=	10;		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ë°¹ï¿½ï¿½
 const int  MAX_SUBMATERIALSIZE			=	5;
 
-//	ÃÖ´ë ±³È¯¾ÆÀÌÅÛÀÇ °³¼ö
+//	ï¿½Ö´ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 const int	MAX_CARRY	= 8;
 const int   MAX_MOBSTORE = 24;
 const int   SZTRADE_LENGTH = 64;
 
 //	Party
-const int	MAX_PARTY			=	7;	// ÇÑ ±×·ìÀÇ ÃÖ´ë¼ö( 1+5) 
+const int	MAX_PARTY			=	7;	// ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½( 1+5) 
 const int	PARTY_PICKUP_TIME	=	10000;
 const int	ROOTING_SHARE		=	1;
 const int	ROOTING_PERSON		=	0;
@@ -308,7 +308,7 @@ const int LOGMONEY				=	1000000;
 //	Developer
 #define Developer				"TANDEV01"
 
-//	¿ä»õÀü°ü·Ã
+//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const int MONEY_ARENAEVENT		=	100000000;
 
 //	Billing(cash)
@@ -320,7 +320,7 @@ const int	MONEY_OF_CHALLENG		=	10000;
 typedef enum _EChallenge { eChallenge_WAIT = 0, eChallenge_Request = 1, eChallenge_Response = 2, eChallenge_Combat = 3, } EChallenge;
 typedef enum _EChallengeReason { eChallenge_Accept = 0, eChallenge_Denay = 1, eChallenge_Rest = 2, eChallenge_System = 3, eChallenge_End = 4,  } EChallengeReason;
 /*----------------------------------------------------------------------------*/
-// ¾ÆÀÌÅÛ Á¦·Ã ¼º°øÈ®·ü
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½
 /*----------------------------------------------------------------------------*/
 const int REFINE_INITIALIZE_LEVEL	= 4;
 const int REFINE_DISAPEAR_LEVEL		= 7;
@@ -329,7 +329,7 @@ const int REFINE_DISAPEAR_LEVEL		= 7;
 const int MAX_RANK				= 250;
 #define RANKFILE				"K:\\Rank%02d.txt"
 
-//	Yut(À·³îÀÌ)
+//	Yut(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 const int MAX_POSITION	=	29;
 const int MAX_BETUSER	=	20000;
 enum
@@ -348,14 +348,14 @@ enum
 //#define HT_NAME_MAX 50
 //#endif
 
-#define		TRIBE_NAGA			1//0x01	// ³ª°¡
-#define		TRIBE_ASURA			4//0x02	// ¾Æ¼ö¶ó
-#define		TRIBE_YAKSA			16//0x03	// ¾ßÅ©»ç
-#define		TRIBE_DEVA			64//0x04	// µ¥¹Ù
-#define		TRIBE_KINNARA		2//0x05	// Å²³ª¶ó
-#define		TRIBE_RAKSHASA		8//0x06	// ¶óÅ©»þ»ç
-#define		TRIBE_GANDHARVA		32//0x07	// °£´Ù¸£¹Ù
-#define		TRIBE_GARUDA		128//0x08	// °¡·ç´Ù
+#define		TRIBE_NAGA			1//0x01	// ï¿½ï¿½ï¿½ï¿½
+#define		TRIBE_ASURA			4//0x02	// ï¿½Æ¼ï¿½ï¿½ï¿½
+#define		TRIBE_YAKSA			16//0x03	// ï¿½ï¿½Å©ï¿½ï¿½
+#define		TRIBE_DEVA			64//0x04	// ï¿½ï¿½ï¿½ï¿½
+#define		TRIBE_KINNARA		2//0x05	// Å²ï¿½ï¿½ï¿½ï¿½
+#define		TRIBE_RAKSHASA		8//0x06	// ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½
+#define		TRIBE_GANDHARVA		32//0x07	// ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
+#define		TRIBE_GARUDA		128//0x08	// ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #define		BEAUTY_OLD_HAIR		5
 #define		BEAUTY_OLD_FACE		5
@@ -364,27 +364,27 @@ enum
 
 #define HT_PARAMTYPE_NONE					0
 
-// ¸ó½ºÅÍ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_MONSTER				1
 #define HT_PARAMTYPE_MONSTER_START			2001
 #define HT_PARAMTYPE_MONSTER_END			2999
 
-// ¸ó½ºÅÍ ½ºÅ³ÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_MONSTERSKILL			2
 #define HT_PARAMTYPE_MONSTERSKILL_START		3501
 #define HT_PARAMTYPE_MONSTERSKILL_END		3999
 
-// Ä³¸¯ÅÍ ½ºÅ³ÀÇ ID ¿µ¿ª
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_PCSKILL				3
 #define HT_PARAMTYPE_PCSKILL_START			3001
 #define HT_PARAMTYPE_PCSKILL_END			3499
 
-// ¾ÆÀÌÅÛÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM					4
 #define HT_PARAMTYPE_ITEM_START				4001
 #define HT_PARAMTYPE_ITEM_END				9989
 
-// NPC ID ¿µ¿ª
+// NPC ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_NPC					5
 #define HT_PARAMTYPE_NPC_START				1001
 #define HT_PARAMTYPE_NPC_END				1999
@@ -402,7 +402,7 @@ enum
 
 #define HT_PARAMTYPE_END					8
 
-// ½ºÅ³ Áß ³ª°¡/Å²³ª¶ó
+// ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/Å²ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_PCSKILL_NAGAKIN_START				3001
 #define HT_PARAMTYPE_PCSKILL_NAGAKIN_END				3100
 
@@ -415,7 +415,7 @@ enum
 #define HT_PARAMTYPE_PCSKILL_NAGAKIN_3RD_START			3041
 #define HT_PARAMTYPE_PCSKILL_NAGAKIN_3RD_END			3060
 
-// ½ºÅ³ Áß ¾Æ¼ö¶ó/¶ô»þ»ç
+// ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½Æ¼ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_PCSKILL_ASURARAK_START				3101
 #define HT_PARAMTYPE_PCSKILL_ASURARAK_END				3200
 
@@ -428,7 +428,7 @@ enum
 #define HT_PARAMTYPE_PCSKILL_ASURARAK_3RD_START			3141
 #define HT_PARAMTYPE_PCSKILL_ASURARAK_3RD_END			3160
 
-// ½ºÅ³ Áß ¾ßÅ©»þ/°£´Ù¸£¹Ù
+// ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½/ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_PCSKILL_YAKGAN_START				3201
 #define HT_PARAMTYPE_PCSKILL_YAKGAN_END					3300
 
@@ -441,7 +441,7 @@ enum
 #define HT_PARAMTYPE_PCSKILL_YAKGAN_3RD_START			3241
 #define HT_PARAMTYPE_PCSKILL_YAKGAN_3RD_END				3260
 
-// ½ºÅ³ Áß µ¥¹Ù/°¡·ç´Ù
+// ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_PCSKILL_DEVAGARU_START				3301
 #define HT_PARAMTYPE_PCSKILL_DEVAGARU_END				3400
 
@@ -454,11 +454,11 @@ enum
 #define HT_PARAMTYPE_PCSKILL_DEVAGARU_3RD_START			3341
 #define HT_PARAMTYPE_PCSKILL_DEVAGARU_3RD_END			3360
 
-// ¾ÆÀÌÅÛ Áß ¹«±âÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_WEAPON_START							4001
 #define HT_PARAMTYPE_ITEM_WEAPON_END							5000
 
-// ¾ÆÀÌÅÛ Áß ÇÑ¼Õ ¹«±âÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_WEAPON_ONEHAND_START					4001
 #define HT_PARAMTYPE_ITEM_WEAPON_ONEHAND_END					4300
 
@@ -498,7 +498,7 @@ enum
 #define HT_PARAMTYPE_ITEM_WEAPON_ONEHAND_QUEST_MAGIC_START		4299
 #define HT_PARAMTYPE_ITEM_WEAPON_ONEHAND_QUEST_MAGIC_END		4300
 
-// ¾ÆÀÌÅÛ Áß ¾ç¼Õ ¹«±âÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_WEAPON_TWOHAND_START					4301
 #define HT_PARAMTYPE_ITEM_WEAPON_TWOHAND_END					4600
 
@@ -538,7 +538,7 @@ enum
 #define HT_PARAMTYPE_ITEM_WEAPON_TWOHAND_QUEST_MAGIC_START		4599
 #define HT_PARAMTYPE_ITEM_WEAPON_TWOHAND_QUEST_MAGIC_END		4600
 
-// ¾ÆÀÌÅÛ Áß ÅõÃ´ ¹«±âÀÇ ID ¿µ¿ª
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã´ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_WEAPON_THROW_START					4601
 #define HT_PARAMTYPE_ITEM_WEAPON_THROW_END						4700
 
@@ -578,11 +578,11 @@ enum
 //#define HT_PARAMTYPE_ITEM_WEAPON_THROW_QUEST_MAGIC_START		4669
 //#define HT_PARAMTYPE_ITEM_WEAPON_THROW_QUEST_MAGIC_END			4670
 
-// ¹æ¾î±¸
+// ï¿½ï¿½î±¸
 #define HT_PARAMTYPE_ITEM_DEFENCE_START							5001
 #define HT_PARAMTYPE_ITEM_DEFENCE_END							6000
 
-// °©¿Ê
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_ARMOR_START					5001
 #define HT_PARAMTYPE_ITEM_DEFENCE_ARMOR_END						5150
 
@@ -598,7 +598,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_ARMOR_QUEST_START				5146
 #define HT_PARAMTYPE_ITEM_DEFENCE_ARMOR_QUEST_END				5150
 
-// ¹ÙÁö
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_PANTS_START					5151
 #define HT_PARAMTYPE_ITEM_DEFENCE_PANTS_END						5250
 
@@ -614,7 +614,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_PANTS_QUEST_START				5246
 #define HT_PARAMTYPE_ITEM_DEFENCE_PANTS_QUEST_END				5250
 
-// Åõ±¸
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_HELMET_START					5251
 #define HT_PARAMTYPE_ITEM_DEFENCE_HELMET_END					5400
 
@@ -630,7 +630,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_HELMET_QUEST_START			5396
 #define HT_PARAMTYPE_ITEM_DEFENCE_HELMET_QUEST_END				5400
 
-// Àå°©
+// ï¿½å°©
 #define HT_PARAMTYPE_ITEM_DEFENCE_GLOVES_START					5401
 #define HT_PARAMTYPE_ITEM_DEFENCE_GLOVES_END					5500
 
@@ -646,7 +646,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_GLOVES_QUEST_START			5496
 #define HT_PARAMTYPE_ITEM_DEFENCE_GLOVES_QUEST_END				5500
 
-// Çã¸®¶ì
+// ï¿½ã¸®ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_BELT_START					5501
 #define HT_PARAMTYPE_ITEM_DEFENCE_BELT_END						5600
 
@@ -662,7 +662,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_BELT_QUEST_START				5596
 #define HT_PARAMTYPE_ITEM_DEFENCE_BELT_QUEST_END				5600
 
-// ½Å¹ß
+// ï¿½Å¹ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHOES_START					5601
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHOES_END						5700
 
@@ -678,7 +678,7 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHOES_QUEST_START				5696
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHOES_QUEST_END				5700
 
-// ¹æÆÐ
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHIELD_START					5701
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHIELD_END					5800
 
@@ -694,15 +694,15 @@ enum
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHIELD_QUEST_START			5796
 #define HT_PARAMTYPE_ITEM_DEFENCE_SHIELD_QUEST_END				5800
 
-// ºÎÀû
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_CHARM_START							5801
 #define HT_PARAMTYPE_ITEM_CHARM_END								5850
 
-// ¾Ç¼¼»ç¸®
+// ï¿½Ç¼ï¿½ï¿½ç¸®
 #define HT_PARAMTYPE_ITEM_ACCESSORY_START						6001
 #define HT_PARAMTYPE_ITEM_ACCESSORY_END							6500
 
-// ±Í°ÉÀÌ
+// ï¿½Í°ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EARRING_START				6001
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EARRING_END					6100
 
@@ -718,7 +718,7 @@ enum
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EARRING_QUEST_START			6096
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EARRING_QUEST_END			6100
 
-// ÆÈÂî
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_ACCESSORY_BRACELET_START				6101
 #define HT_PARAMTYPE_ITEM_ACCESSORY_BRACELET_END				6200
 
@@ -734,7 +734,7 @@ enum
 #define HT_PARAMTYPE_ITEM_ACCESSORY_BRACELET_QUEST_START		6196
 #define HT_PARAMTYPE_ITEM_ACCESSORY_BRACELET_QUEST_END			6200
 
-// ¸ñ°ÉÀÌ
+// ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_ACCESSORY_NECKLACE_START				6201
 #define HT_PARAMTYPE_ITEM_ACCESSORY_NECKLACE_END				6300
 
@@ -750,7 +750,7 @@ enum
 #define HT_PARAMTYPE_ITEM_ACCESSORY_NECKLACE_QUEST_START		6296
 #define HT_PARAMTYPE_ITEM_ACCESSORY_NECKLACE_QUEST_END			6300
 
-// ÀÎº¥È®Àå
+// ï¿½Îºï¿½È®ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EXPANDINVEN_START			6301
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EXPANDINVEN_END				6310
 
@@ -760,7 +760,7 @@ enum
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EXPANDINVEN_QUEST_START		6309
 #define HT_PARAMTYPE_ITEM_ACCESSORY_EXPANDINVEN_QUEST_END		6310
 
-// ¹ÝÁö
+// ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_ACCESSORY_RING_START					6401
 #define HT_PARAMTYPE_ITEM_ACCESSORY_RING_END					6500
 
@@ -776,23 +776,23 @@ enum
 #define HT_PARAMTYPE_ITEM_ACCESSORY_RING_QUEST_START			6496
 #define HT_PARAMTYPE_ITEM_ACCESSORY_RING_QUEST_END				6500
 
-// Á¦·Ã Àç·á
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_REFINE_START							6501
 #define HT_PARAMTYPE_ITEM_REFINE_END							6700
 
-// ¸ÞÀÎÁ¦·Ã
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_REFINE_MAIN_START						6501
 #define HT_PARAMTYPE_ITEM_REFINE_MAIN_END						6550
 
-// Ã·°¡ Á¦·ÃÀç·á
+// Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_REFINE_SUB2_START						6551
 #define HT_PARAMTYPE_ITEM_REFINE_SUB2_END						6600
 
-// º¸Á¶Á¦·Ã
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_REFINE_SUB_START						6601
 #define HT_PARAMTYPE_ITEM_REFINE_SUB_END						6700
 
-// À¯·áÈ­ ¾ÆÀÌÅÛ-Áö¼Ó¾ÆÀÌÅÛ
+// ï¿½ï¿½ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_CHARGE_START							6801
 #define HT_PARAMTYPE_ITEM_CHARGE_END							7000
 
@@ -802,34 +802,34 @@ enum
 #define HT_PARAMTYPE_ITEM_CHARGE_FUNCTION_START					6951
 #define HT_PARAMTYPE_ITEM_CHARGE_FUNCTION_END					7000
 
-// À¯·áÈ­ ¾ÆÀÌÅÛ Áß ¼Ò¸ð¼º ¾ÆÀÌÅÛ
+// ï¿½ï¿½ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_CHARGE_USABLE_START					7031
 #define HT_PARAMTYPE_ITEM_CHARGE_USABLE_END						7070
 
 #define HT_PARAMTYPE_ITEM_CHARGE_USABLE2_START					6719
 #define HT_PARAMTYPE_ITEM_CHARGE_USABLE2_END 					6722
 
-// ¼Òºñ ¾ÆÀÌÅÛ (1)
+// ï¿½Òºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (1)
 #define HT_PARAMTYPE_ITEM_USABLE_START							7001
 #define HT_PARAMTYPE_ITEM_USABLE_END							7100
 
-// ¼Òºñ ¾ÆÀÌÅÛ (2)
+// ï¿½Òºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (2)
 #define HT_PARAMTYPE_ITEM_USABLE2_START							6701
 #define HT_PARAMTYPE_ITEM_USABLE2_END							6800
 
-// ·çÇÇ¾Æ
+// ï¿½ï¿½ï¿½Ç¾ï¿½
 #define HT_PARAMTYPE_ITEM_USABLE_MONEY_START					7081
 #define HT_PARAMTYPE_ITEM_USABLE_MONEY_END						7090
 
-// È­»ì
+// È­ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_USABLE_ARROW_START					7091
 #define HT_PARAMTYPE_ITEM_USABLE_ARROW_END						7100
 
-// ¼öÁý ¾ÆÀÌÅÛ
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_COLLECT_START							7101
 #define HT_PARAMTYPE_ITEM_COLLECT_END							8000
 
-// Äù½ºÆ® Àü¿ë ¾ÆÀÌÅÛ
+// ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define HT_PARAMTYPE_ITEM_QUESTONLY_START						8001
 #define HT_PARAMTYPE_ITEM_QUESTONLY_END							8200
 
@@ -837,7 +837,7 @@ enum
 
 #define HT_ITEMLEVEL_MAX			255
 
-//	0:½ÇÆÐ, -1:Àç·ÃºÒ°¡´É
+//	0:ï¿½ï¿½ï¿½ï¿½, -1:ï¿½ï¿½ÃºÒ°ï¿½ï¿½ï¿½
 const int REFINE_MAIN[6][MAX_MAINREFINELEVEL] = {				
 	{80		,70		,60		,45		,30		,0		,0		,0		,0		,0		,0		,0},
 	{100	,100	,90		,75		,65		,55		,40		,10		,0		,0		,0		,0},
@@ -890,10 +890,10 @@ struct STRUCT_INITITEM
 struct STRUCT_SPELL
 {
 		int	SkillPoint;
-		int	TargetType;      // 0:ÀÚ½Å  1:Å¸ÀÎ   2:ÀÚ½ÅÅ¸ÀÎ   3:Áö¿ª3  4:Áö¿ª5 
-		int	ManaSpent;       // ¸¶³ª¼Ò¸ð·®
-		int	Delay;           // ¸¶¹ýÀç»ç¿ë¿¡ ÇÊ¿äÇÑ½Ã°£
-		int	Range;           // »çÁ¤°Å¸®
+		int	TargetType;      // 0:ï¿½Ú½ï¿½  1:Å¸ï¿½ï¿½   2:ï¿½Ú½ï¿½Å¸ï¿½ï¿½   3:ï¿½ï¿½ï¿½ï¿½3  4:ï¿½ï¿½ï¿½ï¿½5 
+		int	ManaSpent;       // ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½
+		int	Delay;           // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¿¡ ï¿½Ê¿ï¿½ï¿½Ñ½Ã°ï¿½
+		int	Range;           // ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
 		int	InstanceType; 
 		int	InstanceValue;
 		int	TickType;     
@@ -910,26 +910,26 @@ struct STRUCT_SPELL
 		int	AffectResist;
 		int	Passive;
 };
-//  Index:          ¸¶¹ý¹øÈ£                    - 0-71 °¢ Å¬·¹½ºº° 0-23(±â»ç) 24-47(¸¶»ç) 48-71(¼ö»ç) 72-96(Çù»ç)
-//  SkillPoint:     ¹è¿ì´Âµ¥ ÇÊ¿äÇÑ ±â¼úÆ÷ÀÎÆ® 
-//  TargetType:     0:ÀÚ½Å¸¸  1:Å¸ÀÎ  2:ÀÚ½Å¶Ç´ÂÅ¸ÀÎ 3:¶¥3x3  4:¶¥5x5
-//  ManaSpent:      ±âº» ¸¶³ª ¼Ò¸ð·® °è¿­¼÷·Ãµµ°¡ 100ÀÌ¸é 200% 
-//  Delay:          ÇÑ¹ø ¾²°í ´Ù½Ã ¾²±â±îÁö ÇÊ¿äÇÑ ½Ã°£ ´ÜÀ§´Â ÃÊ.
-//  Range:          »çÁ¤°Å¸®
-//  InstanceType:   ¸¶¹ýÀÌ Àû¿ëµÇ´Â ¼ø°£ Ã³¸®µÇ´Â È¿°ú - 0:¾øÀ½ 1:HPÁõ°¨       2:HP%Áõ°¨      3:È­¸éÁ¡¸ê  
-//  InstanceValue:  HPÁõ°¡·® ¶Ç´Â °¨¼Ò·® ¶Ç´Â È­¸éÁ¡¸êÁ¤µµ.
-//  TickType:       Æ½(4ÃÊ)¸¶³ª Ã³¸®µÇ´Â È¿°ú          - 0:¾øÀ½ 1:HP+Áõ°¨      2:HP%Áõ°¨      3:3x3HP°¨¼Ò    4:3x3HPÁõ°¡ 
-//  TickValue:      HPÁõ°¡·® ¶Ç´Â °¨¼Ò·®
-//  AffectType:     °É·ÁÀÖ´Âµ¿¾È Score º¯È­            - 0:¾øÀ½ 1:´Þ¸®±â+º¯È­  2:ÀúÇ×·Â%º¯È­  3:Dex%º¯È­     4:°ø¼Ó+º¯È­
-//  AffectValue:    +- ¶Ç´Â %·®. +-´Â ´õÇØÁö°Å³ª ºüÁö°í, %´Â ÇöÁ¦·® ±âÁØÀ¸·Î 2¹è½Ã 200 1/2½Ã 50
+//  Index:          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£                    - 0-71 ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0-23(ï¿½ï¿½ï¿½) 24-47(ï¿½ï¿½ï¿½ï¿½) 48-71(ï¿½ï¿½ï¿½ï¿½) 72-96(ï¿½ï¿½ï¿½ï¿½)
+//  SkillPoint:     ï¿½ï¿½ï¿½Âµï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® 
+//  TargetType:     0:ï¿½Ú½Å¸ï¿½  1:Å¸ï¿½ï¿½  2:ï¿½Ú½Å¶Ç´ï¿½Å¸ï¿½ï¿½ 3:ï¿½ï¿½3x3  4:ï¿½ï¿½5x5
+//  ManaSpent:      ï¿½âº» ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ ï¿½è¿­ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ 100ï¿½Ì¸ï¿½ 200% 
+//  Delay:          ï¿½Ñ¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+//  Range:          ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
+//  InstanceType:   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ç´ï¿½ È¿ï¿½ï¿½ - 0:ï¿½ï¿½ï¿½ï¿½ 1:HPï¿½ï¿½ï¿½ï¿½       2:HP%ï¿½ï¿½ï¿½ï¿½      3:È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+//  InstanceValue:  HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Ò·ï¿½ ï¿½Ç´ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+//  TickType:       Æ½(4ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ç´ï¿½ È¿ï¿½ï¿½          - 0:ï¿½ï¿½ï¿½ï¿½ 1:HP+ï¿½ï¿½ï¿½ï¿½      2:HP%ï¿½ï¿½ï¿½ï¿½      3:3x3HPï¿½ï¿½ï¿½ï¿½    4:3x3HPï¿½ï¿½ï¿½ï¿½ 
+//  TickValue:      HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Ò·ï¿½
+//  AffectType:     ï¿½É·ï¿½ï¿½Ö´Âµï¿½ï¿½ï¿½ Score ï¿½ï¿½È­            - 0:ï¿½ï¿½ï¿½ï¿½ 1:ï¿½Þ¸ï¿½ï¿½ï¿½+ï¿½ï¿½È­  2:ï¿½ï¿½ï¿½×·ï¿½%ï¿½ï¿½È­  3:Dex%ï¿½ï¿½È­     4:ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½È­
+//  AffectValue:    +- ï¿½Ç´ï¿½ %ï¿½ï¿½. +-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, %ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ 200 1/2ï¿½ï¿½ 50
 //
 
-// Dropped itemÀº mask´ÜÀ§·Î Á¸ÀçÇÑ´Ù. -> º°µµ½ºÆ®·°ÃÄ ¾øÀ½
-// °ªÀº unsigned short ¸¦ »ç¿ëÇÏ°í ¾ÆÀÌµð´Â 20000-30000ÀÌ¸ç, 20000ÀÌ ¾î·¹ÀÌ 0¿¡ ¹èÄ¡µÈ´Ù.
+// Dropped itemï¿½ï¿½ maskï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½ unsigned short ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ 20000-30000ï¿½Ì¸ï¿½, 20000ï¿½ï¿½ ï¿½î·¹ï¿½ï¿½ 0ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½È´ï¿½.
 struct STRUCT_ITEMLIST
-{      //int				   Style;						// ½ºÅ¸ÀÏ
-       //int				   Position;					// ÀåÂø °¡´É ºÎÀ§ -> 2ºÎÀ§ ÀÌ»ó ÀåÂø°¡´É½Ã Bitmask(?)
-       char					Name[ITEMNAME_LENGTH];		// ¾ÆÀÌÅÛ ÀÌ¸§
+{      //int				   Style;						// ï¿½ï¿½Å¸ï¿½ï¿½
+       //int				   Position;					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -> 2ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ Bitmask(?)
+       char					Name[ITEMNAME_LENGTH];		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
        short				nIndexMesh;
        short				nIndexTexture;
        short				nIndexVisualEffect;
@@ -951,18 +951,18 @@ struct STRUCT_SCORE
 	  short   Level;
 	  short   Ac;
 	  short   Damage;
-      unsigned char   Reserved;   // ÇÏÀ§ 4ºñÆ®(0-15):0¹üÀÎ(ÛíìÑ). 1»óÀÎ. 2Ã¢°í  3½ºÅ³  4¹üÀÎ(ÛóìÑ) 5. 
-	                              // »óÀ§ 4ºñÆ®(0-15) µð·º¼Ç 1,2,3,4,6,7,8,9 ¶Ç´Â none(0)
-	  unsigned char   AttackRun;  // »óÀ§ 4ºñÆ® °ø°Ý¼Óµµ   - 0:50%   5:100%   10:200%
-                                  // ÇÏÀ§ 4ºñÆ® ´Þ¸®±â¼Óµµ - 1-6                        
+      unsigned char   Reserved;   // ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ®(0-15):0ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½). 1ï¿½ï¿½ï¿½ï¿½. 2Ã¢ï¿½ï¿½  3ï¿½ï¿½Å³  4ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) 5. 
+	                              // ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ®(0-15) ï¿½ð·º¼ï¿½ 1,2,3,4,6,7,8,9 ï¿½Ç´ï¿½ none(0)
+	  unsigned char   AttackRun;  // ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ý¼Óµï¿½   - 0:50%   5:100%   10:200%
+                                  // ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ® ï¿½Þ¸ï¿½ï¿½ï¿½Óµï¿½ - 1-6                        
 	  short   MaxHp,   MaxMp;
 	  short   Hp   ,   Mp   ;
 	  short   snMuscleChakra, snNerveChakra, snHeartChakra, snSoulChakra;
-	  unsigned char Special[4];  // ¹«±â¼÷·Ãµµ/ °¢¸¶¹ý°è¿­º°¼÷·Ãµµ1,2,3
+	  unsigned char Special[4];  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½/ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½1,2,3
 };
 
 struct STRUCT_ITEM // 16 bytes
-{		short		snIndex ; // Shopitem ¿¡¼­ÀÇ index
+{		short		snIndex ; // Shopitem ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index
 		short		snDurability ;
 		WORD		wSerial;
 		short		snDummy;	
@@ -975,9 +975,9 @@ struct STRUCT_ITEM // 16 bytes
 
 struct STRUCT_ITEMVIEW
 {
-	SHORT		snIndex ;		//	Shopitem ¿¡¼­ÀÇ index
-	BYTE		byMainRef;		//	¼Ó¼º¿¡ µû¸¥ ºñÆ®¼ÂÀÌ ÇÊ¿äÇÔ.
-	BYTE		byRefineLevel;	//	Á¦·Ã·¹º§
+	SHORT		snIndex ;		//	Shopitem ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index
+	BYTE		byMainRef;		//	ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½.
+	BYTE		byRefineLevel;	//	ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½
 };
 
 typedef struct _S_CHARACTER_LIST
@@ -1001,8 +1001,8 @@ typedef struct _S_CHARACTER_LIST
 	BYTE    	byFaceType;   
 	BYTE		byHeadType;
 	BYTE		byLevel;
-	BYTE		byGMStatus;		//	bit flag(0x01:ÄÉ¸¯ÅÍºí·°, 0x02:Åõ¸í¸ðµå, 0x04:Ã¤ÆÃºí·°, ...)	
-	BYTE		byClass1;			//	bit flag Áß¸ñÁßº¹Àº | ¿¬»ê»ç¿ë.
+	BYTE		byGMStatus;		//	bit flag(0x01:ï¿½É¸ï¿½ï¿½Íºï¿½ï¿½ï¿½, 0x02:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0x04:Ã¤ï¿½Ãºï¿½ï¿½ï¿½, ...)	
+	BYTE		byClass1;			//	bit flag ï¿½ß¸ï¿½ï¿½ßºï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	BYTE		byClass2;
 
 	short		snKarma;
@@ -1016,7 +1016,7 @@ struct STRUCT_SELCHAR
 
 
 
-struct STRUCT_MOB // 32+24+24+100+100+1152+256 = 1688 bytes = 1.688 kb, ½ÇÁ¦·Î 1024*2¸¸Å­ÀÌ ¾²ÀÏ°ÍÀÌ´Ù.
+struct STRUCT_MOB // 32+24+24+100+100+1152+256 = 1688 bytes = 1.688 kb, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1024*2ï¿½ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ï¿½Ì´ï¿½.
 {		
 		char			        szName[SZNAME_LENGTH];
 		short					sMuscle ;
@@ -1040,13 +1040,13 @@ struct STRUCT_MOB // 32+24+24+100+100+1152+256 = 1688 bytes = 1.688 kb, ½ÇÁ¦·Î 1
 		BYTE					byHead;
 
 		BYTE					byInvenBag;
-		BYTE					bySpecialName;		// Class ·Î º¯°æÀ» ÇØÁà¾ß ÇÔ. int
+		BYTE					bySpecialName;		// Class ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. int
 		BYTE					byZone;
 		BYTE					bySaveZone;
 
-		BYTE					byStatus;			//	bit flag(0x01:±Ó¸»°ÅÀý, ...)
-		BYTE					byGMStatus;			//	bit flag(0x01:ÄÉ¸¯ÅÍºí·°, 0x02:Åõ¸í¸ðµå, 0x04:Ã¤ÆÃºí·°, ...)	
-		BYTE					byClass1;				//	bit flag Áß¸ñÁßº¹Àº | ¿¬»ê»ç¿ë.
+		BYTE					byStatus;			//	bit flag(0x01:ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½, ...)
+		BYTE					byGMStatus;			//	bit flag(0x01:ï¿½É¸ï¿½ï¿½Íºï¿½ï¿½ï¿½, 0x02:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0x04:Ã¤ï¿½Ãºï¿½ï¿½ï¿½, ...)	
+		BYTE					byClass1;				//	bit flag ï¿½ß¸ï¿½ï¿½ßºï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 		BYTE					byClass2;
 
 		short					snKarma;
@@ -1100,7 +1100,7 @@ struct STRUCT_GUILD_MEMBER
 		char	MemberName[SZNAME_LENGTH];
 
 		BYTE	GuildRank;
-		BYTE	GuildState;			//	0:ºó½½·Ô, 1:·Î±×off, 2:·Î±×on
+		BYTE	GuildState;			//	0:ï¿½ó½½·ï¿½, 1:ï¿½Î±ï¿½off, 2:ï¿½Î±ï¿½on
 		BYTE	byLevel;
 		BYTE	byDummy;
 		short	snTribe;
@@ -1121,7 +1121,7 @@ struct STRUCT_GUILD
 		int					Mark;
 		char				GuildMessage[GUILDMESSAGE_LENGTH];
 		STRUCT_GUILD_MEMBER Member[MAX_GUILD_MEMBER];
-		STRUCT_ITEM			Repository[MAX_CARGO*3];	// Ã¢°í 3°³
+		STRUCT_ITEM			Repository[MAX_CARGO*3];	// Ã¢ï¿½ï¿½ 3ï¿½ï¿½
 };
 
 struct TASK_INFO
@@ -1151,7 +1151,7 @@ struct TASK_INFO
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                           STRUCTURE
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Message Structure ÀÇ ID ÀÎµ¦½Ì ¹æ½Ä  
+// Message Structure ï¿½ï¿½ ID ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½  
 //        0 - MAX_USER           User
 // MAX_USER - MAX_MOB            NPC
 // 10000    - 10000+MAX_OBJ    Object   
@@ -1194,7 +1194,7 @@ struct  MSG_STANDARDPARM3
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 //
-//           DB ¼­¹ö     - >   °ÔÀÓ ¼­¹ö
+//           DB ï¿½ï¿½ï¿½ï¿½     - >   ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -1234,15 +1234,16 @@ struct   MSG_DBSavingQuit
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 //
-//               °ÔÀÓ ¼­¹ö   - >   DB ¼­¹ö
+//               ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   - >   DB ï¿½ï¿½ï¿½ï¿½
 //
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 #define  FLAG_GAME2DB                0x0800
-#define _MSG_DBNewCharacter         ( 2 | FLAG_GAME2DB) //   Ä³·¢ÅÍ ¸¸µé±â
-#define _MSG_DBAccountLogin         ( 3 | FLAG_GAME2DB) //   ¾îÄ«¿îÆ® ·Î±×ÀÎ
-#define _MSG_DBCharacterLogin       ( 4 | FLAG_GAME2DB) //   Ä³·¢ÅÍ ·Î±×ÀÎ
-#define _MSG_DBNoNeedSave           ( 5 | FLAG_GAME2DB) //   Á¢¼Ó Á¾·á, ÀúÀåÇÒ°Ô ¾øÀ½.
+#define _MSG_DBNewAccount           ( 1 | FLAG_GAME2DB) //   ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
+#define _MSG_DBNewCharacter         ( 2 | FLAG_GAME2DB) //   Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+#define _MSG_DBAccountLogin         ( 3 | FLAG_GAME2DB) //   ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½Î±ï¿½ï¿½ï¿½
+#define _MSG_DBCharacterLogin       ( 4 | FLAG_GAME2DB) //   Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
+#define _MSG_DBNoNeedSave           ( 5 | FLAG_GAME2DB) //   ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½.
 #define _MSG_DBSaveMob              ( 7 | FLAG_GAME2DB)
 struct	MSG_DBSaveMob
 {       _MSG;
@@ -1256,7 +1257,9 @@ struct	MSG_DBSaveMob
 		int				Export;
 		DWORD			dwTimeStamp[MAX_TIMEITEM];
 };
+#define	_MSG_DBEditCharacter		( 6 | FLAG_GAME2DB)
 #define	_MSG_DBDeleteCharacter		( 9 | FLAG_GAME2DB)
+#define	_MSG_DBRenameCharacter		( 10 | FLAG_GAME2DB)
 #define	_MSG_MessageDBImple			(11 | FLAG_GAME2DB | FLAG_DB2GAME) //   Parm 
 struct	MSG_MessageDBImple
 {		_MSG;
@@ -1274,13 +1277,13 @@ struct	MSG_MessageDBImple
 struct	MSG_DBSendItem
 {		_MSG;
 		int nID;
-		int Result;					// 0: ¿äÃ»,¼º°ø  1:°ÔÀÓÁßÀÌ¾Æ´Ô  2:´ë»óÀÌ´Ù¸§ 3:ºóÀÚ¸®¾øÀ½ 
+		int Result;					// 0: ï¿½ï¿½Ã»,ï¿½ï¿½ï¿½ï¿½  1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾Æ´ï¿½  2:ï¿½ï¿½ï¿½ï¿½Ì´Ù¸ï¿½ 3:ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ 
 		char Account[ACCOUNTNAME_LENGTH];
 		STRUCT_ITEM	Item;
 };
 
 //-------------------------------------------------------
-//	added by Á¤Àç¿õ(2003.11.22)
+//	added by ï¿½ï¿½ï¿½ï¿½ï¿½(2003.11.22)
 //-------------------------------------------------------
 int Percent( double a_dValue, double a_dPercent ) ;
 
@@ -1301,7 +1304,7 @@ int Percent( double a_dValue, double a_dPercent ) ;
 
 
 //#define TN_DURABILITY_CONST			100
-// »ó¼ö Á¤ÀÇ
+// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 enum { eSummonCaller_TriggerEvent1 = 20, eSummonCaller_TriggerEvent2 = 30
 		, eSummonCaller_Normal = 100, eSummonCaller_Familiar, eSummonCaller_Fellow, eSummonCaller_Tracker
 		, eSummonCaller_MonsterScroll = 110, eSummonCaller_GMCommand = 120,
@@ -1318,7 +1321,7 @@ enum { eCnst_StaffCorrect = 0, eCnst_StaffMaxNerves, eCnst_AbsorbMax, eCnst_Refl
 enum { eRetainer_DistanceFromMaster = 32, } ;
 enum { eCmd_None = 0, eCmd_PopMonster = 1, eCmd_DropItem = 2, eCmd_MaxCount = 6, eArea_MaxMobListCount = 6, } ;
 enum { eSklPtrn_Count = 50, eSklPtrn_Size = 10, eAAC_ArmorTypeCount = 15, eAAC_AttackTypeCount = 21, ePath_MaxCount = 5, eFlee_MaxPathCount = 5, eRoam_MaxPathCount = 5, eSmbl_MaxSize = 7, } ;
-enum { eSdg_SymbolCount = 7, eSdg_MaxEntry = 200, eSdg_LeaderSize = 4, } ; // °ø¼ºÀü °ü·Ã
+enum { eSdg_SymbolCount = 7, eSdg_MaxEntry = 200, eSdg_LeaderSize = 4, } ; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 enum { eItm_Use = 0, eItm_Info, eItem_Brd, eItm_Arrow = 7092, /*eItm_TownPortal = 7011, eItm_TownPortal2 = 7028, eItm_TownPortal3 = 7034, eItm_TownPortal4 = 7072,*/ eItem_Resurrect1 = 7031, eItem_Resurrect2 = 7039, eItm_Permenent = 2, eItm_Decay = 0};
 enum { eItem_amala = 6614, eItem_jade = 6551, eItem_Resurrect80 = 7031, eItem_Resurrect100 = 7039, eItm_SummonParty = 7078, };
 enum { eItem_Init2ndClass = 7050, eItem_ChangeHair = 7051, eItem_ChangeFace = 7052, eItem_ChangeSex = 7053, eItem_ChangeGuildMark = 7054, eItem_ChangeOldHair = 7055, eItem_ChangeOldFace = 7056, eItem_ChangeOldGuildMark = 7057};
@@ -1350,9 +1353,9 @@ enum { ePortal_Stronghold_SNW = 202, ePortal_Stronghold_SNE = 203, ePortal_Stron
 enum { ePortal_Stronghold_NW = 206, ePortal_Stronghold_NE = 207, ePortal_Stronghold_SW = 208, ePortal_Stronghold_SE = 209, ePortal_Stronghold_Front = 210, };
 enum { /*eWaitTime_TownPortal = 5000, eWaitTime_TownPortal2 = 2000,*/ eWaitTime_Quit = 10000, eWaitTime_SummonParty = 5000, } ;
 enum { eCmbt_Echo = -1, eCmbt_Normal = 0, eCmbt_Critical, eCmbt_Dodge, eCmbt_Blocked, eCmbt_Miss, eCmbt_MemoryTime = 60000, } ;
-enum { eBlk_None = 0, eBlk_Forbidden = 1, eBlk_Pc = 2, eBlk_Monster = 3, eBlk_OutOfMap = 4, eBlk_SafeZone = 5 } ; // ÀÌµ¿½Ã blockµÈ ÀÌÀ¯
-enum { ePop_Succ = 0, ePop_CantPop, ePop_OutOfPopArea, ePop_InvalidCoord } ; // ¸ó½ºÅÍ pop½Ã¿¡ »ç¿ëÇÏ´Â enum
-enum { ePath_Succ = 0, ePath_OutOfActiveArea, ePath_Forbidden, ePath_Idential, ePath_OutOfMap, ePath_TooFar, ePath_Blocked } ; // path-finding½ÃÀÇ enum
+enum { eBlk_None = 0, eBlk_Forbidden = 1, eBlk_Pc = 2, eBlk_Monster = 3, eBlk_OutOfMap = 4, eBlk_SafeZone = 5 } ; // ï¿½Ìµï¿½ï¿½ï¿½ blockï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+enum { ePop_Succ = 0, ePop_CantPop, ePop_OutOfPopArea, ePop_InvalidCoord } ; // ï¿½ï¿½ï¿½ï¿½ popï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ enum
+enum { ePath_Succ = 0, ePath_OutOfActiveArea, ePath_Forbidden, ePath_Idential, ePath_OutOfMap, ePath_TooFar, ePath_Blocked } ; // path-findingï¿½ï¿½ï¿½ï¿½ enum
 enum { eTNAI_TraceCount = 15 } ;
 enum { eATDG_Count = 9, eConst_MaxInstantCoolDonw = 128, } ;
 enum { eMonSkl_MaxIndex = 9, } ;
@@ -1407,7 +1410,7 @@ struct HSRECT
 };
 
 
-struct TNKALA_ALTAR_OLD // Ä®¶ó Á¦´Ü
+struct TNKALA_ALTAR_OLD // Ä®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 {
 	short sID ;
 	short sTrimuriti ;
@@ -1420,8 +1423,8 @@ struct TNKALA_ALTAR_OLD // Ä®¶ó Á¦´Ü
 /*
 const TNKALA_ALTAR_OLD g_krgKalaAltar[eKalaAltar_MaxCount] =
 {
-	0,  1, 720, 438, 0, // ½Ã¹Ù ¹æ¸é
-	1,  1, 720, 466, 0, // °¡¿îµ¥, installed
+	0,  1, 720, 438, 0, // ï¿½Ã¹ï¿½ ï¿½ï¿½ï¿½
+	1,  1, 720, 466, 0, // ï¿½ï¿½ï¿½îµ¥, installed
 	2,  1, 720, 494, 0,
 	3,  1, 844, 659, 0, // installed
 	4,  1, 814, 659, 0, // installed
@@ -1444,20 +1447,20 @@ const TNKALA_ALTAR_OLD g_krgKalaAltar[eKalaAltar_MaxCount] =
 const TNKALA_ALTAR_OLD g_krgKalaAltar2[eKalaAltar_MaxCount] =
 {
 	0,  1, 908, 717, 0,
-	1,  1, 844, 153, 0, // ¼º ¾çÂÊ 1
-	2,  1, 933, 153, 0, // ¼º ¾çÂÊ 2
-	3,  1, 708, 160, 0, // ¿ä»õ 1
-	4,  1, 708, 118, 0, // ¿ä»õ 2
+	1,  1, 844, 153, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1
+	2,  1, 933, 153, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2
+	3,  1, 708, 160, 0, // ï¿½ï¿½ï¿½ 1
+	4,  1, 708, 118, 0, // ï¿½ï¿½ï¿½ 2
 	5,  2, 402,  97, 0,
-	6,  2, 103, 139, 0, // ¼º ¾çÂÊ 1
-	7,  2, 203, 140, 0, // ¼º ¾çÂÊ 2
-	8,  2, 125, 568, 0, // ¿ä»õ 1
-	9,  2,  83, 568, 0, // ¿ä»õ 2
-	10, 4, 132, 915, 0, // ÃÊ¼Ò
-	11, 4, 476, 844, 0, // ¼º ¾çÂÊ 1
-	12, 4, 476, 934, 0, // ¼º ¾çÂÊ 2
-	13, 4, 803, 938, 0, // ¿ä»õ 1
-	14, 4, 803, 896, 0, // ¿ä»õ 2
+	6,  2, 103, 139, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1
+	7,  2, 203, 140, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2
+	8,  2, 125, 568, 0, // ï¿½ï¿½ï¿½ 1
+	9,  2,  83, 568, 0, // ï¿½ï¿½ï¿½ 2
+	10, 4, 132, 915, 0, // ï¿½Ê¼ï¿½
+	11, 4, 476, 844, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1
+	12, 4, 476, 934, 0, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2
+	13, 4, 803, 938, 0, // ï¿½ï¿½ï¿½ 1
+	14, 4, 803, 896, 0, // ï¿½ï¿½ï¿½ 2
 	
 } ;
 
@@ -1471,8 +1474,8 @@ struct TNSTRONGHOLD
 	char	szGuildName[SZNAME_LENGTH] ;
 	DWORD	dwMark;
 	CTime	kTimeOccupied ;
-	int		irgDestroyer[2] ; // »óÂ¡¹°À» »Ç°µ guild ID ÀúÀå, ÃÊ±âÈ­µÇ¾î¾ß ÇÑ´Ù.
-	// date, ±âÅ¸µîµî
+	int		irgDestroyer[2] ; // ï¿½ï¿½Â¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ guild ID ï¿½ï¿½ï¿½ï¿½, ï¿½Ê±ï¿½È­ï¿½Ç¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
+	// date, ï¿½ï¿½Å¸ï¿½ï¿½ï¿½
 } ;
 
 
@@ -1489,14 +1492,14 @@ struct TNCELL
 
 struct TNEVENT
 {
-	short sCount ; // -1:unlimited, 0<:°¡´ÉÈ½¼ö
+	short sCount ; // -1:unlimited, 0<:ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½
 	short srgTask[eTask_Sort] ;
-	unsigned int uiAvailableTime ; // triggerµÉ ¼ö ÀÖ´Â ¶§, ÇöÀç timeÀÌ ÀÌ ¼öÄ¡º¸´Ù ÀÛÀ¸¸é, event°¡ triggerµÇÁö ¾Ê´Â´Ù.(variable)
-	unsigned int uiCoolDownTime ; // event°¡ ¾ó¸¶³ª ÀÚÁÖ triggerµÉ ¼ö ÀÖ´Â°¡~(static)
-	int iDuration ; // Áö¼Ó½Ã°£ type, 0ÀÌ¸é °è¼Ó ÀÌ¿ë°¡´É, 0ÀÌ»óÀÌ¸é ¼³Á¤ ½Ã°£³¢Áö ÀÌ¿ë °¡´É, -1ÀÌ¸é ÀÌ¿ë ºÒ°¡
-	unsigned int uiDurationTime ; // ÁöÁ¤µÈ ½Ã°£±îÁöÀÏ °æ¿ì time °ª ¼³Á¤
+	unsigned int uiAvailableTime ; // triggerï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ timeï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, eventï¿½ï¿½ triggerï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.(variable)
+	unsigned int uiCoolDownTime ; // eventï¿½ï¿½ ï¿½ó¸¶³ï¿½ ï¿½ï¿½ï¿½ï¿½ triggerï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Â°ï¿½~(static)
+	int iDuration ; // ï¿½ï¿½ï¿½Ó½Ã°ï¿½ type, 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ì¿ë°¡ï¿½ï¿½, 0ï¿½Ì»ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½, -1ï¿½Ì¸ï¿½ ï¿½Ì¿ï¿½ ï¿½Ò°ï¿½
+	unsigned int uiDurationTime ; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ time ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	short sClan ;
-	short sProceedType ; // event¿¡ µî·ÏµÈ task°¡ sequentialÇÏ°Ô ÁøÇàµÇ¾î¾ß ÇÏ´Â°¡? 1 ÀÌ»óÀÌ¸é Àý´ëÀûÀº ¼øÂ÷ Ã³¸®¸¦ ¸»ÇÑ´Ù. Áï ¾ÕÀÇ °ÍÀÌ ½ÇÆÐÇÏ¸é ±×°÷¿¡¼­ ³¡³­´Ù.
+	short sProceedType ; // eventï¿½ï¿½ ï¿½ï¿½Ïµï¿½ taskï¿½ï¿½ sequentialï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ ï¿½Ï´Â°ï¿½? 1 ï¿½Ì»ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½. ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 } ;
 
 
@@ -1558,7 +1561,7 @@ struct TNDAMAGE
 {
 	int irgBase[2] ;
 	int irgPhy[2] ;
-	int irgPierce[2] ; // ¹æ¾îµµ¸¦ ¹«½ÃÇÏ´Â damage
+	int irgPierce[2] ; // ï¿½ï¿½îµµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ damage
 	int irgFire[2] ;
 	int irgCold[2] ;
 	int irgLightning[2] ;
@@ -1584,7 +1587,7 @@ struct TNCOMBAT_FACTORS
 {
 	int iAttackRate ;
 	int iDodgeRate ;
-	int iDodgeSpeed ; // È¸ÇÇ delay ½Ã°£
+	int iDodgeSpeed ; // È¸ï¿½ï¿½ delay ï¿½Ã°ï¿½
 	int iDefense ;
 	int iAC ;
 	int irgResist[4] ;
@@ -1645,8 +1648,8 @@ union HSDATA
 	int iData ;
 	struct
 	{
-		short sData1 ; // low(³·Àº ¼ö)
-		short sData2 ; // high(³ôÀº ¼ö)
+		short sData1 ; // low(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
+		short sData2 ; // high(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
 	} ;
 };
 
@@ -1667,11 +1670,11 @@ struct TNSKILL_DATA
 {
 	short sID ;
 	short sType ; //
-	int iAttackSpeed ;	// ¹ßµ¿ÇÏ±â±îÁö °É¸®´Â ½Ã°£, ¹«±â´Â °ø¼Ó, skillÀº casting time ÀÌ´Ù.
+	int iAttackSpeed ;	// ï¿½ßµï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, skillï¿½ï¿½ casting time ï¿½Ì´ï¿½.
 	//int iApplyTime ;  // 
 	int iActivateTime ;
 	int iCoolDownTime ;
-	int iCastDuration ; // ¹ßµ¿ÇÑ ÈÄ¿¡ °è¼Ó ¸ð¼ÇÀ» ÃëÇÏ´Â ½Ã°£, -1:passive, 0:instant, 0<:Áö¼Ó½Ã°£(ÃÊ;ÃÖ´ë120ÃÊ)
+	int iCastDuration ; // ï¿½ßµï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ã°ï¿½, -1:passive, 0:instant, 0<:ï¿½ï¿½ï¿½Ó½Ã°ï¿½(ï¿½ï¿½;ï¿½Ö´ï¿½120ï¿½ï¿½)
 	int iRange ;
 	int iAOE ;
 
@@ -1681,13 +1684,13 @@ struct TNSKILL_DATA
 	byte byCastCount ;
 
 	//char iRange ;  // -2:unlimited, -1:weapon-base, 0:self, 0<:range
-	//char iAOE ; // -1:N/a, 0:Unit, 0<:¹üÀ§¹Ý°æ	
+	//char iAOE ; // -1:N/a, 0:Unit, 0<:ï¿½ï¿½ï¿½ï¿½ï¿½Ý°ï¿½	
 	//byte byDummy2 ;
 	//byte byDummy3 ;
 
 	byte bySuccessRate ;
-	byte byFollow ; // follow°¡ ³¯¾Æ°¡´Â ÃÖ´ë ºñ°Å¸®
-	byte byPierceRate ; // °üÅë È®·ü	
+	byte byFollow ; // followï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Å¸ï¿½
+	byte byPierceRate ; // ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½	
 	byte byArmorType ;
 	
 	short sProperty ;
@@ -1700,7 +1703,7 @@ struct TNSKILL_DATA
 	TNCOST kCost ;
 	TNREQUIREMENT kReq ;
 
-	// item Æ¯¼ö
+	// item Æ¯ï¿½ï¿½
 	int iPrice ;
 	short sEventID ;
 	short sMaxDur ;
@@ -1709,7 +1712,7 @@ struct TNSKILL_DATA
 	byte byDecay ;
 	TNDAMAGE kDamage ;
 
-	// skill Æ¯¼ö
+	// skill Æ¯ï¿½ï¿½
 	
 	int iReqWeapon ;
 	int iReqItem ;
@@ -1729,7 +1732,7 @@ typedef struct TNSKILL_DATA	TNITEM_DATA ;
 struct TNAFFECTION
 {
 	TNEFFECT kEffect ;
-	unsigned int uiExpireTime ; // ¿Ï·á ½Ã°£
+	unsigned int uiExpireTime ; // ï¿½Ï·ï¿½ ï¿½Ã°ï¿½
 	unsigned int uiStartTime ;
 	int iPartyLeader ;
 };
@@ -1739,7 +1742,7 @@ struct TNAFFECTION
 struct TNATTACKER
 {
 	int iID ;
-	int iDamage ; // score¸¦ ³ªÅ¸³½´Ù.
+	int iDamage ; // scoreï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½.
 	int iScore ;
 	unsigned int uiReleaseTime ;
 	TNATTACKER() : iID(0), iDamage(0), iScore(0), uiReleaseTime(0) {}
@@ -1748,10 +1751,10 @@ struct TNATTACKER
 
 struct TNLASTEST_TIME
 {
-	unsigned int uiActivate ; // È°µ¿À» ½ÃÀÛÇÏ´Â ½Ã°£, ÀÌ ¼öÄ¡º¸´Ù Å©¸é È°µ¿À» ÇÑ´Ù.
+	unsigned int uiActivate ; // È°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ã°ï¿½, ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ È°ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	unsigned int uiMoved ;
-	unsigned int uiAttackedOld ; // ÀÌÀü ÀÌÀü °ø°Ý ½Ã°£
-	unsigned int uiAttacked ; // ÀÌÀü °ø°Ý ½Ã°£
+	unsigned int uiAttackedOld ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+	unsigned int uiAttacked ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 	unsigned int uiDamaged ;
 	unsigned int uiKilled ;
 	unsigned int uiHealed ;
@@ -2065,7 +2068,7 @@ typedef enum _ETNENTITY
 
 
 
-// bit vector ·Î ÇÑ´Ù.
+// bit vector ï¿½ï¿½ ï¿½Ñ´ï¿½.
 typedef enum _ETNFsmState
 {
 	eTNFsm_None		= -2,
@@ -2097,17 +2100,17 @@ typedef enum _ETNCharacter
 
 
 
-// affectionÀ» µ¿½Ã¿¡ ¿©·¯ °¡Áö°¡ ÀÖÀ» ¼ö ÀÖ±â ¶§¹®¿¡ bitvector°ú °°Àº ¹æ¹ýÀ» ½á¾ß ÇÑ´Ù.
-// skill(magic)¿¡ ÀÇÇØ ¿µÇâÀ» ¹Þ´Â ¸ñ·ÏµéÀ» Æ÷ÇÔÇÑ´Ù.
+// affectionï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ bitvectorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+// skill(magic)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 typedef enum _ETNAffectionState
 {
 	eTNAfn_None = 0,
 	eTNAfn_Damage = 1,
 	eTNAfn_DamageSplash = 2,
 	eTNAfn_EnergyOfSword = 3,
-	eTNAfn_PierceDamage = 4, // phycical, ¹æ¾î·Â 100% ¹«½Ã
-	eTNAfn_DamageTP = 5, // TP¸¦ ÁÙÀÎ´Ù.
-	eTNAfn_PercentDamage = 6, // Max HPÀÇ ÀÏÁ¤ % HP¸¦ ÁÙÀÎ´Ù.
+	eTNAfn_PierceDamage = 4, // phycical, ï¿½ï¿½ï¿½ï¿½ 100% ï¿½ï¿½ï¿½ï¿½
+	eTNAfn_DamageTP = 5, // TPï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½.
+	eTNAfn_PercentDamage = 6, // Max HPï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ % HPï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½.
 	eTNAfn_Fire = 10,
 	eTNAfn_Cold = 11,
 	eTNAfn_Lightning = 12,
@@ -2129,9 +2132,9 @@ typedef enum _ETNAffectionState
 	eTNAfn_WizardEyes = 1065,
 	eTNAfn_Hold	= 2000,
 	eTNAfn_Hold2 = 2005, // seidge mode
-	eTNAfn_Stun = 2010, // ±âÀý
-	eTNAfn_Sleep = 2020, // Àá
-	eTNAfn_Blind = 2040, // Àå´Ô, ½Ã¾ß¸¦ 1·Î ÁÙÀÎ´Ù.
+	eTNAfn_Stun = 2010, // ï¿½ï¿½ï¿½ï¿½
+	eTNAfn_Sleep = 2020, // ï¿½ï¿½
+	eTNAfn_Blind = 2040, // ï¿½ï¿½ï¿½, ï¿½Ã¾ß¸ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½.
 	eTNAfn_Concentration = 2210,
 	eTNAfn_Disruption = 2220,
 	eTNAfn_Invulnerable = 2230,
@@ -2141,7 +2144,7 @@ typedef enum _ETNAffectionState
 	eTNAfn_ManaShield = 2510,
 	eTNAfn_SpiritLink = 2520,
 
-	// Æ¯¼ö ¿ëµµ
+	// Æ¯ï¿½ï¿½ ï¿½ëµµ
 	eTNAfn_ExpandBag30 = 2900,
 	eTNAfn_ProtectFromPK = 2910,
 	eTNAfn_ProtectFromMonster = 2915,
@@ -2197,8 +2200,8 @@ typedef enum _ETNAffectionState
 	eTNAfn_Resurrect = 3110,
 	eTNAfn_ReflectDamage = 3120,
 	eTNAfn_AbsorbDamage= 3130,
-	eTNAfn_Terror = 3140, // µµ¸Á°¡°Ô ÇÑ´Ù.
-	eTNAfn_Taunt = 3150, // ¾à ¿Ã·Á¼­ °ø°ÝÇÏ°Ô ÇÑ´Ù.
+	eTNAfn_Terror = 3140, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+	eTNAfn_Taunt = 3150, // ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ñ´ï¿½.
 	eTNAfn_DeTaunt = 3151,
 	eTNAfn_RangeUp = 3160,
 	eTNAfn_RangeDown = 3165,
@@ -2213,7 +2216,7 @@ typedef enum _ETNAffectionState
 	eTNAfn_Dash = 3240,
 	eTNAfn_Teleport = 3250,
 	eTNAfn_CantUsePotion = 3260,
-	eTNAfn_100PCriticalHit = 3270, // 100% Å©¸®Æ¼ÄÃ È÷Æ®
+	eTNAfn_100PCriticalHit = 3270, // 100% Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Æ®
 	eTNAfn_Recall = 3280,
 	eTNAfn_Weakness = 3290,
 	eTNAfn_SuccessRate = 3300,
@@ -2264,9 +2267,9 @@ typedef enum _ETNAffectionState
 	eTNAfn_AllStateMinus2 = 4253,
 	eTNAfn_AllDamagePlus = 4260,
 	eTNAfn_AllDamageMinus = 4261,
-	eTNAfn_FixedDamagePlus = 4270, // °è»ê ÈÄ¿¡ ÃÖÁ¾ ´Ü°è¿¡¼­ Ãß°¡µÈ´Ù.
+	eTNAfn_FixedDamagePlus = 4270, // ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°è¿¡ï¿½ï¿½ ï¿½ß°ï¿½ï¿½È´ï¿½.
 	eTNAfn_FixedDamageMinus = 4271,
-	eTNAfn_FixedDamagePlus2 = 4280, // °è»ê ÈÄ¿¡ ÃÖÁ¾ ´Ü°è¿¡¼­ Ãß°¡µÈ´Ù.
+	eTNAfn_FixedDamagePlus2 = 4280, // ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°è¿¡ï¿½ï¿½ ï¿½ß°ï¿½ï¿½È´ï¿½.
 	eTNAfn_FixedDamageMinus2 = 4281,
 	eTNAfn_AttackRatePlus = 4300,
 	eTNAfn_AttackRateMinus = 4301,
@@ -2320,10 +2323,10 @@ typedef enum _ETNAffectionState
 	eTNAfN_PetGrowth = 4570,
 
 	//	Sub Refining Effect
-	eTNAfn_RefiningJade		= 4610,		//	¾ÆÀÌÅÛ ¼Ò¸ê¹æÁö
-	eTNAfn_RefiningDiscount	= 4620,		//	Á¦·Ãºñ¿ë °¨¼Ò
-	eTNAfn_RefiningRateUp	= 4630,		//	Á¦·ÃÈ®·ü »ó½Â
-	eTNAfn_RefiningProtect	= 4640,		//	Á¦·ÃÀç·á ¼Ò¸ê¹æÁö
+	eTNAfn_RefiningJade		= 4610,		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½ï¿½
+	eTNAfn_RefiningDiscount	= 4620,		//	ï¿½ï¿½ï¿½Ãºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNAfn_RefiningRateUp	= 4630,		//	ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½
+	eTNAfn_RefiningProtect	= 4640,		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½ï¿½
 
 	// etc
 	eTNAfn_Birth		= 10000,
@@ -2336,7 +2339,7 @@ typedef enum _ETNAffectionState
 } ETNAffectionState ;
 
 
-// client¿¡ affection Á¤º¸¸¦ ¾Ë·ÁÁÖ±â À§ÇÑ bit-vectorÀÌ´Ù.
+// clientï¿½ï¿½ affection ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ bit-vectorï¿½Ì´ï¿½.
 typedef enum _ETNVisualAffection
 {
 	eTNVSAfn_DontMove				= 0x00002380,
@@ -2357,9 +2360,9 @@ typedef enum _ETNVisualAffection
 	eTNVSAfn_Sleep					= 0x00000200, 
 	eTNVSAfn_Blind					= 0x00000400, 
 	eTNVSAfn_Invulnerable			= 0x00000800, // 10
-	eTNVSAfn_MagicShield			= 0x00001000, // ¾Æ¼ö¶ó - ÆÄ¶óÄ«
+	eTNVSAfn_MagicShield			= 0x00001000, // ï¿½Æ¼ï¿½ï¿½ï¿½ - ï¿½Ä¶ï¿½Ä«
 	eTNVSAfn_Hold2					= 0x00002000, // seidge mode	
-	eTNVSAfn_ManaShield				= 0x00004000, // µ¥¹Ù - ¸¶³ª½¯µå
+	eTNVSAfn_ManaShield				= 0x00004000, // ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	eTNVSAfn_ReflectDamage			= 0x00008000,
 	eTNVSAfn_RecoverTP				= 0x00010000,	
 	eTNVSAfn_Heal					= 0x00020000, 
@@ -2375,8 +2378,8 @@ typedef enum _ETNVisualAffection
 	eTNVSAfn_ProtectAll				= 0x08000000,
 	eTNVSAfn_HaveKalaCore			= 0x10000000,
 	eTNVSAfn_ProtectFromPK			= 0x20000000, // 30
-	eTNVSAfn_PKAttacker				= 0x40000000, // ¼±Á¦°ø°ÝÀÚ
-	eTNVSAfn_BlessOfGod				= 0x80000000, // eTNVSAfn_HaveKalaCore°ú Àý´ë Áßº¹µÇÁö ¾Ê´Â´Ù.
+	eTNVSAfn_PKAttacker				= 0x40000000, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	eTNVSAfn_BlessOfGod				= 0x80000000, // eTNVSAfn_HaveKalaCoreï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 
 	// Inner Affections
 	eTNInAfn_Empty					= 0x00000000,
@@ -2398,7 +2401,7 @@ typedef enum _ETNInnerAffection
 } ETNInnerAffection ;
 
 
-typedef enum _ETNEye // º¸Áö ¸øÇÏ´Â ¸ñ·ÏÀÌ bit vector·Î µî·ÏµÇ¾î¾ß ÇÑ´Ù.
+typedef enum _ETNEye // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ bit vectorï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
 {
 	eTNEye_DetectAll				= 0x00000000,
 	eTNEye_DetectVisibleOnly		= eTNVSAfn_Invisible, //0x00000020,
@@ -2442,7 +2445,7 @@ typedef enum _ETNImmunity
 	//eTNImm_Elemental			= 0x10000000,
 	//eTNImm_Elemental			= 0x20000000,
 	//eTNImm_Elemental			= 0x40000000,
-	//eTNImm_All				= 0x80000000, // »ìÁ¦·Î´Â ¾Æ·¡¿Í °°ÀÌ ¸ðµç bit°¡ 1ÀÎ °æ¿ì¿¡ ´ëÇÑ °ªÀ» °¡Á®¾ß ÇÑ´Ù.
+	//eTNImm_All				= 0x80000000, // ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ bitï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	eTNImm_All					= 0xFFFFFFFF,
 } ETNImmunity ;
 
@@ -2488,7 +2491,7 @@ typedef enum _ETNVariationIndex
 	eTNVar_SpiritLink, // 35,
 	eTNVar_SuccessRate, // 36, limit
 	eTNVar_EnhanceHelmet = 37,
-	//eTNVar_EnhanceHardness = 38, // ³»±¸µµ °¨¼ÒÀ²À» ÁÙÀÎ´Ù.
+	//eTNVar_EnhanceHardness = 38, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½.
 	eTNVar_DamageBonusForNextAttack = 38,
 	eTNVar_RangeDown = 39,
 	eTNVar_EnhanceNecklace = 40,
@@ -2551,7 +2554,7 @@ typedef enum _ETNEquipmentSlot
 } ETNEquipmentSlot ;
 
 
-// ¸ðµÎ one-hand weapon
+// ï¿½ï¿½ï¿½ one-hand weapon
 typedef enum _ETNWeaponType
 {
 	eTNWpn_Sword			= 0x0001,
@@ -2592,18 +2595,18 @@ typedef enum _ETNSkillType
 
 typedef enum _ETNCombatPhase
 {
-	// ¾Æ·¡ÀÇ 6°³´Â combat progress¸¦ ³ªÅ¸³½´Ù. bit°¡ check°¡ µÇ¾î ÀÖÀ¸¸é ±× °úÁ¤À» ¼öÇàÇÑ´Ù.
-	eTNCPhase_CastInstant1		= 0x0001,  // caster ÀÚ½Å¿¡¼­ °è»ê, damage up/down °è¿­
-	eTNCPhase_CastInstant2		= 0x0002,  // caster ÀÚ½Å¿¡¼­ °è»ê, Ãß°¡ÀûÀÎ damage °ü·Ã effect, pierce strike, critical-strike, multiple-strike
-	eTNCPhase_DealDamage		= 0x0004,  // caster ÀÚ½Å¿¡¼­ °è»ê, deal damage
-	eTNCPhase_CastInstant3		= 0x0008, // caster ÀÚ½Å¿¡¼­ °è»ê, steal °è¿­
-	eTNCPhase_OnTakeInstant1	= 0x0010, // target(corpse)¿¡°Ô ¼ø°£ÀûÀÎ È¿°ú¸¦ ³»´Â
-	eTNCPhase_OnTakeInstant2	= 0x0020, // target(alive)¿¡°Ô ¼ø°£ÀûÀÎ È¿°ú¸¦ ³»´Â
-	eTNCPhase_OnAffect			= 0x0040, // target(alive)¿¡°Ô Áö¼ÓÀûÀ¸·Î È¿°ú¸¦ ³ªÅ¸³»´Â
-	eTNCPhase_AffectSelf		= 0x0080, // ÀÚ½Å¿¡°Ô Áö¼ÓÀûÀ¸·Î È¿°ú¸¦ ³ªÅ¸³»´Â, targetÀÌ ÀÚ½Å ÀÌ¿ÜÀÏ °æ¿ìÀÌÁö¸¸ ÀÚ½ÅÇÑÅ×µµ ¿µÇâÀÌ ¹ÌÃÄ¾ßÇÒ °æ¿ì¿¡¸¸ »ç¿ëÇÑ´Ù. º¸Åë selt buff´Â ¹Ù·Î À§ÀÇ eTNCPhase_OnAffect¸¦ »ç¿ëÇÑ´Ù.
+	// ï¿½Æ·ï¿½ï¿½ï¿½ 6ï¿½ï¿½ï¿½ï¿½ combat progressï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½. bitï¿½ï¿½ checkï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+	eTNCPhase_CastInstant1		= 0x0001,  // caster ï¿½Ú½Å¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, damage up/down ï¿½è¿­
+	eTNCPhase_CastInstant2		= 0x0002,  // caster ï¿½Ú½Å¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ damage ï¿½ï¿½ï¿½ï¿½ effect, pierce strike, critical-strike, multiple-strike
+	eTNCPhase_DealDamage		= 0x0004,  // caster ï¿½Ú½Å¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, deal damage
+	eTNCPhase_CastInstant3		= 0x0008, // caster ï¿½Ú½Å¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, steal ï¿½è¿­
+	eTNCPhase_OnTakeInstant1	= 0x0010, // target(corpse)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNCPhase_OnTakeInstant2	= 0x0020, // target(alive)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNCPhase_OnAffect			= 0x0040, // target(alive)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½
+	eTNCPhase_AffectSelf		= 0x0080, // ï¿½Ú½Å¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½, targetï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ï¿½×µï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. ï¿½ï¿½ï¿½ï¿½ selt buffï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ eTNCPhase_OnAffectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	eTNCPhase_Taunt				= 0x0100, // 256
-	eTNCPhase_StartAction		= 0x0200, // ÀÚ½Å¿¡°Ô Æ¯¼öÇÑ actionÀ» ¹ßµ¿½ÃÅ²´Ù. , 512
-	eTNCPhase_OnChargInstance	= 0x0400, // ÀÚ½Å¿¡°Ô Æ¯¼öÇÑ actionÀ» ¹ßµ¿½ÃÅ²´Ù. , 1024
+	eTNCPhase_StartAction		= 0x0200, // ï¿½Ú½Å¿ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ actionï¿½ï¿½ ï¿½ßµï¿½ï¿½ï¿½Å²ï¿½ï¿½. , 512
+	eTNCPhase_OnChargInstance	= 0x0400, // ï¿½Ú½Å¿ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ actionï¿½ï¿½ ï¿½ßµï¿½ï¿½ï¿½Å²ï¿½ï¿½. , 1024
 	eTNCPhase_CastOnly			= 0x0800,
 
 	eTNCPhase_StatusChanged		= 0x0060, // eTNCPhase_OnTakeInstant2 + eTNCPhase_OnAffect
@@ -2667,7 +2670,7 @@ typedef enum _ETNAllowedTarget
 typedef enum _ETNCellInfo
 {
 	eTNCell_SafetyZone					= 0x0001,
-	//eTNCell_Collision					= 0x0002, // ÀÌÀü¿¡ ÀÌ·¸°Ô ÇßÀ½
+	//eTNCell_Collision					= 0x0002, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	eTNCell_PKAllowed					= 0x0004,	
 	eTNCell_Shrine						= 0x0008,
 	eTNCell_Blocked						= 0x0010,
@@ -2701,8 +2704,8 @@ typedef enum _ETNRouteType
 
 typedef enum _ETNClan
 {
-	eTNClan_Friendly = 0, // 0Àº ¿ìÈ£ÀÌ´Ù.
-	eTNClan_Hostile = 11, // 11 ºÎÅÍ hostileÀÌ´Ù.
+	eTNClan_Friendly = 0, // 0ï¿½ï¿½ ï¿½ï¿½È£ï¿½Ì´ï¿½.
+	eTNClan_Hostile = 11, // 11 ï¿½ï¿½ï¿½ï¿½ hostileï¿½Ì´ï¿½.
 
 	eTNClan_NoTrimuritiy = 0,
 	eTNClan_Brahma		= 1,
@@ -2731,7 +2734,7 @@ typedef enum _ETNClan
 	eTNClan_Reserved,
 } ETNClan ;
 
-// Á¤¸®°¡ Àß¸øµÇ¾î ÀÖ´Ù.
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½.
 typedef enum _ETNClass
 {
 	eTNMob_PC = 0,
@@ -2741,37 +2744,37 @@ typedef enum _ETNClass
 	eTNCls_2nd,
 	eTNCls_3rd,
 
-	// NPC Á÷¾÷ ¸ñ·Ï
+	// NPC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	eTNCls_Pet	= 9,
-	eTNCls_Warrior = 10, // ÀÏ¹Ý ¸ó½ºÅÍ(ÀüÅõÇü)
-	eTNCls_Summon = 11, // ¼ÒÈ¯ ¸ó½ºÅÍ
+	eTNCls_Warrior = 10, // ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+	eTNCls_Summon = 11, // ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½
 	eTNCls_SummonOld = 12,
-	eTNCls_Follower = 13, // (ÀüÅõÇü)
-	eTNCls_Trap = 14, // ÇÕÁ¤
+	eTNCls_Follower = 13, // (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+	eTNCls_Trap = 14, // ï¿½ï¿½ï¿½ï¿½
 	eTNCls_Fellow = 15,
 	eTNCls_Event = 17,// not use
-	eTNCls_Quest = 18, // quest °ü·Ã mobile
-	eTNCls_NPC = 19,	 // 19, client¿¡¼­ contact_npc ¸Þ½ÃÁö¸¦ Àü´ÞÇÑ´Ù.
+	eTNCls_Quest = 18, // quest ï¿½ï¿½ï¿½ï¿½ mobile
+	eTNCls_NPC = 19,	 // 19, clientï¿½ï¿½ï¿½ï¿½ contact_npc ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 
 	/*
-	eTNCls_Mount, // Å»°Í(ºñÀüÅõÇü), PetÀÌ¶û °ãÄ¡´Â ºÎºÐÀÏ ¼ö ÀÖ´Ù. pet¿¡ mount °¡´ÉÇÑÁö¸¦ °Ë»çÇÑ´Ù.
-	eTNCls_Guard, // (ÀüÅõÇü), ÀÌ Å¸ÀÔÀÌ ÇÊ¿äÀÖÀ»±î?
-	eTNCls_Guider,   // tutorial¿¡ ´ëÇÑ ³»¿ëÀ» À¯Àúµé¿¡°Ô ¾Ë¸®´Â ¿ªÇÒ
-	eTNCls_Merchant, // »óÀÎ(ºñÀüÅõÇü)
-	eTNCls_Keeper, // º¸°ü¼Ò(ºñÀüÅõÇü)
+	eTNCls_Mount, // Å»ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½), Petï¿½Ì¶ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½. petï¿½ï¿½ mount ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½.
+	eTNCls_Guard, // (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½), ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
+	eTNCls_Guider,   // tutorialï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¿¡ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNCls_Merchant, // ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+	eTNCls_Keeper, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	*/
 
 
-	// Á÷¾÷ ¼¼ºÐÈ­
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
 	eTNCls2_Basic = 0,
-	// class1ÀÌ summonÀÎ °æ¿ì	
+	// class1ï¿½ï¿½ summonï¿½ï¿½ ï¿½ï¿½ï¿½	
 	eTNCls2_Tracker = 1,
-	eTNCls2_Familiar = 2, // ´Ü¼øÈ÷ °ø°Ý¸¸ ÇÏ´Â ÆÐ¹Ð¸®¾î
+	eTNCls2_Familiar = 2, // ï¿½Ü¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½ ï¿½Ï´ï¿½ ï¿½Ð¹Ð¸ï¿½ï¿½ï¿½
 	eTNCls2_Summoned = 3,
 	eTNCls2_Retainer = 4,
 	//
-	eTNCls2_Guard, // ±ÙÃ³¿¡ ¼ÒÈ¯µÇ¾î¼­ ¼ÒÈ¯ÀÚ¸¦ º¸È£ÇÑ´Ù.
-	//eTNCls2_Soldier, // º´»ç°³³ä
+	eTNCls2_Guard, // ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ç¾î¼­ ï¿½ï¿½È¯ï¿½Ú¸ï¿½ ï¿½ï¿½È£ï¿½Ñ´ï¿½.
+	//eTNCls2_Soldier, // ï¿½ï¿½ï¿½ç°³ï¿½ï¿½
 } ETNClass ;
 
 
@@ -2792,8 +2795,8 @@ typedef enum _ETNMonsterProperty
 	//eMonPrty_PoisonResist, 
 	eMonPrty_PopDelayMin = 10, // 10
 	eMonPrty_PopDelayMax,
-	eMonPrty_BlockedCell, // ÀÌµ¿ ¸øÇÏ´Â cell Á¤º¸
-	eMonPrty_CantDetect, // °¨ÁöÇÏÁö ¸øÇÏ´Â affectionÁ¤º¸
+	eMonPrty_BlockedCell, // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ cell ï¿½ï¿½ï¿½ï¿½
+	eMonPrty_CantDetect, // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ affectionï¿½ï¿½ï¿½ï¿½
 	eMonPrty_Resist,	
 	eMonPrty_SpeechRate,
 	eMonPrty_HPRecovery,
@@ -2848,9 +2851,9 @@ typedef enum _ETNAI
 	eTNAI_BeKilled1,
 	eTNAI_UnderAttack1, // 10
 	eTNAI_Attack,
-	eTNAI_HitEnemy, // critical hit·Î ÀûÀ» ¶§·ÈÀ» ¶§,
+	eTNAI_HitEnemy, // critical hitï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,
 	eTNAI_Miss,
-	eTNAI_BeHitted, // critical hit·Î ¸Â¾ÒÀ» ¶§
+	eTNAI_BeHitted, // critical hitï¿½ï¿½ ï¿½Â¾ï¿½ï¿½ï¿½ ï¿½ï¿½
 	eTNAI_Dodge,
 	eTNAI_Trace,
 	eTNAI_GiveUpToTrace,
@@ -2860,8 +2863,8 @@ typedef enum _ETNAI
 	eTNAI_Guard2,
 	eTNAI_BeKilled2,
 	eTNAI_UnderAttack2,	
-	eTNAI_CantTrace,  // °ÉÄ¡±â event
-	eTNAI_StopToAttack, // ¸÷ ¸ôÀÌ ¹æÁö
+	eTNAI_CantTrace,  // ï¿½ï¿½Ä¡ï¿½ï¿½ event
+	eTNAI_StopToAttack, // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	eTNAI_Return,
 	eTNAI_Flee,
 	eTNAI_Lead,
@@ -2963,7 +2966,7 @@ typedef enum _ETNAction
 	eTNAct_CountMonster					= 20100,
 	eTNAct_CountMonsterByTribe			= 20101,
 	eTNAct_TeleportAll					= 20110,
-	eTNAct_ReturnToSaveZone				= 20120, // ½ÇÁ¦·Î´Â ¹ü¿ëÀûÀÎ ÇÔ¼ö°¡ ¾Æ´Ï´Ù.
+	eTNAct_ReturnToSaveZone				= 20120, // ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½Æ´Ï´ï¿½.
 	eTNAct_ReturnPCToSaveZone			= 20121,
 	eTNAct_CountBrahmaMonster			= 20130,
 	eTNAct_CountVishnuMonster			= 20140,
@@ -3140,7 +3143,7 @@ typedef enum _ETNSpeechLocation
 } ETNSpeechLocation ;
 
 
-typedef enum _ETNSwitch  // 1ÀÏ °æ¿ì´Â offµÈ °ÍÀÌ´Ù. 0ÀÏ °æ¿ì´Â on
+typedef enum _ETNSwitch  // 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ offï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½. 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ on
 {
 	eTNSwitch_Empty					= 0x00000000,
 	eTNSwitch_DecPrana				= 0x00000001,
@@ -3153,12 +3156,12 @@ typedef enum _ETNSwitch  // 1ÀÏ °æ¿ì´Â offµÈ °ÍÀÌ´Ù. 0ÀÏ °æ¿ì´Â on
 } ETNSwitch ;
 
 
-typedef enum _ETNProduction  // ¿¬Ãâ È¿°ú
+typedef enum _ETNProduction  // ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½
 {
-	eTNPrdt_PopNormal = 0, // ±×³É Áö¸éÀ§¿¡¼­ ÆãÇÏ°í ³ªÅ¸³², ÃâÇö½Ã ÁÖÀ§¿¡ µÕ±×·± FX°¡ ÅÍÁü
-	eTNPrdt_PopRaise = 1, // Áö¸é ¾Æ·¡¿¡¼­ ¼­¼­È÷ Áö¸é À§·Î ¿Ã¶ó¿À´Â ¿¬Ãâ
-	eTNPrdt_PopDescend = 2, // ³ôÀº °÷¿¡¼­ Áö¸éÀ¸·Î ¼­¼­È÷ ³»·Á¿Â´Ù.(°¡¼Óµµ:0)
-	eTNPrdt_PopFallDown = 3, // ³ôÀº °÷¿¡¼­ Áö¸éÀ¸·Î °¡¼ÓµÇ¸é¼­ ¶³¾îÁü.(ÇÏ´Ã¿¡¼­ ¹°Ã¼°¡ ¶³¾îÁö´Â ´À³¦, Â÷Åõ¶û°¡ °³Æó¹®¿¡ ¾²ÀÏ ¿¹Á¤)
+	eTNPrdt_PopNormal = 0, // ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ±×·ï¿½ FXï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNPrdt_PopRaise = 1, // ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	eTNPrdt_PopDescend = 2, // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½.(ï¿½ï¿½ï¿½Óµï¿½:0)
+	eTNPrdt_PopFallDown = 3, // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÓµÇ¸é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.(ï¿½Ï´Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ó¹®¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
 	eTNPrdt_RemoveNormal = 0,
 	eTNPrdt_RemoveBoom = 1,
@@ -3214,7 +3217,7 @@ typedef enum _EGuildLevel
 } EGuildLevel;
 
 /*********************************************/
-//	2004.08.26(´É·ÂÄ¡, ½ºÅ³ ÃÊ±âÈ­ °ü·ÃÆÐÅ¶)
+//	2004.08.26(ï¿½É·ï¿½Ä¡, ï¿½ï¿½Å³ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶)
 typedef enum _ENPCCommandTYPE
 {
 	eInitSkill			= 1,
@@ -3251,29 +3254,29 @@ typedef enum _ECommand
 #define TRIMURITI_VISHNU	2
 #define TRIMURITI_SIVA		4
 
-#define	TRIBE_NONE			255		// Á¾Á· Á¦ÇÑ ¾øÀ½
-#define TRIBE_NAGA			1		// ³ª°¡
-#define TRIBE_KINNARA		2		// ¾Æ¼ö¶ó
-#define TRIBE_ASURA			4		// ¾ßÅ©»ç
-#define TRIBE_RAKSHASA		8		// µ¥¹Ù
-#define TRIBE_YAKSA			16		// Å²³ª¶ó
-#define TRIBE_GANDHARVA		32		// ¶óÅ©»þ»ç
-#define TRIBE_DEVA			64		// °£´Ù¸£¹Ù
-#define TRIBE_GARUDA		128		// °¡·ç´Ù
+#define	TRIBE_NONE			255		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define TRIBE_NAGA			1		// ï¿½ï¿½ï¿½ï¿½
+#define TRIBE_KINNARA		2		// ï¿½Æ¼ï¿½ï¿½ï¿½
+#define TRIBE_ASURA			4		// ï¿½ï¿½Å©ï¿½ï¿½
+#define TRIBE_RAKSHASA		8		// ï¿½ï¿½ï¿½ï¿½
+#define TRIBE_YAKSA			16		// Å²ï¿½ï¿½ï¿½ï¿½
+#define TRIBE_GANDHARVA		32		// ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½
+#define TRIBE_DEVA			64		// ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
+#define TRIBE_GARUDA		128		// ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #pragma	pack(push, 1)
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-// ¸Ê¿¡ °ü·ÃµÈ »ó¼ö
+// ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½
 namespace _MAP_MANAGER
 {
-	const int NAME_LEN = 26;						// ¸Ê ÀÌ¸§ ±æÀÌ
-	const int CELLS_PER_GRID = 4;					// ±×¸®µå ´ç ¼¿ °³¼ö
-	const int CELLS_PER_CS = 4;						// CriticalSection´ç ¼¿ °³¼ö
-	const int LIST_COUNT_ON_CELL = 3;				// ÇÑ ¼¿(±×¸®µå)´ç ¿ÀºêÁ§Æ® ¸®½ºÆ® °³¼ö
-	const int VIM_CHANGE_RANGE = 1;					// VIM º¯°æ ¹üÀ§
-	const float VIM_CHANGE_VALUE_SIDE = 0.5f;		// Á÷¼± ¹æÇâ VIM º¯°æ °ª
-	const float VIM_CHANGE_VALUE_CORNER = 0.25f;	// ´ë°¢¼± ¹æÇâ VIM º¯°æ °ª
-	const int DEFAULT_FIND_ARRANGE_DISTANCE = 5;	// ±âº» ¹èÄ¡ °¡´ÉÀ§Ä¡ °Ë»ö ¹üÀ§
+	const int NAME_LEN = 26;						// ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+	const int CELLS_PER_GRID = 4;					// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	const int CELLS_PER_CS = 4;						// CriticalSectionï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	const int LIST_COUNT_ON_CELL = 3;				// ï¿½ï¿½ ï¿½ï¿½(ï¿½×¸ï¿½ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+	const int VIM_CHANGE_RANGE = 1;					// VIM ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	const float VIM_CHANGE_VALUE_SIDE = 0.5f;		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ VIM ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	const float VIM_CHANGE_VALUE_CORNER = 0.25f;	// ï¿½ë°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ VIM ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	const int DEFAULT_FIND_ARRANGE_DISTANCE = 5;	// ï¿½âº» ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½
 };
 
 namespace _CELL_STATE
@@ -3299,11 +3302,11 @@ typedef struct _S_FILE_HEADER_INFO	{
 
 struct _S_GOBJ_GENERATIONAREA_PARAMS
 {
-	DWORD	dwIndex;		// »ý¼º ¿µ¿ª Index(»ç¿ë¾ÈÇÔ).
-	SHORT	snStartX;		// »ý¼º ¿µ¿ª ½ÃÀÛ X ÁÂÇ¥
-	SHORT	snStartZ;		// »ý¼º ¿µ¿ª ½ÃÀÛ Z ÁÂÇ¥
-	SHORT	snEndX;			// »ý¼º ¿µ¿ª ³¡ XÁÂÇ¥ 
- 	SHORT	snEndZ;			// »ý¼º ¿µ¿ª ³¡ ZÁÂÇ¥
+	DWORD	dwIndex;		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Index(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½).
+	SHORT	snStartX;		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	SHORT	snStartZ;		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	SHORT	snEndX;			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Xï¿½ï¿½Ç¥ 
+ 	SHORT	snEndZ;			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Zï¿½ï¿½Ç¥
 };
 
 struct _S_TRIMURITY_AREA
@@ -3314,10 +3317,10 @@ struct _S_TRIMURITY_AREA
 
 typedef struct _S_GOBJ_MONSTER_RANGE
 {
-	int		nStartX;	// X ÁÂÇ¥(°¡·Î)
-	int		nStartZ;	// Z ÁÂÇ¥(¼¼·Î)
-	int		nEndX;		// X ÁÂÇ¥(°¡·Î)
-	int		nEndZ;		// Z ÁÂÇ¥(¼¼·Î)
+	int		nStartX;	// X ï¿½ï¿½Ç¥(ï¿½ï¿½ï¿½ï¿½)
+	int		nStartZ;	// Z ï¿½ï¿½Ç¥(ï¿½ï¿½ï¿½ï¿½)
+	int		nEndX;		// X ï¿½ï¿½Ç¥(ï¿½ï¿½ï¿½ï¿½)
+	int		nEndZ;		// Z ï¿½ï¿½Ç¥(ï¿½ï¿½ï¿½ï¿½)
 	int		nHeight;
 }S_MonsterRange;
 
@@ -3325,8 +3328,8 @@ struct _TNAREA_PROPERTY
 {
 	enum { eBhvCond_Aggr = 0, eBhvCond_Flee = 1 } ;
 
-	unsigned int uiMonsterID ; // 0ÀÌ ¾Æ´Ñ °ªÀÌ µé¾î¿À¸é loadingÀ» ½ÃÀÛÇÑ´Ù.
-	int iDeployCount;  // pop ¼ö
+	unsigned int uiMonsterID ; // 0ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ loadingï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+	int iDeployCount;  // pop ï¿½ï¿½
 
 	int iBehavior ;
 	int irgBhvCond[3] ;
@@ -3375,8 +3378,8 @@ struct TNDEPLOY_DATA
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
-#define FLAG_GAME2CLIENT                0x0100          // ¼­¹ö°¡ ³¯¸®´Â ¸Þ½ÃÁö        256   //
-#define FLAG_CLIENT2GAME                0x0200          // Å¬¶óÀÌ¾ðÆ®°¡ ³¯¸®´Â ¸Þ½ÃÁö  512   //
+#define FLAG_GAME2CLIENT                0x0100          // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½        256   //
+#define FLAG_CLIENT2GAME                0x0200          // Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½  512   //
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //        Base
@@ -3405,8 +3408,8 @@ struct		S_SSP_REQ_MOVE_ZONE_SERVER
 {	
 	_MSG;
 	int			nID;
-	char		AccountName[ACCOUNTNAME_LENGTH];	//	°èÁ¤ ID
-	char		AccountPass[ACCOUNTPASS_LENGTH];	//	°èÁ¤ ºñ¹ø
+	char		AccountName[ACCOUNTNAME_LENGTH];	//	ï¿½ï¿½ï¿½ï¿½ ID
+	char		AccountPass[ACCOUNTPASS_LENGTH];	//	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	char		szCharName[SZNAME_LENGTH];					// Character Name
 };
 struct		S_SSP_RESP_MOVE_ZONE_SERVER
@@ -3556,17 +3559,17 @@ struct  S_SSP_REQ_SAVE_QUIT
 typedef struct _S_SSP_REQ_CHARACTER_SEARCH
 {	_MSG;
 	int													nID;
-	char												szCharName[SZNAME_LENGTH];		// °Ë»öÇÒ Ä³¸¯ÅÍ ÀÌ¸§
+	char												szCharName[SZNAME_LENGTH];		// ï¿½Ë»ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 } S_SSP_REQ_CHARACTER_SEARCH, *PS_SSP_REQ_CHARACTER_SEARCH;
 // GSCP_INIT_CHAR : 0xA547
 typedef struct _S_SSP_RESP_CHARACTER_SEARCH
 {	_MSG;
 	int													nID;
-	BYTE												byResult;						// °Ë»ö °á°ú( 0:¼º°ø, 1:½ÇÆÐ)
-	BYTE												byZone;							// Ä³¸¯ÅÍ À§Ä¡ÇÑ Á¸
+	BYTE												byResult;						// ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½( 0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½)
+	BYTE												byZone;							// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½
 	SHORT												snDummy;
-	char												szAccountID[ACCOUNTNAME_LENGTH];// °Ë»öÇÑ Ä³¸¯ÅÍ °èÁ¤.
-	char												szCharName[SZNAME_LENGTH];		// °Ë»öÇÑ Ä³¸¯ÅÍ ÀÌ¸§.
+	char												szAccountID[ACCOUNTNAME_LENGTH];// ï¿½Ë»ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	char												szCharName[SZNAME_LENGTH];		// ï¿½Ë»ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½.
 } S_SSP_RESP_CHARACTER_SEARCH, * PS_SSP_RESP_CHARACTER_SEARCH;
 
 
@@ -3714,7 +3717,7 @@ struct    MSG_CNFMobKill
 {        _MSG;
           unsigned short KilledMob;
 		  unsigned short Killer;
-		  unsigned int   Exp;//°¢°¢ ÀÚ½ÅÀÇ ÇöÀç °æÇèÄ¡¸¦ º¸³»ÁØ´Ù-¹ÞÀº»ç¶÷ÀÇ °æÇèÄ¡
+		  unsigned int   Exp;//ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡
 };
 #define  _MSG_UpdateCargoCoin   	        ( 57 | FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)
 /*
@@ -3737,7 +3740,7 @@ struct    MSG_CreateMobTrade
         short          PosX,PosY;
 
         unsigned short MobID;    
-		unsigned short Equip[MAX_EQUIP];     //   | 0000 | 0000 | 0000 | 0000   4ºñÆ® Á¦·Ã 12ºñÆ® ¾ÆÀÌÅÛ
+		unsigned short Equip[MAX_EQUIP];     //   | 0000 | 0000 | 0000 | 0000   4ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ 12ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         unsigned short Affect[MAX_AFFECT];               //     SANC   ITEM_INDEX(0-4095)
 		unsigned short Guild;
 		unsigned short          CreateType;
@@ -3760,7 +3763,7 @@ struct    MSG_CreateMob
 #define	 _MSG_RemoveMob            	        (101 | FLAG_GAME2CLIENT )
 struct    MSG_RemoveMob
 {        _MSG;
-	      int RemoveType;   // 0:ÀÌµ¿¿¡ ÀÇÇÑ Å¬¸®ÇÎ ¸®¹«ºê   1:»ç¸Á »èÁ¦  2:·Î±×¾Æ¿ô »èÁ¦  3:ÀÌµ¿ÈÄ »èÁ¦¸¿ÀÌ ÀÌµ¿À» ¿Ï·á.
+	      int RemoveType;   // 0:ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   1:ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  2:ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½  3:ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Ï·ï¿½.
 };
 #define	 _MSG_Action		                (102 | FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)
 struct    MSG_Action
@@ -3768,7 +3771,7 @@ struct    MSG_Action
 		  int		dwKeyID; 
           short		PosX,PosY;
 	      int		Speed;
-		  short		Effect;		// 0:¾É±â  1:¼­±â  2:°È±â  3:¶Ù±â  4:³¯±â  5:ÅÚ·¹Æ÷Æ®,	6:¹Ð¸®±â(knock-back), 7:¹Ì²ô·¯Áö±â(ÀÌµ¿¾Ö´Ï¾øÀ½)  8:µµ¹ß, 9:ÀÎ»ç, 10:µ¹°Ý 
+		  short		Effect;		// 0:ï¿½É±ï¿½  1:ï¿½ï¿½ï¿½ï¿½  2:ï¿½È±ï¿½  3:ï¿½Ù±ï¿½  4:ï¿½ï¿½ï¿½ï¿½  5:ï¿½Ú·ï¿½ï¿½ï¿½Æ®,	6:ï¿½Ð¸ï¿½ï¿½ï¿½(knock-back), 7:ï¿½Ì²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ìµï¿½ï¿½Ö´Ï¾ï¿½ï¿½ï¿½)  8:ï¿½ï¿½ï¿½ï¿½, 9:ï¿½Î»ï¿½, 10:ï¿½ï¿½ï¿½ï¿½ 
 		  short		Direction;	//
 	      unsigned short TargetX,TargetY;
 };
@@ -3813,13 +3816,13 @@ struct    MSG_Attack
 		unsigned short		PosX,		PosY;
 		unsigned short		TargetX,	TargetY;
 		//
-		short 				SkillIndex;		// 0-98-106  (-1ÀÌ¸é ¹°¸®Àû °ø°Ý)
+		short 				SkillIndex;		// 0-98-106  (-1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         short				CurrentMp;
-		// ÀÌÇÏ byte 2°³·Î ÇØ°áµÇ´ÂÁö °ËÅä
+		// ï¿½ï¿½ï¿½ï¿½ byte 2ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½Ç´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		unsigned char		Motion;
-		unsigned char		SkillParm;		// ½ºÅ³ È¿°ú ÁõÆø·ü ¶Ç´Â ¹°¸®°ø°Ý ÀÌÆåÆ®. 0 ÀÌ µðÆúÆ®.
+		unsigned char		SkillParm;		// ï¿½ï¿½Å³ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®. 0 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®.
 		unsigned char		FlagLocal;		//
-		unsigned char		DoubleCritical;     // 0ºñÆ® ´õºí 1ºñÆ® Å©¸®Æ¼Ä®
+		unsigned char		DoubleCritical;     // 0ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Æ® Å©ï¿½ï¿½Æ¼Ä®
 
 		unsigned int		CurrentExp;
 		short				ReqMp;
@@ -3887,11 +3890,11 @@ struct    MSG_UseItem
 #define   STATE_LOCKED  3
 #define  _MSG_UpdateItem 	      	        (116 | FLAG_GAME2CLIENT | FLAG_CLIENT2GAME  )
 struct    MSG_UpdateItem
-{        _MSG;   // ID´Â client
+{        _MSG;   // IDï¿½ï¿½ client
           int ItemID;
-          short State;                        // [¿øÇÏ´Â¹Ù²ï»óÅÂ] 0:ÀÌµµÀúµµ¾Æ´Ñ°Å 1:¿­¸°¹®  2:´ÝÈù¹®   3:Àá±ä¹®     
-		                                    // lock°ú unlockÀº key°¡ ÀÖ´Â °æ¿ì¸¸.
-		                                    // º¸¹°»óÀÚ Ã³¸®´Â ¹ÌÁ¤..
+          short State;                        // [ï¿½ï¿½ï¿½Ï´Â¹Ù²ï¿½ï¿½ï¿½ï¿½] 0:ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ´Ñ°ï¿½ 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  2:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   3:ï¿½ï¿½ä¹®     
+		                                    // lockï¿½ï¿½ unlockï¿½ï¿½ keyï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ì¸¸.
+		                                    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½..
 		  short Height;
 };
 
@@ -3916,10 +3919,10 @@ struct    MSG_SwapItem
 struct   MSG_ApplyBonus
 {
   	    _MSG;
-	     short      BonusType;    // º¸³Ê½º ´ëºÐ·ù 0:ScoreBonus 1:Special 2:Skill
-	     short      Detail;       // ½ºÄÚ¾î 0:Str        1:Int      2:Dex      3:Con
-		                          // ½ºÆä¼È 0:Special1   1:Special2 2:Special2 3:Special4
-		                          // ±â¼ú¹øÈ£  1000-1071  (Detail-1000)/24=Class   (Detail-1000)%24=SkillNumber
+	     short      BonusType;    // ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½ï¿½Ð·ï¿½ 0:ScoreBonus 1:Special 2:Skill
+	     short      Detail;       // ï¿½ï¿½ï¿½Ú¾ï¿½ 0:Str        1:Int      2:Dex      3:Con
+		                          // ï¿½ï¿½ï¿½ï¿½ï¿½ 0:Special1   1:Special2 2:Special2 3:Special4
+		                          // ï¿½ï¿½ï¿½ï¿½ï¿½È£  1000-1071  (Detail-1000)/24=Class   (Detail-1000)%24=SkillNumber
 		 unsigned short TargetID;
 };
 
@@ -3927,16 +3930,16 @@ struct   MSG_ApplyBonus
 struct   MSG_SetShortSkill
 {
 	    _MSG;
-		char  Skill[12];              // ½ºÅ³¹øÈ£ 0-23
+		char  Skill[12];              // ï¿½ï¿½Å³ï¿½ï¿½È£ 0-23
 };
 
 //#define _MSG_Buy                           (121 | FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)
 //struct   MSG_Buy
 //{
 //	    _MSG;
-//		unsigned short TargetID;                // »ç·Á´Â »óÀÎ NPC ID
-//		short TargetInvenPos;          // »ç·Á´Â »óÀÎÀÇ Inven À§Ä¡.
-//		short MyInvenPos;              // »ç¼­ ¹ÞÀ¸·Á´Â ³ªÀÇ Inven À§Ä¡.
+//		unsigned short TargetID;                // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ NPC ID
+//		short TargetInvenPos;          // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Inven ï¿½ï¿½Ä¡.
+//		short MyInvenPos;              // ï¿½ç¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Inven ï¿½ï¿½Ä¡.
 //		int   Coin;
 //};
 //
@@ -3944,13 +3947,13 @@ struct   MSG_SetShortSkill
 //struct   MSG_Sell
 //{
 //	    _MSG;
-//		unsigned short TargetID;                // ÆÈ·Á´Â »óÀÎ NPC ID
+//		unsigned short TargetID;                // ï¿½È·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ NPC ID
 //		short MyType;
-//		short MyPos;                // ³ªÀÇ ÆÈ ¾ÆÀÌÅÛÀÇ Inven
+//		short MyPos;                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Inven
 //};
 #define _MSG_REQShopList                  (123 | FLAG_CLIENT2GAME)
-struct   MSG_REQShopList                 // Å¬¶óÀÌ¾ðÆ®°¡ º¸³¾¶§´Â Leader¸¸ »ç¿ë. 
-{                                        // ¼­¹ö°¡ º¸³¾¶§´Â ÀüÃ¼ ¸®½ºÆ®
+struct   MSG_REQShopList                 // Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Leaderï¿½ï¿½ ï¿½ï¿½ï¿½. 
+{                                        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½Æ®
 	    _MSG;
 		 unsigned short TargetID;
 };
@@ -3958,7 +3961,7 @@ struct   MSG_REQShopList                 // Å¬¶óÀÌ¾ðÆ®°¡ º¸³¾¶§´Â Leader¸¸ »ç¿ë.
 struct    MSG_ShopList
 {
 	      _MSG;
-		  int         ShopType;              // 1:»óÀÎ  2:Ä«°í(¾È¾²Áö¸¸)  3:½ºÅ³
+		  int         ShopType;              // 1:ï¿½ï¿½ï¿½ï¿½  2:Ä«ï¿½ï¿½(ï¿½È¾ï¿½ï¿½ï¿½ï¿½ï¿½)  3:ï¿½ï¿½Å³
 		  STRUCT_ITEM List[MAX_SHOPLIST];
 		  int         Tax;
 };
@@ -4015,9 +4018,9 @@ struct    MSG_SetHpDam
 #define _MSG_Quest                           ( 139 | FLAG_CLIENT2GAME ) // STANDARDPARM2
 #define _MSG_Deprivate                       ( 140 | FLAG_CLIENT2GAME ) // STANDARDPARM
 
-#define _MSG_ReqChallange                    ( 141 | FLAG_GAME2CLIENT ) // STANDARD       ¼­¹ö°¡ Å¬¶óÀÌ¾ðÆ®¿¡°Ô Ok,CancelÀÇ ±âÈ¸¸¦ ÁØ´Ù.
-#define _MSG_Challange                       ( 142 | FLAG_CLIENT2GAME)  // STANDARDPARM Parm¿¡ Å¸°Ù ¾ÆÀÌµð.
-#define _MSG_ChallangeConfirm                ( 143 | FLAG_CLIENT2GAME)  // ReqChallange¿¡ ´ëÇÑ Å¬¶óÀÌ¾ðÆ®ÀÇ ÀÀ´äÀÌ´Ù.
+#define _MSG_ReqChallange                    ( 141 | FLAG_GAME2CLIENT ) // STANDARD       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ Ok,Cancelï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Ø´ï¿½.
+#define _MSG_Challange                       ( 142 | FLAG_CLIENT2GAME)  // STANDARDPARM Parmï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½.
+#define _MSG_ChallangeConfirm                ( 143 | FLAG_CLIENT2GAME)  // ReqChallangeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
 #define _MSG_ReqTeleport                     ( 144 | FLAG_CLIENT2GAME )
 #define _MSG_EnterVillage                    ( 145 | FLAG_CLIENT2GAME )
 #define _MSG_SetHpMode                       ( 146 | FLAG_CLIENT2GAME ) 
@@ -4035,7 +4038,7 @@ struct   MSG_SetHpMode
 #define _MSG_AutoTrade                      ( 151 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)
 struct   MSG_AutoTrade
 {       _MSG;
-         char           Desc[MAX_DESC]; // ÇÑ±Û 11ÀÚ // ÆÄ´Â»ç¶÷ÀÌ¸§Àº ID¿¡¼­ ±¸ÇÑ´Ù.
+         char           Desc[MAX_DESC]; // ï¿½Ñ±ï¿½ 11ï¿½ï¿½ // ï¿½Ä´Â»ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ IDï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
          STRUCT_ITEM    Item[MAX_AUTOTRADE];
 		 char           InvenPos[MAX_AUTOTRADE];
 		 int            TradeMoney[MAX_AUTOTRADE];
@@ -4068,12 +4071,12 @@ struct    MSG_AttackOne
 		unsigned short		Progress;
 		unsigned short		PosX,		PosY;
 		unsigned short		TargetX,	TargetY;
-		short 				SkillIndex;		// 0-98-106  (-1ÀÌ¸é ¹°¸®Àû °ø°Ý)
+		short 				SkillIndex;		// 0-98-106  (-1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         short				CurrentMp;
 		unsigned char		Motion;
-		unsigned char		SkillParm;		// ½ºÅ³ È¿°ú ÁõÆø·ü ¶Ç´Â ¹°¸®°ø°Ý ÀÌÆåÆ®. 0 ÀÌ µðÆúÆ®.
+		unsigned char		SkillParm;		// ï¿½ï¿½Å³ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®. 0 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®.
 		unsigned char		FlagLocal;		//
-		unsigned char		DoubleCritical;     // 0ºñÆ® ´õºí 1ºñÆ® Å©¸®Æ¼Ä®
+		unsigned char		DoubleCritical;     // 0ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Æ® Å©ï¿½ï¿½Æ¼Ä®
 
 		unsigned int		CurrentExp;
 		short				ReqMp;
@@ -4088,12 +4091,12 @@ struct    MSG_AttackTwo
 		unsigned short		Progress;
 		unsigned short		PosX,		PosY;
 		unsigned short		TargetX,	TargetY;
-		short 				SkillIndex;		// 0-98-106  (-1ÀÌ¸é ¹°¸®Àû °ø°Ý)
+		short 				SkillIndex;		// 0-98-106  (-1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         short				CurrentMp;
 		unsigned char		Motion;
-		unsigned char		SkillParm;		// ½ºÅ³ È¿°ú ÁõÆø·ü ¶Ç´Â ¹°¸®°ø°Ý ÀÌÆåÆ®. 0 ÀÌ µðÆúÆ®.
+		unsigned char		SkillParm;		// ï¿½ï¿½Å³ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®. 0 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®.
 		unsigned char		FlagLocal;		//
-		unsigned char		DoubleCritical;     // 0ºñÆ® ´õºí 1ºñÆ® Å©¸®Æ¼Ä®
+		unsigned char		DoubleCritical;     // 0ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Æ® Å©ï¿½ï¿½Æ¼Ä®
 		unsigned int		CurrentExp;
 		short				ReqMp;
 		short				Rsv;
@@ -4130,8 +4133,8 @@ struct  MSG_CombineItem
 		 STRUCT_ITEM    Item[MAX_TRADE];
 		 char           InvenPos[MAX_TRADE];
 };
-#define _MSG_CombineComplete					(167 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)  // STANDARDPARM  0:Ãë¼Ò 1:¼º°ø 2:½ÇÆÐ
-#define _MSG_WarInfo							(168 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)  // STANDARDPARM  ÀüÀïÁß ±æµå, 0Àº ÇØÁ¦
+#define _MSG_CombineComplete					(167 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)  // STANDARDPARM  0:ï¿½ï¿½ï¿½ 1:ï¿½ï¿½ï¿½ï¿½ 2:ï¿½ï¿½ï¿½ï¿½
+#define _MSG_WarInfo							(168 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME)  // STANDARDPARM  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 #define _MSG_TransperCharacter					(169 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME | FLAG_DB2GAME)  // STANDARDPARM2 
 #define _MSG_ReqTransper						(170 |FLAG_GAME2CLIENT | FLAG_CLIENT2GAME | FLAG_DB2GAME | FLAG_GAME2DB)  // STANDARDPARM2 
 struct MSG_ReqTransper						
@@ -4147,15 +4150,15 @@ struct MSG_ReqTransper
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 //
-//               NP ¼­¹ö   - >   DB ¼­¹ö
+//               NP ï¿½ï¿½ï¿½ï¿½   - >   DB ï¿½ï¿½ï¿½ï¿½
 //
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 #define FLAG_DB2NP                      0x1000        
 #define FLAG_NP2DB                      0x2000        
 
-#define  _MSG_NPReqIDPASS            ( 1 | FLAG_DB2NP) //   ¾îÄ«¿îÆ® ¸¸µé±â
-#define  _MSG_NPIDPASS               ( 2 | FLAG_NP2DB) //   Ä³·¢ÅÍ ¸¸µé±â
+#define  _MSG_NPReqIDPASS            ( 1 | FLAG_DB2NP) //   ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½
+#define  _MSG_NPIDPASS               ( 2 | FLAG_NP2DB) //   Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 struct    MSG_NPIDPASS
 {        _MSG;
 		 int  nID;
@@ -4164,7 +4167,7 @@ struct    MSG_NPIDPASS
 		 char Pass[ACCOUNTPASS_LENGTH];
 		 int  Encode2;
 };
-#define  _MSG_NPReqAccount           ( 3 | FLAG_NP2DB) //   ¾îÄ«¿îÆ® Á¶È¸
+#define  _MSG_NPReqAccount           ( 3 | FLAG_NP2DB) //   ï¿½ï¿½Ä«ï¿½ï¿½Æ® ï¿½ï¿½È¸
 struct    MSG_NPReqAccount
 {        _MSG;
 		 char Account[ACCOUNTNAME_LENGTH];
@@ -4272,7 +4275,7 @@ struct MSG_NPGiftInfo
 
 
 /////////////////////////////////////////////////////////////////////
-//       Æã¼Ç
+//       ï¿½ï¿½ï¿½
 /////////////////////////////////////////////////////////////////////
 //void                BASE_ClearMob             (STRUCT_MOB*    mob);
 //void                BASE_ClearItem            (STRUCT_ITEM*   item);
@@ -4387,7 +4390,7 @@ extern BYTE BASE_GetRefineVariable(STRUCT_ITEM * pRef);
 BOOL BASE_CheckItemLog(STRUCT_ITEM *pItem);
 void BASE_GetItemCode(STRUCT_ITEM * item,char * str);
 
-//extern void BASE_SortTradeItem(STRUCT_ITEM * Item,int Type); // BufferÀÇ Å©±â´Â int * Size
+//extern void BASE_SortTradeItem(STRUCT_ITEM * Item,int Type); // Bufferï¿½ï¿½ Å©ï¿½ï¿½ï¿½ int * Size
 extern STRUCT_ITEM * GetItemPointer(STRUCT_MOB * mob, STRUCT_ITEM * cargo,int type,int pos);
 //extern int  BASE_GetSkillDamage(int SkillNum, STRUCT_MOB * mob,int weather,int weapondamage);
 
@@ -4434,8 +4437,8 @@ extern int BaseSIDCHM[4][6];
 //#define MSV_RANGE	 0x01
 //#define MSV_CRAFT	 0x02
 //#define MSV_BACKPACK 0x04
-#define MSV_SNOOP	0x01	// CreateMob¿¡ Àü´ÞµÇ´Â°ÍÀº 0-3ºñÆ®
-#define MSV_TOWN	0xC0	// »óÀ§ 2ºñÆ®°¡ ½ÃÀÛ ¸¶À»ÀÌ´Ù
+#define MSV_SNOOP	0x01	// CreateMobï¿½ï¿½ ï¿½ï¿½ï¿½ÞµÇ´Â°ï¿½ï¿½ï¿½ 0-3ï¿½ï¿½Æ®
+#define MSV_TOWN	0xC0	// ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
 
 #define                TIMER_SEC    0
 #define                TIMER_MIN    1
@@ -4475,18 +4478,18 @@ extern int BaseSIDCHM[4][6];
 #define MAP_OBJECT_SIT_ENABLE	 (0x40)
 #define MAP_OBJECT_MOUNT_ENABLE	 (0x80)
 
-#define CSP_REQ_LOGIN                                     0x1001      // ·Î±×ÀÎ ¿äÃ» ¸Þ½ÃÁö
-#define CSP_REQ_WORLD_LIST                                0x1002      // ¿ùµå ¼­¹ö ¸®½ºÆ® ¿äÃ»
-#define CSP_REQ_MOVE_ZONE_SERVER                          0x1003      // ¿ùµå ´ëÇ¥ Á¸¼­¹ö¿¡ Á¢¼ÓÀ» ¿äÃ»
-#define _Msg_VersionCheck								0x1004			//	Å¬¶óÀÌ¾ðÆ®ÀÇ ¹öÀüÀ» Ã¼Å©ÇÑ´Ù.
-#define CSP_REQ_CHAR_LIST                                 0x1011      // ÇØ´ç ¿ùµåÀÇ Ä³¸¯ÅÍ ¸®½ºÆ® ¿äÃ»
-#define CSP_REQ_CHAR_CREATE                               0x1012      // ÄÉ¸¯ÅÍ »ý¼ºÀ» ¿äÃ»
-#define CSP_REQ_CHAR_REMOVE                               0x1013      // ÄÉ¸¯ÅÍ »èÁ¦¸¦ ¿äÃ»
-#define CSP_REQ_CHAR_SELECT                               0x1014      // ÄÉ¸¯ÅÍ ¼±ÅÃÈÄ Á¸¼­¹ö Á¢¼Ó ¿äÃ»
-#define CSP_REQ_EXIT_ZONE_SERVER                          0x1015      // Ä³¸¯ÅÍ ¼±ÅÃÃ¢À» ºüÁ®³ª°¡°í, ¿ùµå¼­¹ö ¼±ÅÃÃ¢À¸·Î ÀÌµ¿ ¿äÃ»
-#define CSP_REQ_CHAR_LOGOUT                               0x1021      // Ä³¸¯ÅÍÀÇ ·Î±× ¾Æ¿ôÀ» ¿äÃ»
-#define CSP_REQ_REMOVE_MOB								  0x1022      // Ä³¸¯ÅÍ ·Î±×¾Æ¿ô, ¿öÇÁ, ¼ø°£ÀÌµ¿ÀÇ ÁÖº¯Àü¼Û ¿äÃ»
-#define CSP_OTHER_CHAR_LOGOUT_NOTIFY                      0x1023      // Ä³¸¯ÅÍÀÇ ·Î±×¾Æ¿ô, ¿öÇÁ, ¼ø°£ÀÌµ¿À» ÆÄÆ¼, ±æµå, ÁÖ¼Ò·Ï °ü·Ã ÄÉ¸¯ÅÍ¿¡°Ô Àü¼Û¿äÃ»
+#define CSP_REQ_LOGIN                                     0x1001      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_REQ_WORLD_LIST                                0x1002      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ã»
+#define CSP_REQ_MOVE_ZONE_SERVER                          0x1003      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define _Msg_VersionCheck								0x1004			//	Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
+#define CSP_REQ_CHAR_LIST                                 0x1011      // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_CREATE                               0x1012      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_REMOVE                               0x1013      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_SELECT                               0x1014      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_EXIT_ZONE_SERVER                          0x1015      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½å¼­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_LOGOUT                               0x1021      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ ï¿½Æ¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_REMOVE_MOB								  0x1022      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_OTHER_CHAR_LOGOUT_NOTIFY                      0x1023      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼, ï¿½ï¿½ï¿½, ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¿ï¿½Ã»
 const int	_MSG_Status					=	0x1031;
 struct MSG_Status
 {
@@ -4496,7 +4499,7 @@ struct MSG_Status
 	BYTE	byDummy1;
 	short	snDummy1;
 };
-#define CSP_REQ_CHAR_INIT                                 0x1101      // Ä³¸¯ÅÍÀÇ Á¢¼ÓÃÊ±âÁ¤º¸ ¿äÃ» ¸Þ¼¼Áö
+#define CSP_REQ_CHAR_INIT                                 0x1101      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ¼ï¿½ï¿½ï¿½
 const int	_MSG_InitSkill				=	0x1104;
 struct MSG_InitSkill
 {
@@ -4504,42 +4507,42 @@ struct MSG_InitSkill
 	BYTE					bySkill[MAX_SKILL];
 };
 
-#define CSP_INIT_GUILD                                    0x1105      // ÀÚ½ÅÀÇ ±æµåÃÊ±âÁ¤º¸¸¦ Àü¼ÛÇÔ.
-#define CSP_INIT_ADDRESS_BOOK                             0x1106      // ÁÖ¼Ò·Ï Á¤º¸ Àü¼ÛÀ» ¿äÃ»
-#define CSP_REQ_CHAR_HISTORY                              0x1108      // ÄÉ¸¯ÅÍ È÷½ºÅä¸®Á¤º¸ ¿äÃ»
-#define CSP_INIT_EQUIPMENT                                0x1109      // ÄÉ¸¯ÅÍ Âø¿ëÀåºñ ¿äÃ»
-//#define CSP_INIT_MONSTER_NPC                              0x1111      // ÁÖº¯ Monster/NPC Á¤º¸ Àü¼Û ¿äÃ»
-#define CSP_INIT_OTHER_MOB                                0x1112      // ÁÖº¯ ´Ù¸¥ ÄÉ¸¯ÅÍ Á¤º¸ Àü¼Û ¿äÃ»
-#define CSP_INIT_REAL_ADDRESS_BOOK                        0x1113      // ÁÖ¼Ò·Ï Á¤º¸ Àü¼ÛÀ» ¿äÃ»
-#define CSP_INIT_REAL_GUILD                               0x1114      // ±æµå Á¤º¸ Àü¼ÛÀ» ¿äÃ»
-#define CSP_INIT_REAL_GUILD_MEMBER                        0x1115      // ±æµå Á¤º¸ Àü¼ÛÀ» ¿äÃ»
-#define CSP_INIT_ITEM                                     0x1121      // ÁÖº¯ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ Ã³¸® ¿äÃ» ¸Þ¼¼Áö
-#define CSP_INIT_WORLD_USER_COUNT                         0x1161      // ¿ùµåº° Á¢¼ÓÀÚ¼ö¸¦ Ã³¸®ÇÔ.
-#define CSP_INIT_GUILD_MEMBER                             0x1171      // ÀÚ½ÅÀÇ ±æµå¿øÁ¤º¸¸¦ Àü¼ÛÇÔ.
-#define CSP_REQ_CHAR_MOVE                                 0x1201      // Ä³¸¯ÅÍ ÀÌµ¿ ¿äÃ» ¸Þ½ÃÁö
-#define CSP_OTHER_CHAR_MOVE                               0x1202      // Ä³¸¯ÅÍÀÇ ÀÌµ¿¼º°øÀ» ´Ù¸¥ Ä³¸¯ÅÍ¿¡°Ô ¾Ë·ÁÁÜ
-#define CSP_MONSTER_MOVE_STEP                             0x1206      // ÇÑ¼¿ ÀÌµ¿À» ÁÖº¯¿¡ Àü¼Û
-#define CSP_MONSTER_MOVE_NSTEP                            0x1207      // ¿©·¯¼¿ ÀÌµ¿À» ÁÖº¯¿¡ Àü¼Û
-#define CSP_MONSTER_MOVE_END                              0x1208      // ¿©·¯¼¿ ÀÌµ¿ÀÇ °á°ú ÁÂÇ¥¸¦ Àü¼Û
-#define CSP_REQ_ITEM_USE                                  0x1223      // ¾ÆÀÌÅÛ »ç¿ë ¿äÃ»
-#define CSP_ITEM_USE_BROADCAST                            0x1224      // ¾ÆÀÌÅÛ »ç¿ëÀ» ÁÖº¯ ´Ù¸¥ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û ¿äÃ»
-#define CSP_ITEM_REMOVE                                   0x1225      // ÀÎº¥Åä¸®¿¡¼­ ¾ÆÀÌÅÛ »ç¶óÁüÀ» ¿äÃ»
-#define CSP_REQ_CHAR_MOVE_BROADCAST                       0x1227      // ÄÉ¸¯ÅÍÀÇ ÀÌµ¿À» ¿äÃ»ÇÑ´Ù.
+#define CSP_INIT_GUILD                                    0x1105      // ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+#define CSP_INIT_ADDRESS_BOOK                             0x1106      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_HISTORY                              0x1108      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_EQUIPMENT                                0x1109      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+//#define CSP_INIT_MONSTER_NPC                              0x1111      // ï¿½Öºï¿½ Monster/NPC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_OTHER_MOB                                0x1112      // ï¿½Öºï¿½ ï¿½Ù¸ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_REAL_ADDRESS_BOOK                        0x1113      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_REAL_GUILD                               0x1114      // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_REAL_GUILD_MEMBER                        0x1115      // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_INIT_ITEM                                     0x1121      // ï¿½Öºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ¼ï¿½ï¿½ï¿½
+#define CSP_INIT_WORLD_USER_COUNT                         0x1161      // ï¿½ï¿½ï¿½åº° ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½.
+#define CSP_INIT_GUILD_MEMBER                             0x1171      // ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+#define CSP_REQ_CHAR_MOVE                                 0x1201      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_OTHER_CHAR_MOVE                               0x1202      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
+#define CSP_MONSTER_MOVE_STEP                             0x1206      // ï¿½Ñ¼ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_MONSTER_MOVE_NSTEP                            0x1207      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_MONSTER_MOVE_END                              0x1208      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_REQ_ITEM_USE                                  0x1223      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_ITEM_USE_BROADCAST                            0x1224      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_ITEM_REMOVE                                   0x1225      // ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_MOVE_BROADCAST                       0x1227      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
 
-#define CSP_REQ_ATK_CHAR                                  0x1301      // Ä³¸¯ÅÍÀÇ °ø°Ý ¿äÃ»
-#define CSP_ATK_CHAR_BROADCAST                            0x1302      // Ä³¸¯ÅÍÀÇ °ø°ÝÀ» ÁÖº¯ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û ¿äÃ»
-#define CSP_REQ_ITEM_EQUIPMENT                            0x1401      // ¾ÆÀÌÅÛ ÀåÂøÀ» ¿äÃ»
-#define CSP_ITEM_EQUIPMENT_BROADCAST                      0x1402      // ¾ÆÀÌÅÛ ÀåÂøÀ» ÁÖº¯ Ä³¸¯ÅÍ¿¡°Ô Àü¼Û
-#define CSP_ITEM_ABRASION                                 0x1411      // ¾ÆÀÌÅÛ »ç¶óÁüÀ» ¾Ë¸²
-#define CSP_ITEM_ABRASION_BROADCAST                       0x1412      // ¾ÆÀÌÅÛ »ç¶óÁüÀ» ÁÖº¯ ´Ù¸¥ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û
+#define CSP_REQ_ATK_CHAR                                  0x1301      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_ATK_CHAR_BROADCAST                            0x1302      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_ITEM_EQUIPMENT                            0x1401      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_ITEM_EQUIPMENT_BROADCAST                      0x1402      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_ITEM_ABRASION                                 0x1411      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½
+#define CSP_ITEM_ABRASION_BROADCAST                       0x1412      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 //	1501	CHAT
 //	1601	GUILD
-#define CSP_REQ_QUEST_HISTORY                             0x1701      // Äù½ºÆ® È÷½ºÅä¸® Á¤º¸ ¿äÃ»
-#define CSP_QUEST_DIALOG                                  0x1702      // ´ëÈ­¹® °á°ú Àü¼Û
-#define CSP_QUEST_NOTIFY_LEVEL                            0x1703      // Äù½ºÆ® ´Ü°è ¾Ë¸²
-#define CSP_CHAR_PING                                     0x1831      // ÄÉ¸¯ÅÍÀÇ °ÔÀÓÁ¢¼ÓÁßÀÓÀ» ¾Ë¸°´Ù.
-#define _MSG_Beauty							0x1912						//	ÄÉ¸¯ÅÍ ¹Ì¿ë½Ç
+#define CSP_REQ_QUEST_HISTORY                             0x1701      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_QUEST_DIALOG                                  0x1702      // ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_QUEST_NOTIFY_LEVEL                            0x1703      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ü°ï¿½ ï¿½Ë¸ï¿½
+#define CSP_CHAR_PING                                     0x1831      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½.
+#define _MSG_Beauty							0x1912						//	ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½
 struct MSG_Beauty
 {
 	_MSG
@@ -4552,7 +4555,7 @@ struct MSG_Beauty
 	int				nCash;
 };
 
-#define _MSG_CLASS							0x1981				// ÄÉ¸¯ÅÍÀÇ ÀüÁ÷À» ¿äÃ»ÇÑ´Ù.
+#define _MSG_CLASS							0x1981				// ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
 struct MSG_CLASS
 {
 	_MSG
@@ -4563,163 +4566,163 @@ struct MSG_CLASS
 };
 #define _MSG_TOGGLE_BUTTON								  0x1980
 #define _MSG_CHANGE_TARGET								  0x1990
-#define CSP_REQ_SKILL_REGIST                              0x2001      // ½ºÅ³ µî·ÏÀ» ¿äÃ»ÇÑ´Ù
-#define CSP_SKILL_REGIST                                  0x2002      // Ä«½ºÆ® »ó½Â¿¡ µû¸¥ ½ºÅ³ ÀÚµ¿ µî·ÏÀ» ¾Ë·ÁÁØ´Ù
-#define CSP_REQ_SKILL_SELECT                              0x2003      // µî·ÏµÈ ½ºÅ³À» ¼±ÅÃ/ÇØÁ¦
-#define CSP_REQ_SKILL_SELECT_BROADCAST                    0x2004      // µî·ÏµÈ ½ºÅ³À» ¼±ÅÃ/ÇØÁ¦
-#define CSP_REQ_SKILL_USE2_CHAR                           0x2011      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°Ý ÁØºñµ¿ÀÛÀ» ¿äÃ»
-#define CSP_SKILL_READY_CHAR_BROADCAST                    0x2012      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°Ý ÁØºñµ¿ÀÛÀ» ÁÖº¯¿¡ Àü¼Û
-#define CSP_REQ_SKILL_ATK_CHAR                            0x2013      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°ÝÀ» ¿äÃ»
-#define CSP_SKILL_ATK_CHAR_BROADCAST                      0x2014      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°ÝÀ» ÁÖº¯ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û
-#define CSP_REQ_SKILL_LEVEL_UP                            0x2021      // Ä³¸¯ÅÍÀÇ ½ºÅ³ Level-UpÀ» ¿äÃ»
-#define CSP_REQ_SHOP_SKILL_LIST                           0x2022      // ½Àµæ °¡´ÉÇÑ ½ºÅ³ List¸¦ ¿äÃ»
+#define CSP_REQ_SKILL_REGIST                              0x2001      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½
+#define CSP_SKILL_REGIST                                  0x2002      // Ä«ï¿½ï¿½Æ® ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ø´ï¿½
+#define CSP_REQ_SKILL_SELECT                              0x2003      // ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
+#define CSP_REQ_SKILL_SELECT_BROADCAST                    0x2004      // ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
+#define CSP_REQ_SKILL_USE2_CHAR                           0x2011      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_SKILL_READY_CHAR_BROADCAST                    0x2012      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_REQ_SKILL_ATK_CHAR                            0x2013      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_SKILL_ATK_CHAR_BROADCAST                      0x2014      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_REQ_SKILL_LEVEL_UP                            0x2021      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ Level-Upï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_SHOP_SKILL_LIST                           0x2022      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ Listï¿½ï¿½ ï¿½ï¿½Ã»
 //	0x2201	TRADE
-#define CSP_REQ_MY_ENTYR_LIST                             0x2305      // ÀÚ½ÅÀÌ µî·Ï,º¸°ü ¾ÆÀÌÅÛ ¿äÃ»
-#define CSP_REQ_TRADE_ITEM_SEEK                           0x2306      // º¸°ü ¾ÆÀÌÅÛ Ã£±â ¿äÃ»
+#define CSP_REQ_MY_ENTYR_LIST                             0x2305      // ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_TRADE_ITEM_SEEK                           0x2306      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½Ã»
 //	0X2401	PARTY
-#define CSP_REQ_TROUBLE_REPORT                            0x2541      // ¼­¹ö¿¡ ½Å°í³»¿ëÀ» Á¢¼öÇÑ´Ù.
-#define CSP_REQ_TROUBLE_REPORT_LIST                       0x2542      // ¼­¹ö¿¡ ½Å°í³»¿ëÀÇ ¸®½ºÆ®¸¦ ¿äÃ»ÇÑ´Ù.
-#define CSP_REQ_TROUBLE_REPORT_SET                        0x2543      // ½Å°í³»¿ëÀÇ Ã³¸®»óÈ²À» ¹Þ´Â´Ù.
-#define GCSP_REQ_TROUBLE_REPORT_LIST                      0x2544      // ·Î±×ÀÎ ¿äÃ» ¸Þ½ÃÁö
-#define GCSP_REQ_TROUBLE_REPORT_SET                       0x2545      // ·Î±×ÀÎ ¿äÃ» ¸Þ½ÃÁö
-#define GCSP_REQ_TROUBLE_REPORT                           0x2546      // ·Î±×ÀÎ ¿äÃ» ¸Þ½ÃÁö
-#define GCSP_REQ_PARAMETER_CHANGE                         0x2550      // Ä³¸¯ÅÍÀÇ ±âº» Á¤º¸°ªÀ» º¯°æ ¿äÃ»
-#define GCSP_REQ_ITEM_INSERT                              0x2551      // ¾ÆÀÌÅÛ »ðÀÔ ¿äÃ»
-#define GCSP_REQ_ITEM_DELETE                              0x2552      // ¾ÆÀÌÅÛ »èÁ¦ ¿äÃ»
-#define GCSP_REQ_SKILL_INSERT                             0x2553      // ½ºÅ³ »ðÀÔ ¿äÃ»
-#define GCSP_REQ_SKILL_DELETE                             0x2554      // ½ºÅ³ »èÁ¦ ¿äÃ»
-#define CSP_REQ_CHAR_INFO                                 0x2561      // ÄÉ¸¯ÅÍ Á¤º¸ ¿äÃ» ¸Þ½ÃÁö
-#define CSP_REQ_CHAR_EQUIPMENT                            0x2562      // ÄÉ¸¯ÅÍÀÇ ÀåÂøÁ¤º¸ ¿äÃ» ¸Þ½ÃÁö
-#define CSP_REQ_CHAR_SKILL                                0x2563      // ÄÉ¸¯ÅÍÀÇ ½ºÅ³Á¤º¸ ¿äÃ» ¸Þ½ÃÁö
-#define CSP_REQ_CLOSE_CHAR                                0x2571      // ÄÉ¸¯ÅÍÀÇ Á¢¼ÓÁ¾·á ¿äÃ» ¸Þ½ÃÁö
-#define CSP_REQ_JOIN_ADDRESS_BOOK                         0x2603      // ÁÖ¼Ò·Ï¿¡ Ä³¸¯ÅÍ Ãß°¡¸¦ ¿äÃ»
-#define CSP_JOIN_ADDRESS_BOOK_NOTIFY                      0x2604      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ»À» Ä³¸¯ÅÍ¿¡°Ô Àü¼Û¿äÃ» ¸Þ¼¼Áö
-#define CSP_REQ_JOIN_ADDRESS_BOOK_RESULT                  0x2605      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ» °á°ú¸¦ ¼­¹ö¿¡ Àü¼Û
-#define CSP_JOIN_ADDRESS_BOOK_RESULT_NOTIFY               0x2606      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ»¿¡ ´ëÇÑ ½ÂÀÎ °á°ú¸¦ Ä³¸¯ÅÍ¿¡°Ô Àü¼Û¿äÃ»¸Þ¼¼Áö
-#define CSP_REQ_ADDRESS_BOOK_MEMBER_DELETE                0x2607      // ÁÖ¼Ò·Ï¿¡ ÀÖ´Â Ä³¸¯ÅÍ Á¤º¸ÀÇ »èÁ¦¸¦ ¿äÃ»
-#define CSP_ADDRESS_BOOK_MEMBER_DELETE_NOTIFY             0x2608      // ÁÖ¼Ò·Ï¿¡¼­ »èÁ¦¸¦ ¾Ë¸°´Ù
-#define CSP_REQ_ADDRESS_BOOK_GROUP_ADD                    0x2611      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ Ãß°¡¸¦ ¿äÃ»
-#define CSP_REQ_ADDRESS_BOOK_GROUP_DELETE                 0x2612      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ »èÁ¦¸¦ ¿äÃ»
-#define CSP_REQ_ADDRESS_BOOK_GROUP_MOVE                   0x2613      // ÁÖ¼Ò·Ï¿¡ ÄÉ¸¯ÅÍÀÇ ±×·ìÀÌµ¿À» ¿äÃ»
-#define CSP_REQ_ADDRESS_BOOK_GROUP_RENAME                 0x2614      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ ÀÌ¸§º¯°æÀ» ¿äÃ»
-#define CSP_REQ_ADDRESS_BOOK_STATUS                       0x2621      // ÁÖ¼Ò·Ï µî·Ï¿äÃ»ÀÇ °ÅºÎ¸¦ ¼¼ÆÃ¿äÃ»
+#define CSP_REQ_TROUBLE_REPORT                            0x2541      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+#define CSP_REQ_TROUBLE_REPORT_LIST                       0x2542      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
+#define CSP_REQ_TROUBLE_REPORT_SET                        0x2543      // ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
+#define GCSP_REQ_TROUBLE_REPORT_LIST                      0x2544      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define GCSP_REQ_TROUBLE_REPORT_SET                       0x2545      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define GCSP_REQ_TROUBLE_REPORT                           0x2546      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define GCSP_REQ_PARAMETER_CHANGE                         0x2550      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define GCSP_REQ_ITEM_INSERT                              0x2551      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define GCSP_REQ_ITEM_DELETE                              0x2552      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define GCSP_REQ_SKILL_INSERT                             0x2553      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define GCSP_REQ_SKILL_DELETE                             0x2554      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_CHAR_INFO                                 0x2561      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_REQ_CHAR_EQUIPMENT                            0x2562      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_REQ_CHAR_SKILL                                0x2563      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_REQ_CLOSE_CHAR                                0x2571      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½Þ½ï¿½ï¿½ï¿½
+#define CSP_REQ_JOIN_ADDRESS_BOOK                         0x2603      // ï¿½Ö¼Ò·Ï¿ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_JOIN_ADDRESS_BOOK_NOTIFY                      0x2604      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¿ï¿½Ã» ï¿½Þ¼ï¿½ï¿½ï¿½
+#define CSP_REQ_JOIN_ADDRESS_BOOK_RESULT                  0x2605      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define CSP_JOIN_ADDRESS_BOOK_RESULT_NOTIFY               0x2606      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¿ï¿½Ã»ï¿½Þ¼ï¿½ï¿½ï¿½
+#define CSP_REQ_ADDRESS_BOOK_MEMBER_DELETE                0x2607      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½Ö´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_ADDRESS_BOOK_MEMBER_DELETE_NOTIFY             0x2608      // ï¿½Ö¼Ò·Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½
+#define CSP_REQ_ADDRESS_BOOK_GROUP_ADD                    0x2611      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_ADDRESS_BOOK_GROUP_DELETE                 0x2612      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_ADDRESS_BOOK_GROUP_MOVE                   0x2613      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_ADDRESS_BOOK_GROUP_RENAME                 0x2614      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define CSP_REQ_ADDRESS_BOOK_STATUS                       0x2621      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½Ï¿ï¿½Ã»ï¿½ï¿½ ï¿½ÅºÎ¸ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½Ã»
 #define CSP_REQ_LEARN_SKILL                               0x3210      // Learn a skill
 #define CSP_REQ_CAST_SKILL                                0x3220      // cast a skill
 #define CSP_CAST_SKILL_BROADCAST                          0x3230      // cast a skill
-#define CSP_CAST_UNIT_SKILL                               0x3240      // unitÀ» Å¸°ÙÀ¸·Î ÇÏ´Â ½ºÅ³
-#define CSP_CAST_AREA_SKILL                               0x3250      // ground¸¦ Å¸°ÙÀ¸·Î ÇÏ´Â ¹üÀ§ ½ºÅ³
-#define CSP_DEBUFFER_SKILL                                0X3260      // ¹öÇÎµÈ skillÀÌ °­Á¦ÀûÀ¸·Î removeµÆÀ½À» ¾Ë¸°´Ù.
+#define CSP_CAST_UNIT_SKILL                               0x3240      // unitï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½Å³
+#define CSP_CAST_AREA_SKILL                               0x3250      // groundï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³
+#define CSP_DEBUFFER_SKILL                                0X3260      // ï¿½ï¿½ï¿½Îµï¿½ skillï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ removeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½.
 #define CSP_REQ_CHAR_ACT                                  0x3300      // Action
-#define CSP_CHAR_ACT_BROADCAST                            0x3310      // ActionÀ» broadcast
+#define CSP_CHAR_ACT_BROADCAST                            0x3310      // Actionï¿½ï¿½ broadcast
 #define CSP_REQ_UPDATE_UI                                 0x3500      // Update UI
 #define CSP_REQ_UPDATE_STATUS                             0x3501      // Update Status
 #define CSP_LEVEL_UP_BROADCAST                            0x3510      // level up
 #define CSP_REQ_INCREASE_CHAKRA                           0x3520      // Increase a chakra point
 
-#define SCP_RESP_LOGIN                                    0x9001      // ·Î±×ÀÎ ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_WORLD_LIST                               0x9002      // ¿ùµå ¼­¹ö ¸®½ºÆ® ÀÀ´ä
-#define SCP_RESP_MOVE_ZONE_SERVER                         0x9003      // ¿ùµå ´ëÇ¥ Á¸¼­¹ö¿¡ Á¢¼Ó ÀÀ´ä
-#define SCP_RESP_CHAR_LIST                                0x9011      // Ä³¸¯ÅÍ ¸®½ºÆ® Àü¼Û
-#define SCP_RESP_CHAR_CREATE                              0x9012      // ÄÉ¸¯ÅÍ »ý¼º ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_CHAR_REMOVE                              0x9013      // ÄÉ¸¯ÅÍ »èÁ¦ ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_CHAR_SELECT	                          0x9014      // ÄÉ¸¯ÅÍ ¼±ÅÃÈÄ Á¸¼­¹ö Á¢¼Ó ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_EXIT_ZONE_SERVER                         0x9015      // Ä³¸¯ÅÍ ¼±ÅÃÃ¢À» ºüÁ®³ª°¡°í, ¿ùµå¼­¹ö ¼±ÅÃÃ¢À¸·Î ÀÌµ¿ ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_CHAR_LOGOUT                              0x9021      // Ä³¸¯ÅÍÀÇ ·Î±× ¾Æ¿ô ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_REMOVE_MOB                               0x9022      // Ä³¸¯ÅÍ ·Î±×¾Æ¿ô, ¿öÇÁ, ¼ø°£ÀÌµ¿ÀÇ ÁÖº¯Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_OTHER_CHAR_LOGOUT_NOTIFY                      0x9023      // Ä³¸¯ÅÍÀÇ ·Î±×¾Æ¿ô, ¿öÇÁ, ¼ø°£ÀÌµ¿À» ÆÄÆ¼, ±æµå, ÁÖ¼Ò·Ï °ü·Ã ÄÉ¸¯ÅÍ¿¡°Ô Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_CHAR_INIT                                0x9101      // Ä³¸¯ÅÍÀÇ Á¢¼ÓÃÊ±âÁ¤º¸ ÀÀ´ä ¸Þ¼¼Áö
+#define SCP_RESP_LOGIN                                    0x9001      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_WORLD_LIST                               0x9002      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+#define SCP_RESP_MOVE_ZONE_SERVER                         0x9003      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_LIST                                0x9011      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_CREATE                              0x9012      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_REMOVE                              0x9013      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_SELECT	                          0x9014      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_EXIT_ZONE_SERVER                         0x9015      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½å¼­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_LOGOUT                              0x9021      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ ï¿½Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_REMOVE_MOB                               0x9022      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_OTHER_CHAR_LOGOUT_NOTIFY                      0x9023      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼, ï¿½ï¿½ï¿½, ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_INIT                                0x9101      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 
-#define SCP_INIT_SKILL                                    0x9104      // ÄÉ¸¯ÅÍÀÇ ½ºÅ³Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_GUILD                                    0x9105      // ±æµåÀÇ ½Ç½Ã°£ Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_ADDRESS_BOOK                             0x9106      // ÁÖ¼Ò·Ï Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_CHAR_HISTORY                             0x9108      // ÄÉ¸¯ÅÍ È÷½ºÅä¸®Á¤º¸ ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_EQUIPMENT                                0x9109      // ÄÉ¸¯ÅÍ Âø¿ëÀåºñ ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä ¸Þ¼¼Áö
-//#define SCP_INIT_MONSTER_NPC                              0x9111      // ÁÖº¯ Monster/NPC Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_OTHER_MOB                                0x9112      // ÁÖº¯ ´Ù¸¥ ÄÉ¸¯ÅÍ Á¤º¸ ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_REAL_ADDRESS_BOOK                        0x9113      // ÁÖ¼Ò·Ï Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_REAL_GUILD                               0x9114      // ±æµåÀÇ ½Ç½Ã°£ Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_REAL_GUILD_MEMBER                        0x9115      // ±æµå¸âÀÇ ½Ç½Ã°£ Á¤º¸ Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_ITEM                                     0x9121      // ÁÖº¯ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ Ã³¸® ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_INIT_WORLD_USER_COUNT                         0x9161      // ¿ùµåº° Á¢¼ÓÀÚ¼ö¸¦ Ã³¸®ÇÔ.
-#define SCP_INIT_GUILD_MEMBER                             0x9171      // ÀÚ½ÅÀÇ ±æµå¿øÁ¤º¸¸¦ Àü¼ÛÇÔ.
-#define SCP_RESP_CHAR_MOVE                                0x9201      // Ä³¸¯ÅÍ ÀÌµ¿¿¡ ´ëÇÑ °á°ú ¸Þ½ÃÁö
-#define SCP_OTHER_CHAR_MOVE                               0x9202      // ÀÌµ¿Á¤º¸¸¦ ´Ù¸¥ Ä³¸¯ÅÍ¿¡°Ô ¾Ë·ÁÁÜ
-#define SCP_MONSTER_MOVE_STEP                             0x9206      // ÇÑ¼¿ ÀÌµ¿À» ÁÖº¯¿¡ Àü¼Û
-#define SCP_MONSTER_MOVE_NSTEP                            0x9207      // ¿©·¯¼¿ ÀÌµ¿À» ÁÖº¯¿¡ Àü¼Û
-#define SCP_MONSTER_MOVE_END                              0x9208      // ¿©·¯¼¿ ÀÌµ¿ÀÇ °á°ú ÁÂÇ¥¸¦ Àü¼Û
-#define SCP_RESP_ITEM_USE                                 0x9223      // ¾ÆÀÌÅÛ »ç¿ë ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_ITEM_USE_BROADCAST                            0x9224      // ¾ÆÀÌÅÛ »ç¿ëÀ» ÁÖº¯ ´Ù¸¥ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_ITEM_REMOVE                                   0x9225      // ÀÎº¥Åä¸®¿¡¼­ ¾ÆÀÌÅÛ »ç¶óÁüÀ» ¾Ë·ÁÁÜ
-#define SCP_RESP_CHAR_MOVE_BROADCAST                      0x9227      // ÄÉ¸¯ÅÍÀÇ ÀÌµ¿À» ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_RESP_ATK_CHAR                                 0x9301      // Ä³¸¯ÅÍÀÇ °ø°Ý ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_ATK_CHAR_BROADCAST                            0x9302      // Ä³¸¯ÅÍÀÇ °ø°ÝÀ» ÁÖº¯ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_ITEM_EQUIPMENT                           0x9401      // ¾ÆÀÌÅÛ ÀåÂø ¿äÃ»¿¡ ´ëÇÑ °á°ú
-#define SCP_ITEM_EQUIPMENT_BROADCAST                      0x9402      // ¾ÆÀÌÅÛ ÀåÂøÀ» ÁÖº¯ Ä³¸¯ÅÍ¿¡°Ô Àü¼Û
-#define SCP_ITEM_ABRASION                                 0x9411      // ¾ÆÀÌÅÛ »ç¶óÁüÀ» ¾Ë¸² ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_ITEM_ABRASION_BROADCAST                       0x9412      // ¾ÆÀÌÅÛ »ç¶óÁüÀ» ÁÖº¯ ´Ù¸¥ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_QUEST_HISTORY                            0x9701      // Äù½ºÆ® È÷½ºÅä¸® Á¤º¸ Àü¼Û
-#define SCP_QUEST_DIALOG                                  0x9702      // ´ëÈ­¹® Ãâ·Â
-#define SCP_QUEST_NOTIFY_LEVEL                            0x9703      // Äù½ºÆ® ´Ü°è ¾Ë¸²
-#define SCP_QUEST_DIALOG                                  0x9702      // ´ëÈ­¹® Ãâ·Â
-#define SCP_QUEST_NOTIFY_LEVEL                            0x9703      // Äù½ºÆ® ´Ü°è ¾Ë¸²
-#define SCP_RESP_SKILL_REGIST                             0xA001      // ½ºÅ³ µî·Ï °á°ú ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_SKILL_REGIST                                  0xA002      // Ä«½ºÆ® »ó½Â¿¡ µû¸¥ ½ºÅ³ ÀÚµ¿ µî·Ï °á°ú ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_SKILL_SELECT                             0xA003      // µî·ÏµÈ ½ºÅ³À» ¼±ÅÃ/ÇØÁ¦ °á°ú ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_SKILL_SELECT_BROADCAST                   0xA004      // µî·ÏµÈ ½ºÅ³À» ¼±ÅÃ/ÇØÁ¦ °á°ú ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_RESP_SKILL_USE2_CHAR                          0xA011      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°Ý ÁØºñµ¿ÀÛ ¿äÃ» °á°ú ¸Þ¼¼Áö
-#define SCP_SKILL_READY_CHAR_BROADCAST                    0xA012      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°Ý ÁØºñµ¿ÀÛÀ» ÁÖº¯¿¡ Àü¼Û°á°ú ¸Þ¼¼Áö
-#define SCP_RESP_SKILL_ATK_CHAR                           0xA013      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°Ý ÀÀ´ä ¸Þ¼¼Áö
-#define SCP_SKILL_ATK_CHAR_BROADCAST                      0xA014      // Ä³¸¯ÅÍÀÇ ½ºÅ³ °ø°ÝÀ» ÁÖº¯ Ä³¸¯ÅÍµé¿¡°Ô Àü¼Û °á°ú ¸Þ¼¼Áö
-#define SCP_RESP_SKILL_LEVEL_UP                           0xA021      // Ä³¸¯ÅÍÀÇ ½ºÅ³ Level-Up ¿äÃ» °á°ú ¸Þ¼¼Áö
-#define SCP_RESP_SHOP_SKILL_LIST                          0xA022      // ½Àµæ °¡´ÉÇÑ ½ºÅ³ List ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_RESP_TROUBLE_REPORT                           0xA541      // ¼­¹ö¿¡ ½Å°í³»¿ëÀ» Á¢¼öÇÑ´Ù.
-#define SCP_RESP_TROUBLE_REPORT_LIST                      0xA542      // ¼­¹ö¿¡ ½Å°í³»¿ëÀÇ ¸®½ºÆ®¸¦ ¿äÃ»ÇÑ´Ù.
-#define SCP_RESP_TROUBLE_REPORT_SET                       0xA543      // ½Å°í³»¿ëÀÇ Ã³¸®»óÈ²À» ¹Þ´Â´Ù.
-#define GSCP_RESP_TROUBLE_REPORT_LIST                     0xA544      // ·Î±×ÀÎ ÀÀ´ä ¸Þ½ÃÁö
-#define GSCP_RESP_TROUBLE_REPORT_SET                      0xA545      // ·Î±×ÀÎ ÀÀ´ä ¸Þ½ÃÁö
-#define GSCP_RESP_TROUBLE_REPORT                          0xA546      // ·Î±×ÀÎ ÀÀ´ä ¸Þ½ÃÁö
-#define GSCP_INIT_ITEM                                    0xA548      // Ä³¸¯ÅÍ ¾ÆÀÌÅÛ Á¤º¸
-#define GSCP_INIT_SKILL                                   0xA549      // Ä³¸¯ÅÍ ½ºÅ³ Á¤º¸
-#define GSCP_RESP_PARAMETER_CHANGE                        0xA550      // Ä³¸¯ÅÍÀÇ ±âº» Á¤º¸°ªÀ» º¯°æ ¿äÃ»¿¡ ´ëÇÑ °á°ú
-#define GSCP_RESP_ITEM_INSERT                             0xA551      // ¾ÆÀÌÅÛ »ðÀÔ °á°ú
-#define GSCP_RESP_ITEM_DELETE                             0xA552      // ¾ÆÀÌÅÛ »èÁ¦ °á°ú
-#define GSCP_RESP_SKILL_INSERT                            0xA553      // ½ºÅ³ »ðÀÔ °á°ú
-#define GSCP_RESP_SKILL_DELETE                            0xA554      // ½ºÅ³ »èÁ¦ °á°ú
-#define SCP_RESP_CHAR_INFO                                0xA561      // ÄÉ¸¯ÅÍ Á¤º¸ ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_CHAR_EQUIPMENT                           0xA562      // ÄÉ¸¯ÅÍÀÇ ÀåÂøÁ¤º¸ ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_CHAR_SKILL                               0xA563      // ÄÉ¸¯ÅÍÀÇ ½ºÅ³Á¤º¸ ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_CLOSE_CHAR                               0xA571      // ÄÉ¸¯ÅÍÀÇ Á¢¼ÓÁ¾·á ÀÀ´ä ¸Þ½ÃÁö
-#define SCP_RESP_JOIN_ADDRESS_BOOK                        0xA603      // ÁÖ¼Ò·Ï¿¡ Ä³¸¯ÅÍÃß°¡ ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_JOIN_ADDRESS_BOOK_NOTIFY                      0xA604      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ»À» Ä³¸¯ÅÍ¿¡°Ô Àü¼Û¸Þ¼¼Áö
-#define SCP_RESP_JOIN_ADDRESS_BOOK_RESULT                 0xA605      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ» °á°ú¿¡ °á°ú ¸Þ¼¼Áö
-#define SCP_JOIN_ADDRESS_BOOK_RESULT_NOTIFY               0xA606      // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ»¿¡ ´ëÇÑ ½ÂÀÎ °á°ú¸¦ Ä³¸¯ÅÍ¿¡°Ô Àü¼Û
-#define SCP_RESP_ADDRESS_BOOK_MEMBER_DELETE               0xA607      // ÁÖ¼Ò·Ï¿¡ ÀÖ´Â Ä³¸¯ÅÍ Á¤º¸ÀÇ »èÁ¦¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_ADDRESS_BOOK_MEMBER_DELETE_NOTIFY             0xA608      // ÁÖ¼Ò·Ï¿¡¼­ »èÁ¦¸¦ ¾Ë¸°´Ù
-#define SCP_RESP_ADDRESS_BOOK_GROUP_ADD                   0xA611      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ Ãß°¡ ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_RESP_ADDRESS_BOOK_GROUP_DELETE                0xA612      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ »èÁ¦ ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_RESP_ADDRESS_BOOK_GROUP_MOVE                  0xA613      // ÁÖ¼Ò·Ï¿¡ ÄÉ¸¯ÅÍÀÇ ±×·ìÀÌµ¿ ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
-#define SCP_RESP_ADDRESS_BOOK_GROUP_RENAME                0xA614      // ÁÖ¼Ò·Ï¿¡ ±×·ìÀÇ ÀÌ¸§º¯°æÀ» ¿äÃ»°á°ú
-#define SCP_RESP_ADDRESS_BOOK_STATUS                      0xA621      // ÁÖ¼Ò·Ï µî·Ï¿äÃ»ÀÇ °ÅºÎ¸¦ ¼¼ÆÃ¿äÃ»
-#define MSG_ITEM_ID                                       0xB100      // item °ü·Ã
+#define SCP_INIT_SKILL                                    0x9104      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_GUILD                                    0x9105      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_ADDRESS_BOOK                             0x9106      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_HISTORY                             0x9108      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_EQUIPMENT                                0x9109      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+//#define SCP_INIT_MONSTER_NPC                              0x9111      // ï¿½Öºï¿½ Monster/NPC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_OTHER_MOB                                0x9112      // ï¿½Öºï¿½ ï¿½Ù¸ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_REAL_ADDRESS_BOOK                        0x9113      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_REAL_GUILD                               0x9114      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_REAL_GUILD_MEMBER                        0x9115      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_ITEM                                     0x9121      // ï¿½Öºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_INIT_WORLD_USER_COUNT                         0x9161      // ï¿½ï¿½ï¿½åº° ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½.
+#define SCP_INIT_GUILD_MEMBER                             0x9171      // ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+#define SCP_RESP_CHAR_MOVE                                0x9201      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_OTHER_CHAR_MOVE                               0x9202      // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
+#define SCP_MONSTER_MOVE_STEP                             0x9206      // ï¿½Ñ¼ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_MONSTER_MOVE_NSTEP                            0x9207      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_MONSTER_MOVE_END                              0x9208      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_RESP_ITEM_USE                                 0x9223      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_ITEM_USE_BROADCAST                            0x9224      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_ITEM_REMOVE                                   0x9225      // ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_MOVE_BROADCAST                      0x9227      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_ATK_CHAR                                 0x9301      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_ATK_CHAR_BROADCAST                            0x9302      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_ITEM_EQUIPMENT                           0x9401      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define SCP_ITEM_EQUIPMENT_BROADCAST                      0x9402      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_ITEM_ABRASION                                 0x9411      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_ITEM_ABRASION_BROADCAST                       0x9412      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ ï¿½Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_QUEST_HISTORY                            0x9701      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_QUEST_DIALOG                                  0x9702      // ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define SCP_QUEST_NOTIFY_LEVEL                            0x9703      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ü°ï¿½ ï¿½Ë¸ï¿½
+#define SCP_QUEST_DIALOG                                  0x9702      // ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define SCP_QUEST_NOTIFY_LEVEL                            0x9703      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ü°ï¿½ ï¿½Ë¸ï¿½
+#define SCP_RESP_SKILL_REGIST                             0xA001      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_SKILL_REGIST                                  0xA002      // Ä«ï¿½ï¿½Æ® ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SKILL_SELECT                             0xA003      // ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SKILL_SELECT_BROADCAST                   0xA004      // ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SKILL_USE2_CHAR                          0xA011      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_SKILL_READY_CHAR_BROADCAST                    0xA012      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û°ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SKILL_ATK_CHAR                           0xA013      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_SKILL_ATK_CHAR_BROADCAST                      0xA014      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SKILL_LEVEL_UP                           0xA021      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ Level-Up ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_SHOP_SKILL_LIST                          0xA022      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ List ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_TROUBLE_REPORT                           0xA541      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+#define SCP_RESP_TROUBLE_REPORT_LIST                      0xA542      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
+#define SCP_RESP_TROUBLE_REPORT_SET                       0xA543      // ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
+#define GSCP_RESP_TROUBLE_REPORT_LIST                     0xA544      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define GSCP_RESP_TROUBLE_REPORT_SET                      0xA545      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define GSCP_RESP_TROUBLE_REPORT                          0xA546      // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define GSCP_INIT_ITEM                                    0xA548      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define GSCP_INIT_SKILL                                   0xA549      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½
+#define GSCP_RESP_PARAMETER_CHANGE                        0xA550      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define GSCP_RESP_ITEM_INSERT                             0xA551      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define GSCP_RESP_ITEM_DELETE                             0xA552      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define GSCP_RESP_SKILL_INSERT                            0xA553      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define GSCP_RESP_SKILL_DELETE                            0xA554      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_INFO                                0xA561      // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_EQUIPMENT                           0xA562      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_CHAR_SKILL                               0xA563      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_CLOSE_CHAR                               0xA571      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
+#define SCP_RESP_JOIN_ADDRESS_BOOK                        0xA603      // ï¿½Ö¼Ò·Ï¿ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_JOIN_ADDRESS_BOOK_NOTIFY                      0xA604      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_JOIN_ADDRESS_BOOK_RESULT                 0xA605      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_JOIN_ADDRESS_BOOK_RESULT_NOTIFY               0xA606      // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_MEMBER_DELETE               0xA607      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½Ö´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_ADDRESS_BOOK_MEMBER_DELETE_NOTIFY             0xA608      // ï¿½Ö¼Ò·Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_GROUP_ADD                   0xA611      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_GROUP_DELETE                0xA612      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_GROUP_MOVE                  0xA613      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½Ìµï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_GROUP_RENAME                0xA614      // ï¿½Ö¼Ò·Ï¿ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
+#define SCP_RESP_ADDRESS_BOOK_STATUS                      0xA621      // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½Ï¿ï¿½Ã»ï¿½ï¿½ ï¿½ÅºÎ¸ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½Ã»
+#define MSG_ITEM_ID                                       0xB100      // item ï¿½ï¿½ï¿½ï¿½
 #define SCP_RESP_LEARN_SKILL                              0xB210      // Learn a skill
 #define SCP_RESP_CAST_SKILL                               0xB220      // cast a skill
 #define SCP_CAST_SKILL_BROADCAST                          0xB230      // cast a skill
 #define SCP_RESP_CHAR_ACT                                 0xB300      // Action
-#define SCP_CHAR_ACT_BROADCAST                            0xB310      // ActionÀ» broadcast
+#define SCP_CHAR_ACT_BROADCAST                            0xB310      // Actionï¿½ï¿½ broadcast
 #define SCP_RESP_UPDATE_UI                                0xB500      // Update UI
 #define SCP_RESP_UPDATE_STATUS                            0xB501      // Update Status
 #define SCP_LEVEL_UP_BROADCAST                            0xB510      // level up
 #define SCP_RESP_INCREASE_CHAKRA                          0xB520      // Increase a chakra point
 #define REGISTER_KALA_CORE								  0xB530      // register a kala-core on the kala-altar.
-#define CONTACT_NPC                                       0xB540      // NPC¿Í Á¢ÃËÀ» ÇÒ¶§
-#define SKILL_UP_EFFECT                                   0xB550      // skill up effect ¹ßµ¿ ½Ã
+#define CONTACT_NPC                                       0xB540      // NPCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½
+#define SKILL_UP_EFFECT                                   0xB550      // skill up effect ï¿½ßµï¿½ ï¿½ï¿½
 #define SCP_FIRE_FX_BROADCAST		                      0xB560      // Fire a Effect
-#define MSG_SET_ZONE_SETTINGS_ID                          0xB570		// zoneÀÇ ¼³Á¤ »çÇ×À» client¿¡ Àü´ÞÇÑ´Ù.
-#define MSG_CHANGE_TRIMURITI_ID                           0xB580		// clanÀ» º¯°æÀ» client¿¡ ¾Ë¸°´Ù.
-#define MSG_APPLY_SIEGE_ID                                0xB590		// °ø¼º ½ÅÃ»À» ÇÑ´Ù.
-#define MSG_TRIGGER_EVENT_ID                              0xB600		// Æ¯Á¤ event¸¦ ½ÇÇà½ÃÅ²´Ù.
-#define	MSG_STATE_OF_THE_SIEGE_ID						  0xB610		// °ø¼º »óÂ¡¹° Á¡·É »óÅÂ
-#define	MSG_PET_COMMAND_ID                                0xB620		// ÆÖ¿¡°Ô ¸í·ÉÀ» ³»¸²
+#define MSG_SET_ZONE_SETTINGS_ID                          0xB570		// zoneï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ clientï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+#define MSG_CHANGE_TRIMURITI_ID                           0xB580		// clanï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ clientï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½.
+#define MSG_APPLY_SIEGE_ID                                0xB590		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ñ´ï¿½.
+#define MSG_TRIGGER_EVENT_ID                              0xB600		// Æ¯ï¿½ï¿½ eventï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½.
+#define	MSG_STATE_OF_THE_SIEGE_ID						  0xB610		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define	MSG_PET_COMMAND_ID                                0xB620		// ï¿½Ö¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 #define MSG_SIEGE_ENTRY_ID                                0xB630
 #define MSG_CHECK_SIEGE_ENTRY_ID                          0xB640
 #define CONFIRM_SIEGE_ENTRY_ID                            0xB650
@@ -4738,10 +4741,10 @@ typedef struct _S_TNITEM_DATA
 {
 	DWORD                                             dwKeyID;      // Item handle
 	int                                               iID;          // Item ID
-	short                                             snDur;        // Item ³»±¸¼º
-	BYTE                                              nPack;        // Item ÁßÃ¸°³¼ö
+	short                                             snDur;        // Item ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              nPack;        // Item ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½
 	BYTE											  byDummy;
-	WORD                                              wrgMaterial[10];// Ãß°¡µÇ´Â º¸Á¶Àç·á
+	WORD                                              wrgMaterial[10];// ï¿½ß°ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 } S_TNITEM_DATA, * PS_TNITEM_DATA;
 
@@ -4757,28 +4760,28 @@ typedef struct _S_TNSKILL_DATA
 
 typedef struct _S_TNCHAKRA
 {
-	short                                             snMuscle;     // ±ÙÀ° Â÷Å©¶ó
-	short                                             snNerves;     // ½Å°æ Â÷Å©¶ó
-	short                                             snHeart;      // ½ÉÀå Â÷Å©¶ó
-	short                                             snMind;       // Á¤½Å Â÷Å©¶ó
+	short                                             snMuscle;     // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snNerves;     // ï¿½Å°ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snHeart;      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snMind;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
 
 } S_TNCHAKRA, * PS_TNCHAKRA;
 
 
 typedef struct _S_TNRESIST
 {
-	short                                             snFire;       // fire ÀúÇ×
-	short                                             snCold;       // cold ÀúÇ×
-	short                                             snLightning;  // lightning ÀúÇ×
-	short                                             snPoison;     // poison ÀúÇ×
+	short                                             snFire;       // fire ï¿½ï¿½ï¿½ï¿½
+	short                                             snCold;       // cold ï¿½ï¿½ï¿½ï¿½
+	short                                             snLightning;  // lightning ï¿½ï¿½ï¿½ï¿½
+	short                                             snPoison;     // poison ï¿½ï¿½ï¿½ï¿½
 
 } S_TNRESIST, * PS_TNRESIST;
 
 
 typedef struct _S_TNDAMAGE
 {
-	short                                             snMin;        // ÃÖ¼Ò
-	short                                             snMax;        // ÃÖ´ë
+	short                                             snMin;        // ï¿½Ö¼ï¿½
+	short                                             snMax;        // ï¿½Ö´ï¿½
 	short											  snFire ;
 	short											  snCold ;
 	short											  snLightning ;
@@ -4789,7 +4792,7 @@ typedef struct _S_TNDAMAGE
 
 typedef struct _S_TNTARGET_DATA
 {
-	byte                                            byRes ; // result; 0,1: ¼º°ø, 2:½ÇÆÐ
+	byte                                            byRes ; // result; 0,1: ï¿½ï¿½ï¿½ï¿½, 2:ï¿½ï¿½ï¿½ï¿½
 	byte                                            byDummy1 ;
 	short                                           snDummy2 ;
 	short											snKeyID ;
@@ -4817,8 +4820,8 @@ struct S_PARTY
 
 typedef struct _S_GUILD_SKILL
 {
-	DWORD		dwIndex;      // ½ºÅ³ÀÎµ¦½º
-	BYTE		byLevel;      // ÇöÀç ½ºÅ³·¹º§
+	DWORD		dwIndex;      // ï¿½ï¿½Å³ï¿½Îµï¿½ï¿½ï¿½
+	BYTE		byLevel;      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½
 	BYTE		byDummy;
 	short		snDummy;
 
@@ -4827,24 +4830,24 @@ typedef struct _S_GUILD_SKILL
 
 typedef struct _S_GUILD_MEMBER_INFO
 {
-	char		 szName[SZNAME_LENGTH];   // ±æµå¿ø Ä³¸¯ÅÍÀÇ ÀÌ¸§
-	BYTE         byTrimuritiClass;// Ä³¸¯ÅÍÀÇ ÁÖ½Å°è±Þ                                     
-	BYTE         bySpecialName;// Ä³¸¯ÅÍÀÇ Æ¯¼öÄªÈ£                                     
-	BYTE         byGuildAuthority;// ±æµå³»ÀÇ ÁöÀ§                                     
-	BYTE         byTribe;      // Ä³¸¯ÅÍÀÇ Á¾Á·                                     
+	char		 szName[SZNAME_LENGTH];   // ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE         byTrimuritiClass;// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½Å°ï¿½ï¿½                                     
+	BYTE         bySpecialName;// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ÄªÈ£                                     
+	BYTE         byGuildAuthority;// ï¿½ï¿½å³»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                     
+	BYTE         byTribe;      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                     
 				 
-	BYTE         byCastClass;  // Ä³¸¯ÅÍÀÇ Ä«½ºÆ® °è±Þ                                     
-	BYTE         byCastGrade;  // Ä³¸¯ÅÍÀÇ Ä«½ºÆ® µî±Þ                                     
-	BYTE         byConnect;    // Ä³¸¯ÅÍÀÇ Á¢¼Ó¿©ºÎ                                     
+	BYTE         byCastClass;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½                                     
+	BYTE         byCastGrade;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½                                     
+	BYTE         byConnect;    // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½                                     
 	BYTE		 byDummy;
-	int          nContribution;// Ä³¸¯ÅÍÀÇ ±æµå³» °øÇåµµ                                     
+	int          nContribution;// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å³» ï¿½ï¿½ï¿½åµµ                                     
 
 } S_GUILD_MEMBER_INFO, * PS_GUILD_MEMBER_INFO;
 
 typedef struct _S_QUEST_HISTORY_INFO
 {
-	BYTE        byIndex;      // ÇÃ·¡±× ÀÎµ¦½º                                      
-	BYTE        byValue;      // ÇÃ·¡½º °ª                                      
+	BYTE        byIndex;      // ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½                                      
+	BYTE        byValue;      // ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½                                      
 	short		snDummy;
 } S_QUEST_HISTORY_INFO, * PS_QUEST_HISTORY_INFO;
 
@@ -4857,9 +4860,9 @@ typedef struct _S_KEY_ID
 
 typedef struct _S_USER_REPORT_LIST
 {
-	DWORD                                             dwIndex;      // Á¢¼ö½Ã ¹ß±ÞµÇ´Â Á¢¼ö¹øÈ£
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ÞµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 	DWORD                                             dwTime;       
-	BYTE                                              byProceed;    // Ã³¸®»óÈ²
+	BYTE                                              byProceed;    // Ã³ï¿½ï¿½ï¿½ï¿½È²
 	char                                              szReport[512];
 
 } S_USER_REPORT_LIST, * PS_USER_REPORT_LIST;
@@ -4867,22 +4870,22 @@ typedef struct _S_USER_REPORT_LIST
 
 typedef struct _S_REPORT_LIST
 {
-	DWORD                                           	dwIndex;      // Á¢¼ö½Ã ¹ß±ÞµÇ´Â Á¢¼ö¹øÈ£
+	DWORD                                           	dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ÞµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 	char                                            	szCharName[SZNAME_LENGTH];
 	BYTE                                            	byWorld;   
-	BYTE                                            	byProceed;    // Ã³¸®»óÈ²
+	BYTE                                            	byProceed;    // Ã³ï¿½ï¿½ï¿½ï¿½È²
 	short												snDummy;
 	DWORD                                           	dwTime;       
 
 	char                                            	szReport[512];
-	char                                            	szNote[256];  // ºñ°í
+	char                                            	szNote[256];  // ï¿½ï¿½ï¿½
 
 } S_REPORT_LIST, * PS_REPORT_LIST;
 
 
 typedef struct _S_SKILLINFO
 {
-	BYTE                                            	byType;       // SkillÀÇ Á¾·ù
+	BYTE                                            	byType;       // Skillï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	BYTE                                            	byLevel;      // Skill Level
 	short												snDummy;
 	DWORD                                           	dwIndex;      // Skill Index
@@ -4892,12 +4895,12 @@ typedef struct _S_SKILLINFO
 //
 //typedef struct _S_ADDRESS_MEMBER_INFO
 //{
-//	char                                              szName[SZNAME_LENGTH];   // ÁÖ¼Ò·Ï Ä³¸¯ÅÍÀÇ ÀÌ¸§
-//	BYTE                                              byTrimuriti;  // Ä³¸¯ÅÍÀÇ ÁÖ½Å
-//	BYTE                                              byTribe;      // Ä³¸¯ÅÍÀÇ Á¾Á·
-//	BYTE                                              byCastClass;  // Ä³¸¯ÅÍÀÇ Ä«½ºÆ® µî±Þ
-//	BYTE                                              byCastGrade;  // Ä³¸¯ÅÍÀÇ Ä«½ºÆ® °è±Þ
-//	WORD                                              wServerID;    // ÄÉ¸¯ÅÍ°¡ À§Ä¡ÇÑ ¼­¹öID
+//	char                                              szName[SZNAME_LENGTH];   // ï¿½Ö¼Ò·ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+//	BYTE                                              byTrimuriti;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
+//	BYTE                                              byTribe;      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	BYTE                                              byCastClass;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
+//	BYTE                                              byCastGrade;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
+//	WORD                                              wServerID;    // ï¿½É¸ï¿½ï¿½Í°ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ID
 //
 //} S_ADDRESS_MEMBER_INFO, * PS_ADDRESS_MEMBER_INFO;
 //
@@ -4913,8 +4916,8 @@ typedef struct _S_SKILLINFO
 typedef struct _S_CSP_REQ_MOVE_ZONE_SERVER
 {
 	_MSG;
-    char    AccountName[ACCOUNTNAME_LENGTH];	//	°èÁ¤ ID
-	char    AccountPass[ACCOUNTPASS_LENGTH];	//	°èÁ¤ ºñ¹ø
+    char    AccountName[ACCOUNTNAME_LENGTH];	//	ï¿½ï¿½ï¿½ï¿½ ID
+	char    AccountPass[ACCOUNTPASS_LENGTH];	//	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	char    szCharName[SZNAME_LENGTH];						// Character Name
 	short	snVersion[4];
 } S_CSP_REQ_MOVE_ZONE_SERVER, * PS_CSP_REQ_MOVE_ZONE_SERVER;
@@ -5002,7 +5005,7 @@ typedef struct _S_CSP_REQ_CHAR_SELECT
 	char												szCharName[SZNAME_LENGTH];
 	BYTE												byCastClass;  
 	BYTE												byCastGrade;  
-	BYTE												byConnType;   // Á¢¼ÓÀ§Ä¡
+	BYTE												byConnType;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡
 	BYTE												byDummy;
 
 } S_CSP_REQ_CHAR_SELECT, * PS_CSP_REQ_CHAR_SELECT;
@@ -5030,8 +5033,8 @@ typedef struct _MSG_PET_COMMAND
 typedef struct _MSG_FIX_DATE_OF_SIEGE
 {
 	_MSG ;
-	BYTE		byWhat ; // 0: ¼­¹ö¿¡°Ô °ø¼º ³¯Â¥¸¦ ¿äÃ»ÇÒ¶§, 1:°áÁ¤µÈ °ø¼º ³¯Â¥¸¦ ¼­¹ö¿¡ ¾Ë·ÁÁÙ¶§
-	BYTE		byDate  ; //°ø¼º ³¯Â¥(0, 1~n), 0:°áÁ¤µÈ³¯Â¥°¡ ¾øÀ»°æ¿ì, 0 ÃÊ°ú:°áÁ¤µÈ ³¯Â¥ ¼ø¼­¹øÈ£
+	BYTE		byWhat ; // 0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ò¶ï¿½, 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ù¶ï¿½
+	BYTE		byDate  ; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥(0, 1~n), 0:ï¿½ï¿½ï¿½ï¿½ï¿½È³ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0 ï¿½Ê°ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 	short		sDummy ;
 } MSG_FIX_DATE_OF_SIEGE ;
 
@@ -5048,12 +5051,12 @@ typedef struct _MSG_CHECK_SIEGE_ENTRY
 typedef struct _MSG_SIEGE_ENTRY
 {
 	_MSG ;
-	BYTE		byDate  ; //°ø¼º ³¯Â¥
-	BYTE		byClanSlot ; // 0:¼ö¼º, 1:°ø¼º1, 2:°ø¼º2, 3:°ø¼º3
+	BYTE		byDate  ; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥
+	BYTE		byClanSlot ; // 0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½1, 2:ï¿½ï¿½ï¿½ï¿½2, 3:ï¿½ï¿½ï¿½ï¿½3
 	BYTE		byPage ; // 0~4
 	BYTE		byDummy ;
-	int			irgGuildID[8] ; // 0 ÀÌ¸é ºñ¾î ÀÖ´Â °ÍÀÌ´Ù.
-	DWORD		dwrgGuildMark[8] ; // 0 ÀÌ¸é ºñ¾î ÀÖ´Â °ÍÀÌ´Ù.
+	int			irgGuildID[8] ; // 0 ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½.
+	DWORD		dwrgGuildMark[8] ; // 0 ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½.
 	char		szrgGuildName[8][SZGUILD_LENGTH] ; 
 } MSG_SIEGE_ENTRY ;
 
@@ -5061,36 +5064,36 @@ typedef struct _MSG_SIEGE_ENTRY
 typedef struct _MSG_STATE_OF_THE_SIEGE
 {
 	_MSG ;
-	int			irgClan[11] ; // symbol¿¡ ´ëÇÑ °¢ clanÀÇ Á¡·É »óÅÂ
+	int			irgClan[11] ; // symbolï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ clanï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 } MSG_STATE_OF_THE_SIEGE ;
 
 
-typedef struct _MSG_SET_ZONE_SETTINGS // ¼­¹ö¿¡¼­ ÀÏ¹æÀûÀ¸·Î º¸³»´Â ¸Þ½ÃÁö Å¸ÀÔ
+typedef struct _MSG_SET_ZONE_SETTINGS // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½
 {
 	_MSG ;
-	short		snSiege ; // 0Àº °ø¼ºÀü ¾Æ´Ô, 1Àº °ø¼ºÀü Áß
+	short		snSiege ; // 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½, 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	short		snDummy ; // 
-	int			iCastle ; // ¼ö¼ºÃø ±æµå ID
+	int			iCastle ; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ID
 } MSG_SET_ZONE_SETTINGS ;
 
 
-typedef struct _MSG_CHANGE_TRIMURITI // ¼­¹ö¿¡¼­ ÀÏ¹æÀûÀ¸·Î º¸³»´Â ¸Þ½ÃÁö Å¸ÀÔ
+typedef struct _MSG_CHANGE_TRIMURITI // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½
 {
 	_MSG ;
-	short		snKeyID ; // Ä³¸¯ÅÍ ID
-	BYTE		byTrimuriti ; // º¯°æµÉ ÁÖ½Å
+	short		snKeyID ; // Ä³ï¿½ï¿½ï¿½ï¿½ ID
+	BYTE		byTrimuriti ; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
 	BYTE		byDummy ;
 } MSG_CHANGE_TRIMURITI ;
 
 
-// client°¡ server·Î ¿äÃ», server´Â trialÀÌÈÄ¿¡ °á°ú¸¦ replyÇØÁØ´Ù.
+// clientï¿½ï¿½ serverï¿½ï¿½ ï¿½ï¿½Ã», serverï¿½ï¿½ trialï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ replyï¿½ï¿½ï¿½Ø´ï¿½.
 typedef struct _MSG_APPLY_SIEGE
 {
 	_MSG ;
 	BYTE		byClanSlot ; // leader(clan) slot 
-	BYTE		byExpandSlot ; // ÇÏÀ§ slot
-	short		snResult ; // ½ÅÃ» °á°ú °ª
-	//int			nGuildID ; // ½ÅÃ»ÇÑ guild ID
+	BYTE		byExpandSlot ; // ï¿½ï¿½ï¿½ï¿½ slot
+	short		snResult ; // ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ ï¿½ï¿½
+	//int			nGuildID ; // ï¿½ï¿½Ã»ï¿½ï¿½ guild ID
 } MSG_APPLY_SIEGE ;
 
 
@@ -5112,12 +5115,12 @@ typedef struct _MSG_ITEM
 {
 	_MSG ;
 	short                                           	snUserKeyID ;
-	short                                           	snWarpID ;		//	°í±ÞÇü ÀÌµ¿ÀÇ Çª½ºÆ¼Ä« »ç¿ë½Ã ÀÌµ¿Àå¼ÒID
+	short                                           	snWarpID ;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Çªï¿½ï¿½Æ¼Ä« ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ID
 	BYTE												byType ;		// use/info
 	BYTE												byPlace ;		// equipment, bag1~~ , ...
 	BYTE												byIndex ;
 	BYTE												byResult ;
-	STRUCT_ITEM											kItem ;			// ÁßÃ¸°³¼ö°¡ 0ÀÌ¸é »èÁ¦ÇØÁØ´Ù.
+	STRUCT_ITEM											kItem ;			// ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 } MSG_ITEM ;
 
 
@@ -5125,16 +5128,16 @@ typedef struct _MSG_SKILL_UP_EFFECT
 {
 	_MSG ;
 	short                                              snID ;
-	byte                                               byLevel ; // ÇöÀçÀÇ level
-	byte                                               byLevelPlus ; // »ó½ÂÇÑ ¼öÄ¡, ÀÌ ¼öÄ¡°¡ 0º¸´Ù Å©¸é, level ¼ýÀÚ¸¦ ÆÄ¶õ»öÀ¸·Î Ç¥±â
-	// µû¶ó¼­ byLevel + byLevelPlus °ªÀÌ ÇöÀç ½ºÅ³ level
+	byte                                               byLevel ; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ level
+	byte                                               byLevelPlus ; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½, level ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ byLevel + byLevelPlus ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ level
 } MSG_SKILL_UP_EFFECT ;
 
 
 typedef struct _MSG_REGISTER_KALA_CORE
 {
 	_MSG ;
-	short												snID ; // Ä®¶óÁ¦´Ü ID
+	short												snID ; // Ä®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ID
 	short												sDummy ;
 } MSG_REGISTER_KALA_CORE ;
 
@@ -5162,7 +5165,7 @@ typedef struct _S_SCP_RESP_LEARN_SKILL
 	BYTE												byRes;        // Result
 	BYTE												byDummy;
 	short												snDummy;
-	S_TNSKILL_DATA										kSkill;       // level upµÉ skill Á¤º¸
+	S_TNSKILL_DATA										kSkill;       // level upï¿½ï¿½ skill ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_LEARN_SKILL, * PS_SCP_RESP_LEARN_SKILL;
 
@@ -5173,22 +5176,22 @@ typedef struct _S_SCP_RESP_LEARN_SKILL
 typedef struct _S_CSP_CAST_UNIT_SKILL
 {
 	_MSG ;	
-	short											  snSkillID ;       // castÇÑ skill ID
+	short											  snSkillID ;       // castï¿½ï¿½ skill ID
 	short                                             snCasterKeyID;// Caster handle
-	int                                               iSkillIcon ; // bit vector, °ü·ÃµÈ ½ºÅ³ ICON   <===
-	DWORD                                             dwFireHitGapTime ; // ¹ß»çÇÏ°í ÀûÁßÇÒ ¶§±îÁö °É¸° ½Ã°£  <===
-	DWORD                                             dwEndTime ;  // ½ºÅ³ ½ÃÀüÀÌ Á¾·áµÇ´Â ½Ã°£
-	DWORD                                             dwDurationTime ; // Áö¼Ó ½Ã°£À¸·Î ÀÌ ½Ã°£¿¡ Àû¿ëÀÌ ³¡³­´Ù.
-	DWORD                                             dwCoolDownTime ; // ÀÌ ½Ã°£¿¡ cool-downÀÌ ¿Ï·áµÈ´Ù.
-	short                                             snCasterX;    // CasterÀÇ ÇöÀç x ÁÂÇ¥
-	short                                             snCasterZ;    // CasterÀÇ ÇöÀç y ÁÂÇ¥
-	int                                               iCasterHP;    // CasterÀÇ Çö HP
-	int                                               iCasterTP;    // CasterÀÇ Çö TP
-	__int64                                           iCasterAffections ; // Caster¿¡°Ô ÇöÀç °É·ÁÀÖ´Â affection
-	short                                             snMapX;       // Target map x ÁÂÇ¥(ground), ÇÊ¼ö »çÇ×
-	short                                             snMapZ;       // Target map y ÁÂÇ¥(ground), ÇÊ¼ö »çÇ×
-	short                                             snRes ;       // Result(-1:echo, 0:Normal, 1:CriticalHit, 2:Dodge, 3:Àå¾Ö¹°Ãæµ¹ ...)
-	short                                             snPackCount ;  // ¼Ò¸ðµÈ itemÀÇ ÇöÀç ³²Àº °³¼ö(È­»ìÀÇ °³¼ö)]
+	int                                               iSkillIcon ; // bit vector, ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ ICON   <===
+	DWORD                                             dwFireHitGapTime ; // ï¿½ß»ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ ï¿½Ã°ï¿½  <===
+	DWORD                                             dwEndTime ;  // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Ã°ï¿½
+	DWORD                                             dwDurationTime ; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+	DWORD                                             dwCoolDownTime ; // ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ cool-downï¿½ï¿½ ï¿½Ï·ï¿½È´ï¿½.
+	short                                             snCasterX;    // Casterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ x ï¿½ï¿½Ç¥
+	short                                             snCasterZ;    // Casterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ y ï¿½ï¿½Ç¥
+	int                                               iCasterHP;    // Casterï¿½ï¿½ ï¿½ï¿½ HP
+	int                                               iCasterTP;    // Casterï¿½ï¿½ ï¿½ï¿½ TP
+	__int64                                           iCasterAffections ; // Casterï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½Ö´ï¿½ affection
+	short                                             snMapX;       // Target map x ï¿½ï¿½Ç¥(ground), ï¿½Ê¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snMapZ;       // Target map y ï¿½ï¿½Ç¥(ground), ï¿½Ê¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snRes ;       // Result(-1:echo, 0:Normal, 1:CriticalHit, 2:Dodge, 3:ï¿½ï¿½Ö¹ï¿½ï¿½æµ¹ ...)
+	short                                             snPackCount ;  // ï¿½Ò¸ï¿½ï¿½ itemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)]
 	byte                                              bySkillLevel ;
 	byte                                              byDummy ;
 	short                                             sDummy2 ;
@@ -5202,22 +5205,22 @@ typedef struct _S_CSP_CAST_UNIT_SKILL
 typedef struct _S_CSP_CAST_AREA_SKILL
 {
 	_MSG;
-	short											  snSkillID ;       // castÇÑ skill ID	
+	short											  snSkillID ;       // castï¿½ï¿½ skill ID	
 	short                                             snCasterKeyID;// Caster handle
-	int                                               iSkillIcon ; // bit vector, °ü·ÃµÈ ½ºÅ³ ICON   <===
-	DWORD                                             dwFireHitGapTime ; // ¹ß»çÇÏ°í ÀûÁßÇÒ ¶§±îÁö °É¸° ½Ã°£   <===
-	DWORD                                             dwEndTime ;  // ½ºÅ³ ½ÃÀüÀÌ Á¾·áµÇ´Â ½Ã°£
-	DWORD                                             dwDurationTime ; // Áö¼Ó ½Ã°£À¸·Î ÀÌ ½Ã°£¿¡ Àû¿ëÀÌ ³¡³­´Ù.
-	DWORD                                             dwCoolDownTime ; // ÀÌ ½Ã°£¿¡ cool-downÀÌ ¿Ï·áµÈ´Ù.	
-	short                                             snCasterX;    // CasterÀÇ ÇöÀç x ÁÂÇ¥
-	short                                             snCasterZ;    // CasterÀÇ ÇöÀç y ÁÂÇ¥
-	int                                               iCasterHP;    // CasterÀÇ Çö HP
-	int                                               iCasterTP;    // CasterÀÇ Çö TP
-	__int64                                           iCasterAffections ; // Caster¿¡°Ô ÇöÀç °É·ÁÀÖ´Â affection
-	short                                             snMapX;       // Target map x ÁÂÇ¥(ground), ÇÊ¼ö »çÇ×
-	short                                             snMapZ;       // Target map y ÁÂÇ¥(ground), ÇÊ¼ö »çÇ×
-	short                                             snRes ;       // Result(-1:echo, 0:Normal, 1:CriticalHit, 2:Dodge, 3:Àå¾Ö¹°Ãæµ¹ ...)
-	short                                             snPackCount ;  // ¼Ò¸ðµÈ itemÀÇ ÇöÀç ³²Àº °³¼ö(È­»ìÀÇ °³¼ö)
+	int                                               iSkillIcon ; // bit vector, ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ ICON   <===
+	DWORD                                             dwFireHitGapTime ; // ï¿½ß»ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ ï¿½Ã°ï¿½   <===
+	DWORD                                             dwEndTime ;  // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Ã°ï¿½
+	DWORD                                             dwDurationTime ; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+	DWORD                                             dwCoolDownTime ; // ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ cool-downï¿½ï¿½ ï¿½Ï·ï¿½È´ï¿½.	
+	short                                             snCasterX;    // Casterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ x ï¿½ï¿½Ç¥
+	short                                             snCasterZ;    // Casterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ y ï¿½ï¿½Ç¥
+	int                                               iCasterHP;    // Casterï¿½ï¿½ ï¿½ï¿½ HP
+	int                                               iCasterTP;    // Casterï¿½ï¿½ ï¿½ï¿½ TP
+	__int64                                           iCasterAffections ; // Casterï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½Ö´ï¿½ affection
+	short                                             snMapX;       // Target map x ï¿½ï¿½Ç¥(ground), ï¿½Ê¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snMapZ;       // Target map y ï¿½ï¿½Ç¥(ground), ï¿½Ê¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snRes ;       // Result(-1:echo, 0:Normal, 1:CriticalHit, 2:Dodge, 3:ï¿½ï¿½Ö¹ï¿½ï¿½æµ¹ ...)
+	short                                             snPackCount ;  // ï¿½Ò¸ï¿½ï¿½ itemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	byte                                              bySkillLevel ;
 	byte                                              byDummy ;
 	short                                             sDummy2 ;
@@ -5227,13 +5230,13 @@ typedef struct _S_CSP_CAST_AREA_SKILL
 
 
 
-//CSP_DEBUFFER_SKILL // ´Ü¼øÈ÷ client»ó¿¡ Ç¥½ÃµÈ skill iconÀ» ¾ø¾Ö±â À§ÇÑ ¿ëµµÀÌ´Ù. ½ÇÁ¦ ¼º´ÉÀ» »©´Â °ÍÀº ÀÌ¹Ì Àû¿ëµÇ°í ÀÖ´Ù.
+//CSP_DEBUFFER_SKILL // ï¿½Ü¼ï¿½ï¿½ï¿½ clientï¿½ï¿½ Ç¥ï¿½Ãµï¿½ skill iconï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ëµµï¿½Ì´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½Ö´ï¿½.
 typedef struct _S_CSP_DEBUFFER_SKILL
 {
 	_MSG ;
 	short                                             snSkillID ;
 	short                                             snDummy ;
-	__int64                                           iCasterAffections ; // Caster¿¡°Ô ÇöÀç °É·ÁÀÖ´Â affection, // ÀÌ°ÍÀÌ µû·Î ÇÊ¿äÇÑ°¡?
+	__int64                                           iCasterAffections ; // Casterï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½Ö´ï¿½ affection, // ï¿½Ì°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ñ°ï¿½?
 } S_CSP_DEBUFFER_SKILL, *PS_CSP_DEBUFFER_SKILL ;
 
 
@@ -5241,8 +5244,8 @@ typedef struct _S_CSP_DEBUFFER_SKILL
 struct MSG_TOGGLE_BUTTON
 {
 	_MSG;
-	BYTE											byButton ; // ´©¸¥ ¹öÆ°, 1:PK_btn, 2:assist btn
-	BYTE											byValue ; // ÇöÀç »óÅÂ°ª 0(off)/1(on)
+	BYTE											byButton ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°, 1:PK_btn, 2:assist btn
+	BYTE											byValue ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ 0(off)/1(on)
 	short											snDummy ; 
 } ;
 
@@ -5259,7 +5262,7 @@ struct MSG_CHANGE_TARGET
 typedef struct _S_CSP_REQ_CHAR_ACT
 {
 	_MSG;
-	BYTE                                              byAct;        // ÃëÇÏ·Á´Â Çàµ¿
+	BYTE                                              byAct;        // ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½àµ¿
 
 } S_CSP_REQ_CHAR_ACT, * PS_CSP_REQ_CHAR_ACT;
 
@@ -5283,7 +5286,7 @@ typedef struct _S_SCP_CHAR_ACT_BROADCAST
 {
 	_MSG;
 	DWORD                                             dwKeyID;      // PC handle
-	BYTE                                              byAct;        // ÃëÇÏ·Á´Â Çàµ¿
+	BYTE                                              byAct;        // ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½àµ¿
 
 } S_SCP_CHAR_ACT_BROADCAST, * PS_SCP_CHAR_ACT_BROADCAST;
 
@@ -5299,40 +5302,40 @@ typedef struct _S_CSP_REQ_UPDATE_UI
 typedef struct _S_SCP_RESP_UPDATE_UI
 {
 	_MSG;
-	short								snX;          // ÇöÀç x ÁÂÇ¥
-	short                              	snZ;          // ÇöÀç y ÁÂÇ¥   
+	short								snX;          // ï¿½ï¿½ï¿½ï¿½ x ï¿½ï¿½Ç¥
+	short                              	snZ;          // ï¿½ï¿½ï¿½ï¿½ y ï¿½ï¿½Ç¥   
 	char								byteSpeed1;											
-	BYTE                               	byLevel ;      // Çö Level
-	BYTE                                byCaste ;      // Caste °è±Þ
-	BYTE                                byRangePlus ; // ¿ø°Å¸® °ø°Ý »ç°Å¸® Áõ°¡ ¼öÄ¡, º¸ÅëÀº 0, »ç°Å¸® Áõ°¡ ½ºÅ³ÀÌ °É·ÈÀ» °æ¿ì¿¡´Â 0 ÃÊ°ú <===
+	BYTE                               	byLevel ;      // ï¿½ï¿½ Level
+	BYTE                                byCaste ;      // Caste ï¿½ï¿½ï¿½
+	BYTE                                byRangePlus ; // ï¿½ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0, ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½É·ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ 0 ï¿½Ê°ï¿½ <===
 	char								byteSpeed2;	
-	BYTE                                bySaveTPCost ; // TP cost Àý¾à ¼öÄ¡ <===
-	BYTE                                byClass1 ;     // ÀüÁ÷ ´Ü°è
-	BYTE								byClass2 ;     // ¼¼ºÎ Á÷¾÷
+	BYTE                                bySaveTPCost ; // TP cost ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ <===
+	BYTE                                byClass1 ;     // ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	BYTE								byClass2 ;     // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	BYTE                                byDummy1 ;     //
 	BYTE                                byDummy2 ;     //
 	char								byteAS1;	
 	char								byteSpeed3;	
-	//int                               iMoveSpeed ;   // Çö MoveSpeed 
-	//int                               iAttackSpeed ; // Çö ÀÏ¹Ý ¹«±â ±â¹Ý °ø°Ý ¼Óµµ, skill¿¡´Â Àû¿ëÀÌ ¾ÈµÈ´Ù. <===
-	short                               snAttackSpeedCorrect ; // ¹«±â ±â¹Ý ¼Óµµ Áõ°¡ ¼öÄ¡( ÀÌ ¼öÄ¡¸¸Å­À» ´õ ºü¸£°Ô) <===
-	short                               snCastSpeedCorrect ; // ¹«±â ±â¹ÝÀÌ ¾Æ´Ñ skill ¼Óµµ Áõ°¡ ¼öÄ¡ <===
-	short                               snDDup ;		// DD type skillÀÇ °ø°Ý·Â upÀ» Ç¥±âÇÑ´Ù. <===
+	//int                               iMoveSpeed ;   // ï¿½ï¿½ MoveSpeed 
+	//int                               iAttackSpeed ; // ï¿½ï¿½ ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½, skillï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÈ´ï¿½. <===
+	short                               snAttackSpeedCorrect ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡( ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) <===
+	short                               snCastSpeedCorrect ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ skill ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ <===
+	short                               snDDup ;		// DD type skillï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ upï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ñ´ï¿½. <===
 	short								snKarma ;     //<===
-	int                                 iBramanPoint ; // Çö Braman point	
-	int                                 iPietyPoint ; // Çö ½Å¾Ó½É point <===
+	int                                 iBramanPoint ; // ï¿½ï¿½ Braman point	
+	int                                 iPietyPoint ; // ï¿½ï¿½ ï¿½Å¾Ó½ï¿½ point <===
 	int                                 iTitle ;       // Title
-	int                                 iMaxPrana ;    // ÃÖ´ë Prana
-	int                                 iPrana ;       // Çö Prana
+	int                                 iMaxPrana ;    // ï¿½Ö´ï¿½ Prana
+	int                                 iPrana ;       // ï¿½ï¿½ Prana
 	S_TNCHAKRA                          krgChakra[2] ; // 0:base chakra, 1:changed chakra
-	short                               snCPRemaining ;// ³²Àº Chakra Point
-	short                               snSPRemaining ;// ³²Àº Skill Point
-	int                                 iHP ;          // Çö HP
-	int                                 iMaxHP ;       // ÃÖ´ë HP
-	int                                 iHPRecovery ;  // HPÈ¸º¹·®/ÃÊ
-	int                                 iTP ;          // Çö TP
-	int                                 iMaxTP ;       // ÃÖ´ë TP
-	int                                 iTPRecovery ;  // TPÈ¸º¹·®/ÃÊ
+	short                               snCPRemaining ;// ï¿½ï¿½ï¿½ï¿½ Chakra Point
+	short                               snSPRemaining ;// ï¿½ï¿½ï¿½ï¿½ Skill Point
+	int                                 iHP ;          // ï¿½ï¿½ HP
+	int                                 iMaxHP ;       // ï¿½Ö´ï¿½ HP
+	int                                 iHPRecovery ;  // HPÈ¸ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½
+	int                                 iTP ;          // ï¿½ï¿½ TP
+	int                                 iMaxTP ;       // ï¿½Ö´ï¿½ TP
+	int                                 iTPRecovery ;  // TPÈ¸ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½
 	short                               snAC ;         // AC
 	short                               snAttackRate ; // Attack Rate
 	short                               snDodgeRate ;  // Dodge Rate
@@ -5341,10 +5344,10 @@ typedef struct _S_SCP_RESP_UPDATE_UI
 	char								byteAS2;	
 	char								byteSpeedParity;	
 	char								byteAS3;	
-	S_TNRESIST                          kResist ;      // ÀúÇ×
+	S_TNRESIST                          kResist ;      // ï¿½ï¿½ï¿½ï¿½
 	S_TNDAMAGE                          kDamage ;		// damage
-	int									iGold ;       // µ·
-	int                                 iSkillIcon ; // bit vector, °ü·ÃµÈ ½ºÅ³ ICON  <===
+	int									iGold ;       // ï¿½ï¿½
+	int                                 iSkillIcon ; // bit vector, ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ ICON  <===
 	__int64                             iAffections ;  // <===
 	char								byteAS4;	
 	char								byteParity;
@@ -5366,16 +5369,16 @@ typedef struct _S_SCP_RESP_UPDATE_STATUS
 	_MSG;
 	short                                             snKeyID ;		// who
 	short                                             snKarma ;
-	int                                               iHP;          // Çö HP
-	int                                               iTP;          // Çö TP
-	int                                               iPrana;       // Çö Prana
-	__int64                                           iAffections ; // ÇöÀç °É·ÁÀÖ´Â affection
-	int                                               iSkillIcon ; // bit vector, °ü·ÃµÈ ½ºÅ³ ICON <===
-	int                                               iPietyPoint ; // Çö ½Å¾Ó½É point <===
-	int                                               iMoveSpeed ;   // Çö MoveSpeed <===
-	int                                               iAttackSpeed ; // Çö ÀÏ¹Ý ¹«±â ±â¹Ý °ø°Ý ¼Óµµ, skill¿¡´Â Àû¿ëÀÌ ¾ÈµÈ´Ù. <===
-	short                                             snAttackSpeedCorrect ; // ¹«±â ±â¹Ý ¼Óµµ Áõ°¡ ¼öÄ¡( ÀÌ ¼öÄ¡¸¸Å­À» ´õ ºü¸£°Ô) <===
-	short                                             snCastSpeedCorrect ; // ¹«±â ±â¹ÝÀÌ ¾Æ´Ñ skill ¼Óµµ Áõ°¡ ¼öÄ¡ <===
+	int                                               iHP;          // ï¿½ï¿½ HP
+	int                                               iTP;          // ï¿½ï¿½ TP
+	int                                               iPrana;       // ï¿½ï¿½ Prana
+	__int64                                           iAffections ; // ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½Ö´ï¿½ affection
+	int                                               iSkillIcon ; // bit vector, ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ ICON <===
+	int                                               iPietyPoint ; // ï¿½ï¿½ ï¿½Å¾Ó½ï¿½ point <===
+	int                                               iMoveSpeed ;   // ï¿½ï¿½ MoveSpeed <===
+	int                                               iAttackSpeed ; // ï¿½ï¿½ ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½, skillï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÈ´ï¿½. <===
+	short                                             snAttackSpeedCorrect ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡( ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) <===
+	short                                             snCastSpeedCorrect ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ skill ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ <===
 
 } S_SCP_RESP_UPDATE_STATUS, * PS_SCP_RESP_UPDATE_STATUS;
 
@@ -5392,7 +5395,7 @@ typedef struct _S_SCP_LEVEL_UP_BROADCAST
 {
 	_MSG;
 	DWORD                                             dwKeyID;      // PC handle
-	BYTE                                              byLevel;      // Çö Level
+	BYTE                                              byLevel;      // ï¿½ï¿½ Level
 
 } S_SCP_LEVEL_UP_BROADCAST, * PS_SCP_LEVEL_UP_BROADCAST;
 
@@ -5402,7 +5405,7 @@ typedef struct _S_SCP_FIRE_FX_BROADCAST
 {
 	_MSG;
 	DWORD                                             dwKeyID ;      // PC handle
-	int                                               iFX ;      // ÄÑ¾ßµÉ FX ID
+	int                                               iFX ;      // ï¿½Ñ¾ßµï¿½ FX ID
 } S_SCP_FIRE_FX_BROADCAST, * PS_SCP_FIRE_FX_BROADCAST ;
 
 
@@ -5411,7 +5414,7 @@ typedef struct _S_SCP_FIRE_FX_BROADCAST
 typedef struct _S_CSP_REQ_INCREASE_CHAKRA
 {
 	_MSG;
-	BYTE                                              byChakra;     // ¿Ã¸®·Á´Â chakra(0:muscle, 1:nerves, 2:heart, 3:mind)
+	BYTE                                              byChakra;     // ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ chakra(0:muscle, 1:nerves, 2:heart, 3:mind)
 
 } S_CSP_REQ_INCREASE_CHAKRA, * PS_CSP_REQ_INCREASE_CHAKRA;
 
@@ -5429,11 +5432,11 @@ typedef struct _S_SCP_RESP_REMOVE_MOB
 {
 	_MSG;
 	int                                             nID;      
-	BYTE                                            byResult ;     // client¿¡¼­ ¾ø¾îÁö´Â ÀÌÀ¯ - 1:killed, 2:logout, 3:sucide, 5:teleport(out)
-	BYTE											byRemoveType ; // »ç¶óÁö´Â ¿¬Ãâ¹øÈ£; 0:ÀÏ¹Ý Á×´Â ¾Ö´Ï(or ±×³É »ç¶óÁü), 1:ÆãÇÏ°í »ç¶óÁü
-	short                                           snTribe ; // Á¾Á· Á¤º¸, 2000~3000ÀÌ¸é ¸ó½ºÅÍÀÌ´Ù. 100ÀÌÇÏÀÌ¸é PCÀÌ´Ù.
+	BYTE                                            byResult ;     // clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - 1:killed, 2:logout, 3:sucide, 5:teleport(out)
+	BYTE											byRemoveType ; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È£; 0:ï¿½Ï¹ï¿½ ï¿½×´ï¿½ ï¿½Ö´ï¿½(or ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½), 1:ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                           snTribe ; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 2000~3000ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½. 100ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ PCï¿½Ì´ï¿½.
 	DWORD                                           dwKillerID ;
-	char											szName[SZNAME_LENGTH] ; // Ä³¸¯ÅÍ¸í Á¤º¸
+	char											szName[SZNAME_LENGTH] ; // Ä³ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 } S_SCP_RESP_REMOVE_MOB, * PS_SCP_RESP_REMOVE_MOB;
 
 
@@ -5452,9 +5455,9 @@ typedef struct _S_SCP_RESP_EXIT_ZONE_SERVER
 } S_SCP_RESP_EXIT_ZONE_SERVER, * PS_SCP_RESP_EXIT_ZONE_SERVER;
 
 #define		CSP_REQ_SAVE_POSITION	0x1016
-//	S_REQUEST ¸¦ ÀÌ¿ëÇÑ´Ù.
+//	S_REQUEST ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ñ´ï¿½.
 #define		SCP_RESP_SAVE_POSITION	0x9016
-//	S_RESULT ¸¦ ÀÌ¿ëÇÑ´Ù.
+//	S_RESULT ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ñ´ï¿½.
 
 
 // CSP_REQ_CHAR_LOGOUT : 0x1021
@@ -5492,7 +5495,7 @@ typedef struct _S_CSP_OTHER_CHAR_LOGOUT_NOTIFY
 typedef struct _S_SCP_OTHER_CHAR_LOGOUT_NOTIFY
 {
 	char                                              	szCharName[SZNAME_LENGTH];
-	BYTE                                              	byResult;     // Á¢¼ÓÁ¾·á ½ºÅ¸ÀÏ
+	BYTE                                              	byResult;     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
 	BYTE                                              	byRegion;     
 	BYTE                                              	byZone;  
 	BYTE												byDummy;
@@ -5504,9 +5507,9 @@ typedef struct _S_SCP_OTHER_CHAR_LOGOUT_NOTIFY
 typedef struct _S_CSP_REQ_CHAR_INIT
 {
 	_MSG;
-	BYTE        byConnType;   // Á¢¼ÓÀ¯Çü                                      
-	BYTE        byConnPos;    // Á¢¼ÓÀ§Ä¡                                      
-	WORD        wPortalID;    // Á¢¼ÓÆ÷Å»ID                                      
+	BYTE        byConnType;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                                      
+	BYTE        byConnPos;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡                                      
+	WORD        wPortalID;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ID                                      
 	char        szCharName[SZNAME_LENGTH];
 	char		szTargetName[SZNAME_LENGTH];
 
@@ -5517,8 +5520,8 @@ typedef struct _S_CSP_REQ_CHAR_INIT
 typedef struct _S_SCP_RESP_CHAR_INIT
 {
 	_MSG;
-	BYTE					byResult;		// ÃÊ±âÈ­ °á°ú
-	BYTE					byDummy;;		//	0:»ì¾ÆÀÖÀ½, 1:Á×¾îÀÖÀ½
+	BYTE					byResult;		// ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½
+	BYTE					byDummy;;		//	0:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1:ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½
 	short					snBagIndex;
 
     DWORD                   dwGameTime ;
@@ -5557,10 +5560,10 @@ typedef struct _S_CSP_REQ_CHAR_HISTORY
 // SCP_RESP_CHAR_HISTORY : 0x9108
 typedef struct _S_SCP_RESP_CHAR_HISTORY
 {
-	DWORD												dwStartTime;  // È÷½ºÅä¸® ¹ß»ý ½Ã°£
-	WORD												wType;        // È÷½ºÅä¸® Á¾·ù
+	DWORD												dwStartTime;  // ï¿½ï¿½ï¿½ï¿½ï¿½ä¸® ï¿½ß»ï¿½ ï¿½Ã°ï¿½
+	WORD												wType;        // ï¿½ï¿½ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½
 	short												snDummy;
-	char												szContent[SZNAME_LENGTH];// È÷½ºÅä¸® ³»¿ë
+	char												szContent[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_CHAR_HISTORY, * PS_SCP_RESP_CHAR_HISTORY;
 
@@ -5575,17 +5578,17 @@ typedef struct _S_CSP_INIT_EQUIPMENT
 // SCP_INIT_EQUIPMENT : 0x9109
 typedef struct _S_SCP_INIT_EQUIPMENT
 {
-	BYTE                                              byPlace;      // ¾ÆÀÌÅÛÀÇ ÀåÂø À§Ä¡
-	DWORD                                             dwKeyID;      // ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwIndex;      // ¾ÆÀÌÅÛÀÇ Index
+	BYTE                                              byPlace;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
 	short                                             snCurDurability;
-	short                                             snCount;      // ¾ÆÀÌÅÛÀÇ ¼ö·®(ÁßÃ¸°¹¼ö)
-	BYTE                                              byX;          // ¾ÆÀÌÅÛ ÀåÂø X ÁÂÇ¥(0ºÎÅÍ ½ÃÀÛ)
-	BYTE                                              byZ;          // ¾ÆÀÌÅÛ ÀåÂø Z ÁÂÇ¥(0ºÎÅÍ ½ÃÀÛ)
-	short                                             snMovingSpeed;// ¾ÆÀÌÅÛÀÇ ÀÌµ¿¼Óµµ
-	short                                             snAttackSpeed;// ¾ÆÀÌÅÛÀÇ °ø°Ý¼Óµµ
-	short                                             snCastingSpeed;// ¾ÆÀÌÅÛÀÇ ÄÉ½ºÆÃ¼Óµµ
-	BYTE                                              byShootRange; // ¹ß»çÃ¼ÀÇ »çÁ¤°Å¸®
+	short                                             snCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½)
+	BYTE                                              byX;          // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥(0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	BYTE                                              byZ;          // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥(0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	short                                             snMovingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½
+	short                                             snAttackSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½
+	short                                             snCastingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É½ï¿½ï¿½Ã¼Óµï¿½
+	BYTE                                              byShootRange; // ï¿½ß»ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
 	BYTE                                              bySubMaterialCount;
 
 } S_SCP_INIT_EQUIPMENT, * PS_SCP_INIT_EQUIPMENT;
@@ -5616,7 +5619,7 @@ typedef struct _S_SCP_INIT_EQUIPMENT
 //	int                                               nSpeed;       
 //	short                                             snDestX;      
 //	short                                             snDestZ;      
-//	BYTE                                              bySize;       // ¸ó½ºÅÍÀÇ Å©±â
+//	BYTE                                              bySize;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 //
 //} S_SCP_INIT_MONSTER_NPC, * PS_SCP_INIT_MONSTER_NPC;
 
@@ -5645,25 +5648,25 @@ typedef struct _S_SCP_INIT_OTHER_MOB
 	BYTE       		byCastClass;                                         
 	BYTE       		byCastGrade;                                         
 	BYTE       		bySpecialName;
-	BYTE			byGMStatus;		//	bit flag(0x01:ÄÉ¸¯ÅÍºí·°, 0x02:Åõ¸í¸ðµå, 0x04:Ã¤ÆÃºí·°, ...)	
+	BYTE			byGMStatus;		//	bit flag(0x01:ï¿½É¸ï¿½ï¿½Íºï¿½ï¿½ï¿½, 0x02:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0x04:Ã¤ï¿½Ãºï¿½ï¿½ï¿½, ...)	
           
 	BYTE       		byActiveLevel; 
 	BYTE       		byActionLevel; 
 	BYTE       		byType;                                              
-	BYTE       		byDir;			// ¹æÇâ Á¤º¸(0:random, 1~4:µ¿¼­³²ºÏ)
+	BYTE       		byDir;			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(0:random, 1~4:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
 	short			snKarma;
-	BYTE			byClass1;			//	bit flag Áß¸ñÁßº¹Àº | ¿¬»ê»ç¿ë.
+	BYTE			byClass1;			//	bit flag ï¿½ß¸ï¿½ï¿½ßºï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	BYTE			byClass2;
 
 	BYTE			byLevel;
 	BYTE			byTradeMode;
-	BYTE			byPopType ; // popµÉ ¶§ÀÇ ¿¬Ãâ ¸ð½À, 0 Àº ±âÁ¸ÀÇ °Í, 1Àº ¹Ù´Ú¿¡¼­ ¼­¼­È÷ ¿Ã¶ó¿À´Â ¸ð½À
-	BYTE			byCollision ; // Ãæµ¹ ¿©ºÎ, 1ÀÌ¸é Ãæµ¹ÀÌ µÇ¾î Åë°úÇÏÁö ¸øÇÏ´Â °ÍÀÌ´Ù. 0ÀÌ¸é Åë°ú °¡´ÉÇÏ´Ù.
+	BYTE			byPopType ; // popï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 0 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, 1ï¿½ï¿½ ï¿½Ù´Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	BYTE			byCollision ; // ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½, 1ï¿½Ì¸ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½. 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
 	
 	short      		snHeight ;
-	short      		snTargetX ;		// ÄÉ¸¯ÅÍÀÇ ÀÌµ¿½ÃÀÇ XÁÂÇ¥                                       
-	short      		snTargetZ ;		// ÄÉ¸¯ÅÍÀÇ ÀÌµ¿½ÃÀÇ ZÁÂÇ¥  
+	short      		snTargetX ;		// ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥                                       
+	short      		snTargetZ ;		// ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥  
 	short      		snTribe ;
 	
 	int        		nMaxHP;                                              
@@ -5677,7 +5680,7 @@ typedef struct _S_SCP_INIT_OTHER_MOB
 	__int64			iAffections ;
 	byte			byCaste;
 	//#ifdef __TN_LOCAL_SERVER_SWITCH__
-	byte			byClan ; // clan Á¤º¸°ª, °ø¼ºÀüÀÏ °æ¿ì¿¡ ÂüÁ¶
+	byte			byClan ; // clan ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½
 	//#endif
 	//#ifndef __TN_LOCAL_SERVER_SWITCH__
 	byte			byDummy ;
@@ -5711,8 +5714,8 @@ typedef struct _S_SCP_INIT_ITEM
 
 } S_SCP_INIT_ITEM, * PS_SCP_INIT_ITEM;
 
-#define CSP_REQ_INIT_REGEN_CHAR                           0x1131      // Ä³¸¯ÅÍ ¸®Á¨ ÃÊ±âÈ­ ¿äÃ»
-#define SCP_RESP_INIT_REGEN_CHAR                          0x9131      // ÀÎº¥Åä¸®³» ¾ÆÀÌÅÛ À§Ä¡ ÀúÀå ÀÀ´ä ¸Þ¼¼Áö
+#define CSP_REQ_INIT_REGEN_CHAR                           0x1131      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½Ã»
+#define SCP_RESP_INIT_REGEN_CHAR                          0x9131      // ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 // CSP_REQ_INIT_REGEN_CHAR : 0x1131
 typedef struct _S_CSP_REQ_INIT_REGEN_CHAR
 {	_MSG
@@ -5722,23 +5725,23 @@ typedef struct _S_CSP_REQ_INIT_REGEN_CHAR
 typedef struct _S_SCP_RESP_INIT_REGEN_CHAR
 {	_MSG
 
-	BYTE       	byZone;			// ÄÉ¸¯ÅÍÀÇ Zone À§Ä¡                   //	REGEN_TYPE_SAVE½Ã ÅÂ¾î³¯ Áö¿ªÀÇ ZoneID	                    
+	BYTE       	byZone;			// ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ Zone ï¿½ï¿½Ä¡                   //	REGEN_TYPE_SAVEï¿½ï¿½ ï¿½Â¾î³¯ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ZoneID	                    
 	BYTE       	byWhether;
 	short      	snX;                                                 
 	short      	snZ;                                                 
  	short      	snDegree;    
 
 	DWORD      	dwGameTime;                                             
-	int        	nCurHP;			// ÄÉ¸¯ÅÍ HPÀÇ ÇöÀç°ª                                       
+	int        	nCurHP;			// ï¿½É¸ï¿½ï¿½ï¿½ HPï¿½ï¿½ ï¿½ï¿½ï¿½ç°ª                                       
 } S_SCP_RESP_INIT_REGEN_CHAR, * PS_SCP_RESP_INIT_REGEN_CHAR;
 
-#define _MSG_TrimuritySelect							0x1141			// ÄÉ¸¯ÅÍ ÁÖ½Å¼±ÅÃ
+#define _MSG_TrimuritySelect							0x1141			// ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ö½Å¼ï¿½ï¿½ï¿½
 struct MSG_TrimuritySelect
 {	_MSG
 	char		CharName[SZNAME_LENGTH];
 	DWORD		dwMoney;
-	BYTE		byTrimuriti;	//	ÄÉ¸¯ÅÍÀÇ ÁÖ½Å¼±ÅÃ
-	BYTE		byType;			//	0:Á¶È¸, 1:½ÇÇà
+	BYTE		byTrimuriti;	//	ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½Å¼ï¿½ï¿½ï¿½
+	BYTE		byType;			//	0:ï¿½ï¿½È¸, 1:ï¿½ï¿½ï¿½ï¿½
 	int			nBrahmaCount;
 	int			nVishnuCount;
 	int			nSivaCount;
@@ -5770,10 +5773,10 @@ typedef struct _S_SCP_INIT_WORLD_USER_COUNT
 // CSP_REQ_CHAR_MOVE : 0x1201
 typedef struct _S_CSP_REQ_CHAR_MOVE
 {
-	BYTE                                              byDir;        // ÀÌµ¿»óÅÂ ¹× ÀÌµ¿¹æÇâ Á¤º¸
+	BYTE                                              byDir;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	short                                             snDegree;     
 	DWORD                                             dwTickCount;  
-	WORD                                              wSeqNum;      // ÀÌµ¿ÆÐÅ¶ Sequence Number
+	WORD                                              wSeqNum;      // ï¿½Ìµï¿½ï¿½ï¿½Å¶ Sequence Number
 
 } S_CSP_REQ_CHAR_MOVE, * PS_CSP_REQ_CHAR_MOVE;
 
@@ -5782,10 +5785,10 @@ typedef struct _S_CSP_REQ_CHAR_MOVE
 typedef struct _S_SCP_RESP_CHAR_MOVE
 {
 	BYTE                                              byResult;     // Result Field
-	short                                             snX;          // ÄÉ¸¯ÅÍÀÇ XÁÂÇ¥
-	short                                             snZ;          // ÄÉ¸¯ÅÍÀÇ ZÁÂÇ¥
-	BYTE                                              byY;          // ÄÉ¸¯ÅÍÀÇ Ãþ ³ôÀÌ
-	short                                             snHeight;     // ÄÉ¸¯ÅÍÀÇ ´Ü ³ôÀÌ
+	short                                             snX;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥
+	BYTE                                              byY;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snHeight;     // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_CHAR_MOVE, * PS_SCP_RESP_CHAR_MOVE;
 
@@ -5801,48 +5804,48 @@ typedef struct _S_CSP_OTHER_CHAR_MOVE
 typedef struct _S_SCP_OTHER_CHAR_MOVE
 {
 	DWORD                                             dwKeyID;      // character KeyID
-	BYTE                                              byDir;        // Ä³¸¯ÅÍ ÀÌµ¿»óÅÂ, ¹æÇâ Á¤º¸
-	short                                             snDegree;     // ÄÉ¸¯ÅÍÀÇ ÀÌµ¿ °¢µµ Á¤º¸
-	short                                             snMovingSpeed;// 100ÃÊ´ç ÀÌµ¿°¡´É Cell ¼ö
-	short                                             snX;          // ÄÉ¸¯ÅÍÀÇ XÁÂÇ¥
-	short                                             snZ;          // ÄÉ¸¯ÅÍÀÇ ZÁÂÇ¥
-	BYTE                                              byY;          // ÄÉ¸¯ÅÍÀÇ Ãþ ³ôÀÌ
-	short                                             snHeight;     // ÄÉ¸¯ÅÍÀÇ ´Ü ³ôÀÌ
+	BYTE                                              byDir;        // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snDegree;     // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snMovingSpeed;// 100ï¿½Ê´ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ Cell ï¿½ï¿½
+	short                                             snX;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥
+	BYTE                                              byY;          // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snHeight;     // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_OTHER_CHAR_MOVE, * PS_SCP_OTHER_CHAR_MOVE;
 
-#define CSP_REQ_ITEM_MOVE									0x1203      // ¾ÆÀÌÅÛ ÀÌµ¿ °á°ú
-#define SCP_RESP_ITEM_MOVE									0x9203      // ¾ÆÀÌÅÛ ÀÌµ¿ °á°ú
+#define CSP_REQ_ITEM_MOVE									0x1203      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½
+#define SCP_RESP_ITEM_MOVE									0x9203      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½
 // CSP_REQ_ITEM_MOVE : 0x1203
 typedef struct _S_CSP_REQ_ITEM_MOVE
 {	_MSG
-	BYTE			byFromPlace;	// ¾ÆÀÌÅÛÀÌ ¿ø·¡ ÀÖ´ø À§Ä¡ : 0 ¸Ê, 1 ÀÎº¥, 2 ÀåÂø, 3 Ã¢°í, 11 ¾Æ½¬¶÷Ã¢°í										
-	BYTE			byToPlace;    // ¾ÆÀÌÅÛÀ» ÀÌµ¿½ÃÅ³ ´ë»ó										
-	BYTE			byFromIndex;	// Index ¹øÈ£(ÀÎº¥Åä¸®»óÀÇ Index)										
-	BYTE			byToIndex;    // Index ¹øÈ£(ÀÎº¥Åä¸®»óÀÇ Index)										
+	BYTE			byFromPlace;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Ä¡ : 0 ï¿½ï¿½, 1 ï¿½Îºï¿½, 2 ï¿½ï¿½ï¿½ï¿½, 3 Ã¢ï¿½ï¿½, 11 ï¿½Æ½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½										
+	BYTE			byToPlace;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å³ ï¿½ï¿½ï¿½										
+	BYTE			byFromIndex;	// Index ï¿½ï¿½È£(ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ Index)										
+	BYTE			byToIndex;    // Index ï¿½ï¿½È£(ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ Index)										
 } S_CSP_REQ_ITEM_MOVE, * PS_CSP_REQ_ITEM_MOVE;
 // SCP_RESP_ITEM_MOVE : 0x9203
 typedef struct _S_SCP_RESP_ITEM_MOVE
 {	_MSG
-	int				nResult;		// °á°ú : 0-¼º°ø, 1-½ÇÆÐ									
-	BYTE			byFromPlace;	// ¾ÆÀÌÅÛÀÌ ¿ø·¡ ÀÖ´ø À§Ä¡ : 1, ÀÎº¥, 2, ÀåÂø, 3, Ã¢°í									
-	BYTE			byToPlace;		// ¾ÆÀÌÅÛÀ» ÀÌµ¿½ÃÅ³ ´ë»ó									
-	BYTE			byFromIndex;	// Index ¹øÈ£(ÀÎº¥Åä¸®»óÀÇ Index)									
-	BYTE			byToIndex;		// Index ¹øÈ£(ÀÎº¥Åä¸®»óÀÇ Index)									
+	int				nResult;		// ï¿½ï¿½ï¿½ : 0-ï¿½ï¿½ï¿½ï¿½, 1-ï¿½ï¿½ï¿½ï¿½									
+	BYTE			byFromPlace;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Ä¡ : 1, ï¿½Îºï¿½, 2, ï¿½ï¿½ï¿½ï¿½, 3, Ã¢ï¿½ï¿½									
+	BYTE			byToPlace;		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å³ ï¿½ï¿½ï¿½									
+	BYTE			byFromIndex;	// Index ï¿½ï¿½È£(ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ Index)									
+	BYTE			byToIndex;		// Index ï¿½ï¿½È£(ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ Index)									
 } S_SCP_RESP_ITEM_MOVE, * PS_SCP_RESP_ITEM_MOVE;
 
-#define SCP_MAP_ITEM_APPEAR									0x9204      // »õ·Î¿î ¾ÆÀÌÅÛÀÇ Á¾·ù¹× À§Ä¡ Á¤º¸¸¦ ÁÖº¯Ä³¸¯ÅÍ¿¡°Ô Àü¼Û
+#define SCP_MAP_ITEM_APPEAR									0x9204      // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 // SCP_MAP_ITEM_APPEAR : 0x9204
 typedef struct _S_SCP_MAP_ITEM_APPEAR
 {	_MSG
 	int				nItemID;	// Item KeyID									
 	DWORD			dwIndex;    // Item Index	
 	int				nMobIndex;  // MOB Index
-	short			snX;        // Item XÁÂÇ¥									
-	short			snZ;        // Item ZÁÂÇ¥									
+	short			snX;        // Item Xï¿½ï¿½Ç¥									
+	short			snZ;        // Item Zï¿½ï¿½Ç¥									
 } S_SCP_MAP_ITEM_APPEAR, * PS_SCP_MAP_ITEM_APPEAR;
 
-#define SCP_MAP_ITEM_DISAPPEAR								0x9205      // ¾ÆÀÌÅÛÀÌ »ç¶óÁø À§Ä¡¸¦ ÁÖº¯Ä³¸¯ÅÍ¿¡°Ô Àü¼Û
+#define SCP_MAP_ITEM_DISAPPEAR								0x9205      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Öºï¿½Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 // SCP_MAP_ITEM_DISAPPEAR : 0x9205
 typedef struct _S_SCP_MAP_ITEM_DISAPPEAR
 {	_MSG
@@ -5850,16 +5853,16 @@ typedef struct _S_SCP_MAP_ITEM_DISAPPEAR
 	char			szName[SZNAME_LENGTH];		// MOB of name
 } S_SCP_MAP_ITEM_DISAPPEAR, * PS_SCP_MAP_ITEM_DISAPPEAR;
 
-#define CSP_REQ_ITEM_DROP									0x1209	  // ¾ÆÀÌÅÛÀ» ¶¥¿¡ ¹ö¸².
-#define SCP_RESP_ITEM_DROP									0x9209	  // ¾ÆÀÌÅÛÀ» ¶¥¿¡ ¹ö¸².
+#define CSP_REQ_ITEM_DROP									0x1209	  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+#define SCP_RESP_ITEM_DROP									0x9209	  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 typedef struct _S_CSP_REQ_ITEM_DROP
 {	_MSG
 	DWORD			dwMoney;
-	BYTE			byFromPlace;	// ¾ÆÀÌÅÛÀÌ ¿ø·¡ ÀÖ´ø À§Ä¡ : 1, ÀÎº¥, 2, ÀåÂø, 3, Ã¢°í				
-	BYTE			byIndex;		// Index ¹øÈ£(ÀÎº¥Åä¸®»óÀÇ Index)				
+	BYTE			byFromPlace;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Ä¡ : 1, ï¿½Îºï¿½, 2, ï¿½ï¿½ï¿½ï¿½, 3, Ã¢ï¿½ï¿½				
+	BYTE			byIndex;		// Index ï¿½ï¿½È£(ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ Index)				
 	short			snDummy;				
-	short			snX;			// ¾ÆÀÌÅÛÀ» ¹ö¸± XÁÂÇ¥				
-	short			snZ;			// ¾ÆÀÌÅÛÀ» ¹ö¸± ZÁÂÇ¥				
+	short			snX;			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥				
+	short			snZ;			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥				
 } S_CSP_REQ_ITEM_DROP, *PS_CSP_REQ_ITEM_DROP;
 typedef struct _S_SCP_RESP_ITEM_DROP
 {	_MSG
@@ -5872,8 +5875,8 @@ typedef struct _S_SCP_RESP_ITEM_DROP
 	short	snDummy;
 } S_SCP_RESP_ITEM_DROP, *PS_SCP_RESP_ITEM_DROP;
 
-#define CSP_REQ_ITEM_GET									0x120A	  // ¾ÆÀÌÅÛÀ» ¶¥¿¡¼­ ÁÖ½¿.
-#define SCP_RESP_ITEM_GET									0x920A	  // ¾ÆÀÌÅÛÀ» ¶¥¿¡¼­ ÁÖ½¿.
+#define CSP_REQ_ITEM_GET									0x120A	  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½.
+#define SCP_RESP_ITEM_GET									0x920A	  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½.
 typedef struct _S_CSP_REQ_ITEM_GET
 {	_MSG
 	int				nItemID;
@@ -5886,32 +5889,32 @@ typedef struct _S_SCP_RESP_ITEM_GET
 	DWORD			dwMoney;
 } S_SCP_RESP_ITEM_GET, *PS_SCP_RESP_ITEM_GET;
 
-#define SCP_RESP_ITEM_SET									0x920B	  // ÄÉ¸¯ÅÍ ¾ÆÀÌÅÛ ¼¼ÆÃÀÌ º¯°æµÊ.
+#define SCP_RESP_ITEM_SET									0x920B	  // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 typedef struct _S_SCP_RESP_ITEM_SET
 {	_MSG
-	BYTE			byType;	//	0:¾ÆÀÌÅÛ¼Ò¸ê, 1:¾ÆÀÌÅÛ»ý¼º
+	BYTE			byType;	//	0:ï¿½ï¿½ï¿½ï¿½ï¿½Û¼Ò¸ï¿½, 1:ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½
 	BYTE			byPlace;
 	BYTE			byIndex;
 	BYTE			byDummy;
 	STRUCT_ITEM		sitem;
 } S_SCP_RESP_ITEM_SET, *PS_SCP_RESP_ITEM_SET;
 
-#define SCP_RESP_EQUIP_SET									0x920C	  // ÄÉ¸¯ÅÍ ÀåÂø ¼¼ÆÃÀÌ º¯°æµÊ.
+#define SCP_RESP_EQUIP_SET									0x920C	  // ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 typedef struct _S_SCP_RESP_EQUIP_SET
 {	_MSG
 	int				nID;
 	STRUCT_ITEMVIEW	Equip[VISUAL_EQUIP];
 } S_SCP_RESP_EQUIP_SET, *PS_SCP_RESP_EQUIP_SET;
 
-#define _MSG_Money_Move										0x1226      // ·çÇÇ¾ÆÀÇ ÀÌµ¿À» ¿äÃ»
+#define _MSG_Money_Move										0x1226      // ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 struct MSG_Money_Move
 {	_MSG
 	BYTE			byFromPlace;										
 	BYTE			byToPlace;
 	short			snDummy;
 	DWORD			dwMoney;											
-	DWORD			dwFromMoney;										// ¿Å±æÀå¼ÒÀÇ ·çÇÇ¾Æ(ÀÌµ¿¼º°ø½Ã»ç¿ë)
-	DWORD			dwToMoney;											// ¿Å±äÀå¼ÒÀÇ ·çÇÇ¾Æ(ÀÌµ¿¼º°ø½Ã»ç¿ë)
+	DWORD			dwFromMoney;										// ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¾ï¿½(ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½)
+	DWORD			dwToMoney;											// ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¾ï¿½(ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½)
 };
 
 // CSP_MONSTER_MOVE_STEP : 0x1206
@@ -5943,8 +5946,8 @@ typedef struct _S_SCP_MONSTER_MOVE_NSTEP
 {
 	DWORD                                             dwKeyID;      
 	int                                               nMovingSpeed; 
-	short                                             snX;          // ÃÖÁ¾ xÁÂÇ¥
-	short                                             snZ;          // ÃÖÁ¾ zÁÂÇ¥
+	short                                             snX;          // ï¿½ï¿½ï¿½ï¿½ xï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ï¿½ï¿½ zï¿½ï¿½Ç¥
 
 } S_SCP_MONSTER_MOVE_NSTEP, * PS_SCP_MONSTER_MOVE_NSTEP;
 
@@ -5970,7 +5973,7 @@ typedef struct _S_SCP_MONSTER_MOVE_END
 struct MSG_Packing
 {	_MSG
 	BYTE	byType;				//	Packing(1), Unpacking(2)
-	BYTE	byResult;			//	¼º°ø(0), ½ÇÆÐ(1)
+	BYTE	byResult;			//	ï¿½ï¿½ï¿½ï¿½(0), ï¿½ï¿½ï¿½ï¿½(1)
 	BYTE	byFromPlace;
 	BYTE	byFromIndex;
 	BYTE	byFromCount;
@@ -5982,7 +5985,7 @@ struct MSG_Packing
 //// CSP_REQ_ITEM_USE : 0x1223
 //typedef struct _S_CSP_REQ_ITEM_USE
 //{
-//	DWORD                                             dwKeyID;      // »ç¿ëÇÒ ¾ÆÀÌÅÛÀÇ KeyID
+//	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
 //
 //} S_CSP_REQ_ITEM_USE, * PS_CSP_REQ_ITEM_USE;
 //
@@ -5991,10 +5994,10 @@ struct MSG_Packing
 //typedef struct _S_SCP_RESP_ITEM_USE
 //{
 //	BYTE                                              byResult;     // Result Field
-//	DWORD                                             dwKeyID;      // »ç¿ëÇÑ ¾ÆÀÌÅÛÀÇ KeyID
-//	short                                             snCount;      // ¾ÆÀÌÅÛ ¼ö·®
-//	int                                               nCurHP;       // Ä³¸¯ÅÍÀÇ ÇöÀç HP
-//	DWORD                                             dwCurStatus;  // Ä³¸¯ÅÍÀÇ »óÅÂ
+//	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+//	short                                             snCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	int                                               nCurHP;       // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
+//	DWORD                                             dwCurStatus;  // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 //} S_SCP_RESP_ITEM_USE, * PS_SCP_RESP_ITEM_USE;
 
@@ -6009,8 +6012,8 @@ struct MSG_Packing
 //// SCP_ITEM_USE_BROADCAST : 0x9224
 //typedef struct _S_SCP_ITEM_USE_BROADCAST
 //{
-//	DWORD                                             dwKeyID;      // ¾ÆÀÌÅÛÀ» »ç¿ëÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-//	DWORD                                             dwIndex;      // »ç¿ëÇÑ ¾ÆÀÌÅÛÀÇ Index
+//	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+//	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
 //
 //} S_SCP_ITEM_USE_BROADCAST, * PS_SCP_ITEM_USE_BROADCAST;
 
@@ -6025,10 +6028,10 @@ typedef struct _S_CSP_ITEM_REMOVE
 // SCP_ITEM_REMOVE : 0x9225
 typedef struct _S_SCP_ITEM_REMOVE
 {
-	DWORD                                             dwKeyID;      // »ç¶óÁø ¾ÆÀÌÅÛÀÇ KeyID
-	BYTE                                              byPlace;      // »ç¶óÁø ¾ÆÀÌÅÛÀÇ À§Ä¡
-	short                                             snX;          // »ç¶óÁø ¾ÆÀÌÅÛÀÇ X ÁÂÇ¥
-	short                                             snZ;          // »ç¶óÁø ¾ÆÀÌÅÛÀÇ Z ÁÂÇ¥
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byPlace;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+	short                                             snX;          // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
 
 } S_SCP_ITEM_REMOVE, * PS_SCP_ITEM_REMOVE;
 
@@ -6036,9 +6039,9 @@ typedef struct _S_SCP_ITEM_REMOVE
 // CSP_REQ_CHAR_MOVE_BROADCAST : 0x1227
 typedef struct _S_CSP_REQ_CHAR_MOVE_BROADCAST
 {
-	BYTE                                              byDir;        // ÀÌµ¿»óÅÂ
-	short                                             snToX;        // ÀÌµ¿½ÃÀÇ Á¾ÂøÁ¡ XÁÂÇ¥
-	short                                             snToZ;        // ÀÌµ¿½ÃÀÇ Á¾ÂøÁ¡ ZÁÂÇ¥
+	BYTE                                              byDir;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snToX;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snToZ;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥
 
 } S_CSP_REQ_CHAR_MOVE_BROADCAST, * PS_CSP_REQ_CHAR_MOVE_BROADCAST;
 
@@ -6046,22 +6049,22 @@ typedef struct _S_CSP_REQ_CHAR_MOVE_BROADCAST
 // SCP_RESP_CHAR_MOVE_BROADCAST : 0x9227
 typedef struct _S_SCP_RESP_CHAR_MOVE_BROADCAST
 {
-	DWORD                                             dwKeyID;      // Ä³¸¯ÅÍÀÇ KeyID
-	BYTE                                              byDir;        // ÀÌµ¿»óÅÂ
-	short                                             snFromX;      // ÀÌµ¿½ÃÀÇ ½ÃÀÛÁ¡ XÁÂÇ¥
-	short                                             snFromZ;      // ÀÌµ¿½ÃÀÇ ½ÃÀÛÁ¡ ZÁÂÇ¥
-	short                                             snToX;        // ÀÌµ¿½ÃÀÇ Á¾ÂøÁ¡ XÁÂÇ¥
-	short                                             snToZ;        // ÀÌµ¿½ÃÀÇ Á¾ÂøÁ¡ ZÁÂÇ¥
+	DWORD                                             dwKeyID;      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byDir;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snFromX;      // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snFromZ;      // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥
+	short                                             snToX;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snToZ;        // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½Ç¥
 
 } S_SCP_RESP_CHAR_MOVE_BROADCAST, * PS_SCP_RESP_CHAR_MOVE_BROADCAST;
 
-#define CSP_REQ_MOVE_PORTAL                               0x1231      // Æ÷Å»À» ÅëÇÑ ÀÌµ¿¿äÃ»À» ÇÑ´Ù.
-#define SCP_RESP_MOVE_PORTAL                              0x9231      // Æ÷Å»À» ÅëÇÑ ÀÌµ¿¿äÃ» °á°ú Àü¼Û ÀÀ´ä ¸Þ¼¼Áö
+#define CSP_REQ_MOVE_PORTAL                               0x1231      // ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ñ´ï¿½.
+#define SCP_RESP_MOVE_PORTAL                              0x9231      // ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 // CSP_REQ_MOVE_PORTAL : 0x1231
 typedef struct _S_CSP_REQ_MOVE_PORTAL
 {	_MSG
-	WORD											  wStartPortalID;	//	ÇöÀçÀÇ Æ÷Å»
-	WORD                                              wEndPortalID;     //  ÀÌµ¿ÇÏ°íÀÚ ÇÏ´Â Æ÷Å»ÀÇ ID
+	WORD											  wStartPortalID;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å»
+	WORD                                              wEndPortalID;     //  ï¿½Ìµï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½Å»ï¿½ï¿½ ID
 	
 } S_CSP_REQ_MOVE_PORTAL, * PS_CSP_REQ_MOVE_PORTAL;
 // SCP_RESP_MOVE_PORTAL : 0x9231
@@ -6070,24 +6073,24 @@ typedef struct _S_SCP_RESP_MOVE_PORTAL
 	BYTE        byResult;		// Result Field
 	BYTE		byZone;			// Potal zone
 	short		snDummy;
-	int			nMoney;			// Æ÷Å» ÀÌ¿ë ÈÄ º¯°æµÈ µ·
+	int			nMoney;			// ï¿½ï¿½Å» ï¿½Ì¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 } S_SCP_RESP_MOVE_PORTAL, * PS_SCP_RESP_MOVE_PORTAL;
 
-#define _MSG_MoveOtherZone								0x1241		//	Áö¹ÙÇª½ºÆ¼Ä«¸¦ ÀÌ¿ëÇÑ ÀÌµ¿½Ã »ç¿ë
+#define _MSG_MoveOtherZone								0x1241		//	ï¿½ï¿½ï¿½ï¿½Çªï¿½ï¿½Æ¼Ä«ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 struct MSG_MoveOtherZone
 {	_MSG
 	BYTE		byType;								//	const int   CONNECT_TYPE_PUSTICA	=	5;
 	BYTE		byDummy;
-	short		snPositionID;						//	ÀÌµ¿Àå¼Ò index(type5:À§Ä¡npc index)
+	short		snPositionID;						//	ï¿½Ìµï¿½ï¿½ï¿½ï¿½ index(type5:ï¿½ï¿½Ä¡npc index)
 };
 
 // CSP_REQ_ATK_CHAR : 0x1301
 typedef struct _S_CSP_REQ_ATK_CHAR
 {
-	BYTE                                              byType;       // ´ë»ó Type
-	DWORD                                             dwTargetKeyID;// °ø°Ý ´ë»ó Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwItemKeyID;  // °ø°Ý¿¡ »ç¿ëÇÒ ¾ÆÀÌÅÛ KeyID
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
+	DWORD                                             dwTargetKeyID;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwItemKeyID;  // ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
 
 } S_CSP_REQ_ATK_CHAR, * PS_CSP_REQ_ATK_CHAR;
 
@@ -6096,11 +6099,11 @@ typedef struct _S_CSP_REQ_ATK_CHAR
 typedef struct _S_SCP_RESP_ATK_CHAR
 {
 	BYTE                                              byResult;     // Result Field
-	BYTE                                              byCritical;   // Å©¸®Æ¼ÄÃ È÷Æ® ÆÇÁ¤ ¿©ºÎ
-	short                                             snCount;      // ÅõÃ´¹«±âÀÏ °æ¿ì, ÀÜ¿©¼ö·®
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
-	int                                               nReduceHP;    // µ¥¹ÌÁö°ª
-	int                                               nCurHP;       // °ø°Ý ´çÇÏ´Â Ä³¸¯ÅÍ/MonsterÀÇ ÇöÀç HP
+	BYTE                                              byCritical;   // Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snCount;      // ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
+	int                                               nReduceHP;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int                                               nCurHP;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½/Monsterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
 
 } S_SCP_RESP_ATK_CHAR, * PS_SCP_RESP_ATK_CHAR;
 
@@ -6115,16 +6118,16 @@ typedef struct _S_CSP_ATK_CHAR_BROADCAST
 // SCP_ATK_CHAR_BROADCAST : 0x9302
 typedef struct _S_SCP_ATK_CHAR_BROADCAST
 {
-	BYTE                                              byType;       // ´ë»ó Type
-	DWORD                                             dwKeyID;      // °ø°ÝÀ» ÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwTargetKeyID;// °ø°ÝÀ» ´çÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	BYTE                                              byEquipPart;  // °ø°Ý½Ã¿¡ »ç¿ëÇÏ´Â ¾ÆÀÌÅÛÀ» ÀåÂøÇÑ ºÎÀ§
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwTargetKeyID;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byEquipPart;  // ï¿½ï¿½ï¿½Ý½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	BYTE                                              byResult;     // Result Field
-	int                                               nReduceHP;    // µ¥¹ÌÁö°ª
-	int                                               nCurHP;       // °ø°Ý ´çÇÏ´Â Ä³¸¯ÅÍÀÇ ÇöÀç HP
-	BYTE                                              byCritical;   // Å©¸®Æ¼ÄÃ È÷Æ® ÆÇÁ¤ ¿©ºÎ
-	short                                             snCurX;       // °ø°ÝÀÚÀÇ ÇöÀç XÁÂÇ¥
-	short                                             snCurz;       // °ø°ÝÀÚÀÇ ÇöÀç zÁÂÇ¥
+	int                                               nReduceHP;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int                                               nCurHP;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
+	BYTE                                              byCritical;   // Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snCurX;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+	short                                             snCurz;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ zï¿½ï¿½Ç¥
 
 } S_SCP_ATK_CHAR_BROADCAST, * PS_SCP_ATK_CHAR_BROADCAST;
 
@@ -6132,10 +6135,10 @@ typedef struct _S_SCP_ATK_CHAR_BROADCAST
 // CSP_REQ_ITEM_EQUIPMENT : 0x1401
 typedef struct _S_CSP_REQ_ITEM_EQUIPMENT
 {
-	DWORD                                             dwKeyID;      // Ã¢ÂøÇÒ ¾ÆÀÌÅÛ KeyID
-	BYTE                                              byEquipPart;  // ¾ÆÀÌÅÛ ÀåÂøºÎÀ§
-	BYTE                                              byX;          // ÀåÂø X ÁÂÇ¥
-	BYTE                                              byZ;          // ÀåÂø Z ÁÂÇ¥
+	DWORD                                             dwKeyID;      // Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byEquipPart;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byX;          // ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	BYTE                                              byZ;          // ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
 
 } S_CSP_REQ_ITEM_EQUIPMENT, * PS_CSP_REQ_ITEM_EQUIPMENT;
 
@@ -6143,11 +6146,11 @@ typedef struct _S_CSP_REQ_ITEM_EQUIPMENT
 // SCP_RESP_ITEM_EQUIPMENT : 0x9401
 typedef struct _S_SCP_RESP_ITEM_EQUIPMENT
 {
-	BYTE                                              byResult;     // ¾ÆÀÌÅÛ ÀåÂø ¿äÃ»¿¡ ´ëÇÑ °á°ú °ª
-	short                                             snMovingSpeed;// ¾ÆÀÌÅÛÀÇ ÀÌµ¿¼Óµµ
-	short                                             snAttackSpeed;// ¾ÆÀÌÅÛÀÇ °ø°Ý¼Óµµ
-	short                                             snCastingSpeed;// ¾ÆÀÌÅÛÀÇ ÄÉ½ºÆÃ¼Óµµ
-	BYTE                                              byShootRange; // ¹ß»çÃ¼ÀÇ »çÁ¤°Å¸®
+	BYTE                                              byResult;     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½
+	short                                             snMovingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½
+	short                                             snAttackSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½
+	short                                             snCastingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É½ï¿½ï¿½Ã¼Óµï¿½
+	BYTE                                              byShootRange; // ï¿½ß»ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
 
 } S_SCP_RESP_ITEM_EQUIPMENT, * PS_SCP_RESP_ITEM_EQUIPMENT;
 
@@ -6162,9 +6165,9 @@ typedef struct _S_CSP_ITEM_EQUIPMENT_BROADCAST
 // SCP_ITEM_EQUIPMENT_BROADCAST : 0x9402
 typedef struct _S_SCP_ITEM_EQUIPMENT_BROADCAST
 {
-	DWORD                                             dwKeyID;      // ÀåÂø Ä³¸¯ÅÍ KeyID
-	DWORD                                             dwIndex;      // ÀåÂø ¾ÆÀÌÅÛ ÀÎµ¦½º
-	BYTE                                              byEquipPart;  // ¾ÆÀÌÅÛ ÀåÂø ºÎÀ§
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
+	BYTE                                              byEquipPart;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	BYTE                                              bySubMaterialCount;
 
 } S_SCP_ITEM_EQUIPMENT_BROADCAST, * PS_SCP_ITEM_EQUIPMENT_BROADCAST;
@@ -6180,12 +6183,12 @@ typedef struct _S_CSP_ITEM_ABRASION
 // SCP_ITEM_ABRASION : 0x9411
 typedef struct _S_SCP_ITEM_ABRASION
 {
-	DWORD                                             dwKeyIDWeapon;// ¹«±â ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwKeyIDBody;  // ÀÇº¹ ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwKeyIDShield;// ¹æÆÐ ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwKeyIDHead;  // ¸ðÀÚ ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwKeyIDFoot;  // ½Å¹ß ¾ÆÀÌÅÛÀÇ KeyID
-	DWORD                                             dwKeyIDBelt;  // Çã¸®¶ì ¾ÆÀÌÅÛÀÇ KeyID
+	DWORD                                             dwKeyIDWeapon;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwKeyIDBody;  // ï¿½Çºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwKeyIDShield;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwKeyIDHead;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwKeyIDFoot;  // ï¿½Å¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwKeyIDBelt;  // ï¿½ã¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
 
 } S_SCP_ITEM_ABRASION, * PS_SCP_ITEM_ABRASION;
 
@@ -6200,13 +6203,13 @@ typedef struct _S_CSP_ITEM_ABRASION_BROADCAST
 // SCP_ITEM_ABRASION_BROADCAST : 0x9412
 typedef struct _S_SCP_ITEM_ABRASION_BROADCAST
 {
-	DWORD                                             dwKeyID;      // ¾ÆÀÌÅÛÀÌ »ç¶óÁø Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwIndexWeapon;// ¹«±â ¾ÆÀÌÅÛÀÇ Index
-	DWORD                                             dwIndexBody;  // ÀÇº¹ ¾ÆÀÌÅÛÀÇ Index
-	DWORD                                             dwIndexShield;// ¹æÆÐ ¾ÆÀÌÅÛÀÇ Index
-	DWORD                                             dwIndexHead;  // ¸ðÀÚ ¾ÆÀÌÅÛÀÇ Index
-	DWORD                                             dwIndexFoot;  // ½Å¹ß ¾ÆÀÌÅÛÀÇ Index
-	DWORD                                             dwIndexBelt;  // Çã¸®¶ì ¾ÆÀÌÅÛÀÇ Index
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndexWeapon;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwIndexBody;  // ï¿½Çºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwIndexShield;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwIndexHead;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwIndexFoot;  // ï¿½Å¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwIndexBelt;  // ï¿½ã¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
 
 } S_SCP_ITEM_ABRASION_BROADCAST, * PS_SCP_ITEM_ABRASION_BROADCAST;
 
@@ -6221,7 +6224,7 @@ struct MOBSTOREITEM
 struct MSG_MobStore
 {	_MSG
 	int 				nID;
-	BYTE				byMode;		//	0:»ó°Å·¡¾ÈÇÔ, 1:»ó°Å·¡ÇÔ
+	BYTE				byMode;		//	0:ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½Å·ï¿½ï¿½ï¿½
 	BYTE				byDummy;
 	short				snDummy;
 	char				szTrade[SZTRADE_LENGTH];
@@ -6246,112 +6249,112 @@ struct MSG_MobStatus
 /************************************************************************************************/
 //	CHAT PACKET
 /************************************************************************************************/
-//	ÀÏ¹ÝÃ¤ÆÃ
+//	ï¿½Ï¹ï¿½Ã¤ï¿½ï¿½
 #define CSP_REQ_CHAT					0x1501
 #define SCP_RESP_CHAT					0x9501
 #define SCP_NOTIFY_CHAT					0x9502
 typedef struct _S_CSP_REQ_CHAT
 {	_MSG
-	BYTE                            byBgColor;					// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö
-	BYTE                            byTextColor;				// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö
+	BYTE                            byBgColor;					// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	BYTE                            byTextColor;				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½
 	BYTE							byTrimuriti;
-	BYTE							byWhere;					// 0:Ã¤ÆÃÃ¢, 1:¸Ó¸®Ç³¼±, 2:Ã¤ÆÃÃ¢°ú ¸Ó¸®Ç³¼± ¸ðµÎ
+	BYTE							byWhere;					// 0:Ã¤ï¿½ï¿½Ã¢, 1:ï¿½Ó¸ï¿½Ç³ï¿½ï¿½, 2:Ã¤ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½Ó¸ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½ï¿½
 	short							snDummy;
-	char                            szMsg[MAX_CHAT_LENGTH];		// Ã¤ÆÃ ¸Þ¼¼Áö
+	char                            szMsg[MAX_CHAT_LENGTH];		// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 } S_CSP_REQ_CHAT, * PS_CSP_REQ_CHAT;
 typedef struct _S_SCP_NOTIFY_CHAT
 {	_MSG
-	int		nID;							// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ KeyID
-	BYTE    byBgColor;						// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö
-	BYTE    byTextColor;					// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö
+	int		nID;							// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE    byBgColor;						// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	BYTE    byTextColor;					// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½
 	BYTE	byTrimuriti;
-	BYTE	byWhere;						// 0:Ã¤ÆÃÃ¢, 1:¸Ó¸®Ç³¼±, 2:Ã¤ÆÃÃ¢°ú ¸Ó¸®Ç³¼± ¸ðµÎ
+	BYTE	byWhere;						// 0:Ã¤ï¿½ï¿½Ã¢, 1:ï¿½Ó¸ï¿½Ç³ï¿½ï¿½, 2:Ã¤ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½Ó¸ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½ï¿½
 	short	snDummy;
-	char    szMsg[MAX_CHAT_LENGTH];		// Ã¤ÆÃ ¸Þ¼¼Áö
+	char    szMsg[MAX_CHAT_LENGTH];		// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 } S_SCP_NOTIFY_CHAT, * PS_SCP_NOTIFY_CHAT;
 
-//	±Í¼Ó¸»
+//	ï¿½Í¼Ó¸ï¿½
 #define CSP_REQ_WHISPER_CHAT			0x1503
 #define SCP_RESP_WHISPER_CHAT			0x9503
 #define SCP_NOTIFY_WHISPER_CHAT			0x9504
 typedef struct _S_CSP_REQ_WHISPER_CHAT
 {	_MSG	
-	BYTE	byBgColor;    // Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;  // Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö
+	BYTE	byBgColor;    // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;  // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½
 	BYTE	byTrimuriti;
 	BYTE	byDummy;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö                                              
-	char    szName[SZNAME_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÒ Ä³¸¯ÅÍ ÀÌ¸§                                           
+	char	szMsg[MAX_CHAT_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½                                              
+	char    szName[SZNAME_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½                                           
 } S_CSP_REQ_WHISPER_CHAT, * PS_CSP_REQ_WHISPER_CHAT;
 typedef struct _S_SCP_RESP_WHISPER_CHAT
 {	_MSG	
 	BYTE	byResult;
-	BYTE	byBgColor;				// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;			// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
+	BYTE	byBgColor;				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;			// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
 	BYTE	byTrimuriti;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ÆÃ ¸Þ¼¼Áö                                              
-	char    szName[SZNAME_LENGTH];				// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÒ Ä³¸¯ÅÍ ÀÌ¸§                                       
+	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½                                              
+	char    szName[SZNAME_LENGTH];				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½                                       
 } S_SCP_RESP_WHISPER_CHAT, * PS_SCP_RESP_WHISPER_CHAT;
 typedef struct _S_SCP_NOTIFY_WHISPER_CHAT
 {	_MSG   
-	BYTE    byBgColor;    // Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                          
-	BYTE    byTextColor;  // Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
+	BYTE    byBgColor;    // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                          
+	BYTE    byTextColor;  // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
 	BYTE	byTrimuriti;
 	BYTE	byDummy;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö 
-	char    szName[SZNAME_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§  
+	char	szMsg[MAX_CHAT_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ 
+	char    szName[SZNAME_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½  
                                                                                
 } S_SCP_NOTIFY_WHISPER_CHAT, * PS_SCP_NOTIFY_WHISPER_CHAT;
 
-////	°øÁö ¸Þ¼¼Áö
+////	ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 //#define CSP_REQ_BROADCAST				0x1505
 //#define SCP_NOTIFY_BROADCAST			0x9506
 //typedef struct _S_CSP_REQ_BROADCAST
 //{	_MSG
-//	BYTE	byMsgType;		//	ÆÄÆ¼(0), ±æµå(1), Á¸(2), ¿ùµå(3), °ÔÀÓ(4)		
-//	BYTE	byBgColor;		//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-//	BYTE	byTextColor;	//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö                                              
+//	BYTE	byMsgType;		//	ï¿½ï¿½Æ¼(0), ï¿½ï¿½ï¿½(1), ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3), ï¿½ï¿½ï¿½ï¿½(4)		
+//	BYTE	byBgColor;		//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+//	BYTE	byTextColor;	//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½                                              
 //	BYTE	byTrimuriti;
-//	char	szMsg[MAX_NOTIFY_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö 
+//	char	szMsg[MAX_NOTIFY_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ 
 //} S_CSP_REQ_BROADCAST, * PS_CSP_REQ_BROADCAST;
 //typedef struct _S_SCP_NOTIFY_BROADCAST
 //{	_MSG
-//	BYTE	byMsgType;		//	ÆÄÆ¼(0), ±æµå(1), Á¸(2), ¿ùµå(3), °ÔÀÓ(4)	
-//	BYTE	byBgColor;		// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-//	BYTE	byTextColor;	// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
+//	BYTE	byMsgType;		//	ï¿½ï¿½Æ¼(0), ï¿½ï¿½ï¿½(1), ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3), ï¿½ï¿½ï¿½ï¿½(4)	
+//	BYTE	byBgColor;		// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+//	BYTE	byTextColor;	// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
 //	BYTE	byTrimuriti;
-//	char	szMsg[MAX_NOTIFY_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö   
-//	char    szName[SZNAME_LENGTH];   // Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§   
+//	char	szMsg[MAX_NOTIFY_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½   
+//	char    szName[SZNAME_LENGTH];   // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½   
 //} S_SCP_NOTIFY_BROADCAST, * PS_SCP_NOTIFY_BROADCAST;
-#define _MSG_Chat						0x1507			//	ÆÄÆ¼, ±æµåÃ¤ÆÃ
+#define _MSG_Chat						0x1507			//	ï¿½ï¿½Æ¼, ï¿½ï¿½ï¿½Ã¤ï¿½ï¿½
 struct MSG_Chat
 {
 	_MSG
-	BYTE	byMsgType;					//	ÆÄÆ¼(1), ±æµå(2)	
-	BYTE	byBgColor;					//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;				//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
-	BYTE	byTrimuriti;				//	ÄÉ¸¯ÅÍÀÇ ÁÖ½Å
-	int		nGuildID;					//	±æµåÃ¤ÆÃÀÏ °æ¿ì ÇØ´ç±æµåÀÇ ID
-	int		nAlliedGuildID;				//	¿¬ÇÕ±æµå Ã¤ÆÃÀÇ °æ¿ì ¿¬ÇÕ±æµåÀÇ ID
-	char	szMsg[MAX_GROUPCHAT_LENGTH];		//	Ã¤ÆÃ ¸Þ¼¼Áö
-	char    szName[SZNAME_LENGTH];		//	Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§   
+	BYTE	byMsgType;					//	ï¿½ï¿½Æ¼(1), ï¿½ï¿½ï¿½(2)	
+	BYTE	byBgColor;					//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;				//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
+	BYTE	byTrimuriti;				//	ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
+	int		nGuildID;					//	ï¿½ï¿½ï¿½Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½ ID
+	int		nAlliedGuildID;				//	ï¿½ï¿½ï¿½Õ±ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ±ï¿½ï¿½ï¿½ï¿½ ID
+	char	szMsg[MAX_GROUPCHAT_LENGTH];		//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+	char    szName[SZNAME_LENGTH];		//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½   
 };
 #define _MSG_Broadcast					0x1508
 struct MSG_Broadcast
 {
 	_MSG
-	BYTE	byMsgType;					//	Á¸(1), ¿ùµå(2), °ÔÀÓ(3), ÀüÅõ¸í·É¼­(4), È£¿Ü(5), GM°øÁö(6)	
-	BYTE	byBgColor;					//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;				//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö(ÀüÅõ¸í·É¼­¿Í È£¿ÜÀÇ °æ¿ì ÀÎº¥ÀÎµ¦½º·Î »ç¿ëÇÑ´Ù.)
-	BYTE	byTrimuriti;				//	ÄÉ¸¯ÅÍÀÇ ÁÖ½Å
-	char	szMsg[MAX_NOTIFY_LENGTH];   //	Ã¤ÆÃ ¸Þ¼¼Áö   
-	char    szName[SZNAME_LENGTH];		//	Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§   
+	BYTE	byMsgType;					//	ï¿½ï¿½(1), ï¿½ï¿½ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3), ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½(4), È£ï¿½ï¿½(5), GMï¿½ï¿½ï¿½ï¿½(6)	
+	BYTE	byBgColor;					//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;				//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.)
+	BYTE	byTrimuriti;				//	ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
+	char	szMsg[MAX_NOTIFY_LENGTH];   //	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½   
+	char    szName[SZNAME_LENGTH];		//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½   
 };
 
-// ÁøÁ¤ ¸Þ½ÃÁö
+// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
 #define CSP_REQ_APPEAL_CHAT					0x150F
 #define SCP_RESP_APPEAL_CHAT				0x950F
 typedef struct _S_CSP_REQ_APPEAL_CHAT
@@ -6360,7 +6363,7 @@ typedef struct _S_CSP_REQ_APPEAL_CHAT
 } S_CSP_REQ_APPEAL_CHAT, * PS_CSP_REQ_APPEAL_CHAT;
 typedef struct _S_SCP_RESP_APPEAL_CHAT
 {	_MSG;
-	BYTE	byResult;	// °á°ú : 0x00 - ¼º°ø, 0x01 - ½ÇÆÐ(Á¢¼öµÇÁö ¾ÊÀ½), 0x02 - ½ÇÆÐ(ÁøÁ¤ Ã³¸®ÇÑµµ ÃÊ°ú)
+	BYTE	byResult;	// ï¿½ï¿½ï¿½ : 0x00 - ï¿½ï¿½ï¿½ï¿½, 0x01 - ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½), 0x02 - ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñµï¿½ ï¿½Ê°ï¿½)
 	BYTE	byDummy;
 	SHORT	snDummy;
 	char	szMsg[MAX_CHAT_LENGTH];
@@ -6372,36 +6375,36 @@ typedef struct _S_SCP_RESP_APPEAL_CHAT
 struct S_SSP_REQ_WHISPER_CHAT
 {	_MSG	
 	int		nID;
-	BYTE	byBgColor;				// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;			// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö    
+	BYTE	byBgColor;				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;			// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½    
 	BYTE	byTrimuriti;
 	BYTE	byDummy;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ÆÃ ¸Þ¼¼Áö    
-	char    szSourName[SZNAME_LENGTH];			// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§  
-	char    szDestName[SZNAME_LENGTH];			// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÒ Ä³¸¯ÅÍ ÀÌ¸§            
+	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½    
+	char    szSourName[SZNAME_LENGTH];			// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½  
+	char    szDestName[SZNAME_LENGTH];			// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½            
 };
 struct S_SSP_RESP_WHISPER_CHAT
 {	_MSG	
 	int		nID;
 	BYTE	byResult;
-	BYTE	byBgColor;				// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;			// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
+	BYTE	byBgColor;				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;			// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
 	BYTE	byTrimuriti;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ÆÃ ¸Þ¼¼Áö                                              
-	char    szName[SZNAME_LENGTH];				// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÒ Ä³¸¯ÅÍ ÀÌ¸§ 
+	char	szMsg[MAX_CHAT_LENGTH]; // Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½                                              
+	char    szName[SZNAME_LENGTH];				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ 
 };
 struct S_SSP_NOTIFY_WHISPER_CHAT
 {	_MSG	
 	int		nID;
-	BYTE	byBgColor;							// Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;						// Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
+	BYTE	byBgColor;							// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;						// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
 	BYTE	byTrimuriti;
 	BYTE	byDummy;
 	short	snDummy;
-	char	szMsg[MAX_CHAT_LENGTH];				// Ã¤ÆÃ ¸Þ¼¼Áö                                              
-	char    szName[SZNAME_LENGTH];				// Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§ 
+	char	szMsg[MAX_CHAT_LENGTH];				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½                                              
+	char    szName[SZNAME_LENGTH];				// Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ 
 };
 
 //#define	SSP_REQ_BROADCAST			0x0011
@@ -6409,20 +6412,20 @@ struct S_SSP_NOTIFY_WHISPER_CHAT
 //struct S_SSP_REQ_BROADCAST
 //{	_MSG	
 //	int		nID;
-//	BYTE	byMsgType;				//	ÆÄÆ¼(0), ±æµå(1), Á¸(2), ¿ùµå(3), °ÔÀÓ(4)	
-//	BYTE	byBgColor;				//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-//	BYTE	byTextColor;			//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö
+//	BYTE	byMsgType;				//	ï¿½ï¿½Æ¼(0), ï¿½ï¿½ï¿½(1), ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3), ï¿½ï¿½ï¿½ï¿½(4)	
+//	BYTE	byBgColor;				//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+//	BYTE	byTextColor;			//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½
 //	BYTE	byTrimuriti;
-//	char	szMsg[MAX_NOTIFY_LENGTH]; //	Ã¤ÆÃ ¸Þ¼¼Áö            
+//	char	szMsg[MAX_NOTIFY_LENGTH]; //	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½            
 //};
 //struct S_SSP_NOTIFY_BROADCAST
 //{	_MSG
-//	BYTE	byMsgType;				//	ÆÄÆ¼(0), ±æµå(1), Á¸(2), ¿ùµå(3), °ÔÀÓ(4)	
-//	BYTE	byBgColor;				//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-//	BYTE	byTextColor;			//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö                                              
+//	BYTE	byMsgType;				//	ï¿½ï¿½Æ¼(0), ï¿½ï¿½ï¿½(1), ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3), ï¿½ï¿½ï¿½ï¿½(4)	
+//	BYTE	byBgColor;				//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+//	BYTE	byTextColor;			//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½                                              
 //	BYTE	byTrimuriti;
-//	char	szMsg[MAX_NOTIFY_LENGTH]; //	Ã¤ÆÃ ¸Þ¼¼Áö                                              
-//	char    szName[SZNAME_LENGTH];	//	¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§ 
+//	char	szMsg[MAX_NOTIFY_LENGTH]; //	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½                                              
+//	char    szName[SZNAME_LENGTH];	//	ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ 
 //};
 #define SSP_REQ_APPEAL_CHAT			0x0012
 #define SSP_RESP_APPEAL_CHAT		0x0013
@@ -6434,7 +6437,7 @@ typedef struct _S_SSP_REQ_APPEAL_CHAT
 typedef struct _S_SSP_RESP_APPEAL_CHAT
 {	_MSG;
 	int		nID;
-	BYTE	byResult;	// °á°ú : 0x00 - ¼º°ø, 0x01 - ½ÇÆÐ(Á¢¼öµÇÁö ¾ÊÀ½), 0x02 - ½ÇÆÐ(ÁøÁ¤ Ã³¸®ÇÑµµ ÃÊ°ú)
+	BYTE	byResult;	// ï¿½ï¿½ï¿½ : 0x00 - ï¿½ï¿½ï¿½ï¿½, 0x01 - ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½), 0x02 - ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñµï¿½ ï¿½Ê°ï¿½)
 	BYTE	byDummy;
 	SHORT	snDummy;
 	char	szMsg[MAX_CHAT_LENGTH];
@@ -6444,26 +6447,26 @@ typedef struct _S_SSP_RESP_APPEAL_CHAT
 struct MSG_COMMAND
 {
 	_MSG
-	BYTE	byMsgType;					//	Á¸(1), ¿ùµå(2), °ÔÀÓ(3)	
-	BYTE	byBgColor;					//	Ã¤ÆÃ ¸Þ¼¼Áö ¹è°æ»ö                                              
-	BYTE	byTextColor;				//	Ã¤ÆÃ ¸Þ¼¼Áö ±ÛÀÚ»ö  
-	BYTE	byTrimuriti;				//	ÄÉ¸¯ÅÍÀÇ ÁÖ½Å
-	char	szMsg[MAX_NOTIFY_LENGTH];   //	Ã¤ÆÃ ¸Þ¼¼Áö   
-	char    szName[SZNAME_LENGTH];		//	Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ Ä³¸¯ÅÍ ÀÌ¸§   
+	BYTE	byMsgType;					//	ï¿½ï¿½(1), ï¿½ï¿½ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½(3)	
+	BYTE	byBgColor;					//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                              
+	BYTE	byTextColor;				//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú»ï¿½  
+	BYTE	byTrimuriti;				//	ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½
+	char	szMsg[MAX_NOTIFY_LENGTH];   //	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½   
+	char    szName[SZNAME_LENGTH];		//	Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½   
 };
 
 #define _MSG_ServerCommand			0x1511
 struct MSG_ServerCommand
 {
 	_MSG
-	BYTE	byCommandType;					//	¸í·É¾î Á¾·ù(0:·Î±×´ýÇÁ,..)
+	BYTE	byCommandType;					//	ï¿½ï¿½ï¿½É¾ï¿½ ï¿½ï¿½ï¿½ï¿½(0:ï¿½Î±×´ï¿½ï¿½ï¿½,..)
 	BYTE	byDummy1;					                                             
 	BYTE	byDummy2;					
 	BYTE	byDummy3;					 
 };
 
 #define	SSP_REQ_ZONE_INIT			0x0013
-//	S_CSP_REQ_TRADE_CANCEL´Â S_REQUEST¸¦ ÀÌ¿ëÇÏ±â·Î ÇÑ´Ù.
+//	S_CSP_REQ_TRADE_CANCELï¿½ï¿½ S_REQUESTï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï±ï¿½ï¿½ ï¿½Ñ´ï¿½.
 /************************************************************************************************/
 //	Guild	packet
 /************************************************************************************************/
@@ -6501,7 +6504,7 @@ struct	MSG_AddGuildMember
 struct	MSG_RemoveGuildMember
 {		_MSG
 		int					GuildID;
-		BYTE				byRemoveType;						//	ÀÚ½ÅÀÌ Å»Åð(1), ³²À»¹æÃâ(2), ±æµåÇØÃ¼(3)
+		BYTE				byRemoveType;						//	ï¿½Ú½ï¿½ï¿½ï¿½ Å»ï¿½ï¿½(1), ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(2), ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼(3)
 		BYTE				byDummy;							//	enum { eGuild_Remove_me = 1, eGuild_Remove_you = 2, eGuild_Remove_All = 3, } ;
 		short				snDummy;
 		char				CharacterName[SZNAME_LENGTH];
@@ -6568,7 +6571,7 @@ struct MSG_GuildUpdateMark
 		short				snDummy;
 		int					GuildID;
 		int					Mark;
-		int					nMoney;				//	·çÇÇ¾Æ ¶Ç´Â Å¸´Ï
+		int					nMoney;				//	ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ç´ï¿½ Å¸ï¿½ï¿½
 };
 
 #define _MSG_GuildNotify						0x1613
@@ -6583,15 +6586,15 @@ struct MSG_GuildNotify
 struct Msg_GuildAlliance
 {
 		_MSG
-		int			nID;					//	»ó´ëÀÇ nID
+		int			nID;					//	ï¿½ï¿½ï¿½ï¿½ï¿½ nID
 		BYTE		byResult;				
-		BYTE		byType;					//	enum { eGuildFriend = 1, eGuildHost = 2, };				//	1:µ¿¸Í, 2:Àû´ë
-		BYTE		byAct;					//	enum { eGuildAllianceIn = 1, eGuildAllianceOut = 2, };	//	1:°á¼º, 2:ÇØÃ¼
+		BYTE		byType;					//	enum { eGuildFriend = 1, eGuildHost = 2, };				//	1:ï¿½ï¿½ï¿½ï¿½, 2:ï¿½ï¿½ï¿½ï¿½
+		BYTE		byAct;					//	enum { eGuildAllianceIn = 1, eGuildAllianceOut = 2, };	//	1:ï¿½á¼º, 2:ï¿½ï¿½Ã¼
 		BYTE		byDummy;
 };
 
 #define _Msg_GuildCargoUsingLevel				0x1615
-struct Msg_GuildCargoUsingLevel				//	°øÁö¿ë(ÀüÁ¸°øÁö), ¸¶ÇÏ¶óÀÚ¸¸ ÀÌ¿ë°¡´É
+struct Msg_GuildCargoUsingLevel				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½), ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½Ú¸ï¿½ ï¿½Ì¿ë°¡ï¿½ï¿½
 {
 	_MSG
 	int		nGuildID;
@@ -6600,16 +6603,16 @@ struct Msg_GuildCargoUsingLevel				//	°øÁö¿ë(ÀüÁ¸°øÁö), ¸¶ÇÏ¶óÀÚ¸¸ ÀÌ¿ë°¡´É
 };
 
 #define _Msg_GuildCargoTimeExtension			0x1616
-struct Msg_GuildCargoTimeExtension			//	¸¶ÇÏ¶óÀÚ¸¸ ÀÌ¿ë°¡´É
+struct Msg_GuildCargoTimeExtension			//	ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½Ú¸ï¿½ ï¿½Ì¿ë°¡ï¿½ï¿½
 {
 	_MSG
-	BYTE	byResult;						//	0:¼º°ø, 1:½ÇÆÐ
-	BYTE	byType;							//	1: 1¹ø»ç¿ë, 2: 1,2¹ø»ç¿ë, 3: 1,2,3¹ø»ç¿ë
+	BYTE	byResult;						//	0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½
+	BYTE	byType;							//	1: 1ï¿½ï¿½ï¿½ï¿½ï¿½, 2: 1,2ï¿½ï¿½ï¿½ï¿½ï¿½, 3: 1,2,3ï¿½ï¿½ï¿½ï¿½ï¿½
 	short	snDummy;
 };
 
 #define _Msg_GuildCargoTime						0x1617
-struct Msg_GuildCargoTime					//	°øÁö¿ë(ÀüÁ¸°øÁö), ¸¶ÇÏ¶óÀÚ¸¸ ÀÌ¿ë°¡´É
+struct Msg_GuildCargoTime					//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½), ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½Ú¸ï¿½ ï¿½Ì¿ë°¡ï¿½ï¿½
 {
 	_MSG
 	int			nGuildID;
@@ -6620,15 +6623,15 @@ struct Msg_GuildCargoTime					//	°øÁö¿ë(ÀüÁ¸°øÁö), ¸¶ÇÏ¶óÀÚ¸¸ ÀÌ¿ë°¡´É
 struct Msg_GuildItem
 {
 	_MSG
-	STRUCT_ITEM arrItem[MAX_CARGO*3];				//	±æµåÃ¢°í¸®½ºÆ®(_Msg_GuildCargoUse·Î »ç¿ë¿äÃ»ÇÑ ±æ¿ø¿¡°Ô ¾Ë¸°´Ù)
+	STRUCT_ITEM arrItem[MAX_CARGO*3];				//	ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®(_Msg_GuildCargoUseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½)
 };
 
 #define _Msg_GuildCargoUse						0x1619
 struct Msg_GuildCargoUse
 {
 	_MSG
-	BYTE	bySet;									//	0:»ç¿ëÇØÁ¦, 1:»ç¿ë¿äÃ»
-	BYTE	byResult;								//	»ç¿ëÇØÁ¦³ª »ç¿ë¿äÃ»¿¡ ´ëÇÑ °á°ú(0:¼º°ø, 1:½ÇÆÐ)
+	BYTE	bySet;									//	0:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½Ã»
+	BYTE	byResult;								//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½)
 };
 
 #define _Msg_GuildCargoUseUpdate				0x1620
@@ -6636,7 +6639,7 @@ struct Msg_GuildCargoUseUpdate
 {
 	_MSG
 	int		nGuildID;
-	char	pUsingMember[SZNAME_LENGTH];			//	Ã¢°í¸¦ »ç¿ëÁßÀÎ ÄÉ¸¯ÅÍ(¾øÀ» °æ¿ì null)
+	char	pUsingMember[SZNAME_LENGTH];			//	Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ null)
 };
 
 #define _Msg_GuildItemUpdate					0x1621
@@ -6654,15 +6657,15 @@ struct Msg_GuildItemUpdate
 #define	MAX_MESSENGER		28
 struct STRUCT_MESSENGER_ITEM
 {		char	szCharName[SZNAME_LENGTH];		
-		BYTE	Status;						// 0:ºó½½·Ô 1:OFF	2:ON	3:BLOCK?(º¸·ù)
+		BYTE	Status;						// 0:ï¿½ó½½·ï¿½ 1:OFF	2:ON	3:BLOCK?(ï¿½ï¿½ï¿½ï¿½)
 		BYTE	Opponent;
-		short	snTribe;					// Ä³¸¯ÅÍÀÇ Á¾Á·                                   			
+		short	snTribe;					// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                                   			
 };
 
 struct STRUCT_MESSENGER_LIST
 {   int		Login;
     int		Slot;
-	char	AccountName[ACCOUNTNAME_LENGTH];	// ÇöÀç »ç¿ëÁßÀÎ ¾îÄ«¿îÆ®
+	char	AccountName[ACCOUNTNAME_LENGTH];	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ®
 	char	CharName[SZNAME_LENGTH];
 	STRUCT_MESSENGER_ITEM Item[MAX_MESSENGER];
 };	
@@ -6671,7 +6674,7 @@ struct STRUCT_MESSENGER_LIST
 	struct STRUCT_OLD_MESSENGER_LIST
 	{	int		Login;
 		int		Slot;
-		char	AccountName[OLD_ACCOUNTNAME_LENGTH];	// ÇöÀç »ç¿ëÁßÀÎ ¾îÄ«¿îÆ®
+		char	AccountName[OLD_ACCOUNTNAME_LENGTH];	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä«ï¿½ï¿½Æ®
 		char	CharName[SZNAME_LENGTH];
 		STRUCT_MESSENGER_ITEM Item[MAX_MESSENGER];
 	};
@@ -6702,22 +6705,22 @@ struct	MSG_MessengerLogout
 		char	AccountName	[ACCOUNTNAME_LENGTH];
 		char	CharName	[SZNAME_LENGTH];
 };
-#define	_MSG_UpdateMessengerList			0x2702  // ÀüÃ¼ ¸Þ½ÅÀú ½½·ÔÀ» °»½ÅÇÑ´Ù
+#define	_MSG_UpdateMessengerList			0x2702  // ï¿½ï¿½Ã¼ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 struct	MSG_UpdateMessengerList
 {		_MSG
 		int		nID;							// 1~999
 		STRUCT_MESSENGER_ITEM Item[MAX_MESSENGER];
 };
-#define	_MSG_UpdateMessengerItem			0x2703	// ÇÑ°³ÀÇ ¸Þ½ÅÀú ½½·ÔÀ» °»½ÅÇÑ´Ù
+#define	_MSG_UpdateMessengerItem			0x2703	// ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 struct	MSG_UpdateMessengerItem
 {		_MSG
 		int		nID;							// 1~999
 		int		nSlot;
 		STRUCT_MESSENGER_ITEM Item;
 };
-// Å¬¶óÀÌ¾ðÆ®´Â Char_init¿äÃ» Á÷Àü STRUCT_MESSENGER_ITEM Item[MAX_MESSENGER] À» memset(0) ÇÑ´Ù.
-// Å¬¶óÀÌ¾ðÆ®µµ ¸Þ½ÅÀú¿¡ ´©±º°¡¸¦ Ãß°¡/ÇØÁ¦ ÇÒ°æ¿ì ¼­¹ö¿¡ UpdateMessengerItem¸¦ ³¯¸°´Ù.
-// ¿äÃ»¸¸ÇÏ°í °»½ÅÀº ¼­¹öÀÇ UpdateMessengerItemÀ¸·Î °»½ÅÇÏ°í, ¼­¹ö´Â MessageBoxµµ ÁØ´Ù.
+// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ Char_initï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ STRUCT_MESSENGER_ITEM Item[MAX_MESSENGER] ï¿½ï¿½ memset(0) ï¿½Ñ´ï¿½.
+// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UpdateMessengerItemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+// ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UpdateMessengerItemï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MessageBoxï¿½ï¿½ ï¿½Ø´ï¿½.
 #define _MSG_ReqMessenger					0x2704
 struct MSG_ReqMessenger
 {		_MSG
@@ -6746,14 +6749,14 @@ struct MSG_MessengerRemovelist
 		char	AccountName	[ACCOUNTNAME_LENGTH];
 };
 
-//#define	_MSG_MessengerChangeMyInfo					0x2704		//	Ä£±¸ÀÇ Á¤º¸°¡ º¯°æµÉ °æ¿ì»ç¿ë(ZS<->MSG)
+//#define	_MSG_MessengerChangeMyInfo					0x2704		//	Ä£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½(ZS<->MSG)
 //struct MSG_MessengerChangeMyInfo 
 //{
 //		_MSG
 //		int		nID;
 //		STRUCT_MESSENGER_ITEM Item;
 //};
-//#define _MSG_MessengerSave					0x2705		//	Á¸¼­¹ö³» À¯ÀúÀÇ messengerÁ¤º¸º¯°æÀ» ¾Ë¸².(ZS->MSG)
+//#define _MSG_MessengerSave					0x2705		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ messengerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½.(ZS->MSG)
 //struct MSG_MessengerSave
 //{
 //		_MSG
@@ -6767,31 +6770,31 @@ struct MSG_MessengerRemovelist
 //	PARTY PACKET
 /************************************************************************************************/
 #define _MSG_REQParty                       0x2401
-struct   MSG_REQParty                       //	ÆÄÆ¼¿øÀ¸·Î °¡ÀÔÀ» ¿äÃ»ÇÔ
-{											//	¼­¹ö°¡ º¸³¾¶§´Â ÀüÃ¼ ¸®½ºÆ®
-	    _MSG;								//	C->S, S->C ¸Þ¼¼Áö
+struct   MSG_REQParty                       //	ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½
+{											//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½Æ®
+	    _MSG;								//	C->S, S->C ï¿½Þ¼ï¿½ï¿½ï¿½
          S_PARTY Leader;
 		 int   TargetID;
 };
 #define _MSG_CNFParty                       0x2402
-struct   MSG_CNFParty                       //	ÆÄÆ¼¿øÀ¸·Î °¡ÀÔÀ» Çã°¡ÇÔ.
-{                                           //	C->S ¸Þ¼¼Áö
+struct   MSG_CNFParty                       //	ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ã°¡ï¿½ï¿½.
+{                                           //	C->S ï¿½Þ¼ï¿½ï¿½ï¿½
 	    _MSG;
         int	TargetID;
 };
 #define _MSG_AddParty               		0x2403
-struct   MSG_AddParty              		//	¸â¹öÃß°¡½Ã, ÆÄÆ¼°¡ÀÔ½Ã ¸â¹öÁ¤º¸°¡ ³¯¾Æ°£´Ù.
+struct   MSG_AddParty              		//	ï¿½ï¿½ï¿½ï¿½ß°ï¿½ï¿½ï¿½, ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½Ô½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½.
 {                                   		//	S->C
 	    _MSG;
 		int nLeaderID;
 		S_PARTY Party;
 };
 #define _MSG_RemoveParty					0x2404
-struct   MSG_RemoveParty                 	//	¸â¹öÅ»Åð½Ã³ª ÆÄÆ¼ÇØÃ¼½Ã ¸â¹öÁ¤º¸°¡ ³¯¾Æ°£´Ù.
-{                                        	//	C->S ÀÚ½ÅÀÌ Å»Åð½Ã nID=ÀÚ½Å, 
-	    _MSG;								//	C->S ¸®´õ°¡ ¸â¹ö¹æÃâ½Ã nID=Å¸ÀÎ,
-		int nLeaderID;						//	C->S ¸®´õ°¡ ÆÄÆ¼ÇØÃ¼½Ã nID=MAX_USER(1000)
-		int nTargetID;						//	S->C ¸â¹ö Å»Åð³ª ¹æÃâ½Ã ¼­¹ö°¡ ³¯¸².
+struct   MSG_RemoveParty                 	//	ï¿½ï¿½ï¿½Å»ï¿½ï¿½Ã³ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½.
+{                                        	//	C->S ï¿½Ú½ï¿½ï¿½ï¿½ Å»ï¿½ï¿½ï¿½ nID=ï¿½Ú½ï¿½, 
+	    _MSG;								//	C->S ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ nID=Å¸ï¿½ï¿½,
+		int nLeaderID;						//	C->S ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½Ã¼ï¿½ï¿½ nID=MAX_USER(1000)
+		int nTargetID;						//	S->C ï¿½ï¿½ï¿½ Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 };
 #define	SCP_RESP_UPDATE_PARTY				0x2406
 typedef struct _S_SCP_RESP_UPDATE_PARTY
@@ -6802,7 +6805,7 @@ typedef struct _S_SCP_RESP_UPDATE_PARTY
 struct   MSG_SetParty
 {	_MSG
 	byte	byResult;
-	byte	byRootingMode;					//	ÆÄÆ¼¸®´õ°¡ ·çÆÃ¼¼ÆÃÀ» ¹Ù²Ü¼ö ÀÖ´Ù.(ROOTING_SHARE=0, ROOTING_PERSON=1)
+	byte	byRootingMode;					//	ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ü¼ï¿½ ï¿½Ö´ï¿½.(ROOTING_SHARE=0, ROOTING_PERSON=1)
 	short   snDummy;
 };
 
@@ -6813,17 +6816,17 @@ struct MSG_GMMode
 {
 		_MSG
 		int		nID;
-		BYTE	byResult;						//	0:¼º°ø, 1:½ÇÆÐ
-		BYTE	byGMMode;						//	bit flag(0x01:ÄÉ¸¯ÅÍºí·°, 0x02:Åõ¸í¸ðµå, 0x04:Ã¤ÆÃºí·°, ...)	
+		BYTE	byResult;						//	0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½
+		BYTE	byGMMode;						//	bit flag(0x01:ï¿½É¸ï¿½ï¿½Íºï¿½ï¿½ï¿½, 0x02:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0x04:Ã¤ï¿½Ãºï¿½ï¿½ï¿½, ...)	
 		short	snDummy;
-		char	szCharName[SZNAME_LENGTH];		//	bit flag Áß¸ñÁßº¹Àº | ¿¬»ê»ç¿ë.
+		char	szCharName[SZNAME_LENGTH];		//	bit flag ï¿½ß¸ï¿½ï¿½ßºï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 };
 #define _MSG_GMMode_Notify					0x2502
 struct MSG_GMMode_Notify
 {
 		_MSG
 		int		nID;
-		BYTE	byGMMode;						//	bit flag(0x01:ÄÉ¸¯ÅÍºí·°, 0x02:Åõ¸í¸ðµå, 0x04:Ã¤ÆÃºí·°, ...)	
+		BYTE	byGMMode;						//	bit flag(0x01:ï¿½É¸ï¿½ï¿½Íºï¿½ï¿½ï¿½, 0x02:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 0x04:Ã¤ï¿½Ãºï¿½ï¿½ï¿½, ...)	
 		BYTE	byDummy;
 		short	snDummy;
 };
@@ -6847,14 +6850,14 @@ struct MSG_GMMoveToPlayer
 #define _MSG_GMKickPlayer					0x2505
 struct MSG_GMKickPlayer
 {	_MSG;
-	int			nID;						// S->S ÀÏ¶§¸¸, Å¬¶óÀÌ¾ðÆ®´Â ¹«Á¶°Ç 0À» ³Ö´Â´Ù.
-	int			nResult;					// S->C ÀÏ¶§¸¸, 0ÀÌ¸é ¼º°ø, 1ÀÌ¸é Á¢¼ÓÁß ¾Æ´Ô.
+	int			nID;						// S->S ï¿½Ï¶ï¿½ï¿½ï¿½, Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½Ö´Â´ï¿½.
+	int			nResult;					// S->C ï¿½Ï¶ï¿½ï¿½ï¿½, 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½, 1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½.
 	char		szCharName[SZNAME_LENGTH];
 };
 #define _MSG_Warp							0x2506
 struct MSG_Warp
 {	_MSG;
-	int		nID;		//	È£ÃâÀÚ ID(È£ÃâÀÚ°¡ ¾øÀ» °æ¿ì 0)
+	int		nID;		//	È£ï¿½ï¿½ï¿½ï¿½ ID(È£ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 0)
 	byte	byResult;
 	byte	byType;
 	short	snDummy;
@@ -6879,8 +6882,8 @@ typedef struct _S_SCP_RESP_QUEST_HISTORY
 // CSP_QUEST_DIALOG : 0x1702
 typedef struct _S_CSP_QUEST_DIALOG
 {	_MSG;
-	short                                             snDialog;		// ´ëÈ­ ¹øÈ£
-	byte                                              byResult;     // ´ëÈ­ °á°ú
+	short                                             snDialog;		// ï¿½ï¿½È­ ï¿½ï¿½È£
+	byte                                              byResult;     // ï¿½ï¿½È­ ï¿½ï¿½ï¿½
 	byte											  byDummy;
 
 } S_CSP_QUEST_DIALOG, * PS_CSP_QUEST_DIALOG;
@@ -6889,7 +6892,7 @@ typedef struct _S_CSP_QUEST_DIALOG
 // SCP_QUEST_DIALOG : 0x9702
 typedef struct _S_SCP_QUEST_DIALOG
 {	_MSG;
-	short                                              wIndex;       // ´ëÈ­ ¹øÈ£
+	short                                              wIndex;       // ï¿½ï¿½È­ ï¿½ï¿½È£
     short											   snDummy;
 } S_SCP_QUEST_DIALOG, * PS_SCP_QUEST_DIALOG;
 
@@ -6897,16 +6900,16 @@ typedef struct _S_SCP_QUEST_DIALOG
 // CSP_QUEST_NOTIFY_LEVEL : 0x1703
 typedef struct _S_CSP_QUEST_NOTIFY_LEVEL
 {	_MSG;
-	SHORT											  snNPCIndex;	// NPC ÀÎµ¦½º ¹øÈ£
+	SHORT											  snNPCIndex;	// NPC ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½È£
 } S_CSP_QUEST_NOTIFY_LEVEL, * PS_CSP_QUEST_NOTIFY_LEVEL;
 
 
 // SCP_QUEST_NOTIFY_LEVEL : 0x9703
 typedef struct _S_SCP_QUEST_NOTIFY_LEVEL
 {	_MSG;
-	SHORT                                             snNPCIndex;   // NPC ÀÎµ¦½º ¹øÈ£
-	BYTE                                              byIndex;      // Äù½ºÆ® ÀÎµ¦½º ¹øÈ£
-	BYTE                                              byLevel;      // Äù½ºÆ® ÁøÇà »óÅÂ
+	SHORT                                             snNPCIndex;   // NPC ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	BYTE                                              byIndex;      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	BYTE                                              byLevel;      // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_QUEST_NOTIFY_LEVEL, * PS_SCP_QUEST_NOTIFY_LEVEL;
 
@@ -6921,8 +6924,8 @@ typedef struct _S_CSP_MONSTER_DISAPPEAR
 // SCP_MONSTER_DISAPPEAR : 0x9801
 typedef struct _S_SCP_MONSTER_DISAPPEAR
 {
-	DWORD                                             dwKeyID;      // MonsterÀÇ KeyID
-	BYTE                                              byType;       // Monster°¡ »ç¶óÁö´Â À¯Çü
+	DWORD                                             dwKeyID;      // Monsterï¿½ï¿½ KeyID
+	BYTE                                              byType;       // Monsterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_MONSTER_DISAPPEAR, * PS_SCP_MONSTER_DISAPPEAR;
 
@@ -6937,8 +6940,8 @@ typedef struct _S_CSP_CHAR_STATUS
 // SCP_CHAR_STATUS : 0x9802
 typedef struct _S_SCP_CHAR_STATUS
 {
-	DWORD                                             dwKeyID;      // Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwStatus;     // Ä³¸¯ÅÍÀÇ »óÅÂ Á¤º¸
+	DWORD                                             dwKeyID;      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwStatus;     // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_CHAR_STATUS, * PS_SCP_CHAR_STATUS;
 
@@ -6953,9 +6956,9 @@ typedef struct _S_CSP_CHAR_MONSTER_STATUS_BROADCAST
 // SCP_CHAR_MONSTER_STATUS_BROADCAST : 0x9803
 typedef struct _S_SCP_CHAR_MONSTER_STATUS_BROADCAST
 {
-	DWORD                                             dwKeyID;      // Ä³¸¯ÅÍÀÇ KeyID
-	BYTE                                              byAct;        // »óÅÂ
-	DWORD                                             dwStatus;     // »óÅÂ
+	DWORD                                             dwKeyID;      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              byAct;        // ï¿½ï¿½ï¿½ï¿½
+	DWORD                                             dwStatus;     // ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_CHAR_MONSTER_STATUS_BROADCAST, * PS_SCP_CHAR_MONSTER_STATUS_BROADCAST;
 
@@ -6970,8 +6973,8 @@ typedef struct _S_CSP_CHAR_DEATH
 // SCP_CHAR_DEATH : 0x9805
 typedef struct _S_SCP_CHAR_DEATH
 {
-	short                                             snLossPrana;  // ¼Ò½ÇµÈ ÇÁ¶ó³ªÀÇ ¾ç
-	BYTE                                              byCount;      // ¼Ò½ÇµÈ ¾ÆÀÌÅÛÀÇ ¼ö
+	short                                             snLossPrana;  // ï¿½Ò½Çµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	BYTE                                              byCount;      // ï¿½Ò½Çµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_CHAR_DEATH, * PS_SCP_CHAR_DEATH;
 
@@ -6986,7 +6989,7 @@ typedef struct _S_CSP_CHAR_MONSTER_DEATH_BROADCAST
 // SCP_CHAR_MONSTER_DEATH_BROADCAST : 0x9806
 typedef struct _S_SCP_CHAR_MONSTER_DEATH_BROADCAST
 {
-	DWORD                                             dwKeyID;      // Á×Àº Ä³¸¯ÅÍ ¶Ç´Â MonsterÀÇ KeyID
+	DWORD                                             dwKeyID;      // ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ Monsterï¿½ï¿½ KeyID
 
 } S_SCP_CHAR_MONSTER_DEATH_BROADCAST, * PS_SCP_CHAR_MONSTER_DEATH_BROADCAST;
 
@@ -7001,9 +7004,9 @@ typedef struct _S_CSP_CHAR_HP_RECOVERY
 // SCP_CHAR_HP_RECOVERY : 0x9811
 typedef struct _S_SCP_CHAR_HP_RECOVERY
 {
-	int                                               nCurHP;       // È¸º¹µÈ ÈÄÀÇ ÇöÀç HP
-	short                                             snHPRecoveryRate;// Ä³¸¯ÅÍÀÇ HP È¸º¹À²
-	int                                               nPrana;       // ÃÑ ÇÁ¶ó³ªÀÇ ¾ç
+	int                                               nCurHP;       // È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
+	short                                             snHPRecoveryRate;// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HP È¸ï¿½ï¿½ï¿½ï¿½
+	int                                               nPrana;       // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_CHAR_HP_RECOVERY, * PS_SCP_CHAR_HP_RECOVERY;
 
@@ -7018,8 +7021,8 @@ typedef struct _S_CSP_MONSTER_HP_RECOVERY
 // SCP_MONSTER_HP_RECOVERY : 0x9812
 typedef struct _S_SCP_MONSTER_HP_RECOVERY
 {
-	int                                               nCurHP;       // È¸º¹µÈ ÈÄÀÇ ÇöÀç HP
-	short                                             snStress;     // Monster ½ºÆ®·¹½º
+	int                                               nCurHP;       // È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
+	short                                             snStress;     // Monster ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_MONSTER_HP_RECOVERY, * PS_SCP_MONSTER_HP_RECOVERY;
 
@@ -7034,8 +7037,8 @@ typedef struct _S_CSP_CHAR_CAST_PROMOTE
 // SCP_CHAR_CAST_PROMOTE : 0x9821
 typedef struct _S_SCP_CHAR_CAST_PROMOTE
 {
-	BYTE                                              byCastClass;  // »ó½ÂµÈ ÈÄÀÇ Ä«½ºÆ® µî±Þ
-	BYTE                                              byCastGrade;  // »ó½ÂµÈ ÈÄÀÇ Ä«½ºÆ® °è±Þ
+	BYTE                                              byCastClass;  // ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
+	BYTE                                              byCastGrade;  // ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 
 } S_SCP_CHAR_CAST_PROMOTE, * PS_SCP_CHAR_CAST_PROMOTE;
 
@@ -7050,9 +7053,9 @@ typedef struct _S_CSP_CHAR_CAST_PROMOTE_BROADCAST
 // SCP_CHAR_CAST_PROMOTE_BROADCAST : 0x9822
 typedef struct _S_SCP_CHAR_CAST_PROMOTE_BROADCAST
 {
-	char                                              	szName[SZNAME_LENGTH];   // Ä³¸¯ÅÍÀÇ ÀÌ¸§
-	BYTE                                              	byCastClass;  // »ó½ÂµÈ ÈÄÀÇ Ä«½ºÆ® µî±Þ
-	BYTE                                              	byCastGrade;  // »ó½ÂµÈ ÈÄÀÇ Ä«½ºÆ® °è±Þ
+	char                                              	szName[SZNAME_LENGTH];   // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE                                              	byCastClass;  // ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
+	BYTE                                              	byCastGrade;  // ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 	short												snDummy;
 
 } S_SCP_CHAR_CAST_PROMOTE_BROADCAST, * PS_SCP_CHAR_CAST_PROMOTE_BROADCAST;
@@ -7074,7 +7077,7 @@ typedef struct _S_SCP_CHAR_PING
 // CSP_REQ_CHAR_LOCATION : 0x1832
 typedef struct _S_CSP_REQ_CHAR_LOCATION
 {
-	char                                              szName[SZNAME_LENGTH];   // Ä³¸¯ÅÍÀÇ ÀÌ¸§
+	char                                              szName[SZNAME_LENGTH];   // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_CSP_REQ_CHAR_LOCATION, * PS_CSP_REQ_CHAR_LOCATION;
 
@@ -7098,35 +7101,35 @@ typedef struct _S_CSP_CHAR_PARAMS_CHANGE
 // SCP_CHAR_PARAMS_CHANGE : 0x9911
 typedef struct _S_SCP_CHAR_PARAMS_CHANGE
 {
-	int                                               nPrana;       // ÇöÀç ÇÁ¶ó³ª
-	short                                             snChakraMuscle;// ±ÙÀ°ÀÇ Â÷Å©¶ó
-	short                                             snChakraNerve;// ½Å°æÀÇ Â÷Å©¶ó
-	short                                             snChakraHeart;// ½ÉÀåÀÇ Â÷Å©¶ó
-	short                                             snChakraSoul; // Á¤½ÅÀÇ Â÷Å©¶ó
-	short                                             snPureChakraMuscle;// ¼ø¼ö ±ÙÀ°ÀÇ Â÷Å©¶ó
-	short                                             snPureChakraNerve;// ¼ø¼ö ½Å°æÀÇ Â÷Å©¶ó
-	short                                             snPureChakraHeart;// ¼ø¼ö ½ÉÀåÀÇ Â÷Å©¶ó
-	short                                             snPureChakraSoul;// ¼ø¼ö Á¤½ÅÀÇ Â÷Å©¶ó
-	short                                             snPhysicalMinDamage;// ¹°¸® ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snPhysicalMaxDamage;// ¹°¸® ÃÖ´ë µ¥¹ÌÁö
-	short                                             snMagicMinDamage;// ¸¶¹ý ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snMagicMaxDamage;// ¸¶¹ý ÃÖ´ë µ¥¹ÌÁö
-	short                                             snFireMinDamage;// ºÒ ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snFireMaxDamage;// ºÒ ÃÖ´ë µ¥¹ÌÁö
-	short                                             snColdMinDamage;// ÃßÀ§ ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snColdMaxDamage;// ÃßÀ§ ÃÖ´ë µ¥¹ÌÁö
-	short                                             snPoisonMinDamage;// µ¶ ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snPoisonMaxDamage;// µ¶ ÃÖ´ë µ¥¹ÌÁö
-	short                                             snAcidMinDamage;// »ê ÃÖ¼Ò µ¥¹ÌÁö
-	short                                             snAcidMaxDamage;// »ê ÃÖ´ë µ¥¹ÌÁö
-	short                                             snArmorIntensity;// °©¿ÊÀÇ °­µµ-¹æ¾î·Â
-	short                                             snAttackSuccRate;// °ø°Ý ¼º°ø·ü
-	short                                             snAvoidanceRate;// È¸ÇÇÀ²
-	int                                               nMaxHP;       // Ä³¸¯ÅÍÀÇ ÃÖ´ë HP
-	short                                             snFireResist; // ºÒ ÀúÇ×·Â
-	short                                             snColdResist; // ÃßÀ§ ÀúÇ×·Â
-	short                                             snPoisonResist;// µ¶ ÀúÇ×·Â
-	short                                             snAcidResist; // »ê ÀúÇ×·Â
+	int                                               nPrana;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snChakraMuscle;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snChakraNerve;// ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snChakraHeart;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snChakraSoul; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snPureChakraMuscle;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snPureChakraNerve;// ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snPureChakraHeart;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snPureChakraSoul;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
+	short                                             snPhysicalMinDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snPhysicalMaxDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snMagicMinDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snMagicMaxDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snFireMinDamage;// ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snFireMaxDamage;// ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snColdMinDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snColdMaxDamage;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snPoisonMinDamage;// ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snPoisonMaxDamage;// ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snAcidMinDamage;// ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snAcidMaxDamage;// ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snArmorIntensity;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½
+	short                                             snAttackSuccRate;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	short                                             snAvoidanceRate;// È¸ï¿½ï¿½ï¿½ï¿½
+	int                                               nMaxHP;       // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ HP
+	short                                             snFireResist; // ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½
+	short                                             snColdResist; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½
+	short                                             snPoisonResist;// ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½
+	short                                             snAcidResist; // ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½
 
 } S_SCP_CHAR_PARAMS_CHANGE, * PS_SCP_CHAR_PARAMS_CHANGE;
 
@@ -7135,7 +7138,7 @@ typedef struct _S_SCP_CHAR_PARAMS_CHANGE
 typedef struct _S_CSP_REQ_CHAKRA_RISING
 {
 	DWORD                                             dwNpcKeyID;   // NPC KeyID
-	BYTE                                              byReqChakraPart;// Â÷Å©¶ó »ó½Â ¿äÃ» ºÎÀ§
+	BYTE                                              byReqChakraPart;// ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_CHAKRA_RISING, * PS_CSP_REQ_CHAKRA_RISING;
 
@@ -7143,7 +7146,7 @@ typedef struct _S_CSP_REQ_CHAKRA_RISING
 // SCP_RESP_CHAKRA_RISING : 0x9921
 typedef struct _S_SCP_RESP_CHAKRA_RISING
 {
-	BYTE                                              byResult;     // °á°ú
+	BYTE                                              byResult;     // ï¿½ï¿½ï¿½
 	int                                               nChakraPoint; 
 	short                                             snChakraMuscle;
 	short                                             snChakraNerve;
@@ -7165,10 +7168,10 @@ typedef struct _S_CSP_REQ_BRAHMAN_RISING
 // SCP_RESP_BRAHMAN_RISING : 0x9922
 typedef struct _S_SCP_RESP_BRAHMAN_RISING
 {
-	BYTE                                              byResult;     // °á°ú
-	int                                               nRisingBrahman;// »ó½Â ÈÄ ÇöÀç ºê¶ó¸¸ Æ÷ÀÎÆ® °ª
-	BYTE                                              byCastClass;  // ºê¶ó¸¸ Æ÷ÀÎÆ® »ó½Â ÈÄ Ä«½ºÆ® µî±Þ
-	BYTE                                              byCastGrade;  // ºê¶ó¸¸ Æ÷ÀÎÆ® »ó½Â ÈÄ Ä«½ºÆ® °è±Þ
+	BYTE                                              byResult;     // ï¿½ï¿½ï¿½
+	int                                               nRisingBrahman;// ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
+	BYTE                                              byCastClass;  // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
+	BYTE                                              byCastGrade;  // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 	int                                               nPrana;       
 
 } S_SCP_RESP_BRAHMAN_RISING, * PS_SCP_RESP_BRAHMAN_RISING;
@@ -7177,7 +7180,7 @@ typedef struct _S_SCP_RESP_BRAHMAN_RISING
 // CSP_REQ_INCREASE_INVENTORY_SLOT : 0x1931
 typedef struct _S_CSP_REQ_INCREASE_INVENTORY_SLOT
 {
-	BYTE                                              byInventoryType;// ÀÎº¥Åä¸® Á¾·ù
+	BYTE                                              byInventoryType;// ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_INCREASE_INVENTORY_SLOT, * PS_CSP_REQ_INCREASE_INVENTORY_SLOT;
 
@@ -7185,7 +7188,7 @@ typedef struct _S_CSP_REQ_INCREASE_INVENTORY_SLOT
 // SCP_RESP_INCREASE_INVENTORY_SLOT : 0x9931
 typedef struct _S_SCP_RESP_INCREASE_INVENTORY_SLOT
 {
-	BYTE                                              byResult;     // ÀÎº¥Åä¸® ½½·Ô Áõ°¡ ¿äÃ» °á°ú
+	BYTE                                              byResult;     // ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½
 	BYTE                                              byCount;      // Inventory Expand Info
 
 } S_SCP_RESP_INCREASE_INVENTORY_SLOT, * PS_SCP_RESP_INCREASE_INVENTORY_SLOT;
@@ -7194,9 +7197,9 @@ typedef struct _S_SCP_RESP_INCREASE_INVENTORY_SLOT
 // CSP_REQ_DECREASE_INVENTORY_SLOT : 0x1932
 typedef struct _S_CSP_REQ_DECREASE_INVENTORY_SLOT
 {
-	BYTE                                              byInventoryType;// ÀÎº¥Åä¸® Á¾·ù
-	BYTE                                              byX;          // Bag Item µé¾î°¥ ÁÂÇ¥ X
-	BYTE                                              byZ;          // Bag Item µé¾î°¥ ÁÂÇ¥ Z
+	BYTE                                              byInventoryType;// ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byX;          // Bag Item ï¿½ï¿½î°¥ ï¿½ï¿½Ç¥ X
+	BYTE                                              byZ;          // Bag Item ï¿½ï¿½î°¥ ï¿½ï¿½Ç¥ Z
 
 } S_CSP_REQ_DECREASE_INVENTORY_SLOT, * PS_CSP_REQ_DECREASE_INVENTORY_SLOT;
 
@@ -7204,7 +7207,7 @@ typedef struct _S_CSP_REQ_DECREASE_INVENTORY_SLOT
 // SCP_RESP_DECREASE_INVENTORY_SLOT : 0x9932
 typedef struct _S_SCP_RESP_DECREASE_INVENTORY_SLOT
 {
-	BYTE                                              byResult;     // °á°ú
+	BYTE                                              byResult;     // ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_DECREASE_INVENTORY_SLOT, * PS_SCP_RESP_DECREASE_INVENTORY_SLOT;
 
@@ -7220,9 +7223,9 @@ typedef struct _S_CSP_REQ_NPC_POINT_UP
 // SCP_RESP_NPC_POINT_UP : 0x9941
 typedef struct _S_SCP_RESP_NPC_POINT_UP
 {
-	BYTE                                              byResult;     // NPC Ä£Àýµµ »ó½Â ¿äÃ» °á°ú
-	DWORD                                             dwGroup;      // NPC °èÅë ¹øÈ£
-	DWORD                                             dwPoint;      // »ó½Â ÈÄ º¯°æµÈ Æ÷ÀÎÆ® °ª
+	BYTE                                              byResult;     // NPC Ä£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½
+	DWORD                                             dwGroup;      // NPC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	DWORD                                             dwPoint;      // ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
 
 } S_SCP_RESP_NPC_POINT_UP, * PS_SCP_RESP_NPC_POINT_UP;
 
@@ -7237,8 +7240,8 @@ typedef struct _S_CSP_REQ_CHANGE_CKAKRA_TO_PRANA
 // SCP_RESP_CHANGE_CKAKRA_TO_PRANA : 0x9951
 typedef struct _S_SCP_RESP_CHANGE_CKAKRA_TO_PRANA
 {
-	BYTE                                              byResult;     // NPC Ä£Àýµµ »ó½Â ¿äÃ» °á°ú
-	int                                               nPrana;       // ÃÑÇÁ¶ó³ªÀÇ ¾ç
+	BYTE                                              byResult;     // NPC Ä£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½
+	int                                               nPrana;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_RESP_CHANGE_CKAKRA_TO_PRANA, * PS_SCP_RESP_CHANGE_CKAKRA_TO_PRANA;
 
@@ -7253,8 +7256,8 @@ typedef struct _S_CSP_OTHER_CHAR_PARAM_BROADCAST
 // SCP_OTHER_CHAR_PARAM_BROADCAST : 0x9952
 typedef struct _S_SCP_OTHER_CHAR_PARAM_BROADCAST
 {
-	DWORD                                             dwKeyID;      // ÄÉ¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwGuildMark;  // ±æµå¸¶Å©ÀÎµ¦½º
+	DWORD                                             dwKeyID;      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwGuildMark;  // ï¿½ï¿½å¸¶Å©ï¿½Îµï¿½ï¿½ï¿½
 
 } S_SCP_OTHER_CHAR_PARAM_BROADCAST, * PS_SCP_OTHER_CHAR_PARAM_BROADCAST;
 
@@ -7276,8 +7279,8 @@ typedef struct _S_SCP_OTHER_CHAR_PARAM_BROADCAST
 // CSP_REQ_SKILL_REGIST : 0x2001
 typedef struct _S_CSP_REQ_SKILL_REGIST
 {
-	DWORD                                             dwIndex;      // µî·ÏÇÒ ½ºÅ³ÀÇ Index
-	BYTE                                              byType;       // SKILLÀÇ Á¾·ù
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	BYTE                                              byType;       // SKILLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_SKILL_REGIST, * PS_CSP_REQ_SKILL_REGIST;
 
@@ -7300,8 +7303,8 @@ typedef struct _S_CSP_SKILL_REGIST
 // SCP_SKILL_REGIST : 0xA002
 typedef struct _S_SCP_SKILL_REGIST
 {
-	DWORD                                             dwIndex;      // ÀÚµ¿ µî·ÏµÈ ½ºÅ³ÀÇ Index
-	BYTE                                              byType;       // SKILLÀÇ Á¾·ù
+	DWORD                                             dwIndex;      // ï¿½Úµï¿½ ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	BYTE                                              byType;       // SKILLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_SKILL_REGIST, * PS_SCP_SKILL_REGIST;
 
@@ -7309,9 +7312,9 @@ typedef struct _S_SCP_SKILL_REGIST
 // CSP_REQ_SKILL_SELECT : 0x2003
 typedef struct _S_CSP_REQ_SKILL_SELECT
 {
-	BYTE                                              bySelect;     // SKILLÀÇ ¼±ÅÃ/ÇØÁ¦
-	BYTE                                              byHand;       // SKILL ¿À¸¥ÂÊ/¿ÞÂÊ ±¸ºÐ
-	DWORD                                             dwIndex;      // ¼±ÅÃ/ÇØÁ¦ ½ºÅ³ Index
+	BYTE                                              bySelect;     // SKILLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byHand;       // SKILL ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ Index
 
 } S_CSP_REQ_SKILL_SELECT, * PS_CSP_REQ_SKILL_SELECT;
 
@@ -7319,7 +7322,7 @@ typedef struct _S_CSP_REQ_SKILL_SELECT
 // SCP_RESP_SKILL_SELECT : 0xA003
 typedef struct _S_SCP_RESP_SKILL_SELECT
 {
-	BYTE                                              byResult;     // SKILL ¼±ÅÃ/ÇØÁ¦ °á°ú
+	BYTE                                              byResult;     // SKILL ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_SKILL_SELECT, * PS_SCP_RESP_SKILL_SELECT;
 
@@ -7334,11 +7337,11 @@ typedef struct _S_CSP_REQ_SKILL_SELECT_BROADCAST
 // SCP_RESP_SKILL_SELECT_BROADCAST : 0xA004
 typedef struct _S_SCP_RESP_SKILL_SELECT_BROADCAST
 {
-	DWORD                                             dwKeyID;      // ÄÉ¸¯ÅÍÀÇ KeyID
-	BYTE                                              bySelect;     // SKILLÀÇ ¼±ÅÃ/ÇØÁ¦
-	BYTE                                              byHand;       // SKILL ¿À¸¥ÂÊ/¿ÞÂÊ ±¸ºÐ
-	DWORD                                             dwIndex;      // ¼±ÅÃ/ÇØÁ¦ ½ºÅ³ Index
-	BYTE                                              byLevel;      // ½ºÅ³ ·¹º§
+	DWORD                                             dwKeyID;      // ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	BYTE                                              bySelect;     // SKILLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byHand;       // SKILL ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ Index
+	BYTE                                              byLevel;      // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_SKILL_SELECT_BROADCAST, * PS_SCP_RESP_SKILL_SELECT_BROADCAST;
 
@@ -7346,12 +7349,12 @@ typedef struct _S_SCP_RESP_SKILL_SELECT_BROADCAST
 // CSP_REQ_SKILL_USE2_CHAR : 0x2011
 typedef struct _S_CSP_REQ_SKILL_USE2_CHAR
 {
-	BYTE                                              byType;       // ´ë»ó Type
-	DWORD                                             dwTargetKeyID;// °ø°ÝÇÒ Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwIndex;      // °ø°Ý¿¡ »ç¿ëÇÒ ½ºÅ³ÀÇ Index
-	short                                             snX;          // ¸Ê X ÁÂÇ¥
-	short                                             snZ;          // ¸Ê Z ÁÂÇ¥
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
+	DWORD                                             dwTargetKeyID;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	short                                             snX;          // ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
 
 } S_CSP_REQ_SKILL_USE2_CHAR, * PS_CSP_REQ_SKILL_USE2_CHAR;
 
@@ -7360,7 +7363,7 @@ typedef struct _S_CSP_REQ_SKILL_USE2_CHAR
 typedef struct _S_SCP_RESP_SKILL_USE2_CHAR
 {
 	BYTE                                              byResult;     // Result Field
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
 
 } S_SCP_RESP_SKILL_USE2_CHAR, * PS_SCP_RESP_SKILL_USE2_CHAR;
 
@@ -7376,12 +7379,12 @@ typedef struct _S_CSP_SKILL_READY_CHAR_BROADCAST
 typedef struct _S_SCP_SKILL_READY_CHAR_BROADCAST
 {
 	BYTE                                              byResult;     // Result Field
-	BYTE                                              byType;       // ´ë»ó Type
-	DWORD                                             dwKeyID;      // ½ºÅ³À» »ç¿ëÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwTargetKeyID;// ½ºÅ³ °ø°ÝÀ» ´çÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwIndex;      // °ø°Ý¿¡ »ç¿ëÇÒ ½ºÅ³ÀÇ Index
-	short                                             snX;          // ¸Ê X ÁÂÇ¥
-	short                                             snZ;          // ¸Ê Z ÁÂÇ¥
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
+	DWORD                                             dwKeyID;      // ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwTargetKeyID;// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	short                                             snX;          // ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ Z ï¿½ï¿½Ç¥
 
 } S_SCP_SKILL_READY_CHAR_BROADCAST, * PS_SCP_SKILL_READY_CHAR_BROADCAST;
 
@@ -7389,13 +7392,13 @@ typedef struct _S_SCP_SKILL_READY_CHAR_BROADCAST
 // CSP_REQ_SKILL_ATK_CHAR : 0x2013
 typedef struct _S_CSP_REQ_SKILL_ATK_CHAR
 {
-	BYTE                                              byType;       // ´ë»ó Type
-	DWORD                                             dwTargetKeyID;// °ø°ÝÇÒ Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwIndex;      // °ø°Ý¿¡ »ç¿ëÇÒ ½ºÅ³ÀÇ Index
-	short                                             snX;          // ¸Ê X ÁÂÇ¥
-	short                                             snZ;          // ¸Ê Z ÁÂÇ¥
-	short                                             snDegree;     // °ø°ÝÀÚ¸¦ Áß½ÉÀ¸·Î ÇÑ ¹æ¾îÀÚÀÇ °¢µµ
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
+	DWORD                                             dwTargetKeyID;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	short                                             snX;          // ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	short                                             snDegree;     // ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
 
 } S_CSP_REQ_SKILL_ATK_CHAR, * PS_CSP_REQ_SKILL_ATK_CHAR;
 
@@ -7404,12 +7407,12 @@ typedef struct _S_CSP_REQ_SKILL_ATK_CHAR
 typedef struct _S_SCP_RESP_SKILL_ATK_CHAR
 {
 	BYTE                                              byResult;     // Result Field
-	BYTE                                              byCritical;   // Å©¸®Æ¼ÄÃ È÷Æ® ÆÇÁ¤ ¿©ºÎ
-	short                                             snCharX;      // ¹æ¾îÀÚ X ÁÂÇ¥
-	short                                             snCharZ;      // ¹æ¾îÀÚ Z ÁÂÇ¥
-	BYTE                                              byClientCount;// Client¿¡¼­ »ç¿ëÇÒ Ä«¿îÆ® °ª
-	int                                               nReduceHP;    // µ¥¹ÌÁö°ª
-	int                                               nCurHP;       // °ø°Ý ´çÇÏ´Â Ä³¸¯ÅÍ/MonsterÀÇ ÇöÀç HP
+	BYTE                                              byCritical;   // Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snCharX;      // ï¿½ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snCharZ;      // ï¿½ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	BYTE                                              byClientCount;// Clientï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½
+	int                                               nReduceHP;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int                                               nCurHP;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½/Monsterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
 
 } S_SCP_RESP_SKILL_ATK_CHAR, * PS_SCP_RESP_SKILL_ATK_CHAR;
 
@@ -7424,20 +7427,20 @@ typedef struct _S_CSP_SKILL_ATK_CHAR_BROADCAST
 // SCP_SKILL_ATK_CHAR_BROADCAST : 0xA014
 typedef struct _S_SCP_SKILL_ATK_CHAR_BROADCAST
 {
-	BYTE                                              byType;       // ´ë»ó Type
+	BYTE                                              byType;       // ï¿½ï¿½ï¿½ Type
 	BYTE                                              byResult;     // Result Field
-	DWORD                                             dwKeyID;      // ½ºÅ³À» »ç¿ëÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwTargetKeyID;//  ½ºÅ³ °ø°ÝÀ» ´çÇÏ´Â Ä³¸¯ÅÍÀÇ KeyID
-	DWORD                                             dwIndex;      // °ø°Ý¿¡ »ç¿ëÇÒ ½ºÅ³ÀÇ Index
-	short                                             snX;          // ¸Ê X ÁÂÇ¥
-	short                                             snZ;          // ¸Ê Z ÁÂÇ¥
-	short                                             snCharX;      // ¹æ¾îÀÚ X ÁÂÇ¥
-	short                                             snCharZ;      // ¹æ¾îÀÚ Z ÁÂÇ¥
-	int                                               nReduceHP;    // µ¥¹ÌÁö°ª
-	int                                               nCurHP;       // °ø°Ý ´çÇÏ´Â Ä³¸¯ÅÍÀÇ ÇöÀç HP
-	BYTE                                              byCritical;   // Å©¸®Æ¼ÄÃ È÷Æ® ÆÇÁ¤ ¿©ºÎ
-	short                                             snCurX;       // °ø°ÝÀÚÀÇ ÇöÀç X ÁÂÇ¥
-	short                                             snCurZ;       // °ø°ÝÀÚÀÇ ÇöÀç Z ÁÂÇ¥
+	DWORD                                             dwKeyID;      // ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwTargetKeyID;//  ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KeyID
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
+	short                                             snX;          // ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snZ;          // ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	short                                             snCharX;      // ï¿½ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snCharZ;      // ï¿½ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
+	int                                               nReduceHP;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int                                               nCurHP;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HP
+	BYTE                                              byCritical;   // Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	short                                             snCurX;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X ï¿½ï¿½Ç¥
+	short                                             snCurZ;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Z ï¿½ï¿½Ç¥
 
 } S_SCP_SKILL_ATK_CHAR_BROADCAST, * PS_SCP_SKILL_ATK_CHAR_BROADCAST;
 
@@ -7445,7 +7448,7 @@ typedef struct _S_SCP_SKILL_ATK_CHAR_BROADCAST
 // CSP_REQ_SKILL_LEVEL_UP : 0x2021
 typedef struct _S_CSP_REQ_SKILL_LEVEL_UP
 {
-	DWORD                                             dwIndex;      // Level-UpÀ» ¿äÃ»ÇÒ ½ºÅ³ÀÇ Index
+	DWORD                                             dwIndex;      // Level-Upï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ Index
 
 } S_CSP_REQ_SKILL_LEVEL_UP, * PS_CSP_REQ_SKILL_LEVEL_UP;
 
@@ -7453,13 +7456,13 @@ typedef struct _S_CSP_REQ_SKILL_LEVEL_UP
 // SCP_RESP_SKILL_LEVEL_UP : 0xA021
 typedef struct _S_SCP_RESP_SKILL_LEVEL_UP
 {
-	BYTE                                              byResult;     // Level-Up °á°ú
-	BYTE                                              byLevel;      // ½ºÅ³ÀÇ Level
-	int                                               nPrana;       // ÇöÀç ÇÁ¶ó³ªÀÇ ¾ç
-	short                                             snMovingSpeed;// ¾ÆÀÌÅÛÀÇ ÀÌµ¿¼Óµµ
-	short                                             snAttackSpeed;// ¾ÆÀÌÅÛÀÇ °ø°Ý¼Óµµ
-	short                                             snCastingSpeed;// ¾ÆÀÌÅÛÀÇ ÄÉ½ºÆÃ¼Óµµ
-	BYTE                                              byShootRange; // ¹ß»çÃ¼ÀÇ »çÁ¤°Å¸®
+	BYTE                                              byResult;     // Level-Up ï¿½ï¿½ï¿½
+	BYTE                                              byLevel;      // ï¿½ï¿½Å³ï¿½ï¿½ Level
+	int                                               nPrana;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	short                                             snMovingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½
+	short                                             snAttackSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½
+	short                                             snCastingSpeed;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É½ï¿½ï¿½Ã¼Óµï¿½
+	BYTE                                              byShootRange; // ï¿½ß»ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
 
 } S_SCP_RESP_SKILL_LEVEL_UP, * PS_SCP_RESP_SKILL_LEVEL_UP;
 
@@ -7477,12 +7480,12 @@ typedef struct _S_CSP_REQ_SHOP_SKILL_LIST
 typedef struct _S_SCP_RESP_SHOP_SKILL_LIST
 {
 	BYTE                                              byResult;     // Result Field
-	BYTE                                              byCount;      // ½Àµæ °¡´ÉÇÑ ½ºÅ³ÀÇ ¼ö
+	BYTE                                              byCount;      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_RESP_SHOP_SKILL_LIST, * PS_SCP_RESP_SHOP_SKILL_LIST;
 
-#define CSP_REQ_SHOP_ITEM_LIST                            0x2101      // Á¦ÀÛ °¡´ÉÇÑ ¾ÆÀÌÅÛ List¸¦ ¿äÃ»
-#define SCP_RESP_SHOP_ITEM_LIST                           0xA101      // Á¦ÀÛ °¡´ÉÇÑ ¾ÆÀÌÅÛ List ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_SHOP_ITEM_LIST                            0x2101      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Listï¿½ï¿½ ï¿½ï¿½Ã»
+#define SCP_RESP_SHOP_ITEM_LIST                           0xA101      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ List ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_SHOP_ITEM_LIST
 {
 	DWORD                                             dwIndex;      
@@ -7492,44 +7495,44 @@ typedef struct _S_CSP_REQ_SHOP_ITEM_LIST
 typedef struct _S_SCP_RESP_SHOP_ITEM_LIST
 {
 	BYTE                                              byResult;     // Result Field
-	DWORD                                             dwMakingIndex;// Á¦ÀÛÁßÀÎ ¾ÆÀÌÅÛ Index
-	DWORD                                             dwRemainTime; // Á¦ÀÛÁßÀÎ ¾ÆÀÌÅÛÀÇ ³²Àº Á¦ÀÛ½Ã°£
-	BYTE                                              byCount;      // Á¦ÀÛ °¡´ÉÇÑ ¾ÆÀÌÅÛÀÇ ¼ö
+	DWORD                                             dwMakingIndex;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	DWORD                                             dwRemainTime; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û½Ã°ï¿½
+	BYTE                                              byCount;      // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_RESP_SHOP_ITEM_LIST, * PS_SCP_RESP_SHOP_ITEM_LIST;
 
-#define CSP_REQ_ITEM_BUY								  0x2102      // ¾ÆÀÌÅÛÀ» »ê´Ù
-#define SCP_RESP_ITEM_BUY	                              0xA102      // ¾ÆÀÌÅÛ ±¸ÀÔ¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_ITEM_BUY								  0x2102      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+#define SCP_RESP_ITEM_BUY	                              0xA102      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_ITEM_BUY
 {	_MSG;
-	short											  snNPCIndex;	// ¾ÆÀÌÅÛ ±¸ÀÔÇÒ »óÀÎ index
-	short                                             snItemIndex;  // ±¸ÀÔÇÒ ¾ÆÀÌÅÛ Index
-	short											  snItemCount;	// ±¸ÀÔÇÒ ¾ÆÀÌÅÛ °³¼ö
+	short											  snNPCIndex;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ index
+	short                                             snItemIndex;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Index
+	short											  snItemCount;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	short											  snDummy;
 } S_CSP_REQ_ITEM_BUY, * PS_CSP_REQ_ITEM_BUY;
 typedef struct _S_SCP_RESP_ITEM_BUY
 {	_MSG;
-	BYTE            byResult;		// 0-¼º°ø, 1-½ÇÆÐ
+	BYTE            byResult;		// 0-ï¿½ï¿½ï¿½ï¿½, 1-ï¿½ï¿½ï¿½ï¿½
 	BYTE			byDummy;
-	short			snItemIndex;	// ¾ÆÀÌÅÛ »óÁ¡ÀÎµ¦½º
-	int				nMoney;			// »óÁ¡ ÀÌ¿ë ÈÄ º¯°æµÈ µ·
+	short			snItemIndex;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½
+	int				nMoney;			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 } S_SCP_RESP_ITEM_BUY, * PS_SCP_RESP_ITEM_BUY;
 
-#define CSP_REQ_ITEM_SELL                               0x2104      // ¾ÆÀÌÅÛ ¼ö¸®¸¦ ¿äÃ»
-#define SCP_RESP_ITEM_SELL                              0xA104      // ¾ÆÀÌÅÛ ¼ö¸®¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_ITEM_SELL                               0x2104      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define SCP_RESP_ITEM_SELL                              0xA104      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_ITEM_SELL
 {	_MSG;
-	short	snNPCIndex;	// ¾ÆÀÌÅÛ ÆÇ¸ÅÇÒ »óÀÎ index
-	BYTE    byPlace;	// Ã¢°í, ÀÎº¥, ÀåÂø
-	BYTE	byIndex;	// ÆÇ¸ÅÇÒ ¾ÆÀÌÅÛ À§Ä¡ Index											  
+	short	snNPCIndex;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ index
+	BYTE    byPlace;	// Ã¢ï¿½ï¿½, ï¿½Îºï¿½, ï¿½ï¿½ï¿½ï¿½
+	BYTE	byIndex;	// ï¿½Ç¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ Index											  
 } S_CSP_REQ_ITEM_SELL, * PS_CSP_REQ_ITEM_SELL;
 typedef struct _S_SCP_RESP_ITEM_SELL
 {   _MSG;
-	BYTE    byResult;		// 0-¼º°ø, 1-½ÇÆÐ                                          
-	BYTE	byPlace;		// Ã¢°í, ÀÎº¥, ÀåÂø										  
-	BYTE	byIndex;		// ÆÇ¸ÅÇÑ ¾ÆÀÌÅÛ À§Ä¡ Index										  
+	BYTE    byResult;		// 0-ï¿½ï¿½ï¿½ï¿½, 1-ï¿½ï¿½ï¿½ï¿½                                          
+	BYTE	byPlace;		// Ã¢ï¿½ï¿½, ï¿½Îºï¿½, ï¿½ï¿½ï¿½ï¿½										  
+	BYTE	byIndex;		// ï¿½Ç¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ Index										  
 	BYTE	byDummy;
-	int		nMoney;			// »óÁ¡ ÀÌ¿ë ÈÄ º¯°æµÈ µ·
+	int		nMoney;			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 } S_SCP_RESP_ITEM_SELL, * PS_SCP_RESP_ITEM_SELL;
 
 #define CSP_REQ_ITEM_REPAIR								0x2105
@@ -7539,13 +7542,13 @@ typedef struct _S_SCP_RESP_ITEM_SELL
 #define 	S_SCP_RESP_ITEM_REPAIR		S_SCP_RESP_ITEM_SELL
 #define 	PS_SCP_RESP_ITEM_REPAIR		PS_SCP_RESP_ITEM_SELL
 
-#define CSP_REQ_ITEM_REFINING                             0x2106      // ¾ÆÀÌÅÛ Á¦·ÃÀ» ¿äÃ»
-#define SCP_RESP_ITEM_REFINING                            0xA106      // ¾ÆÀÌÅÛ Á¦·Ã ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_ITEM_REFINING                             0x2106      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define SCP_RESP_ITEM_REFINING                            0xA106      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_ITEM_REFINING
 {	_MSG
 	BYTE	byPlace;
 	BYTE	byIndex;
-	BYTE	bySubPlace[3];											//	Index 0:ÁÖ,º¸Á¶Àç·Ã 1:Àç·ÃÃ·°¡Àç 2:¹ÌÁ¤
+	BYTE	bySubPlace[3];											//	Index 0:ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1:ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ 2:ï¿½ï¿½ï¿½ï¿½
 	BYTE	bySubIndex[3];
 } S_CSP_REQ_ITEM_REFINING, * PS_CSP_REQ_ITEM_REFINING;
 typedef struct _S_SCP_RESP_ITEM_REFINING
@@ -7583,50 +7586,50 @@ struct MSG_RefineScale
 	short	snDummy;
 };
 
-#define CSP_REQ_PRANA_CONTRIBUTION                        0x2112      // ÇÁ¶ó³ª Çå³³À» ¿äÃ»
-#define SCP_RESP_PRANA_CONTRIBUTION                       0xA112      // ÇÁ¶ó³ª Çå³³À» ¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_PRANA_CONTRIBUTION                        0x2112      // ï¿½ï¿½ï¿½ï¿½ ï¿½å³³ï¿½ï¿½ ï¿½ï¿½Ã»
+#define SCP_RESP_PRANA_CONTRIBUTION                       0xA112      // ï¿½ï¿½ï¿½ï¿½ ï¿½å³³ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_PRANA_CONTRIBUTION
 {
-	int                                               nPrana;       // Çå³³ÇÒ ÇÁ¶ó³ªÀÇ ¾ç
+	int                                               nPrana;       // ï¿½å³³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_CSP_REQ_PRANA_CONTRIBUTION, * PS_CSP_REQ_PRANA_CONTRIBUTION;
 typedef struct _S_SCP_RESP_PRANA_CONTRIBUTION
 {
 	BYTE                                              byResult;     // Result Field
-	int                                               nBrahmanPoint;// Çå³³ ÈÄ ºê¶ó¸¸ Æ÷ÀÎÆ®
-	int                                               nMaxHP;       // ÈÄ Ä³¸¯ÅÍÀÇ ÃÖ´ë HP
-	short                                             snUsePrana;   // °¢ ºÎÀ§º° Â÷Å©¶ó¿¡¼­ ´ÜÀ§½Ã°£´ç ¼Ò¸ðµÇ´Â ÃÑ ÇÁ¶ó³ªÀÇ ¾ç
+	int                                               nBrahmanPoint;// ï¿½å³³ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+	int                                               nMaxHP;       // ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ HP
+	short                                             snUsePrana;   // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ó¿¡¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½Ç´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 } S_SCP_RESP_PRANA_CONTRIBUTION, * PS_SCP_RESP_PRANA_CONTRIBUTION;
 
 
-#define CSP_REQ_RESOURCE_BARTER                           0x2113      // ±³È¯¼Ò¿¡¼­ ÀÚ¿ø ±³È¯À» ¿äÃ»
-#define SCP_RESP_RESOURCE_BARTER                          0xA113      // ±³È¯¼Ò¿¡¼­ ÀÚ¿ø ±³È¯¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä¸Þ¼¼Áö
+#define CSP_REQ_RESOURCE_BARTER                           0x2113      // ï¿½ï¿½È¯ï¿½Ò¿ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½Ã»
+#define SCP_RESP_RESOURCE_BARTER                          0xA113      // ï¿½ï¿½È¯ï¿½Ò¿ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ ï¿½ï¿½È¯ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 typedef struct _S_CSP_REQ_RESOURCE_BARTER
 {
-	DWORD                                             dwNpcKeyID;   // ±³È¯¼Ò NPC KeyID
-	DWORD                                             dwKeyID;      // ±³È¯ÇÒ ¾ÆÀÌÅÛÀÇ KEYID
-	int                                               nItemCount;   // ±³È¯ÇÒ ¾ÆÀÌÅÛÀÇ ÁßÃ¸°³¼ö
+	DWORD                                             dwNpcKeyID;   // ï¿½ï¿½È¯ï¿½ï¿½ NPC KeyID
+	DWORD                                             dwKeyID;      // ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ KEYID
+	int                                               nItemCount;   // ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_RESOURCE_BARTER, * PS_CSP_REQ_RESOURCE_BARTER;
 typedef struct _S_SCP_RESP_RESOURCE_BARTER
 {
 	BYTE                                              byResult;     // Result Field
-	int                                               nSteel;       // ÇöÀç ·çÇÇ¾Æ
-	int                                               nCloth;       // ÇöÀç º¸Á¶Ä«¿îÆ®(ÀÇ¹Ì¾øÀ½)
+	int                                               nSteel;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¾ï¿½
+	int                                               nCloth;       // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä«ï¿½ï¿½Æ®(ï¿½Ç¹Ì¾ï¿½ï¿½ï¿½)
 
 } S_SCP_RESP_RESOURCE_BARTER, * PS_SCP_RESP_RESOURCE_BARTER;
 
-#define CSP_REQ_RESOURCE_BARTER_PRICE                     0x2114      // ±³È¯¼Ò¿¡¼­ÀÇ ÀÚ¿ø±³È¯ºñÀ²À» ¿äÃ»ÇÑ´Ù.
-#define SCP_RESP_RESOURCE_BARTER_PRICE                    0xA114      // ±³È¯¼Ò¿¡¼­ÀÇ ÀÚ¿ø±³È¯ºñÀ²À» ¿äÃ»ÇÑ´Ù.
+#define CSP_REQ_RESOURCE_BARTER_PRICE                     0x2114      // ï¿½ï¿½È¯ï¿½Ò¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
+#define SCP_RESP_RESOURCE_BARTER_PRICE                    0xA114      // ï¿½ï¿½È¯ï¿½Ò¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
 typedef struct _S_CSP_REQ_RESOURCE_BARTER_PRICE
 {
 
 } S_CSP_REQ_RESOURCE_BARTER_PRICE, * PS_CSP_REQ_RESOURCE_BARTER_PRICE;
 typedef struct _S_SCP_RESP_RESOURCE_BARTER_PRICE
 {
-	int                                               nSteelCount;  // Ã¶ÀÇ ±³È¯ºñÀ²
-	int                                               nClothCount;  // Á÷¹°ÀÇ ±³È¯ºñÀ²
+	int                                               nSteelCount;  // Ã¶ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½
+	int                                               nClothCount;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_RESOURCE_BARTER_PRICE, * PS_SCP_RESP_RESOURCE_BARTER_PRICE;
 
@@ -7643,14 +7646,14 @@ typedef struct _S_CSP_REQ_TRADE
 	unsigned char	MyCheck;
 	unsigned short	OpponentID;
 } S_CSP_REQ_TRADE, *PS_CSP_REQ_TRADE;
-//	S_CSP_REQ_TRADE_CANCEL´Â S_REQUEST¸¦ ÀÌ¿ëÇÏ±â·Î ÇÑ´Ù.
-//	S_SCP_RESP_TRADE_CANCEL´Â S_RESULT¸¦ ÀÌ¿ëÇÏ±â·Î ÇÑ´Ù.
+//	S_CSP_REQ_TRADE_CANCELï¿½ï¿½ S_REQUESTï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï±ï¿½ï¿½ ï¿½Ñ´ï¿½.
+//	S_SCP_RESP_TRADE_CANCELï¿½ï¿½ S_RESULTï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï±ï¿½ï¿½ ï¿½Ñ´ï¿½.
 
 
 // CSP_REQ_TRANSPARENCY_MODE : 0x2501
 typedef struct _S_CSP_REQ_TRANSPARENCY_MODE
 {
-	BYTE                                              byMode;       // Åõ¸í¸ðµå ¼³Á¤ÇÃ·¹±×
+	BYTE                                              byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_TRANSPARENCY_MODE, * PS_CSP_REQ_TRANSPARENCY_MODE;
 
@@ -7673,10 +7676,10 @@ typedef struct _S_CSP_TRANSPARENCY_MODE_NOTIFY
 // SCP_TRANSPARENCY_MODE_NOTIFY : 0xA502
 typedef struct _S_SCP_TRANSPARENCY_MODE_NOTIFY
 {
-	BYTE												byMode;       // Åõ¸í¸ðµå ¼³Á¤ÇÃ·¹±×
+	BYTE												byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½
 	BYTE												byDummy;
 	short												snDummy;
-	char												szCharName[SZNAME_LENGTH];// GM Ä³¸¯ÅÍ ÀÌ¸§
+	char												szCharName[SZNAME_LENGTH];// GM Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_SCP_TRANSPARENCY_MODE_NOTIFY, * PS_SCP_TRANSPARENCY_MODE_NOTIFY;
 
@@ -7684,9 +7687,9 @@ typedef struct _S_SCP_TRANSPARENCY_MODE_NOTIFY
 //// CSP_REQ_MOVE_POSITION : 0x2511
 //typedef struct _S_CSP_REQ_MOVE_POSITION
 //{
-//	short                                             snX;          // ¿öÇÁÀÌµ¿ XÁÂÇ¥
-//	short                                             snZ;          // ¿öÇÁÀÌµ¿ ZÁÂÇ¥
-//	BYTE                                              byY;          // ¿öÇÁÀÌµ¿ÀÇ Ãþ ³ôÀÌ
+//	short                                             snX;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Xï¿½ï¿½Ç¥
+//	short                                             snZ;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Zï¿½ï¿½Ç¥
+//	BYTE                                              byY;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 //} S_CSP_REQ_MOVE_POSITION, * PS_CSP_REQ_MOVE_POSITION;
 //
@@ -7695,9 +7698,9 @@ typedef struct _S_SCP_TRANSPARENCY_MODE_NOTIFY
 //typedef struct _S_SCP_RESP_MOVE_POSITION
 //{
 //	BYTE                                              byResult;     // Result Field
-//	short                                             snX;          // ¿öÇÁÀÌµ¿ XÁÂÇ¥
-//	short                                             snZ;          // ¿öÇÁÀÌµ¿ ZÁÂÇ¥
-//	BYTE                                              byY;          // ¿öÇÁÀÌµ¿ÀÇ Ãþ ³ôÀÌ
+//	short                                             snX;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Xï¿½ï¿½Ç¥
+//	short                                             snZ;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Zï¿½ï¿½Ç¥
+//	BYTE                                              byY;          // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 //} S_SCP_RESP_MOVE_POSITION, * PS_SCP_RESP_MOVE_POSITION;
 
@@ -7705,7 +7708,7 @@ typedef struct _S_SCP_TRANSPARENCY_MODE_NOTIFY
 // CSP_REQ_MOVE_NEAR_CHAR : 0x2512
 typedef struct _S_CSP_REQ_MOVE_NEAR_CHAR
 {
-	char                                              szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
+	char                                              szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_CSP_REQ_MOVE_NEAR_CHAR, * PS_CSP_REQ_MOVE_NEAR_CHAR;
 
@@ -7713,7 +7716,7 @@ typedef struct _S_CSP_REQ_MOVE_NEAR_CHAR
 // SCP_RESP_MOVE_NEAR_CHAR : 0xA512
 typedef struct _S_SCP_RESP_MOVE_NEAR_CHAR
 {
-	S_SCP_RESP_MOVE_PORTAL                            MoveInfo;     // ÀÌµ¿Áö¿ª Á¤º¸
+	S_SCP_RESP_MOVE_PORTAL                            MoveInfo;     // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_MOVE_NEAR_CHAR, * PS_SCP_RESP_MOVE_NEAR_CHAR;
 
@@ -7721,7 +7724,7 @@ typedef struct _S_SCP_RESP_MOVE_NEAR_CHAR
 // CSP_REQ_CHAR_RECALL : 0x2513
 typedef struct _S_CSP_REQ_CHAR_RECALL
 {
-	char                                              szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
+	char                                              szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_CSP_REQ_CHAR_RECALL, * PS_CSP_REQ_CHAR_RECALL;
 
@@ -7732,7 +7735,7 @@ typedef struct _S_SCP_RESP_CHAR_RECALL
 	BYTE												byResult;     // Result Field
 	BYTE												byDummy;
 	short												snDummy;
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_SCP_RESP_CHAR_RECALL, * PS_SCP_RESP_CHAR_RECALL;
 
@@ -7747,8 +7750,8 @@ typedef struct _S_CSP_CHAR_RECALL_NOTIFY
 // SCP_CHAR_RECALL_NOTIFY : 0xA514
 typedef struct _S_SCP_CHAR_RECALL_NOTIFY
 {
-	char                                              szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
-	S_SCP_RESP_MOVE_PORTAL                            MoveInfo;     // ÀÌµ¿Áö¿ª Á¤º¸
+	char                                              szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	S_SCP_RESP_MOVE_PORTAL                            MoveInfo;     // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_CHAR_RECALL_NOTIFY, * PS_SCP_CHAR_RECALL_NOTIFY;
 
@@ -7756,8 +7759,8 @@ typedef struct _S_SCP_CHAR_RECALL_NOTIFY
 // CSP_REQ_CONTROL_CHAT : 0x2521
 typedef struct _S_CSP_REQ_CONTROL_CHAT
 {
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
-	BYTE												byMode;       // ±ÝÁö¸ðµå
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE												byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	BYTE												byDummy;
 	short												snDummy;
 
@@ -7770,7 +7773,7 @@ typedef struct _S_SCP_RESP_CONTROL_CHAT
 	BYTE												byResult;     // Result Field
 	BYTE												byDummy;
 	short												snDummy;
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_SCP_RESP_CONTROL_CHAT, * PS_SCP_RESP_CONTROL_CHAT;
 
@@ -7785,8 +7788,8 @@ typedef struct _S_CSP_CONTROL_CHAT_NOTIFY
 // SCP_CONTROL_CHAT_NOTIFY : 0xA522
 typedef struct _S_SCP_CONTROL_CHAT_NOTIFY
 {
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
-	BYTE												byMode;       // ±ÝÁö¸ðµå
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE												byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	BYTE												byDummy;
 	short												snDummy;
 
@@ -7796,8 +7799,8 @@ typedef struct _S_SCP_CONTROL_CHAT_NOTIFY
 // CSP_REQ_CONTROL_ACTION : 0x2531
 typedef struct _S_CSP_REQ_CONTROL_ACTION
 {
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
-	BYTE												byMode;       // ±ÝÁö¸ðµå
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE												byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	BYTE												byDummy;
 	short												snDummy;
 
@@ -7810,7 +7813,7 @@ typedef struct _S_SCP_RESP_CONTROL_ACTION
 	BYTE												byResult;     // Result Field
 	BYTE												byDummy;
 	short												snDummy;
-	char												szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
 } S_SCP_RESP_CONTROL_ACTION, * PS_SCP_RESP_CONTROL_ACTION;
 
@@ -7825,8 +7828,8 @@ typedef struct _S_CSP_CONTROL_ACTION_NOTIFY
 // SCP_CONTROL_ACTION_NOTIFY : 0xA532
 typedef struct _S_SCP_CONTROL_ACTION_NOTIFY
 {
-	char                                              szCharName[SZNAME_LENGTH];// ´ë»ó Ä³¸¯ÅÍ ÀÌ¸§
-	BYTE                                              byMode;       // ±ÝÁö¸ðµå
+	char                                              szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	BYTE                                              byMode;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	BYTE												byDummy;
 	short												snDummy;
 
@@ -7836,7 +7839,7 @@ typedef struct _S_SCP_CONTROL_ACTION_NOTIFY
 // CSP_REQ_TROUBLE_REPORT : 0x2541
 typedef struct _S_CSP_REQ_TROUBLE_REPORT
 {
-	char                                              szReport[512];// ½Å°íÇÒ ³»¿ë
+	char                                              szReport[512];// ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_CSP_REQ_TROUBLE_REPORT, * PS_CSP_REQ_TROUBLE_REPORT;
 
@@ -7845,7 +7848,7 @@ typedef struct _S_CSP_REQ_TROUBLE_REPORT
 typedef struct _S_SCP_RESP_TROUBLE_REPORT
 {
 	BYTE                                              byResult;     // Result Field
-	DWORD                                             dwIndex;      // Á¢¼ö¹øÈ£
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 
 } S_SCP_RESP_TROUBLE_REPORT, * PS_SCP_RESP_TROUBLE_REPORT;
 
@@ -7860,8 +7863,8 @@ typedef struct _S_CSP_REQ_TROUBLE_REPORT_LIST
 // SCP_RESP_TROUBLE_REPORT_LIST : 0xA542
 typedef struct _S_SCP_RESP_TROUBLE_REPORT_LIST
 {
-	DWORD                                             dwCount;      // Á¢¼öµÈ ÃÑ ½Å°íÀÇ °¹¼ö
-	BYTE                                              byCount;      // ÆäÀÌÁö³» ½Å°íÀÇ °¹¼ö
+	DWORD                                             dwCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_SCP_RESP_TROUBLE_REPORT_LIST, * PS_SCP_RESP_TROUBLE_REPORT_LIST;
 
@@ -7869,7 +7872,7 @@ typedef struct _S_SCP_RESP_TROUBLE_REPORT_LIST
 // CSP_REQ_TROUBLE_REPORT_SET : 0x2543
 typedef struct _S_CSP_REQ_TROUBLE_REPORT_SET
 {
-	DWORD                                             dwIndex;      // Á¢¼ö½Ã ¹ß±ÞµÇ´Â Á¢¼ö¹øÈ£
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ÞµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 
 } S_CSP_REQ_TROUBLE_REPORT_SET, * PS_CSP_REQ_TROUBLE_REPORT_SET;
 
@@ -7877,8 +7880,8 @@ typedef struct _S_CSP_REQ_TROUBLE_REPORT_SET
 // SCP_RESP_TROUBLE_REPORT_SET : 0xA543
 typedef struct _S_SCP_RESP_TROUBLE_REPORT_SET
 {
-	DWORD                                             dwIndex;      // Á¢¼ö½Ã ¹ß±ÞµÇ´Â Á¢¼ö¹øÈ£
-	BYTE                                              byProceed;    // Ã³¸®»óÈ²
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ÞµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+	BYTE                                              byProceed;    // Ã³ï¿½ï¿½ï¿½ï¿½È²
 
 } S_SCP_RESP_TROUBLE_REPORT_SET, * PS_SCP_RESP_TROUBLE_REPORT_SET;
 
@@ -7886,7 +7889,7 @@ typedef struct _S_SCP_RESP_TROUBLE_REPORT_SET
 // GCSP_REQ_TROUBLE_REPORT_LIST : 0x2544
 typedef struct _S_GCSP_REQ_TROUBLE_REPORT_LIST
 {
-	int                                               nPage;        // ½Å°í¸®½ºÆ® ÆäÀÌÁö
+	int                                               nPage;        // ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 } S_GCSP_REQ_TROUBLE_REPORT_LIST, * PS_GCSP_REQ_TROUBLE_REPORT_LIST;
 
@@ -7894,8 +7897,8 @@ typedef struct _S_GCSP_REQ_TROUBLE_REPORT_LIST
 // GSCP_RESP_TROUBLE_REPORT_LIST : 0xA544
 typedef struct _S_GSCP_RESP_TROUBLE_REPORT_LIST
 {
-	DWORD                                             dwCount;      // Á¢¼öµÈ ÃÑ ½Å°íÀÇ °¹¼ö
-	BYTE                                              byCount;      // ÆäÀÌÁö³» ½Å°íÀÇ °¹¼ö
+	DWORD                                             dwCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	BYTE                                              byCount;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 } S_GSCP_RESP_TROUBLE_REPORT_LIST, * PS_GSCP_RESP_TROUBLE_REPORT_LIST;
 
@@ -7903,9 +7906,9 @@ typedef struct _S_GSCP_RESP_TROUBLE_REPORT_LIST
 // GCSP_REQ_TROUBLE_REPORT_SET : 0x2545
 typedef struct _S_GCSP_REQ_TROUBLE_REPORT_SET
 {
-	DWORD                                             dwIndex;      // Á¢¼ö½Ã ¹ß±ÞµÇ´Â Á¢¼ö¹øÈ£
-	BYTE                                              byProceed;    // Ã³¸®»óÈ²
-	char                                              szNote[256];  // ºñ°í
+	DWORD                                             dwIndex;      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ÞµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+	BYTE                                              byProceed;    // Ã³ï¿½ï¿½ï¿½ï¿½È²
+	char                                              szNote[256];  // ï¿½ï¿½ï¿½
 
 } S_GCSP_REQ_TROUBLE_REPORT_SET, * PS_GCSP_REQ_TROUBLE_REPORT_SET;
 
@@ -7945,8 +7948,8 @@ typedef struct _S_CSP_REQ_CHAR_INFO
 typedef struct _S_SCP_RESP_CHAR_INFO
 {
 	char                                              szCharName[SZNAME_LENGTH];
-	int                                               nMaxHP;       // ÄÉ¸¯ÅÍ HPÀÇ ÃÖ´ë°ª
-	int                                               nCurHP;       // ÄÉ¸¯ÅÍ HPÀÇ ÇöÀç°ª
+	int                                               nMaxHP;       // ï¿½É¸ï¿½ï¿½ï¿½ HPï¿½ï¿½ ï¿½Ö´ë°ª
+	int                                               nCurHP;       // ï¿½É¸ï¿½ï¿½ï¿½ HPï¿½ï¿½ ï¿½ï¿½ï¿½ç°ª
 	short                                             snMinPhysicalDamage;
 	short                                             snMaxPhysicalDamage;
 	short                                             snMinMagicDamage;
@@ -8009,8 +8012,8 @@ typedef struct _S_SCP_RESP_CLOSE_CHAR
 } S_SCP_RESP_CLOSE_CHAR, * PS_SCP_RESP_CLOSE_CHAR;
 
 // GCSP_REQ_CHARACTER_SEARCH : 0x2547
-#define GCSP_REQ_CHARACTER_SEARCH                         0x2547      // Ä³¸¯ÅÍÀÇ Á¤º¸ ¿äÃ»
-#define GSCP_RESP_CHARACTER_SEARCH						  0xA547      // Ä³¸¯ÅÍ À§Ä¡Á¤º¸
+#define GCSP_REQ_CHARACTER_SEARCH                         0x2547      // Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+#define GSCP_RESP_CHARACTER_SEARCH						  0xA547      // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
 typedef S_SSP_REQ_CHARACTER_SEARCH S_GCSP_REQ_CHARACTER_SEARCH;
 typedef S_SSP_RESP_CHARACTER_SEARCH S_GSCP_RESP_CHARACTER_SEARCH;
 
@@ -8031,12 +8034,12 @@ typedef struct _S_GSCP_INIT_SKILL
 // GCSP_REQ_PARAMETER_CHANGE : 0x2550
 typedef struct _S_GCSP_REQ_PARAMETER_CHANGE
 {
-	char												szCharName[SZNAME_LENGTH];// º¯°æÇÒ Ä³¸¯ÅÍ ÀÌ¸§
-	char												szAccountID[ACCOUNTNAME_LENGTH];// º¯°æÇÒ °èÁ¤ ¾ÆÀÌµð
-	BYTE												byType;       // º¯°æÇÏ°íÀÚ ÇÏ´Â ÆÄ¶ó¹ÌÅÍ ÇÊµå
+	char												szCharName[SZNAME_LENGTH];// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+	char												szAccountID[ACCOUNTNAME_LENGTH];// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	BYTE												byType;       // ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½
 	BYTE												byDummy;
 	short												snDummy;
-	int													nValues;     // º¯°æÇÏ°íÀÚ ÇÏ´Â °ª
+	int													nValues;     // ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½
 
 
 } S_GCSP_REQ_PARAMETER_CHANGE, * PS_GCSP_REQ_PARAMETER_CHANGE;
@@ -8045,7 +8048,7 @@ typedef struct _S_GCSP_REQ_PARAMETER_CHANGE
 // GSCP_RESP_PARAMETER_CHANGE : 0xA550
 typedef struct _S_GSCP_RESP_PARAMETER_CHANGE
 {
-	BYTE                                              byResult;     // Á¤º¸ º¯°æ °á°ú
+	BYTE                                              byResult;     // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 } S_GSCP_RESP_PARAMETER_CHANGE, * PS_GSCP_RESP_PARAMETER_CHANGE;
  
@@ -8060,7 +8063,7 @@ typedef struct _PORTALINFO
 	SHORT	snEZ;
 } PORTALINFO, *PPORTALINFO;
 
-#define _Msg_Escape			0x2601						//	/Å»Ãâ¸í·É
+#define _Msg_Escape			0x2601						//	/Å»ï¿½ï¿½ï¿½ï¿½ï¿½
 
 //////////////////////////////////////////////////////////////
 //********************* BILLING SYSTEM *********************//
@@ -8079,7 +8082,7 @@ typedef struct _PORTALINFO
 #define _Msg_BillStatus			0x3004
 struct	Msg_BillStatus
 {	_MSG;
-	int		nCommand;			//	0:¼º°ø, 1:°èÁ¤¸¸·á
+	int		nCommand;			//	0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int		nDummy[4];
 };
 
@@ -8111,7 +8114,7 @@ struct		Msg_Time
 	BYTE	byResult;
 	BYTE	byDummy;
 	short	snDummy;
-	int		nItemID;					//	½Ã°£Á¦ ±â´É ITEMID
+	int		nItemID;					//	ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ITEMID
 	DWORD	dwTime;
 	int		nCash;
 };
@@ -8143,15 +8146,15 @@ struct		Msg_Mail
 };
 
 /*********************************************/
-//	2004.08.26(´É·ÂÄ¡, ½ºÅ³ ÃÊ±âÈ­ °ü·ÃÆÐÅ¶)
+//	2004.08.26(ï¿½É·ï¿½Ä¡, ï¿½ï¿½Å³ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶)
 #define		_Msg_NPCCommand				0x3005
 struct		Msg_NPCCommand
 {	_MSG;
 	int		nNPCID;
-	BYTE	byType;			//	1:½ºÅ³ÃÊ±âÈ­, 2:´É·ÂÄ¡ÃÊ±âÈ­, 3:2Â÷ÀüÁ÷ÃÊ±âÈ­, 4:½ºÅ³,´ÉÄ¡ÃÊ±âÈ­, 5:event, ...
-	BYTE	byResult;		//	0:¼º°ø, 1:µ·ºÎÁ·, 2:¾ÆÀÌÅÛÂø¿ë, 3:ÃÊ±âÈ­°¡ ºÒ°¡´ÉÇÑ »óÅÂ, 255:etc
-	BYTE	byCommand;		//	1:Á¶È¸, 2:½ÇÇà, ...
-	BYTE	byFirst;		//	0:Ã³À½¾Æ´Ô, 1:Ã³À½, ...
+	BYTE	byType;			//	1:ï¿½ï¿½Å³ï¿½Ê±ï¿½È­, 2:ï¿½É·ï¿½Ä¡ï¿½Ê±ï¿½È­, 3:2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½È­, 4:ï¿½ï¿½Å³,ï¿½ï¿½Ä¡ï¿½Ê±ï¿½È­, 5:event, ...
+	BYTE	byResult;		//	0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 2:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 3:ï¿½Ê±ï¿½È­ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 255:etc
+	BYTE	byCommand;		//	1:ï¿½ï¿½È¸, 2:ï¿½ï¿½ï¿½ï¿½, ...
+	BYTE	byFirst;		//	0:Ã³ï¿½ï¿½ï¿½Æ´ï¿½, 1:Ã³ï¿½ï¿½, ...
 	int		nRupia;
 };
 /*********************************************/
@@ -8196,7 +8199,7 @@ struct		Msg_TimeMode
 ///////////////////////////////////////////////////////////////////
 //********************* TRIMURITI SYSTEM ************************//
 ///////////////////////////////////////////////////////////////////
-#define		_Msg_TrimuritiStatus			0x4301		//	ÇöÀç´Â db->zs ÀÏ¹æÀû µ¥ÀÌÅÍÀü¼Û
+#define		_Msg_TrimuritiStatus			0x4301		//	ï¿½ï¿½ï¿½ï¿½ï¿½ db->zs ï¿½Ï¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 struct		Msg_TrimuritiStatus
 {	_MSG
 	int	iTrimuritiCount[3];
@@ -8228,7 +8231,7 @@ typedef struct Msg_StrongHoldInit Msg_StrongHoldUpdate;
 #define		_Msg_StrongHoldStatus			0x4403
 struct		Msg_StrongHoldStatus
 {	_MSG
-	byte	byMode;			//	0:¿ä»õÀüÁ¾·á, 1:¿ä»õÀü½ÃÀÛ
+	byte	byMode;			//	0:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	byte	byDummy;
 	short	snDummy;
 };
@@ -8254,15 +8257,15 @@ struct		Msg_GameEvent
 #define		_Msg_Alarm						0x4601
 struct		Msg_Alarm
 {	_MSG
-	unsigned int	unType;		//	1 : À¯Àú °ÔÀÓ»ç¿ë±â°£ ¸¸·á
+	unsigned int	unType;		//	1 : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó»ï¿½ï¿½â°£ ï¿½ï¿½ï¿½ï¿½
 };
 
 #define		_Msg_Echo						0x4602
 struct		Msg_Echo	
 {	_MSG
-	int		iEchoID;			//	¿äÃ» echoÀÌ Á¾·ù(1:ºÎÈ°½ºÅ³(byData¿¡ È¸º¹°æÇèÄ¡%±â·Ï), ...)
-	int		iKeyID;				//	»ó´ëÀÇ keyid
-	byte	byResponse;			//	¿äÃ»¿¡ ´ëÇÑ ÀÀ´ä
+	int		iEchoID;			//	ï¿½ï¿½Ã» echoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(1:ï¿½ï¿½È°ï¿½ï¿½Å³(byDataï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡%ï¿½ï¿½ï¿½), ...)
+	int		iKeyID;				//	ï¿½ï¿½ï¿½ï¿½ï¿½ keyid
+	byte	byResponse;			//	ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	byte	byData;
 	short	snData;
 };
@@ -8276,10 +8279,10 @@ struct		Msg_Echo
 struct		Msg_YutBet
 {
 	_MSG
-	byte	byResult;						//	0:¼º°ø, 1:½ÇÆÐ
-	byte	byPosition;						//	º£ÆÃÇÒ À·ÆÇÀÇ ÀÎµ¦½º
+	byte	byResult;						//	0:ï¿½ï¿½ï¿½ï¿½, 1:ï¿½ï¿½ï¿½ï¿½
+	byte	byPosition;						//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 	DWORD	dwDummy;
-	WORD	wCount[48];						//	ÇöÀç ¼ÒÀ¯ÇÒ¼ö ÀÖ´Â ÃÖ´ë ÀÎº¥Åä¸®Ä­ÀÇ ¼ö
+	WORD	wCount[48];						//	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½Ö´ï¿½ ï¿½Ö´ï¿½ ï¿½Îºï¿½ï¿½ä¸®Ä­ï¿½ï¿½ ï¿½ï¿½
 };
 
 #define		_Msg_YutStatus					0x4702
@@ -8306,7 +8309,7 @@ struct		Msg_YutMove
 };
 
 #define		_Msg_YutMoney					0x4705
-//	S_REQUEST S_RESPONSE¸¦ »ç¿ëÇÏ±â·Î ÇÑ´Ù.
+//	S_REQUEST S_RESPONSEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ ï¿½Ñ´ï¿½.
 
 
 ///////////////////////////////////////////////////////////////////
@@ -8327,10 +8330,10 @@ struct		Msg_GetMoney
 struct		Msg_SetSalesRate
 {
 	_MSG
-	BYTE	byType;						//	1:¹®ÀÇ, 2:¼¼ÆÃ¿äÃ»
-	BYTE	byRate;						//	0~100%(Á¤¼ö´ÜÀ§)
+	BYTE	byType;						//	1:ï¿½ï¿½ï¿½ï¿½, 2:ï¿½ï¿½ï¿½Ã¿ï¿½Ã»
+	BYTE	byRate;						//	0~100%(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	short	snDummy;
-	DWORD	dwMoney;					//	ÇöÀçÀÇ ¼¼±ÝÃÑ¾×
+	DWORD	dwMoney;					//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½
 };
 
 
@@ -8340,13 +8343,13 @@ struct		Msg_SetSalesRate
 /*----------------------------------------------------------------------------*/
 // 0x10 Group(Login & Character)
 /*----------------------------------------------------------------------------*/
-const BYTE REPLY_ACK_OK			= 0x00;			//	¼º°ø.
-const BYTE REPLY_INVALID_USER	= 0x01;			//	°èÁ¤ÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½.
-const BYTE REPLY_INVALID_PASSWD	= 0x02;			//	ºñ¹Ð¹øÈ£°¡ Æ²¸².
-const BYTE REPLY_NO_RESPONSE	= 0x03;			//	Á¢¼ÓºÒ°¡(¼­¹ö ÀÀ´ä¾øÀ½).
-const BYTE REPLY_ACCOUNT		= 0x04;			//	Á¢¼ÓºÒ°¡(¿ùÁ¤¾×, ½Ã°£Á¤¾× µî) ¿ÀÇÂº£Å¸ ÀÌÈÄ °áÁ¤.
-const BYTE REPLY_ALREADY_LOGIN	= 0x05;			//	ÀÌ¹Ì ·Î±×ÀÎ µÇ¾î ÀÖÀ½.
-const BYTE REPLY_NEED_LOGIN		= 0x06;			//	·Î±×ÀÎ µÇÁö ¾ÊÀº »ç¿ëÀÚ.
+const BYTE REPLY_ACK_OK			= 0x00;			//	ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_INVALID_USER	= 0x01;			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_INVALID_PASSWD	= 0x02;			//	ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ Æ²ï¿½ï¿½.
+const BYTE REPLY_NO_RESPONSE	= 0x03;			//	ï¿½ï¿½ï¿½ÓºÒ°ï¿½(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½).
+const BYTE REPLY_ACCOUNT		= 0x04;			//	ï¿½ï¿½ï¿½ÓºÒ°ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½) ï¿½ï¿½ï¿½Âºï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_ALREADY_LOGIN	= 0x05;			//	ï¿½Ì¹ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_NEED_LOGIN		= 0x06;			//	ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 
 const BYTE REPLY_GAME_MASTER	= 0x11;
 const BYTE REPLY_TOOL_MASTER	= 0x12;
@@ -8356,7 +8359,7 @@ const BYTE REPLY_UNKNOWN		= 0xFF;
 const BYTE REPLYCHARACTER_ALIVE			= 0x00;
 const BYTE REPLY_CHARACTER_DISCONNECT	= 0x01;
 
-// ÃÊ±âÈ­ ¿äÃ»½Ã ÀÀ´ä ÄÚµå
+// ï¿½Ê±ï¿½È­ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_INIT_CHAR_ERROR_FORTALID		=	0x01;
 const BYTE REPLY_INIT_CHAR_ERROR_POSITION		=	0x02;
 const BYTE REPLY_INIT_CHAR_ERROR_ARRANGE		=	0x03;
@@ -8367,190 +8370,190 @@ const BYTE REPLY_INIT_CHAR_ERROR_CREATEAREA		=	0x07;
 const BYTE REPLY_INIT_CHAR_ERROR_GETDATA		=	0x08;
 const BYTE REPLY_INIT_CHAR_ERROR				=	0x09;
 
-// Ä³¸¯ÅÍ »ý¼º
-const BYTE REPLY_CHAR_CREATE_ALREADY_EXIST	= 0x01; // Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ(Ä³¸¯ÅÍ ÀÌ¹Ì Á¸Àç)
-const BYTE REPLY_CHAR_CREATE_CHAR_FULL		= 0x03;	// Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ(ÄÉ¸¯ÅÍ°¡ 3°³ ´Ù Á¸ÀçÇÔ)
-//const BYTE REPLY_CHAR_CREATE_ACC_FAIL		= 0x04;	// Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ(°èÁ¤ÀÌ¸§ ±æÀÌ ¿À·ù)
-//const BYTE REPLY_CHAR_CREATE_CHR_FAIL		= 0x05;	// Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ(Ä³¸¯ÅÍÀÌ¸§ ±æÀÌ ¿À·ù)
-const BYTE REPLY_CHAR_CREATE_CHR_CHAR_FAIL	= 0x06;	// Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ(Ä³¸¯ÅÍÀÌ¸§ ºÎÀûÇÕ)
-const BYTE REPLY_CHAR_CREATE_CHAKRA_OVER	= 0x07;	// ±âÃÊÂ÷Å©¶ó¿À¹ö
-const BYTE REPLY_CHAR_CREATE_FAIL			= 0x08;	// Ä³¸¯ÅÍ »ý¼º ½ÇÆÐ
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_CREATE_ALREADY_EXIST	= 0x01; // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_CHAR_CREATE_CHAR_FULL		= 0x03;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½É¸ï¿½ï¿½Í°ï¿½ 3ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+//const BYTE REPLY_CHAR_CREATE_ACC_FAIL		= 0x04;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+//const BYTE REPLY_CHAR_CREATE_CHR_FAIL		= 0x05;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_CHAR_CREATE_CHR_CHAR_FAIL	= 0x06;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_CHAR_CREATE_CHAKRA_OVER	= 0x07;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_CREATE_FAIL			= 0x08;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// Ä³¸¯ÅÍ »èÁ¦
-const BYTE REPLY_CHAR_REMOVE_FAIL	= 0x02;	// Ä³¸¯ÅÍ »èÁ¦ ½ÇÆÐ
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_REMOVE_FAIL	= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// Ä³¸¯ÅÍ ·Î±×¾Æ¿ô
-const BYTE REPLY_CHAR_LOGOUT_FAIL	= 0x01;	// Ä³¸¯ÅÍ ·Î±×¾Æ¿ô ½ÇÆÐ(Æ÷Å»)
-//const BYTE REPLY_REQ_CHAR_LOGOUT_FAIL	= 0x02;	// Ä³¸¯ÅÍ ·Î±×¾Æ¿ô ½ÇÆÐ(¼ÒÈ¯)
-const BYTE DISCONNECT_ALREADY_CONNECTED	= 0x03; // ÀÌ¹Ì Á¢¼ÓÁßÀÎ °èÁ¤¿¡ ÀÇÇÑ ·Î±×¾Æ¿ôÃ³¸®
-//	const BYTE DISCONNECT_LACK_OR_HACK		= 0x04; // ÇÙ»ç¿ëÀÚ¿¡ ´ëÇÑ ·Î±×¾Æ¿ôÃ³¸®
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½
+const BYTE REPLY_CHAR_LOGOUT_FAIL	= 0x01;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Å»)
+//const BYTE REPLY_REQ_CHAR_LOGOUT_FAIL	= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½È¯)
+const BYTE DISCONNECT_ALREADY_CONNECTED	= 0x03; // ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½Ã³ï¿½ï¿½
+//	const BYTE DISCONNECT_LACK_OR_HACK		= 0x04; // ï¿½Ù»ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½Ã³ï¿½ï¿½
 
-// ÄÉ¸¯ÅÍ ·Î±×¾Æ¿ô ÁÖº¯Àü¼Û
-const BYTE REPLY_OTHER_CHAR_LOGOUT_DISCONNECT	= 0x00;	// Ä³¸¯ÅÍ Á¢¼ÓÁ¾·á
-const BYTE REPLY_OTHER_CHAR_LOGOUT_PORTAL		= 0x01;	// Ä³¸¯ÅÍ Æ÷Å», ¿öÇÁ¿¡ ÀÇÇÑ °ø°£ÀÌµ¿
-const BYTE REPLY_OTHER_CHAR_LOGOUT_RECALL		= 0x02;	// Ä³¸¯ÅÍ ¼ÒÈ¯¿¡ ÀÇÇÑ »ç¶óÁü
+// ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_OTHER_CHAR_LOGOUT_DISCONNECT	= 0x00;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_OTHER_CHAR_LOGOUT_PORTAL		= 0x01;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å», ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
+const BYTE REPLY_OTHER_CHAR_LOGOUT_RECALL		= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x11 Group(Initialize)
 /*----------------------------------------------------------------------------*/
-// ¾ÆÀÌÅÛ À§Ä¡ ÀúÀå
-const BYTE REPLY_ITEM_POSITION_SAVE_FAIL	= 0x01;	// ¾ÆÀÌÅÛ À§Ä¡ ÀúÀå ½ÇÆÐ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_POSITION_SAVE_FAIL	= 0x01;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x12 Group(Moving, Packing/Unpacking, Using)
 /*----------------------------------------------------------------------------*/
-// Ä³¸¯ÅÍ ÀÌµ¿
-const BYTE REPLY_CHAR_MOVE_FAIL				= 0x01;	// Ä³¸¯ÅÍ ÀÌµ¿ ½ÇÆÐ
-const BYTE REPLY_CHAR_MOVE_CONFLICT_CELL	= 0x02;	// Ä³¸¯ÅÍ ÀÌµ¿ ¸øÇÔ. Cell ¼Ó¼º
-const BYTE REPLY_CHAR_MOVE_CONFLICT_PC		= 0x03;	// Ä³¸¯ÅÍ Ãæµ¹
-const BYTE REPLY_CHAR_MOVE_CONFLICT_NPC		= 0x04;	// Monster, NPC Ãæµ¹
-const BYTE REPLY_CHAR_MOVE_CONFLICT_ITEM	= 0x05;	// Item Ãæµ¹
-const BYTE REPLY_CHAR_MOVE_FAINT			= 0x11;	// Ä³¸¯ÅÍ ±âÀý
-const BYTE REPLY_CHAR_MOVE_FLINT			= 0x12;	// Ä³¸¯ÅÍ ¼®È­
-const BYTE REPLY_CHAR_MOVE_FREEZE			= 0x13;	// Ä³¸¯ÅÍ ¾õ
-const BYTE REPLY_CHAR_MOVE_SLEEP			= 0x14;	// Ä³¸¯ÅÍ ¼ö¸é
-const BYTE REPLY_CHAR_MOVE_SEQ_ERR			= 0x21;	// ÀÌµ¿ Ä«¿îÆ® ¿¡·¯
-const BYTE REPLY_CHAR_MOVE_FAIL_SPEED		= 0x22;	// ÀÌµ¿ ¼Óµµ À§¹Ý
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+const BYTE REPLY_CHAR_MOVE_FAIL				= 0x01;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_MOVE_CONFLICT_CELL	= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½. Cell ï¿½Ó¼ï¿½
+const BYTE REPLY_CHAR_MOVE_CONFLICT_PC		= 0x03;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹
+const BYTE REPLY_CHAR_MOVE_CONFLICT_NPC		= 0x04;	// Monster, NPC ï¿½æµ¹
+const BYTE REPLY_CHAR_MOVE_CONFLICT_ITEM	= 0x05;	// Item ï¿½æµ¹
+const BYTE REPLY_CHAR_MOVE_FAINT			= 0x11;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_MOVE_FLINT			= 0x12;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­
+const BYTE REPLY_CHAR_MOVE_FREEZE			= 0x13;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+const BYTE REPLY_CHAR_MOVE_SLEEP			= 0x14;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_MOVE_SEQ_ERR			= 0x21;	// ï¿½Ìµï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAR_MOVE_FAIL_SPEED		= 0x22;	// ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ¾ÆÀÌÅÛ ÀÌµ¿
-const BYTE REPLY_ITEM_MOVE_LAY_DISABLE		= 0x01;	// ¾ÆÀÌÅÛ ½×±â ºÒ°¡
-const BYTE REPLY_ITEM_MOVE_INVENTORY_LACK	= 0x02;	// ÀÎº¥Åä¸® ÀÚ¸® ºÎÁ·
-const BYTE REPLY_ITEM_MOVE_DISTANCE_ERR		= 0x03;	// ÀÌµ¿ °Å¸® ¿À·ù
-const BYTE REPLY_ITEM_MOVE_PLACE_ERR		= 0x04;	// ÀÌµ¿ À§Ä¡ ¿À·ù
-const BYTE REPLY_ITEM_MOVE_OWNER_ERR		= 0x05;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÀÚ ¿À·ù
-const BYTE REPLY_ITEM_MOVE_ROUTING_TIME		= 0x06; // ¾ÆÀÌÅÛ ·çÆÃ ½Ã°£ ¿À·ù
-const BYTE REPLY_ITEM_MOVE_NOEXIST			= 0x07; // ¾ÆÀÌÅÛ ·çÆÃ ½Ã°£ ¿À·ù
-const BYTE REPLY_ITEM_MOVE_BAG				= 0x08; // È®ÀåÀÎº¥¿¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ½
-const BYTE REPLY_ITEM_MOVE_NOMOVE			= 0x09; // ÀÌµ¿ÇÒ¼ö ¾ø´Â ¾ÆÀÌÅÛ
-const BYTE REPLY_ITEM_MOVE_TWOHAND			= 0x0A; // ¾ç¼Õ¹«±â Âø¿ë¿À·ù
-const BYTE REPLY_ITEM_MOVE_PART				= 0x0B; // ÀÏºÎ¸¸ ½Àµæ
-const BYTE REPLY_ITEM_MOVE_RIGHT			= 0x0C; // ÇØ´ç ¾Æ½¬¶÷Ã¢°í¿µ¿ªÀ» »ç¿ëÇÒ¼ö ¾øÀ» °æ¿ì
-const BYTE REPLY_ITEM_MOVE_ERROR			= 0xff; // Àß¸øµÈ µ¥ÀÌÅÍ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+const BYTE REPLY_ITEM_MOVE_LAY_DISABLE		= 0x01;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×±ï¿½ ï¿½Ò°ï¿½
+const BYTE REPLY_ITEM_MOVE_INVENTORY_LACK	= 0x02;	// ï¿½Îºï¿½ï¿½ä¸® ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_DISTANCE_ERR		= 0x03;	// ï¿½Ìµï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_PLACE_ERR		= 0x04;	// ï¿½Ìµï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_OWNER_ERR		= 0x05;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_ROUTING_TIME		= 0x06; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_NOEXIST			= 0x07; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_BAG				= 0x08; // È®ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_NOMOVE			= 0x09; // ï¿½Ìµï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_TWOHAND			= 0x0A; // ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_PART				= 0x0B; // ï¿½ÏºÎ¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_RIGHT			= 0x0C; // ï¿½Ø´ï¿½ ï¿½Æ½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_MOVE_ERROR			= 0xff; // ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ¾ÆÀÌÅÛ ÆÐÅ·
-const BYTE REPLY_ITEM_PACKING_SOURCE		= 0x01;	// Source ¾ÆÀÌÅÛ Á¸ÀçÇÏÁö ¾ÊÀ½
-const BYTE REPLY_ITEM_PACKING_DESTINATION	= 0x02;	// Destination ¾ÆÀÌÅÛ Á¸ÀçÇÏÁö ¾ÊÀ½
-const BYTE REPLY_ITEM_PACKING_PLACE_ERR		= 0x03;	// ÆÐÅ· Àå¼Ò ºÎÀûÇÕ
-const BYTE REPLY_ITEM_PACKING_OWNER_ERR		= 0x04;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÀÚ ¿À·ù
-const BYTE REPLY_ITEM_PACKING_PART_PACKING	= 0x05;	// ¾ÆÀÌÅÛ ÀÏºÎ¸¸ ÆÐÅ·(½ÇÁ¦ ÆÐÅ· ¼º°ø)
-const BYTE REPLY_ITEM_PACKING_NOT_PACKING	= 0x06;	// ÆÐÅ· ºÒ°¡´É ¾ÆÀÌÅÛ
-const BYTE REPLY_ITEM_PACKING_DISABLE		= 0x07;	// µÎ ¾ÆÀÌÅÛÀº ÆÐÅ·µÉ ¼ö ¾øÀ½
-const BYTE REPLY_ITEM_PACKING_NOT_ADD		= 0x08;	// ÇÑ ¾ÆÀÌÅÛÀÇ Ä«¿îÆ®°¡ ÆÐÅ· ÇÑµµ(100)ÀÓ.
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å·
+const BYTE REPLY_ITEM_PACKING_SOURCE		= 0x01;	// Source ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_DESTINATION	= 0x02;	// Destination ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_PLACE_ERR		= 0x03;	// ï¿½ï¿½Å· ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_OWNER_ERR		= 0x04;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_PART_PACKING	= 0x05;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÏºÎ¸ï¿½ ï¿½ï¿½Å·(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å· ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_ITEM_PACKING_NOT_PACKING	= 0x06;	// ï¿½ï¿½Å· ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_DISABLE		= 0x07;	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å·ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_PACKING_NOT_ADD		= 0x08;	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Å· ï¿½Ñµï¿½(100)ï¿½ï¿½.
 
-// ¾ÆÀÌÅÛ ¾ðÆÐÅ·
-const BYTE REPLY_ITEM_UNPACKING_COUNT_ERR	= 0x01;	// ¾ðÆÐÅ· Ä«¿îÆ® ºÎÀûÇÕ
-const BYTE REPLY_ITEM_UNPACKING_PLACE_ERR	= 0x02;	// ¾ðÆÐÅ· ÀÚ¸® ºÎÀûÇÕ
-const BYTE REPLY_ITEM_UNPACKING_ITEM_EXIST	= 0x03; // ¾ðÆÐÅ· ÀÚ¸®¿¡ ¾ÆÀÌÅÛ Á¸Àç
-const BYTE REPLY_ITEM_UNPACKING_OWNER_ERR	= 0x04;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÀÚ ¿À·ù
-const BYTE REPLY_ITEM_UNPACKING_NOT_UNPACKING	= 0x05;	// ¾ðÆÐÅ· ºÒ°¡´É ¾ÆÀÌÅÛ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å·
+const BYTE REPLY_ITEM_UNPACKING_COUNT_ERR	= 0x01;	// ï¿½ï¿½ï¿½ï¿½Å· Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_UNPACKING_PLACE_ERR	= 0x02;	// ï¿½ï¿½ï¿½ï¿½Å· ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_UNPACKING_ITEM_EXIST	= 0x03; // ï¿½ï¿½ï¿½ï¿½Å· ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_UNPACKING_OWNER_ERR	= 0x04;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_UNPACKING_NOT_UNPACKING	= 0x05;	// ï¿½ï¿½ï¿½ï¿½Å· ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ¾ÆÀÌÅÛ »ç¿ë
-const BYTE REPLY_ITEM_USE_OWNER_ERR	= 0x01;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÀÚ ¿À·ù
-const BYTE REPLY_ITEM_USE_NOT_USE	= 0x02;	// »ç¿ëÇÒ ¼ö ¾ø´Â ¾ÆÀÌÅÛ
-const BYTE REPLY_ITEM_USE_COUNT_ERR	= 0x03;	// ¾ÆÀÌÅÛ Ä«¿îÆ® ¿¡·¯
-const BYTE REPLY_ITEM_USE_RECORDED	= 0X04; // º¹±Ç(´çÃ·µÈ) ¾ÆÀÌÅÛÀÌ ½ÅÃ»µÇ¾úÀ½.
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_USE_OWNER_ERR	= 0x01;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_USE_NOT_USE	= 0x02;	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_USE_COUNT_ERR	= 0x03;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_USE_RECORDED	= 0X04; // ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ã·ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ç¾ï¿½ï¿½ï¿½.
 
-// ·çÇÇ¾ÆÀÇ ÀÌµ¿
-const BYTE REPLY_MONEY_MOVE_SAME	= 0x01;	// µ¿ÀÏÀå¼Ò·Î ÀÌµ¿ºÒ°¡
-const BYTE REPLY_MONEY_MOVE_LACK	= 0x02;	// ·çÇÇ¾ÆÀÇ ¾çÀÌ ºÎÁ·ÇÔ
-const BYTE REPLY_MONEY_MOVE_FAIL	= 0x03;	// ±âÅ¸ ÀÌÀ¯·Î ÀÌµ¿½ÇÆÐ
+// ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+const BYTE REPLY_MONEY_MOVE_SAME	= 0x01;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ ï¿½Ìµï¿½ï¿½Ò°ï¿½
+const BYTE REPLY_MONEY_MOVE_LACK	= 0x02;	// ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_MONEY_MOVE_FAIL	= 0x03;	// ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
 
-// Æ÷Å»ÀÌµ¿
-const BYTE REPLY_MOVE_PORTAL_OUTAREA	= 0x01;	// Å¸Á¸À¸·ÎÀÇ ÀÌµ¿
-const BYTE REPLY_MOVE_PORTAL_STATUS		= 0x02;	// ÀÌµ¿ÇÒ¼ö ¾ø´Â »óÅÂ
-const BYTE REPLY_MOVE_PORTAL_WANTMONEY	= 0x03;	// ÀÌµ¿½ÃÀÇ µ·ºÎÁ·
-const BYTE REPLY_MOVE_PORTAL_WANTLEVEL	= 0x04;	// ÀÌµ¿ÇÒ¼ö·¹º§
-const BYTE REPLY_MOVE_PORTAL_FAIL		= 0x05;	// ±âÅ¸ ¿À·ù
+// ï¿½ï¿½Å»ï¿½Ìµï¿½
+const BYTE REPLY_MOVE_PORTAL_OUTAREA	= 0x01;	// Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+const BYTE REPLY_MOVE_PORTAL_STATUS		= 0x02;	// ï¿½Ìµï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_MOVE_PORTAL_WANTMONEY	= 0x03;	// ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_MOVE_PORTAL_WANTLEVEL	= 0x04;	// ï¿½Ìµï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_MOVE_PORTAL_FAIL		= 0x05;	// ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x13 Group(Combat)
 /*----------------------------------------------------------------------------*/
-// Ä³¸¯ÅÍ °ø°Ý
-const BYTE REPLY_ATK_CHAR_DISTANCE				= 0x01;	// °Å¸® Á¦ÇÑ
-const BYTE REPLY_ATK_CHAR_NO_EQUIP				= 0x02;	// ºñÀåÂø ¾ÆÀÌÅÛ
-const BYTE REPLY_ATK_CHAR_ITEM_TYPE_ERR			= 0x03;	// °ø°Ý°¡´É ¾ÆÀÌÅÛÀÌ ¾Æ´Ô
-const BYTE REPLY_ATK_CHAR_STATUS_ERR			= 0x04;	// Ä³¸¯ÅÍ °ø°Ý ºÒ°¡ »óÅÂ
-const BYTE REPLY_ATK_CHAR_ITEM_OWNER			= 0x05;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÁÖ Á¦ÇÑ
-const BYTE REPLY_ATK_CHAR_FAIL					= 0x06;	// °ø°Ý ÆÇÁ¤ ½ÇÆÐ
-const BYTE REPLY_ATK_CHAR_BLOCK					= 0x07;	// ºí·° ÆÇÁ¤ ¼º°ø
-const BYTE REPLY_ATK_CHAR_TARGET_ERR			= 0x08;	// °ø°Ý ´ë»ó Type ¿À·ù
-const BYTE REPLY_ATK_CHAR_NO_PK					= 0x09;	// PK ºÒ°¡
-const BYTE REPLY_ATK_CHAR_USE_TIME				= 0x0A;	// °ø°Ý Å¸ÀÓ ¿À·ù
-const BYTE REPLY_ATK_CHAR_NO_TARGET				= 0x0B;	// ´ë»ó Ä³¸¯ÅÍ°¡ ¾øÀ½
+// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_DISTANCE				= 0x01;	// ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_NO_EQUIP				= 0x02;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_ITEM_TYPE_ERR			= 0x03;	// ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½
+const BYTE REPLY_ATK_CHAR_STATUS_ERR			= 0x04;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_ITEM_OWNER			= 0x05;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_FAIL					= 0x06;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_BLOCK					= 0x07;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_TARGET_ERR			= 0x08;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Type ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_NO_PK					= 0x09;	// PK ï¿½Ò°ï¿½
+const BYTE REPLY_ATK_CHAR_USE_TIME				= 0x0A;	// ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ATK_CHAR_NO_TARGET				= 0x0B;	// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x14 Group(Equipment)
 /*----------------------------------------------------------------------------*/
-// ¾ÆÀÌÅÛ ÀåÂø
-const BYTE REPLY_ITEM_EQUIPMENT_TYPE_FAIL		= 0x01;	// ÀåÂø ºÒ°¡´ÉÇÑ ¾ÆÀÌÅÛ
-const BYTE REPLY_ITEM_EQUIPMENT_ALREADY_EQUIP	= 0x02;	// ÀåÂøÁßÀÎ ¾ÆÀÌÅÛ ÀåÂøÀ§Ä¡ º¯°æ ºÒ°¡
-const BYTE REPLY_ITEM_EQUIPMENT_POS_EQUIP_FAIL	= 0x03;	// ¾ÆÀÌÅÛ ÇöÀç À§Ä¡°¡ ÀåÂø ºÒ°¡´ÉÇÑ À§Ä¡
-const BYTE REPLY_ITEM_EQUIPMENT_EXIST_POSITION	= 0x04;	// ÀåÂø À§Ä¡¿¡ ´Ù¸¥ ¾ÆÀÌÅÛÀÌ Á¸Àç
-const BYTE REPLY_ITEM_EQUIPMENT_POS_FAIL		= 0x05;	// ÀåÂø ºÎÀ§ ºÎÀûÇÕ
-const BYTE REPLY_ITEM_EQUIPMENT_TWOHAND			= 0x06;	// ¾ç¼Õ ¹«±â ÀåÂø ºÒ°¡´É
-const BYTE REPLY_ITEM_EQUIPMENT_TRIMURITI		= 0x07;	// ÁÖ½Å Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_TRIBE			= 0x08;	// Á¾Á· Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_MUSCL	= 0x09;	// ±ÙÀ°ÀÇ Â÷Å©¶ó Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_NERVE	= 0x0A;	// ½Å°æÀÇ Â÷Å©¶ó Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_HEART	= 0x0B;	// ½ÉÀåÀÇ Â÷Å©¶ó Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_SOUL		= 0x0C;	// Á¤½ÅÀÇ Â÷Å©¶ó Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA			= 0x0D;	// Â÷Å©¶ó Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_BRAHMAN			= 0x0E;	// ºê¶ó¸¸ Æ÷ÀÎÆ® Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_JOBSKILL		= 0x0F;	// Á÷¾÷ ±â¼ú Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_DISTANCE		= 0x10;	// ¾ÆÀÌÅÛ°ú Ä³¸¯ÅÍ °Å¸®Á¦ÇÑ
-const BYTE REPLY_ITEM_EQUIPMENT_OWNER			= 0x11;	// ¾ÆÀÌÅÛ ¼ÒÀ¯ÁÖ Á¦ÇÑ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_TYPE_FAIL		= 0x01;	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_ALREADY_EQUIP	= 0x02;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_POS_EQUIP_FAIL	= 0x03;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+const BYTE REPLY_ITEM_EQUIPMENT_EXIST_POSITION	= 0x04;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_POS_FAIL		= 0x05;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_TWOHAND			= 0x06;	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_TRIMURITI		= 0x07;	// ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_TRIBE			= 0x08;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_MUSCL	= 0x09;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_NERVE	= 0x0A;	// ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_HEART	= 0x0B;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA_SOUL		= 0x0C;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_CHAKRA			= 0x0D;	// ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_BRAHMAN			= 0x0E;	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_JOBSKILL		= 0x0F;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_DISTANCE		= 0x10;	// ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ITEM_EQUIPMENT_OWNER			= 0x11;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x15 Group(Chatting)
 /*----------------------------------------------------------------------------*/
-// ÀÏ¹Ý Ã¤ÆÃ
-const BYTE REPLY_NORMAL_CHAT_FAIL	= 0x01;	// ÀÏ¹ÝÃ¤ÆÃ ½ÇÆÐ
+// ï¿½Ï¹ï¿½ Ã¤ï¿½ï¿½
+const BYTE REPLY_NORMAL_CHAT_FAIL	= 0x01;	// ï¿½Ï¹ï¿½Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 /*----------------------------------------------------------------------------*/
 // 0x16 Group(Party)
 /*----------------------------------------------------------------------------*/
-// ÆÄÆ¼ »ý¼º ¿äÃ»
-const BYTE REPLY_OTHER_JOIN_PARTY	= 0x01;	// ÀÌ¹Ì ´Ù¸¥ ÆÄÆ¼¿¡ °¡ÀÔ Áß
-const BYTE REPLY_REPEAT_PARTY_NAME	= 0x02; // ÆÄÆ¼ ÀÌ¸§ Áßº¹
-const BYTE REPLY_CREATE_PARTY_FAIL	= 0x03; // ÆÄÆ¼ »ý¼º ½ÇÆÐ
+// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_OTHER_JOIN_PARTY	= 0x01;	// ï¿½Ì¹ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+const BYTE REPLY_REPEAT_PARTY_NAME	= 0x02; // ï¿½ï¿½Æ¼ ï¿½Ì¸ï¿½ ï¿½ßºï¿½
+const BYTE REPLY_CREATE_PARTY_FAIL	= 0x03; // ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ÆÄÆ¼ ÇØÃ¼ 
-const BYTE REPLY_DISBAND_LOGOUT_MASTER		= 0x01; // ÆÄÆ¼ÀåÀÌ ·Î±×¾Æ¿ô ÇÔ.
-const BYTE REPLY_DISBAND_PARTY_FAIL			= 0x02;	// ÆÄÆ¼ ÇØÃ¼ ½ÇÆÐ
-const BYTE REPLY_DISBAND_PARTY_NOT_MASTER	= 0x03; // ÆÄÆ¼ÀåÀÌ ¾Æ´Ô, »ý¼º ÆÄÆ¼°¡ ¾øÀ½.
-const BYTE REPLY_DISBAND_PARTY_NAME_ERROR	= 0x04; // ÆÄÆ¼ ÀÌ¸§ÀÌ Àß¸øµÆÀ½.
-const BYTE REPLY_DISBAND_PARTY_SYSTEM_ERROR = 0xFF;	// ½Ã½ºÅÛ ¿¡·¯...
+// ï¿½ï¿½Æ¼ ï¿½ï¿½Ã¼ 
+const BYTE REPLY_DISBAND_LOGOUT_MASTER		= 0x01; // ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½.
+const BYTE REPLY_DISBAND_PARTY_FAIL			= 0x02;	// ï¿½ï¿½Æ¼ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_DISBAND_PARTY_NOT_MASTER	= 0x03; // ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_DISBAND_PARTY_NAME_ERROR	= 0x04; // ï¿½ï¿½Æ¼ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_DISBAND_PARTY_SYSTEM_ERROR = 0xFF;	// ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½...
 
-// ÆÄÆ¼ °¡ÀÔ
-const BYTE REPLY_PARTY_JOIN_DIS			= 0x01; // ÆÄÆ¼ °¡ÀÔ ½ÇÆÐ - °Å¸® Á¦ÇÑ
-const BYTE REPLY_PARTY_JOIN_PARTY		= 0x02; // ´Ù¸¥ ÆÄÆ¼¿¡ °¡ÀÔÁß
-const BYTE REPLY_PARTY_JOIN_NCONNECT	= 0x03; // ÆÄÆ¼ °¡ÀÔ ½ÇÆÐ - »ó´ë¹æ ºñÁ¢¼Ó
-const BYTE REPLY_PARTY_JOIN_FULL		= 0x04;	// ÆÄÆ¼ ÀÎ¿ø¼ö ÃÊ°ú
-const BYTE REPLY_PARTY_JOIN_NMASTER		= 0x05;	// ÆÄÆ¼ÀåÀÌ ¾Æ´Ô.
-const BYTE REPLY_PARTY_ALREADY_MEMBER	= 0x06; // ÆÄÆ¼¿¡ °¡ÀÔÁß.
-const BYTE REPLY_PARTY_JOIN_CAST		= 0x07; // ÆÄÆ¼ÀåÀÇ °è±ÞÀÌ ´õ ³·À½.
+// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_PARTY_JOIN_DIS			= 0x01; // ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_PARTY_JOIN_PARTY		= 0x02; // ï¿½Ù¸ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_PARTY_JOIN_NCONNECT	= 0x03; // ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_PARTY_JOIN_FULL		= 0x04;	// ï¿½ï¿½Æ¼ ï¿½Î¿ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½
+const BYTE REPLY_PARTY_JOIN_NMASTER		= 0x05;	// ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½.
+const BYTE REPLY_PARTY_ALREADY_MEMBER	= 0x06; // ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+const BYTE REPLY_PARTY_JOIN_CAST		= 0x07; // ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
-const BYTE REQ_JOIN_PARTY_OK			= 0x00;	// ÆÄÆ¼ °¡ÀÔ ¼º°ø
-const BYTE REQ_JOIN_PARTY_REJECT		= 0x01;	// ÆÄÆ¼ °¡ÀÔ ½ÇÆÐ
+const BYTE REQ_JOIN_PARTY_OK			= 0x00;	// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REQ_JOIN_PARTY_REJECT		= 0x01;	// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-const BYTE REPLY_SECEDE_PARTY_SUCC		= 0x00; // ÆÄÆ¼ Å»Åð ¼º°ø
-const BYTE REPLY_SECEDE_PARTY_NMASTER	= 0x01; // ÆÄÆ¼Àå¿¡ ÀÇÇÑ Å»Åð
-const BYTE REPLY_SECEDE_PARTY_LOGOUT	= 0x02; // ÆÄÆ¼¿øÀÌ ·Î±×¾Æ¿ô ÇÔ
+const BYTE REPLY_SECEDE_PARTY_SUCC		= 0x00; // ï¿½ï¿½Æ¼ Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SECEDE_PARTY_NMASTER	= 0x01; // ï¿½ï¿½Æ¼ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ Å»ï¿½ï¿½
+const BYTE REPLY_SECEDE_PARTY_LOGOUT	= 0x02; // ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½
 
-// ÁÖ¼Ò·Ï °ü·Ã
-const BYTE REPLY_ACCEPT_ADDRESS			= 0x00; // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ» ½ÂÀÎ
-const BYTE REPLY_REJECT_ADDRESS			= 0x01; // ÁÖ¼Ò·Ï Ãß°¡ ¿äÃ» °ÅÀý
+// ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ACCEPT_ADDRESS			= 0x00; // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_REJECT_ADDRESS			= 0x01; // ï¿½Ö¼Ò·ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½
 
-const BYTE REPLY_ADDRBOOK_LOGOUT		= 0x00; // ÁÖ¼Ò·Ï µî·ÏÀÚ ·Î±×¾Æ¿ô
-const BYTE REPLY_ADDRBOOK_ZONE_MOVE		= 0x01; // ÁÖ¼Ò·Ï µî·ÏÀÚ Á¸ ÀÌµ¿
+const BYTE REPLY_ADDRBOOK_LOGOUT		= 0x00; // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½
+const BYTE REPLY_ADDRBOOK_ZONE_MOVE		= 0x01; // ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½
 
-const BYTE REPLY_ADDRESS_JOIN_DISTANCE	=	0x01;	//	°Å¸®Á¦ÇÑ ¿À·ù
-const BYTE REPLY_ADDRESS_JOIN_CONNECT	=	0x02;	//	»ó´ë¹æÀÌ Á¸¿¡ ¾øÀ½ ¿À·ù
-const BYTE REPLY_ADDRESS_JOIN_ALREADY	=	0x03;	//	ÀÌ¹Ì °¡ÀÔÇÑ ´ë»ó ¿À·ù
+const BYTE REPLY_ADDRESS_JOIN_DISTANCE	=	0x01;	//	ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ADDRESS_JOIN_CONNECT	=	0x02;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_ADDRESS_JOIN_ALREADY	=	0x03;	//	ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 //	GUILD
-const BYTE REPLY_CLIENT_CONNECT			= 0x00; // ±æµå¿ø Á¢¼ÓÁß
-const BYTE REPLY_CLIENT_DISCONNECT		= 0x01; // ±æµå¿ø ºñÁ¢¼ÓÁß
+const BYTE REPLY_CLIENT_CONNECT			= 0x00; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CLIENT_DISCONNECT		= 0x01; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 const BYTE REPLY_GUILDMARK_PARAM		= 0x01;
 const BYTE REPLY_GUILDMARK_RIGHT		= 0x02;
@@ -8559,130 +8562,130 @@ const BYTE REPLY_GUILDMARK_MONEY		= 0x03;
 /*----------------------------------------------------------------------------*/
 // 0x19 Group(Parameter)
 /*----------------------------------------------------------------------------*/
-// Â÷Å©¶ó »ó½Â ¿äÃ»
-const BYTE REPLY_CHAKRA_RISING_PRANA	= 0x01;	// ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_CHAKRA_RISING_CHAKRA	= 0x02;	// Â÷Å©¶ó Á¦ÇÑ(´õÀÌ»ó ¸ø¿Ã¸²)
-const BYTE REPLY_CHAKRA_RISING_DISTANCE	= 0x03;	// °Å¸® Á¦ÇÑ
+// ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_CHAKRA_RISING_PRANA	= 0x01;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHAKRA_RISING_CHAKRA	= 0x02;	// ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½)
+const BYTE REPLY_CHAKRA_RISING_DISTANCE	= 0x03;	// ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ºê¶ó¸¸ Æ÷ÀÎÆ® »ó½Â ¿äÃ»
-const BYTE REPLY_BRAHMAN_RISING_PRANA		= 0x01;	// ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_BRAHMAN_RISING_BRAHMAN		= 0x02;	// ºê¶ó¸¸ Æ÷ÀÎÆ® Á¦ÇÑ(´õÀÌ»ó ¸ø¿Ã¸²)
-const BYTE REPLY_BRAHMAN_RISING_DISTANCE	= 0x03;	// °Å¸® Á¦ÇÑ
+// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_BRAHMAN_RISING_PRANA		= 0x01;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_BRAHMAN_RISING_BRAHMAN		= 0x02;	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½)
+const BYTE REPLY_BRAHMAN_RISING_DISTANCE	= 0x03;	// ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ÀÎº¥Åä¸® ½½·Ô Áõ°¡ ¿äÃ»
-const BYTE REPLY_INCREASE_INVENTORY_SLOT_MAX_COUNT	= 0x01;	// ÀÎº¥Åä¸® ÃÖ´ë ½½·Ô ÃÊ°ú
-const BYTE REPLY_INCREASE_INVENTORY_SLOT_ITEM		= 0x02;	// ÀÎº¥Åä¸® Áõ°¡ ¾ÆÀÌÅÛÀÌ ¾øÀ½
+// ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_INCREASE_INVENTORY_SLOT_MAX_COUNT	= 0x01;	// ï¿½Îºï¿½ï¿½ä¸® ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½
+const BYTE REPLY_INCREASE_INVENTORY_SLOT_ITEM		= 0x02;	// ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// NPC Ä£¹Ðµµ »ó½Â ¿äÃ»
-const BYTE REPLY_NPC_POINT_UP_TYPE_ERR	= 0x01;	// NPC °èÅë ¿À·ù
-const BYTE REPLY_NPC_POINT_UP_2MORE		= 0x02;	// ÇÏ·ç¿¡ 2¹øÀÌ»ó »ó½Â ¿äÃ»ÇÔ
+// NPC Ä£ï¿½Ðµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_NPC_POINT_UP_TYPE_ERR	= 0x01;	// NPC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_NPC_POINT_UP_2MORE		= 0x02;	// ï¿½Ï·ç¿¡ 2ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½
 
-// Â÷Å©¶ó¸¦ ÇÁ¶ó³ª·Î º¯È¯
-const BYTE REPLY_CHANGE_CHAKRA_TO_PRANA_ERR		= 0x01;	// º¯È¯½ÇÆÐ
-const BYTE REPLY_CHANGE_CHAKRA_TO_PRANA_EQUIP	= 0x02;	// º¯È¯½ÇÆÐ(¾ÆÀÌÅÛ Âø¿ëÁß)
+// ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ó³ª·ï¿½ ï¿½ï¿½È¯
+const BYTE REPLY_CHANGE_CHAKRA_TO_PRANA_ERR		= 0x01;	// ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_CHANGE_CHAKRA_TO_PRANA_EQUIP	= 0x02;	// ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
 /*----------------------------------------------------------------------------*/
 // 0x20 Group(Skill)
 /*----------------------------------------------------------------------------*/
-// ½ºÅ³ µî·Ï ¿äÃ»
-const BYTE REPLY_SKILL_REGIST_EXIST			= 0x01;	// ÀÌ¹Ì Á¸ÀçÇÏ´Â ½ºÅ³ÀÓ
-const BYTE REPLY_SKILL_REGIST_INDEX_ERR		= 0x03;	// ÀÎµ¦½º ¿À·ù
-const BYTE REPLY_SKILL_REGIST_TYPE_ERR		= 0x04;	// Å¸ÀÔ ¿À·ù
-const BYTE REPLY_SKILL_REGIST_ERROR			= 0x05;	// ½ºÅ³ µî·Ï ¿À·ù
+// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_SKILL_REGIST_EXIST			= 0x01;	// ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Å³ï¿½ï¿½
+const BYTE REPLY_SKILL_REGIST_INDEX_ERR		= 0x03;	// ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_REGIST_TYPE_ERR		= 0x04;	// Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_REGIST_ERROR			= 0x05;	// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ½ºÅ³ ¼±ÅÃ/ÇØÁ¦/»èÁ¦
-const BYTE REPLY_SKILL_SELECT_HAVE_NO_SKILL	= 0x01;	// ÇØ´ç ½ºÅ³ ¾øÀ½
-const BYTE REPLY_SKILL_SELECT_HAND_ERROR	= 0x02;	// ½ºÅ³ ¼±ÅÃ ºÎÀ§ ¿À·ù
-const BYTE REPLY_SKILL_SELECT_PASSIVE		= 0x03;	// ¼±ÅÃ/ÇØÁ¦/»èÁ¦ ºÒ°¡ ½ºÅ³(ÆÐ½Ãºê ½ºÅ³)
-const BYTE REPLY_SKILL_SELECT_RESELECT		= 0x04;	// ÀÌ¹Ì ¼±ÅÃµÇ¾î ÀÖÀ½
-const BYTE REPLY_SKILL_DELETE_NOT_FREE_SKILL= 0x05; // Free SkillÀÌ ¾Æ´Ô(½ºÅ³ »èÁ¦½Ã)
-const BYTE REPLY_SKILL_DELETE_HAVE_NO_SKILL	= 0x06;	// ÇØ´ç ½ºÅ³ ¾øÀ½(½ºÅ³ »èÁ¦½Ã)
-const BYTE REPLY_SKILL_DELETE_RESELECT		= 0x07;	// ÀÌ¹Ì ¼±ÅÃµÇ¾î ÀÖÀ½(½ºÅ³ »èÁ¦½Ã)
-const BYTE REPLY_SKILL_DELETE_SUCC			= 0x08; // ½ºÅ³»èÁ¦ ¼º°ø
+// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_SELECT_HAVE_NO_SKILL	= 0x01;	// ï¿½Ø´ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_SELECT_HAND_ERROR	= 0x02;	// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_SELECT_PASSIVE		= 0x03;	// ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ ï¿½ï¿½Å³(ï¿½Ð½Ãºï¿½ ï¿½ï¿½Å³)
+const BYTE REPLY_SKILL_SELECT_RESELECT		= 0x04;	// ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ÃµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_DELETE_NOT_FREE_SKILL= 0x05; // Free Skillï¿½ï¿½ ï¿½Æ´ï¿½(ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_SKILL_DELETE_HAVE_NO_SKILL	= 0x06;	// ï¿½Ø´ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_SKILL_DELETE_RESELECT		= 0x07;	// ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ÃµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+const BYTE REPLY_SKILL_DELETE_SUCC			= 0x08; // ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ½ºÅ³ ÁØºñµ¿ÀÛ ¿äÃ»
-const BYTE REPLY_SKILL_USE2_CHAR_DISABLE			= 0x01;	// Ä³¸¯ÅÍ °ø°ÝºÒ°¡ »óÅÂ
-const BYTE REPLY_SKILL_USE2_CHAR_DISTANCE			= 0x02;	// Ä³¸¯ÅÍ °Å¸®Á¦ÇÑ
-const BYTE REPLY_SKILL_USE2_CHAR_HAVE_NO_SKILL		= 0x03;	// ½ºÅ³ÀÌ ¾øÀ½
-const BYTE REPLY_SKILL_USE2_CHAR_NO_SELECT_SKILL	= 0x04;	// ¼±ÅÃµÈ ½ºÅ³ÀÌ ¾Æ´Ô
-const BYTE REPLY_SKILL_USE2_CHAR_REQ_PRANA			= 0x05;	// ½ºÅ³ »ç¿ë ¿ä±¸ ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_SKILL_USE2_CHAR_ITEM_TYPE			= 0x06;	// ¾ÆÀÌÅÛ Å¸ÀÔ Á¦ÇÑ
-const BYTE REPLY_SKILL_USE2_CHAR_ITEM_INDEX			= 0x07;	// ¾ÆÀÌÅÛ ÀÎµ¦½º Á¦ÇÑ
-const BYTE REPLY_SKILL_USE2_CHAR_SKILL_INDEX		= 0x08;	// Æ¯Á¤ ½ºÅ³ ÀÎµ¦½º Á¦ÇÑ
-const BYTE REPLY_SKILL_USE2_CHAR_HAVE_NO_ITEM		= 0x09;	// ÀåÂøµÈ ¾ÆÀÌÅÛÀÌ ¾øÀ½
-const BYTE REPLY_SKILL_USE2_CHAR_NO_TARGET			= 0x0A;	// ´ë»ó Ä³¸¯ÅÍ°¡ ¾øÀ½
-const BYTE REPLY_SKILL_USE2_CHAR_NO_PK				= 0x0B;	// PK ºÒ°¡ Áö¿ª
-const BYTE REPLY_SKILL_USE2_CHAR_TARGET_ERR			= 0x0C;	// ´ë»ó Å¸ÀÔ ¿À·ù
+// ï¿½ï¿½Å³ ï¿½Øºï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_SKILL_USE2_CHAR_DISABLE			= 0x01;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÝºÒ°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_DISTANCE			= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_HAVE_NO_SKILL		= 0x03;	// ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_NO_SELECT_SKILL	= 0x04;	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½Æ´ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_REQ_PRANA			= 0x05;	// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ä±¸ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_ITEM_TYPE			= 0x06;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_ITEM_INDEX			= 0x07;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_SKILL_INDEX		= 0x08;	// Æ¯ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_HAVE_NO_ITEM		= 0x09;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_NO_TARGET			= 0x0A;	// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_NO_PK				= 0x0B;	// PK ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_USE2_CHAR_TARGET_ERR			= 0x0C;	// ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ½ºÅ³ °ø°Ý
-const BYTE REPLY_SKILL_ATK_CHAR_DISABLE				= 0x01;	// Ä³¸¯ÅÍ °ø°ÝºÒ°¡ »óÅÂ
-const BYTE REPLY_SKILL_ATK_CHAR_DISTANCE			= 0x02;	// Ä³¸¯ÅÍ °Å¸®Á¦ÇÑ
-const BYTE REPLY_SKILL_ATK_CHAR_HAVE_NO_SKILL		= 0x03;	// ½ºÅ³ÀÌ ¾øÀ½
-const BYTE REPLY_SKILL_ATK_CHAR_NO_SELECT_SKILL		= 0x04;	// ¼±ÅÃµÈ ½ºÅ³ÀÌ ¾Æ´Ô
-const BYTE REPLY_SKILL_ATK_CHAR_REQ_PRANA			= 0x05;	// ½ºÅ³ »ç¿ë ¿ä±¸ ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_SKILL_ATK_CHAR_ITEM_TYPE			= 0x06;	// ¾ÆÀÌÅÛ Å¸ÀÔ Á¦ÇÑ
-const BYTE REPLY_SKILL_ATK_CHAR_ITEM_INDEX			= 0x07;	// ¾ÆÀÌÅÛ ÀÎµ¦½º Á¦ÇÑ
-const BYTE REPLY_SKILL_ATK_CHAR_SKILL_INDEX			= 0x08;	// Æ¯Á¤ ½ºÅ³ ÀÎµ¦½º Á¦ÇÑ
-const BYTE REPLY_SKILL_ATK_CHAR_HAVE_NO_ITEM		= 0x09;	// ÀåÂøµÈ ¾ÆÀÌÅÛÀÌ ¾øÀ½
-const BYTE REPLY_SKILL_ATK_CHAR_NO_TARGET			= 0x0A;	// ´ë»ó Ä³¸¯ÅÍ°¡ ¾øÀ½
-const BYTE REPLY_SKILL_ATK_CHAR_FAIL				= 0x0B;	// °ø°Ý ÆÇÁ¤ ½ÇÆÐ
-const BYTE REPLY_SKILL_ATK_CHAR_BLOCK				= 0x0C;	// ºí·° ÆÇÁ¤ ¼º°ø
-const BYTE REPLY_SKILL_ATK_CHAR_NO_PK				= 0x0D;	// PK ºÒ°¡ Áö¿ª
-const BYTE REPLY_SKILL_ATK_CHAR_TAGET_ERR			= 0x0E;	// ´ë»ó Å¸ÀÔ ¿À·ù
-const BYTE REPLY_SKILL_ATK_CHAR_USE_TIME			= 0x0F;	// ½ºÅ³ »ç¿ë ½Ã°£ ¿À·ù
+// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_DISABLE				= 0x01;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÝºÒ°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_DISTANCE			= 0x02;	// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_HAVE_NO_SKILL		= 0x03;	// ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_NO_SELECT_SKILL		= 0x04;	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½Æ´ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_REQ_PRANA			= 0x05;	// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ä±¸ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_ITEM_TYPE			= 0x06;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_ITEM_INDEX			= 0x07;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_SKILL_INDEX			= 0x08;	// Æ¯ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_HAVE_NO_ITEM		= 0x09;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_NO_TARGET			= 0x0A;	// ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_FAIL				= 0x0B;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_BLOCK				= 0x0C;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_NO_PK				= 0x0D;	// PK ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_TAGET_ERR			= 0x0E;	// ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_ATK_CHAR_USE_TIME			= 0x0F;	// ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
-// ½ºÅ³ Level-Up ¿äÃ»
-const BYTE REPLY_SKILL_LEVEL_UP_MAX_LEVEL			= 0x01;	// ½ºÅ³ ÃÖ´ë ·¹º§ - ´õÀÌ»ó ·¹º§ ¿Ã¸± ¼ö ¾øÀ½
-const BYTE REPLY_SKILL_LEVEL_UP_PRANA				= 0x02;	// ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_SKILL_LEVEL_UP_HAVE_NO_SKILL		= 0x03;	// ÇØ´ç ½ºÅ³ÀÌ ¾øÀ½
-const BYTE REPLY_SKILL_LEVEL_UP_DATA_MIS			= 0x04; // ·¹º§¾÷ µ¥ÀÌÅ¸°¡ Á¸ÀçÇÏÁö ¾ÊÀ½
+// ï¿½ï¿½Å³ Level-Up ï¿½ï¿½Ã»
+const BYTE REPLY_SKILL_LEVEL_UP_MAX_LEVEL			= 0x01;	// ï¿½ï¿½Å³ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_LEVEL_UP_PRANA				= 0x02;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_LEVEL_UP_HAVE_NO_SKILL		= 0x03;	// ï¿½Ø´ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_SKILL_LEVEL_UP_DATA_MIS			= 0x04; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ÁÖ½Å º¯°æ ¿äÃ» °á°ú
-const BYTE REPLY_TRIMURITI_CHANGE_PRANA_LACK		= 0x01;	// ÇÁ¶ó³ª ºÎÁ·
-const BYTE REPLY_TRIMURITI_CHANGE_SAME_TRIMURITI	= 0x02; // ¶È°°Àº ÁÖ½Åº¯°æÀ» ÇÏ·ÁÇÔ
-const BYTE REPLY_TRIMURITI_CHANGE_FAILED			= 0x03; // ÁÖ½Å º¯°æ ½ÇÆÐ
+// ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½
+const BYTE REPLY_TRIMURITI_CHANGE_PRANA_LACK		= 0x01;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_TRIMURITI_CHANGE_SAME_TRIMURITI	= 0x02; // ï¿½È°ï¿½ï¿½ï¿½ ï¿½Ö½Åºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½
+const BYTE REPLY_TRIMURITI_CHANGE_FAILED			= 0x03; // ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ±Ó¸»Àü¼Û °á°ú
-const BYTE REPLY_WHISPER_CHAR_FAIL					= 0x01;	// ±Ó¸»Àü¼Û ½ÇÆÐ
+// ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_WHISPER_CHAR_FAIL					= 0x01;	// ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 const BYTE REPLY_WHISPER_REJECT						= 0x02;
 
-// ±³È¯ ÀÛ¾÷ ¼öÇà ½Ã ErrorCode
-const BYTE REPLY_TRADE_SUCCESS			= 0x00;		//	Á¤»óÀûÀÎ °Å·¡ÀÇ ¿Ï·á
-const BYTE REPLY_TRADE_USER_DENAY		= 0x01;		//	»ó´ë°¡ °Å·¡¸¦ Ãë¼ÒÇÒ °æ¿ì
-const BYTE REPLY_TRADE_OVER_ME			= 0x02;		//	MY ÀÎº¥ÀÇ ÀÚ¸®°¡ ¸ðÀÚ¶÷
-const BYTE REPLY_TRADE_OVER_YOU			= 0x03;		//	YOUR ÀÎº¥ÀÇ ÀÚ¸®°¡ ¸ðÀÚ¶÷
-const BYTE REPLY_TRADE_OUTINDEX			= 0x04;		//	¾ÆÀÌÅÛ ÀÎµ¦½º ¿À·ù
-const BYTE REPLY_TRADE_USER_DIE			= 0x05;		//	À¯Àú»ç¸ÁÀ¸·Î ÀÎÇÑ °Å·¡ Ãë¼Ò
-const BYTE REPLY_TRADE_USER_CHANGE		= 0x06;		//	À¯Àú»ç¸ÁÀ¸·Î ÀÎÇÑ °Å·¡ Ãë¼Ò
-const BYTE REPLY_TRADE_ERROR			= 0x09;		//	±âÅ¸ ¿À·ù
+// ï¿½ï¿½È¯ ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ErrorCode
+const BYTE REPLY_TRADE_SUCCESS			= 0x00;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å·ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½
+const BYTE REPLY_TRADE_USER_DENAY		= 0x01;		//	ï¿½ï¿½ë°¡ ï¿½Å·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_TRADE_OVER_ME			= 0x02;		//	MY ï¿½Îºï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¶ï¿½
+const BYTE REPLY_TRADE_OVER_YOU			= 0x03;		//	YOUR ï¿½Îºï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¶ï¿½
+const BYTE REPLY_TRADE_OUTINDEX			= 0x04;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_TRADE_USER_DIE			= 0x05;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å·ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_TRADE_USER_CHANGE		= 0x06;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å·ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_TRADE_ERROR			= 0x09;		//	ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½
 
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-// Á¦ÀÛ¼Ò °ü·Ã
+// ï¿½ï¿½ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-// ¿¡·¯ °ü·Ã
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 const BYTE REPLY_ITEM_CREATE_NOT_EXIST			=	-1;
 const BYTE REPLY_ITEM_CREATE_CANNOT				=	-1;
 
-//¾ÆÀÌÅÛ Á¦ÀÛ ¿äÃ» ½Ã °á°ú ÄÚµå
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_ITEM_BUY_GOLD_WANT				=	0x01;
 const BYTE REPLY_ITEM_BUY_SUB_WANT				=	0x03;
 const BYTE REPLY_ITEM_BUY_INVENTORY_LACK		=	0x04;
 const BYTE REPLY_ITEM_BUY_MINCOUNT				=	0x05;
 
-// ¾ÆÀÌÅÛ ¼ö¸® ¿äÃ» ½Ã °á°ú ÄÚµå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_ITEM_REPAIR_MONEY_WANT			=	0x01;
 const BYTE REPLY_ITEM_REPAIR_OUTINDEX			=   0x02;
 const BYTE REPLY_ITEM_REPAIR_ENOUGH				=	0x03;
 const BYTE REPLY_ITEM_REPAIR_RESERVED			=	0x04;
 
-// ¾ÆÀÌÅÛ ÇØÃ¼ ¿äÃ» ½Ã °á°ú ÄÚµå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_ITEM_SELL_INVENTORY_LACK		=	0x01;
 const BYTE REPLY_ITEM_SELL_NO_INVENTORY			=	0x02;
 const BYTE REPLY_ITEM_SELL_RESERVED				=	0x03;
 const BYTE REPLY_ITEM_SELL_OUTINDEX				=	0x04;
 
-// ¾ÆÀÌÅÛ Á¦·Ã ¿äÃ» ½Ã °á°ú ÄÚµå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_ITEM_REFINING_FAIL				=	0x01;
 const BYTE REPLY_ITEM_REFINING_DISAPPEAR		=	0x02;
 const BYTE REPLY_ITEM_REFINING_MONEY_LACK		=	0x03;
@@ -8694,24 +8697,24 @@ const BYTE REPLY_ITEM_REFINING_ERROR			=	0x08;
 const BYTE REPLY_ITEM_REFINING_INITIALIZE		=	0x09;
 const BYTE REPLY_ITEM_SUBREFINING_INITIALIZE	=	0x0A;
 
-//	¾ÆÀÌÅÛ Çå³³°ü·Ã
+//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å³³ï¿½ï¿½ï¿½ï¿½
 const BYTE REPLY_ITEM_CONTRIBUTION_OUTINDEX		=	0x01;
 const BYTE REPLY_ITEM_CONTRIBUTION_OUTPARAM		=	0x02;
 const BYTE REPLY_ITEM_CONTRIBUTION_CANNOT		=   0x03;
 const BYTE REPLY_ITEM_CONTRIBUTION_LACK			=   0x04;
 const BYTE REPLY_ITEM_CONTRIBUTION_EVENT		=	0x05;
 
-// ¾ÆÀÌÅÛ ¸®½ºÆ® °á°ú ÄÚµåbyRefineLevel = 0byRefineLevel = 0
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½Úµï¿½byRefineLevel = 0byRefineLevel = 0
 const BYTE REPLY_ITEM_LISTING_FAILED			=	0x01;
 
-// ±³È¯¼Ò °á°ú ÄÚµå
+// ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_BARTER_DISTANCE				=	0x01;	
 const BYTE REPLY_BARTER_SOURCE_LACK				=	0x02;
 const BYTE REPLY_BARTER_INVENTORY_LACK			=	0x03;
 const BYTE REPLY_BARTER_NPC_DISABLE				=	0x04;
 const BYTE REPLY_BARTER_DISABLE					=	0x05;
 
-// ÀÎº¥Åä¸® È®Àå ÇØÁ¦ °á°ú ÄÚµå
+// ï¿½Îºï¿½ï¿½ä¸® È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 const BYTE REPLY_INVENTORY_DECREASE_NO_EXPANDED		=	0x01;
 const BYTE REPLY_INVENTORY_DECREASE_ITEM_EXIST		=	0x02;
 const BYTE REPLY_INVENYORY_DECREASE_INVENTORY_LACK	=	0x03;
@@ -8745,11 +8748,11 @@ const BYTE REPLY_GMTRANSPARENCY_ALREADY_ON		= 0x01;
 const BYTE REPLY_GMTRANSPARENCY_ALREADY_OFF		= 0x02;
 const BYTE REPLY_GMTRANSPARENCY_UNKNOWN			= 0x03;
 
-//	GM °ü·Ã
-const BYTE REPLY_GMMOVE_OTHER					= 0x01;	//  Å¸Áö¿ª³» ¿öÇÁ ¿äÃ»
-const BYTE REPLY_GMMOVE_UNMOVE					= 0x02;	//	ÀÌµ¿ ºÒ°¡Áö¿ª
-const BYTE REPLY_GMMOVE_DISCONNECT				= 0x03;	//	ÄÉ¸¯ÅÍ ¹ÌÁ¢¼Ó
-const BYTE REPLY_GMMOVE_UNKNOWN					= 0x04;	//	¿öÇÁ ½ÇÆÐ
+//	GM ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_GMMOVE_OTHER					= 0x01;	//  Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+const BYTE REPLY_GMMOVE_UNMOVE					= 0x02;	//	ï¿½Ìµï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_GMMOVE_DISCONNECT				= 0x03;	//	ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_GMMOVE_UNKNOWN					= 0x04;	//	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 const BYTE REPLY_GMCHAT_BIT						= 0x01;
 const BYTE REPLY_GMACTION_BIT					= 0x02;
@@ -8764,7 +8767,7 @@ const BYTE REPLY_DISCONNECT_GMALREADY_CONNECTED			= 0x03;
 const BYTE REPLY_DISCONNECT_GMLACK_OR_HACK				= 0x04;
 const BYTE REPLY_DISCONNECT_GM_ORDERD					= 0x05;
 
-//	ÀÌº¥Æ® ¾ÆÀÌÅÛ ¼øÀ§¸¦ À§ÇÑ ÇÃ·¡±×(EVENT_20030701)
+//	ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½(EVENT_20030701)
 const BYTE REPLY_REQ_SET_EVENT_SUCC				= 0x00;
 const BYTE REPLY_REQ_SET_EVENT_FAIL				= 0x01;
 
@@ -8784,34 +8787,34 @@ const BYTE	REPLY_GUILDALLIANCE_LEVEL			= 0x04;
 const BYTE	REPLY_GUILDALLIANCE_CANCEL			= 0x05;
 
 //	Coupon Event
-const BYTE REPLY_COUPONEVENT_0ST				= 0x00;		//	²Î
-const BYTE REPLY_COUPONEVENT_1ST				= 0x01;		//	1µî(InGame)
-const BYTE REPLY_COUPONEVENT_2ST				= 0x02;		//	2µî(InGame)
-const BYTE REPLY_COUPONEVENT_3ST				= 0x03;		//	3µî(InGame)
-const BYTE REPLY_COUPONEVENT_4ST				= 0x04;		//	4µî(InGame)
-const BYTE REPLY_COUPONEVENT_5ST				= 0x05;		//	5µî(InGame)
-const BYTE REPLY_COUPONEVENT_6ST				= 0x06;		//	6µî(InGame)
-const BYTE REPLY_COUPONEVENT_7ST				= 0x07;		//	¿µÈ­°ü¶÷±Ç
-const BYTE REPLY_COUPONEVENT_8ST				= 0x08;		//	±×·¡ÇÈÄ«µå
-const BYTE REPLY_COUPONEVENT_9ST				= 0x09;		//	Å¸¶õÆ«¶ó
-const BYTE REPLY_COUPONEVENT_10ST				= 0x0A;		//	³ª°¡¹«µå¶ó
-const BYTE REPLY_COUPONEVENT_LACK				= 0x11;		//	°ø°£ºÎÁ·
-const BYTE REPLY_COUPONEVENT_ERROR				= 0x12;		//	¾Ë¼ö¾ø´Â ¿À·ù
-const BYTE REPLY_COUPONEVENT_UNKNOWN			= 0x13;		//	¾Ë¼ö¾ø´Â º¹±Ç
+const BYTE REPLY_COUPONEVENT_0ST				= 0x00;		//	ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_1ST				= 0x01;		//	1ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_2ST				= 0x02;		//	2ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_3ST				= 0x03;		//	3ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_4ST				= 0x04;		//	4ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_5ST				= 0x05;		//	5ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_6ST				= 0x06;		//	6ï¿½ï¿½(InGame)
+const BYTE REPLY_COUPONEVENT_7ST				= 0x07;		//	ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_8ST				= 0x08;		//	ï¿½×·ï¿½ï¿½ï¿½Ä«ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_9ST				= 0x09;		//	Å¸ï¿½ï¿½Æ«ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_10ST				= 0x0A;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_LACK				= 0x11;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_ERROR				= 0x12;		//	ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_COUPONEVENT_UNKNOWN			= 0x13;		//	ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 //	Gemble
-const BYTE REPLY_YUTMONEY_SUCCESS				= 0x00;		//	¼º°ø
-const BYTE REPLY_YUTMONEY_INVENFULL				= 0x01;		//	ÀÎº¥Åä¸®¿¡ ÀÚ¸®°¡ Á¶±Ýµµ ¾ø´Ù
-const BYTE REPLY_YUTMONEY_PART					= 0x02;		//	ÀÔº¥Åä¸®°¡ Ç®ÀÌ¶ó Á¶±Ý¸¸ µ·À» Ã£¾ÑÀ» °æ¿ì
-const BYTE REPLY_YUTMONEY_NOHAVEMONEY			= 0x03;		//	Ã£À» µ·ÀÌ ¾øÀ» °æ¿ì
-const BYTE REPLY_YUTMONEY_FAIL					= 0x04;		//	±âÅ¸ µ·À» Ã£À»¼ö ¾ø´Â °æ¿ì
+const BYTE REPLY_YUTMONEY_SUCCESS				= 0x00;		//	ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_YUTMONEY_INVENFULL				= 0x01;		//	ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ýµï¿½ ï¿½ï¿½ï¿½ï¿½
+const BYTE REPLY_YUTMONEY_PART					= 0x02;		//	ï¿½Ôºï¿½ï¿½ä¸®ï¿½ï¿½ Ç®ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_YUTMONEY_NOHAVEMONEY			= 0x03;		//	Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+const BYTE REPLY_YUTMONEY_FAIL					= 0x04;		//	ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 
 /*********************************************/
-//	2004.08.26(´É·ÂÄ¡, ½ºÅ³ ÃÊ±âÈ­ °ü·ÃÆÐÅ¶)
-const BYTE REPLY_NPCCOMMAND_LACK				= 0x01;		//	·çÇÇ¾Æ°¡ ºÎÁ·ÇÒ°æ¿ì
-const BYTE REPLY_NPCCOMMAND_EQUIP				= 0x02;		//	¾ÆÀÌÅÛÀ» Âø¿ëÇÑ°æ¿ì
-const BYTE REPLY_NPCCOMMAND_STATUS				= 0x03;		//	ÃÊ±âÈ­°¡ ºÒ°¡´ÉÇÑ »óÅÂ
+//	2004.08.26(ï¿½É·ï¿½Ä¡, ï¿½ï¿½Å³ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶)
+const BYTE REPLY_NPCCOMMAND_LACK				= 0x01;		//	ï¿½ï¿½ï¿½Ç¾Æ°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ï¿½
+const BYTE REPLY_NPCCOMMAND_EQUIP				= 0x02;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½
+const BYTE REPLY_NPCCOMMAND_STATUS				= 0x03;		//	ï¿½Ê±ï¿½È­ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 /*********************************************/
 
 #endif

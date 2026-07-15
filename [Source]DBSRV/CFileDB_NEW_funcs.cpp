@@ -285,10 +285,7 @@ void CFileDB::LoadInitItems()
     if (!fp)
         fp = fopen("./InitItem.txt", "rb");
     if (!fp)
-    {
-        MessageBox(NULL, "InitItem file not found", "DBSRV", MB_OK);
         return;
-    }
 
     // Saltar header
     char szLine[0x400] = {0};
@@ -334,10 +331,7 @@ void CFileDB::LoadSkillData()
     if (!fp)
         fp = fopen("./SkillData.txt", "rb");
     if (!fp)
-    {
-        MessageBox(NULL, "SkillData file not found", "DBSRV", MB_OK);
         return;
-    }
 
     // Saltar header
     char szLine[0x400] = {0};

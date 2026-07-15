@@ -1,0 +1,13 @@
+SCC = This is a Source Code Control file
+
+[SQLDAEMON.dsp]
+SCC_Aux_Path = "\\Quantum\TantraCode\"
+SCC_Project_Name = "$/Server/SQLDAEMON", AXAAAAAA
+
+[SQLDAEMON.dsw]
+SCC_Aux_Path = "\\Quantum\TantraCode\"
+SCC_Project_Name = "$/Server/SQLDAEMON", AXAAAAAA
+
+[SQLDAEMON.vcproj]
+SCC_Aux_Path = "\\Quantum\TantraCode\"
+SCC_Project_Name = "$/Server/SQLDAEMON", AXAAAAAA

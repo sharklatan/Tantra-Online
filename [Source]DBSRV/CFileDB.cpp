@@ -31,6 +31,15 @@ extern int				GuildID;
 extern CPSock			AdminClient; // transperserver��
 extern E_COUNTRY_ID		g_eCountryID;
 
+// Buffers globales para handlers de DBSRV_NEW
+#define GAME_EVENT_BUF_SIZE		0x7D00
+#define GAME_EVENT_BUF2_SIZE	0x4E20
+#define GUILD_STORAGE_SIZE		0x400
+static char	g_GameEventBuf[3][GAME_EVENT_BUF_SIZE];
+static char	g_GameEventBuf2[GAME_EVENT_BUF2_SIZE];
+static char	g_GuildStorageBuf[GUILD_STORAGE_SIZE];
+static int	g_nAdminBroadcastFlag = 0;
+
 BOOL ProcessRecord(int conn,char * str);
 
 //#define DECREASE_SLEEPING_ACCOUNTS_BP
@@ -514,13 +523,13 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 
 			char temp[256];
 //			int ret = UpdateGuildCargoItem(m->nGuildID, m->nCargoIndex, &(m->item));
-			int ret = UpdateGuildCargoItem(m->nGuildID, m->nToIndex, &(m->item));
+			int ret = UpdateGuildCargoItem(m->nGuildID, m->nCargoIndex, &(m->item));
 			if	(ret==FALSE)	
-			{	sprintf(temp,"err _Msg_GuildItemUpdate GuildID:%d CIndex:%d, IIndex:%d", m->nGuildID, m->nToIndex, (m->item.snIndex)+4000);
+			{	sprintf(temp,"err _Msg_GuildItemUpdate GuildID:%d, FromIndex:%d, ToIndex:%d, ItemIIndex:%d", m->nGuildID, m->nCargoIndex, (m->item.snIndex)+4000, (m->item.snIndex)+4000);
 				return TRUE;
 			}
 
-			sprintf(temp,"_Msg_GuildItemUpdate GuildID:%d CIndex:%d, IIndex:%d,", m->nGuildID, m->nToIndex, (m->item.snIndex)+4000);
+			sprintf(temp,"_Msg_GuildItemUpdate GuildID:%d, FromIndex:%d, ToIndex:%d, ItemIIndex:%d", m->nGuildID, m->nCargoIndex, (m->item.snIndex)+4000, (m->item.snIndex)+4000);
 
 			pUser[conn].cSock.SendOneMessage((char*)m, sizeof(*m));
 		 }	break;
@@ -1225,6 +1234,227 @@ BOOL CFileDB::ProcessMessage(char * Msg,int conn)
 		}	break;
 		case _Msg_BramanBonus:
 		{	SendToAll((MSG_STANDARD*)Msg);
+		}	break;
+		case SSP_REQ_SHUTDOWN:
+		{	MSG_STANDARD sm; sm.wType = SSP_REQ_SHUTDOWN; sm.wPDULength = 4; sm.nID = 0;
+			for (int i = 0; i < MAX_SERVER; i++)
+			{	if (pUser[i].Mode == USER_EMPTY) continue;
+				if (pUser[i].cSock.Sock == NULL) continue;
+				pUser[i].cSock.SendOneMessage((char*)&sm, sizeof(sm));
+			}
+		}	break;
+		case _MSG_SetStatus:
+		{	// NEW: stores nID at pUser[conn]+0x1D8
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			*(DWORD*)((char*)&pUser[conn] + 0x1D8) = m->nID;
+		}	break;
+		case _MSG_SetFlag:
+		{	// NEW: sets byte at conn offset to 1
+			*(BYTE*)((char*)&pUser[conn] + 0xC3) = 1;
+		}	break;
+		case _MSG_NPNoOp:
+		{	// No-op (matching NEW 0x42CC6A)
+		}	break;
+		case _MSG_NPSendIfActive:
+		{	// NEW: if (g_bNPActive) GetIndex(conn, m->nID); write account
+			// 0x47D1C4 = global active flag
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			if (g_nAdminBroadcastFlag)
+			{	int idx = GetIndex(conn, m->nID);
+				if (idx >= 0 && idx < MAX_DBACCOUNT)
+					DBWriteAccount(&pAccountList[idx].File);
+			}
+		}	break;
+		case _MSG_GameEventGetBuffer:
+		{	// NEW: reads byte[Msg+0xC] as bufIdx (0-2), copies 0x7D00 bytes to Msg+0x10
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int bufIdx = *(BYTE*)(Msg + 0x0C);
+			if (bufIdx < 0) bufIdx = 0;
+			if (bufIdx > 2) bufIdx = 0;
+			memcpy(Msg + 0x10, g_GameEventBuf[bufIdx], GAME_EVENT_BUF_SIZE);
+			m->wPDULength = GAME_EVENT_BUF_SIZE + 0x10 - 4;
+			pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_GameEventGetBuffer2:
+		{	// NEW: copies 0x4E20 bytes from internal buffer (this+0x26AA8) to Msg+0x10
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			memcpy(Msg + 0x10, g_GameEventBuf2, GAME_EVENT_BUF2_SIZE);
+			m->wPDULength = GAME_EVENT_BUF2_SIZE + 0x10 - 4;
+			pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_InvCheck:
+		{	// NEW: sets byte[Msg+0xE]=0, checks account login, scans cargo
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			*(BYTE*)(Msg + 0x0E) = 0;
+			int idx = GetIndex(conn, m->nID);
+			if (idx >= 0 && idx < MAX_DBACCOUNT)
+			{	if (pAccountList[idx].Login > 0 && pAccountList[idx].Slot >= 0)
+				{	// Scan cargo for valid items (snIndex > 0)
+					STRUCT_ACCOUNTFILE* pf = &pAccountList[idx].File;
+					for (int i = 0; i < MAX_CARGO; i++)
+					{	if (pf->Cargo[i].snIndex > 0)
+							*(BYTE*)(Msg + 0x0E) = 1;
+					}
+				}
+			}
+			pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_GameEventVerify:
+		{	// NEW (0x42CC78): verify stored event data with XOR buffer compare
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int bufIdx = *(BYTE*)(Msg + 0x0C);
+			if (bufIdx < 0) bufIdx = 0;
+			if (bufIdx > 2) bufIdx = 0;
+			int result = memcmp(Msg + 0x10, g_GameEventBuf[bufIdx], GAME_EVENT_BUF_SIZE);
+			*(int*)(Msg + 0x0C) = (result == 0) ? 1 : 0;
+			m->wPDULength = 0x10 - 4;
+			pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_GameEventValidate:
+		{	// NEW (0x42CD6B): validate character/account name
+			// Copies char slot data to local buffer, sets result byte
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			BYTE byResult = 0;
+			int idx = GetIndex(conn, m->nID);
+			if (idx >= 0 && idx < MAX_DBACCOUNT)
+			{	if (pAccountList[idx].File.Char[0].szName[0] != 0)
+					byResult = 1;
+			}
+			*(Msg + 4) = byResult;
+			m->wPDULength = 1;
+			pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_GuildStorage:
+		{	// NEW (0x42CF96): byType at Msg+0x10
+			// Type 1: copy Msg+0x14 data to internal buffer
+			// Type 2: copy internal buffer to Msg+0x14 and send back
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int subType = *(int*)(Msg + 0x10);
+			if (subType == 1)
+			{	int dataLen = m->wPDULength - 0x10;
+				if (dataLen > GUILD_STORAGE_SIZE) dataLen = GUILD_STORAGE_SIZE;
+				memcpy(g_GuildStorageBuf, Msg + 0x14, dataLen);
+			}
+			else if (subType == 2)
+			{	int dataLen = m->wPDULength - 0x10;
+				if (dataLen > GUILD_STORAGE_SIZE) dataLen = GUILD_STORAGE_SIZE;
+				memcpy(Msg + 0x14, g_GuildStorageBuf, dataLen);
+				m->wPDULength = dataLen + 0x14 - 4;
+				pUser[conn].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
+		}	break;
+		case _MSG_GameEventCharTransfer:
+		{	// NEW (0x42D57F): copy 0x14 bytes between char slots
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int srcIdx = *(int*)(Msg + 0x10);
+			int dstIdx = *(int*)(Msg + 0x14);
+			int accIdx = GetIndex(conn, m->nID);
+			if (accIdx >= 0 && accIdx < MAX_DBACCOUNT)
+			{	STRUCT_ACCOUNTFILE* pf = &pAccountList[accIdx].File;
+				if (srcIdx >= 0 && srcIdx < MOB_PER_ACCOUNT &&
+					dstIdx >= 0 && dstIdx < MOB_PER_ACCOUNT)
+				{	memcpy(&pf->Char[dstIdx], &pf->Char[srcIdx], 0x14);
+					DBWriteAccount(pf);
+				}
+			}
+		}	break;
+		case _MSG_ReDispatch:
+		{	// NEW (0x42D482): if nID < 32, dispatch by nID through jump table
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			if (m->nID >= 0 && m->nID < 32)
+			{	// In the NEW: re-dispatches through wType jump table
+				// Send back via pUser[0] if active
+				if (pUser[0].Mode != USER_EMPTY && pUser[0].cSock.Sock)
+					pUser[0].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
+		}	break;
+		case _MSG_AdminBroadcast:
+		{	// NEW (0x42D4D0): nID==1:set flag; 2:broadcast to 3 admins; 3:fwd to server[0]
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			if (m->nID == 1)
+			{	g_nAdminBroadcastFlag = 1;
+			}
+			else if (m->nID == 2)
+			{	for (int i = 0; i < MAX_ADMIN; i++)
+				{	if (pAdmin[i].Mode == USER_EMPTY) continue;
+					if (pAdmin[i].cSock.Sock == NULL) continue;
+					pAdmin[i].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+				}
+			}
+			else if (m->nID == 3)
+			{	if (pUser[0].Mode != USER_EMPTY && pUser[0].cSock.Sock)
+					pUser[0].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
+			else
+			{	SendToAll(m);
+			}
+		}	break;
+		case _MSG_ForwardMsg:
+		{	// NEW (0x42D464): forward message to fixed admin socket
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			pUser[0].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+		}	break;
+		case _MSG_NPForward:
+		{	// NEW (0x42E6FE): NP forward handler, sets wType=0x8001 in response
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			if (pUser[0].Mode != USER_EMPTY && pUser[0].cSock.Sock)
+			{	pUser[0].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
+		}	break;
+		case _MSG_BlockUser:
+		{	// NEW (0x430B5C): copies 0x34 bytes from Msg+0x10 to pAccountList[m->nID]
+			// then forwards to server with modified header
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			if (m->nID <= 0 || m->nID >= MAX_USER * MAX_SERVER) break;
+			int serverIdx = m->nID / MAX_USER;
+			int accountIdx = m->nID % MAX_USER;
+			if (accountIdx > 0 && accountIdx < MAX_DBACCOUNT)
+			{	memcpy(&pAccountList[accountIdx], Msg + 0x10, 0x34);
+				*(BYTE*)(Msg + 0x0C) = accountIdx % MAX_USER;
+				m->wPDULength = 0x44 - 4;
+				if (serverIdx >= 0 && serverIdx < MAX_SERVER)
+				{	if (pUser[serverIdx].Mode != USER_EMPTY && pUser[serverIdx].cSock.Sock)
+						pUser[serverIdx].cSock.SendOneMessage(Msg, 0x44);
+				}
+			}
+		}	break;
+		case _MSG_BlockSave:
+		{	// NEW (0x430C12): writes block data to file
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			char szPath[256];
+			char szFName[64];
+			memcpy(szFName, Msg + 0x18, 20);
+			szFName[20] = 0;
+			sprintf(szPath, "Q:/serv%2.2d/block/%s.txt", m->nID, szFName);
+			FILE* f = fopen(szPath, "wt");
+			if (f)
+			{	fprintf(f, "%d", *(int*)(Msg + 0x14));
+				fclose(f);
+			}
+		}	break;
+		case _MSG_Unknown1509:
+		case _MSG_Unknown150A:
+		{	// NEW (0x42D2EF): forward to server, part of guild storage flow
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			SendToAll(m);
+		}	break;
+		case _MSG_Unknown150C:
+		{	// NEW (0x42D32C): forward to socket at 0x494350 + wPDULength*0x22C
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int idx = m->wPDULength;
+			if (idx >= 0 && idx < MAX_SERVER)
+			{	if (pUser[idx].Mode != USER_EMPTY && pUser[idx].cSock.Sock)
+					pUser[idx].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
+		}	break;
+		case _MSG_Unknown150D:
+		{	// NEW (0x42D375): forward to socket at 0x494350 + byte[Msg+0xD]*0x22C
+			MSG_STANDARD* m = (MSG_STANDARD*)Msg;
+			int idx = *(BYTE*)(Msg + 0x0D);
+			if (idx >= 0 && idx < MAX_SERVER)
+			{	if (pUser[idx].Mode != USER_EMPTY && pUser[idx].cSock.Sock)
+					pUser[idx].cSock.SendOneMessage(Msg, m->wPDULength + 4);
+			}
 		}	break;
 
 /////////////////////////////////////////////////////////////////////
