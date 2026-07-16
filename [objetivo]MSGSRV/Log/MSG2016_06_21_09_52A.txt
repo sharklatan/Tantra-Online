@@ -1,0 +1,5 @@
+160621 095242 -system		start log 
+160621 095357 -system		sys new connection from 192.168.1.89 - zone :1 
+160621 095404 -system		sys new connection from 192.168.1.89 - zone :6 
+160621 110728 -system		clo server fd 0 
+160621 110728 -system		clo server fd 5 

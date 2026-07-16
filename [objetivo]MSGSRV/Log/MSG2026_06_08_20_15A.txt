@@ -1,0 +1,5 @@
+260608 201525 -system		start log 
+260608 201713 -system		sys new connection from 127.0.0.1 - zone :1 
+260608 202031 -system		clo server fd 0 
+260608 203555 -system		sys new connection from 127.0.0.1 - zone :1 
+260608 203840 -system		clo server fd 0 

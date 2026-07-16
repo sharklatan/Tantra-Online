@@ -1,0 +1,5 @@
+160617 000150 -system		start log 
+160617 000212 -system		sys new connection from 127.0.0.1 - zone :1 
+160617 000222 -system		sys new connection from 127.0.0.1 - zone :6 
+160617 001432 -system		clo server fd 0 
+160617 001432 -system		clo server fd 5 

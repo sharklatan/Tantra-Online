@@ -954,13 +954,14 @@ void BASE_GetFirstKey(char * source,char * dest)
 		    return;
 		 }
 
-		 for (int a=0;a<18;a++)
-		 {   if (Point<KorIndex[a]) break;
+		 int iKor;
+		 for (iKor=0;iKor<18;iKor++)
+		 {   if (Point<KorIndex[iKor]) break;
 		 }
 
-		 if  (a>=0 && a<=17)
-		 {   dest[0]=KorFirst[a*2];
-		     dest[1]=KorFirst[a*2+1];
+		 if  (iKor>=0 && iKor<=17)
+		 {   dest[0]=KorFirst[iKor*2];
+		     dest[1]=KorFirst[iKor*2+1];
 		     dest[2]=0;
 		 }   else
 		 {   strcpy(dest,"etc");
@@ -1052,8 +1053,9 @@ void BASE_InitializeMessage(char * file)
 		   continue;
 		}
         cont = (char*) (str+TabPos+1);
-		for (i=0;i<128;i++)
-		{   if (cont[i]=='\t'||cont[i]==10||cont[i]==0) {cont[i]=0;break;} }
+		int iParse;
+		for (iParse=0;iParse<128;iParse++)
+		{   if (cont[iParse]=='\t'||cont[iParse]==10||cont[iParse]==0) {cont[iParse]=0;break;} }
 
         int len = strlen(cont);
 		if (len<=0||len>=128)//인도네시아 번전은 languig.txt가 너무 길어 일단 블록한다. 추후 문자길이 조정후 다시 풒어야한다.
@@ -1085,10 +1087,11 @@ void BASE_InitializeszName(char * file,int offset)
 	        sscanf(str,"%s",part1);
 			str[510]=0; str[511]=0; 
 			int TabPos=0;
-			for (int i=0;i<256;i++)	{   if (str[i]=='\t') {TabPos=i;break;} }
+			int iParse;
+			for (iParse=0;iParse<256;iParse++)	{   if (str[iParse]=='\t') {TabPos=iParse;break;} }
 			if (TabPos==0)	{  MessageBox(NULL,str,"Can't parse String",MB_OK);	   continue;	}
 			cont = (char*) (str+TabPos+1);
-			for (i=0;i<128;i++)	{if (cont[i]=='\t'||cont[i]==10||cont[i]==0) {cont[i]=0;break;} }
+			for (iParse=0;iParse<128;iParse++)	{if (cont[iParse]=='\t'||cont[iParse]==10||cont[iParse]==0) {cont[iParse]=0;break;} }
 			int len = 0;
 			len = strlen(part1);if (len<=0||len>=SZNAME_LENGTH){  MessageBox(NULL,str,"Empty or Long String-1st",MB_OK);   continue;}
 			len = strlen(cont);	
@@ -1110,10 +1113,11 @@ void BASE_InitializeszName(char * file,int offset)
 	        sscanf(str,"%s",part1);
 			str[510]=0; str[511]=0; 
 			int TabPos=0;
-			for (int i=0;i<256;i++)	{   if (str[i]=='\t') {TabPos=i;break;} }
+			int iParse;
+			for (iParse=0;iParse<256;iParse++)	{   if (str[iParse]=='\t') {TabPos=iParse;break;} }
 			if (TabPos==0)	{  MessageBox(NULL,str,"Can't parse String",MB_OK);	   continue;	}
 			cont = (char*) (str+TabPos+1);
-			for (i=0;i<128;i++)	{if (cont[i]=='\t'||cont[i]==10||cont[i]==0) {cont[i]=0;break;} }
+			for (iParse=0;iParse<128;iParse++)	{if (cont[iParse]=='\t'||cont[iParse]==10||cont[iParse]==0) {cont[iParse]=0;break;} }
 			int len = 0;
 			len = strlen(part1);if (len<=0||len>=SZNAME_LENGTH){  MessageBox(NULL,str,"Empty or Long String-1st",MB_OK);   continue;}
 			len = strlen(cont);	if (len<=0||len>=SZNAME_LENGTH){  MessageBox(NULL,str,"Empty or Long String-2nd",MB_OK);   continue;}
@@ -1531,12 +1535,13 @@ void BASE_WriteInitItem(void)
 {
 	int size = sizeof(STRUCT_INITITEM) * MAX_INITITEM;
 	char * temp = (char *)g_pInitItem;
-	for (int i=0;i<size;i++){temp[i]= temp[i]^0xFF;}  //STRUCT_INITITEM   g_pInitItem[MAX_INITITEM];
+	int iWrite;
+	for (iWrite=0;iWrite<size;iWrite++){temp[iWrite]= temp[iWrite]^0xFF;}  //STRUCT_INITITEM   g_pInitItem[MAX_INITITEM];
 	FILE* fp = fopen("InitItem.bin", "wb");
 	if	(fp==NULL) {MessageBox(NULL,"Can't write inititem.bin","ERROR",MB_OK|MB_SYSTEMMODAL);return;}
 	fwrite(g_pInitItem, size,1, fp);
 	fclose(fp);
-	for (i=0;i<size;i++){temp[i]= temp[i]^0xFF;}
+	for (iWrite=0;iWrite<size;iWrite++){temp[iWrite]= temp[iWrite]^0xFF;}
 }
 
 int BASE_ReadInitItem(void)
@@ -1550,11 +1555,12 @@ int BASE_ReadInitItem(void)
 	fseek(fp,-size,SEEK_END);
 	fread(g_pInitItem, size, 1 , fp);
 	fclose(fp);
-	for (int i=0;i<size;i++){ temp[i]= temp[i]^0xFF;}
+	int iRead;
+	for (iRead=0;iRead<size;iRead++){ temp[iRead]= temp[iRead]^0xFF;}
 
-	for(i=0;i<MAX_INITITEM;i++){		
-		if(g_pInitItem[i].PosX<=0){
-			g_dwInitItem = i;
+	for(iRead=0;iRead<MAX_INITITEM;iRead++){		
+		if(g_pInitItem[iRead].PosX<=0){
+			g_dwInitItem = iRead;
 			break;
 		}
 	}
@@ -1694,7 +1700,7 @@ BOOL  BASE_InitializeServerList(void)
 		FILE* fpBin = fopen("./serverlist.bin", "wb");
 		if(fpBin!=NULL){
 			char szServerBin[64];
-			char szList[65] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
+			char szList[256] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
 			for(int k=0;k<MAX_SERVERGROUP;k++)
 				for(int j=0;j<MAX_SERVERNUMBER;j++)
 				{	sprintf( szServerBin, "%s:%d", g_pServerList[k][j], g_pServerListPort[k][j] );
@@ -1711,7 +1717,7 @@ BOOL  BASE_InitializeServerList(void)
 		FILE* fpBin = fopen("./serverlist.bin", "rb");
 		if(fpBin!=NULL){
 			char szServerBin[64];
-			char szList[65] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";			
+			char szList[256] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";			
 
 			for(int k=0;k<MAX_SERVERGROUP;k++)
 				for(int j=0;j<MAX_SERVERNUMBER;j++)
@@ -1779,7 +1785,7 @@ BOOL  BASE_InitializeServerList_Client(int *pTest, int *pCountryCode)
 		FILE* fpBin = fopen("./serverlist.bin", "wb");
 		if(fpBin!=NULL){
 			char szServerBin[64];
-			char szList[65] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
+			char szList[256] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
 			sprintf(szServerBin, "%d %d", *pTest, *pCountryCode );
 			for(int i=0;i<64;i++)
 			{	szServerBin[i] += szList[63 - i];
@@ -1801,7 +1807,7 @@ BOOL  BASE_InitializeServerList_Client(int *pTest, int *pCountryCode)
 		FILE* fpBin = fopen("./serverlist.bin", "rb");
 		if(fpBin!=NULL){
 			char szServerBin[64];
-			char szList[65] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
+			char szList[256] ="ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅏㅔㅣㅗㅜ가나다";
 			fread( szServerBin, 1, 64, fpBin );
 			for(int i=0;i<64;i++)
 			{

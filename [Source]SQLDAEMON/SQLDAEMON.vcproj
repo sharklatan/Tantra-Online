@@ -15,7 +15,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="C:\Documents and Settings\Administrator\&#26700;Øü\SQLDaemon"
+			OutputDirectory="Release"
 			IntermediateDirectory="Debug"
 			ConfigurationType="1"
 			UseOfMFC="0"

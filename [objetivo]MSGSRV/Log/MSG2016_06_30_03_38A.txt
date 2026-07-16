@@ -1,0 +1,46 @@
+160630 033844 -system		start log 
+160630 033902 -system		sys new connection from 192.168.1.67 - zone :1 
+160630 033909 -system		sys new connection from 192.168.1.67 - zone :6 
+160630 034045 -system		dbg m_mapTable.insert char:Shark1 idx:2 
+160630 034245 -system		dbg m_mapTable.insert char:Bakuhatsu idx:1 
+160630 034703 -system		dbg m_mapTable.erase char:Bakuhatsu idx:1 
+160630 040352 -system		dbg m_mapTable.erase char:Shark1 idx:2 
+160630 040552 -system		dbg m_mapTable.insert char:Rossmery idx:1 
+160630 040725 -system		dbg m_mapTable.insert char:Shark1 idx:2 
+160630 041042 -system		dbg m_mapTable.erase char:Shark1 idx:2 
+160630 041612 -system		dbg m_mapTable.erase char:Rossmery idx:1 
+160630 041935 -system		dbg m_mapTable.insert char:Rossmery idx:1 
+160630 042354 -system		dbg m_mapTable.erase char:Rossmery idx:1 
+160630 042432 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 042444 -system		dbg m_mapTable.insert char:Rossmery idx:2 
+160630 042744 SHARK-LATAN		err add accountlist - already added 
+160630 042915 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 042921 -system		dbg m_mapTable.erase char:Rossmery idx:2 
+160630 042935 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 043149 -system		dbg m_mapTable.insert char:Rossmery idx:2 
+160630 043724 PACHOWER		err add accountlist - already added 
+160630 044339 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 044730 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 044816 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 044932 -system		dbg m_mapTable.erase char:Rossmery idx:2 
+160630 045008 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 045646 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 045757 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 045918 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 050002 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 050224 -system		dbg m_mapTable.insert char:Rossmery idx:2 
+160630 050419 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 051954 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 052131 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 052549 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 054016 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 054111 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 055040 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 055250 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 055331 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 055605 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 055645 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 055738 -system		dbg m_mapTable.insert char:Shark1 idx:1 
+160630 060005 -system		dbg m_mapTable.erase char:Shark1 idx:1 
+160630 060058 -system		clo server fd 5 
+160630 060058 -system		clo server fd 0 

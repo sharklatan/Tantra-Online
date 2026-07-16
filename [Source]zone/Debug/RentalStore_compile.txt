@@ -1,0 +1,105 @@
+cl : Command line warning D4002 : ignoring unknown option '/G-'
+RentalStore.cpp
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(382) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(378) : while compiling class-template member function 'std::_Tree<_Traits>::_Tree(const std::_Tree<_Traits>::_Myt &)'
+        with
+        [
+            _Traits=std::_Tset_traits<DWORD,std::less<DWORD>,std::allocator<DWORD>,false>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\set(57) : see reference to class template instantiation 'std::_Tree<_Traits>' being compiled
+        with
+        [
+            _Traits=std::_Tset_traits<DWORD,std::less<DWORD>,std::allocator<DWORD>,false>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\utility(51) : see reference to class template instantiation 'std::set<_Kty>' being compiled
+        with
+        [
+            _Kty=DWORD
+        ]
+        RentalStore.cpp(175) : see reference to class template instantiation 'std::pair<_Ty1,_Ty2>' being compiled
+        with
+        [
+            _Ty1=char *const ,
+            _Ty2=std::set<DWORD>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1132) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1130) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,const std::_Tree<_Traits>::value_type &,char)'
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,std::set<DWORD>,HTStr,std::allocator<std::pair<char *const ,std::set<DWORD>>>,false>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\map(77) : see reference to class template instantiation 'std::_Tree<_Traits>' being compiled
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,std::set<DWORD>,HTStr,std::allocator<std::pair<char *const ,std::set<DWORD>>>,false>
+        ]
+        c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]zone\RentalStore.h(19) : see reference to class template instantiation 'std::map<_Kty,_Ty,_Pr>' being compiled
+        with
+        [
+            _Kty=char *,
+            _Ty=std::set<DWORD>,
+            _Pr=HTStr
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1132) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1130) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,const std::_Tree<_Traits>::value_type &,char)'
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,DWORD,HTStr,std::allocator<std::pair<char *const ,DWORD>>,false>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\map(77) : see reference to class template instantiation 'std::_Tree<_Traits>' being compiled
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,DWORD,HTStr,std::allocator<std::pair<char *const ,DWORD>>,false>
+        ]
+        c:\Users\Shark\Documents\GitHub\Tantra-Online\[Source]zone\RentalStore.h(21) : see reference to class template instantiation 'std::map<_Kty,_Ty,_Pr>' being compiled
+        with
+        [
+            _Kty=char *,
+            _Ty=DWORD,
+            _Pr=HTStr
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(877) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(867) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Copy(std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr)'
+        with
+        [
+            _Traits=std::_Tset_traits<DWORD,std::less<DWORD>,std::allocator<DWORD>,false>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1109) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1105) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(void)'
+        with
+        [
+            _Traits=std::_Tset_traits<DWORD,std::less<DWORD>,std::allocator<DWORD>,false>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1132) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1130) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,std::_Tree<_Traits>::_Nodeptr,const std::_Tree<_Traits>::value_type &,char)'
+        with
+        [
+            _Traits=std::_Tset_traits<DWORD,std::less<DWORD>,std::allocator<DWORD>,false>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1453) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1444) : while compiling class-template member function 'void std::basic_string<_Elem,_Traits,_Ax>::_Copy(std::basic_string<_Elem,_Traits,_Ax>::size_type,std::basic_string<_Elem,_Traits,_Ax>::size_type)'
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\stdexcept(39) : see reference to class template instantiation 'std::basic_string<_Elem,_Traits,_Ax>' being compiled
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1109) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1105) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(void)'
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,std::set<DWORD>,HTStr,std::allocator<std::pair<char *const ,std::set<DWORD>>>,false>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1109) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xtree(1105) : while compiling class-template member function 'std::_Tree<_Traits>::_Nodeptr std::_Tree<_Traits>::_Buynode(void)'
+        with
+        [
+            _Traits=std::_Tmap_traits<char *,DWORD,HTStr,std::allocator<std::pair<char *const ,DWORD>>,false>
+        ]

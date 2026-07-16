@@ -1,0 +1,72 @@
+cl : Command line warning D4002 : ignoring unknown option '/G-'
+CMob.cpp
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(574) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(828) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(1064) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(479) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(471) : while compiling class-template member function 'std::basic_ostream<_Elem,_Traits>::_Myt &std::basic_ostream<_Elem,_Traits>::put(_Elem)'
+        with
+        [
+            _Elem=wchar_t,
+            _Traits=std::char_traits<wchar_t>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(561) : see reference to class template instantiation 'std::basic_ostream<_Elem,_Traits>' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Traits=std::char_traits<wchar_t>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(479) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(471) : while compiling class-template member function 'std::basic_ostream<_Elem,_Traits>::_Myt &std::basic_ostream<_Elem,_Traits>::put(_Elem)'
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\ostream(922) : see reference to class template instantiation 'std::basic_ostream<_Elem,_Traits>' being compiled
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(99) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(89) : while compiling class-template member function 'bool std::basic_istream<_Elem,_Traits>::_Ipfx(bool)'
+        with
+        [
+            _Elem=wchar_t,
+            _Traits=std::char_traits<wchar_t>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(816) : see reference to class template instantiation 'std::basic_istream<_Elem,_Traits>' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Traits=std::char_traits<wchar_t>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(99) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(89) : while compiling class-template member function 'bool std::basic_istream<_Elem,_Traits>::_Ipfx(bool)'
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\istream(1054) : see reference to class template instantiation 'std::basic_istream<_Elem,_Traits>' being compiled
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1453) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1444) : while compiling class-template member function 'void std::basic_string<_Elem,_Traits,_Ax>::_Copy(std::basic_string<_Elem,_Traits,_Ax>::size_type,std::basic_string<_Elem,_Traits,_Ax>::size_type)'
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\stdexcept(39) : see reference to class template instantiation 'std::basic_string<_Elem,_Traits,_Ax>' being compiled
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]

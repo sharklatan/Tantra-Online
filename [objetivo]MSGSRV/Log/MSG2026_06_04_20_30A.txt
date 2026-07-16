@@ -1,0 +1,2 @@
+260604 203046 -system		start log 
+260604 203100 -system		sys new connection from 127.0.0.1 - zone :1 

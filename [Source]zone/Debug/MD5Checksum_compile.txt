@@ -1,0 +1,2 @@
+cl : Command line warning D4002 : ignoring unknown option '/G-'
+MD5Checksum.cpp

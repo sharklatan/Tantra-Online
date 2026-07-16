@@ -1,0 +1,5 @@
+160625 000751 -system		start log 
+160625 001147 -system		sys new connection from 192.168.1.89 - zone :1 
+160625 001156 -system		sys new connection from 192.168.1.89 - zone :6 
+160625 001305 -system		dbg m_mapTable.insert char:Shark idx:1 
+160625 002025 -system		dbg m_mapTable.erase char:Shark idx:1 

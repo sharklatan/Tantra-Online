@@ -1,0 +1,2 @@
+260608 174040 -system		start log 
+260608 174232 -system		sys new connection from 127.0.0.1 - zone :1 

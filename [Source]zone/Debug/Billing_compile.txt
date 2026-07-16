@@ -1,0 +1,17 @@
+cl : Command line warning D4002 : ignoring unknown option '/G-'
+Billing.cpp
+C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1453) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\xstring(1444) : while compiling class-template member function 'void std::basic_string<_Elem,_Traits,_Ax>::_Copy(std::basic_string<_Elem,_Traits,_Ax>::size_type,std::basic_string<_Elem,_Traits,_Ax>::size_type)'
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\include\stdexcept(39) : see reference to class template instantiation 'std::basic_string<_Elem,_Traits,_Ax>' being compiled
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>,
+            _Ax=std::allocator<char>
+        ]

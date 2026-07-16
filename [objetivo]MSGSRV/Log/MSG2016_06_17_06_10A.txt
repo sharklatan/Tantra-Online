@@ -1,0 +1,9 @@
+160617 061044 -system		start log 
+160617 061151 -system		sys new connection from 192.168.1.89 - zone :1 
+160617 061259 -system		sys new connection from 192.168.1.89 - zone :6 
+160617 063029 -system		dbg m_mapTable.insert char:Shark idx:1 
+160617 070006 -system		dbg m_mapTable.erase char:Shark idx:1 
+160617 071429 -system		dbg m_mapTable.insert char:Shark idx:1 
+160617 075721 -system		dbg m_mapTable.erase char:Shark idx:1 
+160617 081644 -system		clo server fd 0 
+160617 081644 -system		clo server fd 5 

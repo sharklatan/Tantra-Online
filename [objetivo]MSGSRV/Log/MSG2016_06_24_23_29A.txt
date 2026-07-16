@@ -1,0 +1,19 @@
+160624 232923 -system		start log 
+160624 232948 -system		sys new connection from 192.168.1.89 - zone :1 
+160624 232955 -system		sys new connection from 192.168.1.89 - zone :6 
+160624 233140 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 233718 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 233904 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 234120 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 234140 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 234328 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 234440 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 234700 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 234718 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 234902 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 234948 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 235247 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 235604 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 235803 -system		dbg m_mapTable.erase char:Shark idx:1 
+160624 235821 -system		dbg m_mapTable.insert char:Shark idx:1 
+160624 235907 -system		dbg m_mapTable.erase char:Shark idx:1 

@@ -1,0 +1,5 @@
+160630 014847 -system		start log 
+160630 014954 -system		sys new connection from 192.168.1.67 - zone :1 
+160630 015056 -system		sys new connection from 192.168.1.67 - zone :6 
+160630 021746 -system		clo server fd 5 
+160630 021746 -system		clo server fd 0 

@@ -142,7 +142,7 @@ BOOL InitInstance( HANDLE hInstance, int nCmdShow)
 }
 
 
-WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow )
+int WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow )
 {   MSG msg;
     UNREFERENCED_PARAMETER( lpCmdLine );
     hInst = hInstance;
@@ -177,38 +177,39 @@ WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, 
 	unsigned * tmp = (unsigned*)LocalIP;
 	LocalIPBin = *tmp;
 
-	for	(int i=0;i<MAX_SERVERGROUP;i++)
+	int iLoop;
+	for (iLoop=0;iLoop<MAX_SERVERGROUP;iLoop++)
 	{
-		if	(DBServerSocket[i].pSendBuffer==NULL) DBServerSocket[i].pSendBuffer = (char*)malloc(SEND_BUFFER_SIZE);
-		if	(DBServerSocket[i].pSendBuffer==NULL) 
-		{	sprintf(temp,"err get send buffer fail %d",i);
+		if	(DBServerSocket[iLoop].pSendBuffer==NULL) DBServerSocket[iLoop].pSendBuffer = (char*)malloc(SEND_BUFFER_SIZE);
+		if	(DBServerSocket[iLoop].pSendBuffer==NULL) 
+		{	sprintf(temp,"err get send buffer fail %d",iLoop);
 			Log(temp,"system",0);
 		}
-		if	(DBServerSocket[i].pRecvBuffer==NULL) DBServerSocket[i].pRecvBuffer = (char*)malloc(RECV_BUFFER_SIZE);
-		if	(DBServerSocket[i].pRecvBuffer==NULL) 
-		{	sprintf(temp,"err get send buffer fail %d",i);
+		if	(DBServerSocket[iLoop].pRecvBuffer==NULL) DBServerSocket[iLoop].pRecvBuffer = (char*)malloc(RECV_BUFFER_SIZE);
+		if	(DBServerSocket[iLoop].pRecvBuffer==NULL) 
+		{	sprintf(temp,"err get send buffer fail %d",iLoop);
 			Log(temp,"system",0);
 		}
 	}
 
-    for (int i=0;i<MAX_SERVERNUMBER;i++)
-	{	if (!strcmp(g_pServerList[i][INDEXOFDAEMON],name))  {ServerIndex=i;break;}
+    for (iLoop=0;iLoop<MAX_SERVERNUMBER;iLoop++)
+	{	if (!strcmp(g_pServerList[iLoop][INDEXOFDAEMON],name))  {ServerIndex=iLoop;break;}
 	}
 	if	(ServerIndex==-1)
 	{	MessageBox(hWndMain,"Can't get Server Group Index LocalIP:",name,MB_OK|MB_SYSTEMMODAL);
-		MessageBox(hWndMain,"Can't get Server Group Index TestServerIP:",g_pServerList[i][INDEXOFDAEMON],MB_OK|MB_SYSTEMMODAL);
+		MessageBox(hWndMain,"Can't get Server Group Index TestServerIP:",g_pServerList[ServerIndex][INDEXOFDAEMON],MB_OK|MB_SYSTEMMODAL);
 		return TRUE;
 	}
 	int * pip = (int*)LocalIP;
-	for (int i=0;i<MAX_SERVERGROUP;i++)
+	for (iLoop=0;iLoop<MAX_SERVERGROUP;iLoop++)
 	{	bool bContinue=true;
-		if(g_pServerList[i][0][0]==0)	continue;
-		if(DBServerSocket[i].Sock!=NULL)		continue;
-		for(int j=0;j<i;++j)	//	기연결 대상 dba일경우 생략
-		{	if(!strcmp(g_pServerList[i][0], g_pServerList[j][0])) { bContinue=false; break; }
+		if(g_pServerList[iLoop][0][0]==0)	continue;
+		if(DBServerSocket[iLoop].Sock!=NULL)		continue;
+		for(int j=0;j<iLoop;++j)	//	기연결 대상 dba일경우 생략
+		{	if(!strcmp(g_pServerList[iLoop][0], g_pServerList[j][0])) { bContinue=false; break; }
 		}
 		if(!bContinue) continue;
-		int ret = DBServerSocket[i].ConnectServer(g_pServerList[i][0],g_pServerListPort[i][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
+		int ret = DBServerSocket[iLoop].ConnectServer(g_pServerList[iLoop][0],g_pServerListPort[iLoop][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
 		if	(ret==NULL)
 		{	Log("err Can't connect to DB-Server.","-system",0);
 			MessageBox(hWndMain,"Can't connect to DB-SERVER","REBOOTING ERROR",NULL);
@@ -225,12 +226,12 @@ WINAPI WinMain(  HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, 
 		fclose(fp);
 	}
 	char parm[256];
-	for ( i=0;i<MAX_THREAD;i++)
-	{	sprintf(parm,"%d",i);
-		ThreadIDTable[i]=i;
+	for (iLoop=0;iLoop<MAX_THREAD;iLoop++)
+	{	sprintf(parm,"%d",iLoop);
+		ThreadIDTable[iLoop]=iLoop;
 		unsigned ThreadID;
-		ThreadHandle[i] = _beginthreadex(NULL, 0, iThreadProc, &ThreadIDTable[i], 0, &ThreadID);
-		if	(ThreadHandle[i]==0) MessageBox(hWndMain,"Create Thread Failed",parm,MB_OKCANCEL);
+		ThreadHandle[iLoop] = _beginthreadex(NULL, 0, iThreadProc, &ThreadIDTable[iLoop], 0, &ThreadID);
+		if	(ThreadHandle[iLoop]==0) MessageBox(hWndMain,"Create Thread Failed",parm,MB_OKCANCEL);
 	}
 
 	Sleep(2000);
@@ -280,7 +281,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 				DBServerSocket[nIndex].nProcPosition = 0;
 				int * pip = (int*)LocalIP;
 				DBServerSocket[nIndex].CloseSocket();
-				DBServerSocket[nIndex].ConnectServer(g_pServerList[i][0],g_pServerListPort[i][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
+				DBServerSocket[nIndex].ConnectServer(g_pServerList[nIndex][0],g_pServerListPort[nIndex][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
 				// pUser[User].ModeDBServerSocket.=MODE_SAVEEMPTY;
 				// DB 서버에 REQ_SAVE를 날리고 
 				// MODE를 REQ_SAVE로 바꾼다.
@@ -298,7 +299,7 @@ LONG APIENTRY MainWndProc( HWND hWnd, UINT message, UINT wParam, LONG lParam)
 					Log(temp,"-system",0);
 					int * pip = (int*)LocalIP;
 					DBServerSocket[nIndex].CloseSocket();
-					DBServerSocket[nIndex].ConnectServer(g_pServerList[i][0],g_pServerListPort[i][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
+					DBServerSocket[nIndex].ConnectServer(g_pServerList[nIndex][0],g_pServerListPort[nIndex][INDEXOFDAEMON]+1000,*pip,WSA_READ,hWndMain);
 					break;
 				} 
 				ProcessMessage(Msg,nIndex);// , Manage.ReceiveSize);
@@ -341,19 +342,20 @@ void ProcessMessage(char*msg,int ServerGroup)
 		{	MSG_NPAccountInfo * m = (MSG_NPAccountInfo *) msg;
 			EnterCS();
 			
-			for (int t=0;t<MAX_JOB;t++)	{if	(pJob[t].Mode==JOB_EMPTY) break;}
-			if	(t==MAX_JOB) // too much connection, try it later
+			int tJob;
+			for (tJob=0;tJob<MAX_JOB;tJob++)	{if	(pJob[tJob].Mode==JOB_EMPTY) break;}
+			if	(tJob==MAX_JOB) // too much connection, try it later
 			{	sprintf(temp,"err no empty job, fail to save %s",m->account.AccountName);
 				Log(temp,"-system",0);
 				LeaveCS();
 				return;
 			}
-			pJob[t].Mode		=	JOB_CHARGED;
-			pJob[t].Type		=	JOBTYPE_ACCOUNT;
-			memcpy(&pJob[t].Account,&m->account,sizeof(STRUCT_ACCOUNTFILE));
-			pJob[t].ServerGroup = ServerGroup;
-			strncpy(pJob[t].GuildName,m->GuildName,GUILDNAME_LENGTH);
-			pJob[t].GuildRank = m->GuildRank;
+			pJob[tJob].Mode		=	JOB_CHARGED;
+			pJob[tJob].Type		=	JOBTYPE_ACCOUNT;
+			memcpy(&pJob[tJob].Account,&m->account,sizeof(STRUCT_ACCOUNTFILE));
+			pJob[tJob].ServerGroup = ServerGroup;
+			strncpy(pJob[tJob].GuildName,m->GuildName,GUILDNAME_LENGTH);
+			pJob[tJob].GuildRank = m->GuildRank;
 			InterlockedIncrement(&g_nChargedJob);
 			LeaveCS();
 		}	break;
@@ -400,16 +402,17 @@ void ProcessSecTimer( void )
 		if(when.tm_hour>=5&&LastRankDay!=when.tm_mday)
 		{
 			EnterCS();
-			for (int t=0;t<MAX_JOB;t++)	{if	(pJob[t].Mode==JOB_EMPTY) break;}
-			if	(t==MAX_JOB) // too much connection, try it later
+			int tJob;
+			for (tJob=0;tJob<MAX_JOB;tJob++)	{if	(pJob[tJob].Mode==JOB_EMPTY) break;}
+			if	(tJob==MAX_JOB) // too much connection, try it later
 			{	sprintf(temp,"err no empty job, fail to ranking");
 				Log(temp,"-system",0);
 				LeaveCS();
 				return;
 			}
-			ZeroMemory(&pJob[t],sizeof(STRUCT_JOB));
-			pJob[t].Mode		=	JOB_CHARGED;
-			pJob[t].Type		=	JOBTYPE_RANKING;
+			ZeroMemory(&pJob[tJob],sizeof(STRUCT_JOB));
+			pJob[tJob].Mode		=	JOB_CHARGED;
+			pJob[tJob].Type		=	JOBTYPE_RANKING;
 			InterlockedIncrement(&g_nChargedJob);
 			LastRankDay=when.tm_mday;
 			LeaveCS();
@@ -484,7 +487,8 @@ uintptr_t __stdcall iThreadProc(void* lpParameter)
 	{	
 		EnterCS();
 		InterlockedIncrement(&g_nWorkingThreades);
-		for	(int idx=0;idx<MAX_JOB;idx++)
+		int idx;
+		for	(idx=0;idx<MAX_JOB;idx++)
 		{	if	(pJob[idx].Mode==JOB_CHARGED) break;
 		}
 			
